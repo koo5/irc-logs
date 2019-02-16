@@ -1,0 +1,23 @@
+usage:
+
+attach in one command:
+ssh -v  editable-log@loworbit.now.im  -p 44 -t "tmux attach-session -t chat"
+
+let others know who is chatting with them: 
+/nick editable-<stoopkid,daemoz,nilli..>
+
+#do a backup once in a while:
+ssh -v  editable-log@loworbit.now.im  -p 44 -t "cd /var/www/html/logs; git commit -a -m '`date "+%F-%H-%M-%S"`'";
+bash -c "rsync -v -ah -e 'ssh -p  44' -r  root@loworbit.now.im:/var/www          loworbit-`date "+%F-%H-%M-%S"`-www"
+
+#download editable-log source:
+bash -c "rsync -v -ah -e 'ssh -p  44' -r  editable-log@loworbit.now.im:/home/editable-log          loworbit-`date "+%F-%H-%M-%S"`-home"
+
+
+known issues:
+the "irc process" dies every once in a while. There is no indication in the channel buffer. The server buffer says "connecting...".
+note:
+801 editable-  20   0 20356   812   176 S  0.0  0.0  0:08.20 openssl s_client -connect irc.freenode.net 6697 -ign_eof
+https://github.com/jorgenschaefer/circe/issues/327 and other issues are probably related.
+step 1: alt-x kill-emacs
+step 2: run emacs

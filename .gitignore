@@ -1,0 +1,4 @@
+*.log.txt-tail*.txt
+*.log.txt~
+.#*
+

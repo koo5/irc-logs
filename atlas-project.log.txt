@@ -1,0 +1,747 @@
+13.12.18 01:35:12*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog @ChanServ
+                 *** End of /NAMES list.
+#atlas-project> 13.12.18 06:15:17*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog @ChanServ
+                 *** End of /NAMES list.
+13.12.18 08:07:56*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-bwgtanxlgtspocdt, stoopkid: stoopkid)
+13.12.18 08:56:11<editable-dog>yo
+13.12.18 08:56:28<editable-dog>i lost the history here, can you paste the last section plz?
+13.12.18 08:57:07<editable-dog>i enabled logging for this chan and logicmoo so this shouldnt happen again
+13.12.18 08:58:04<stoopkid> np one sec
+13.12.18 09:02:16<stoopkid> https://pastebin.com/uSJDNMzK
+13.12.18 10:07:08<editable-dog>thx
+14.12.18 03:27:21*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-bwgtanxlgtspocdt) left #atlas-project: Quit: Connection closed for inactivity
+14.12.18 13:25:16*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ydaspulnfyovdfes, stoopkid: stoopkid)
+15.12.18 02:40:09*** Nick change: stoopkid (uid137696@gateway/web/irccloud.com/x-ydaspulnfyovdfes) is now known as Panzerwagener
+15.12.18 06:15:18*** Nick regain: Panzerwagener (uid137696@gateway/web/irccloud.com/x-ydaspulnfyovdfes) is now known as stoopkid
+15.12.18 12:34:36<editable-dog>well, the way im looking at our reasoner is that its a thingy that does a resolution procedure for a subset of FOL
+15.12.18 12:35:10<editable-dog>we apparently have rules with existentials, and we have binary relations or something
+15.12.18 12:35:32<editable-dog>we apparently dont have complex terms, but that doesnt seem to be a problem
+15.12.18 12:36:25<editable-dog>so we have this system that has a correspondence to fol, which i suppose gives us some guarantees or something
+15.12.18 12:37:08<editable-dog>we happen to use this rdf thing for input and output and maybe inbetween
+15.12.18 12:37:34<editable-dog>but as you note, rdf is ill-defined all around
+15.12.18 12:38:06<editable-dog>pecularities of how we interpret some rdf input are up to us, and how we interface with other reasoners is up to us and them
+15.12.18 12:38:34<editable-dog>rdf doesnt give us any theoretic foundation
+15.12.18 12:40:30<editable-dog>i wanna look more into how we can do lc in pyco
+15.12.18 12:40:46<editable-dog>and how we can type our rules
+15.12.18 15:04:53<stoopkid> hrm
+15.12.18 15:05:33<stoopkid> to do proper lc & typing we would need predvars (or some kind of guarded predvar via findall)
+15.12.18 15:20:17<stoopkid> we can maybe do pure combinatory logic and compile lambdas down to that
+15.12.18 15:39:40<editable-dog>ok, so i'll add findall
+15.12.18 21:26:02*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ydaspulnfyovdfes) left #atlas-project: Quit: Connection closed for inactivity
+15.12.18 22:44:30*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ietgoypnouvlthcu, stoopkid: stoopkid)
+16.12.18 00:56:02*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ietgoypnouvlthcu) left #atlas-project: Quit: Connection closed for inactivity
+16.12.18 07:34:42*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-maeebayinxexkulp, stoopkid: stoopkid)
+17.12.18 14:10:07<editable-dog>so, have you given up on autonomic?
+17.12.18 14:19:54<stoopkid> hrm, at least on the type-theory/RDF based nomic block-chain aspect of it
+17.12.18 14:21:19<editable-dog>lol, whats left?
+17.12.18 14:21:59<stoopkid> well i mean we still have inferencer stuff we built that could be used in other contexts
+17.12.18 14:29:55<editable-dog>ok
+17.12.18 14:30:02<editable-dog>sucks, tho
+17.12.18 14:30:46<editable-dog>then i guess ill try to go back to prolog for parsing/language building
+17.12.18 14:33:39<editable-dog>idk
+17.12.18 16:17:55<stoopkid> yea idk i'm still trying to figure some things out
+17.12.18 16:18:42<stoopkid> i was sort of banking on the idea that after we figured out HMC's scheme for termination, i guess the parsimonious back-chaining thing hypothetically, then the picture would just start to come together, but
+17.12.18 16:20:06<stoopkid> idk i'm still not seeing the picture, and on further analysis i'm not even sure i have the parsimonious back-chaining thing exactly right anyway
+17.12.18 16:20:43<stoopkid> i think there's a lot of edge-cases i'm not accounting for that just don't come up in the forward-chaining version and weren't accounted for in that algorithm
+17.12.18 16:21:23<stoopkid> but even if i did have it exactly right i don't really understand exactly how to relate it to the type theory rules
+17.12.18 16:21:51<stoopkid> i'm not even sure how we get predvars out of findall
+17.12.18 16:22:27<stoopkid> or rather, i don't get what's special about having predvars in findall but not just having regular predvars
+17.12.18 16:23:06<stoopkid> i can tell that HMC intended to have access to predvars essentially be guarded by findall, but i can't tell exactly what he had in mind for this
+17.12.18 16:24:37<stoopkid> or why he found it to be necessary
+17.12.18 16:25:15<stoopkid> just really not sure what he has for a significant portion of it at all
+17.12.18 16:25:23<stoopkid> has in mind*
+17.12.18 16:27:31<stoopkid> and i'm not sure how to extract it out of him either
+17.12.18 16:28:30<stoopkid> i can see that none of the constraints i'm failing to satisfy so far really have anything to do with representing or using the type theory as a programming language, or verification framework, or inferencing system or even as a distributed version of any of that
+17.12.18 16:29:40<stoopkid> ex. agda is a programming lang, verification framework, and inferencing system, and could have easily been made a distributed version of that
+17.12.18 16:29:48<stoopkid> but it's quite obviously not working under the same constraints as HMC is
+17.12.18 16:30:17<stoopkid> i can easily set up some queries that show that Agda's inferencing is generally non-terminating it just cuts it off after some max-depth
+17.12.18 16:30:44<stoopkid> cause, who cares right
+17.12.18 16:31:05<stoopkid> you could even just let it run forever it's not gonna hurt anything
+17.12.18 16:31:52<stoopkid> their type-checking is more of an ad-hoc thing kinda like what we did following the simpler-easier tutorial, just a more advanced version of that
+17.12.18 16:33:33<stoopkid> but otoh, they aren't running a nomic on a block-chain and cramming it into as minimal of semantic web standards as they can
+17.12.18 16:36:55<stoopkid> and i'd say i'm really not confident enough at this stage that i know how to cram it down into those constraints myself
+17.12.18 16:37:12<stoopkid> i'm still having trouble even formulating what are the right questions to even ask about it
+17.12.18 16:39:55<stoopkid> and i feel like that would just be getting way ahead of myself cause i'm still trying to even demo the basic features that my ideas for next-gen apps are all predicated on
+17.12.18 16:42:30<stoopkid> and then from another direction, you've come up a method for termination that's... idk how to describe it
+17.12.18 16:43:00<stoopkid> "american spent $10 million on a pen that could write in 0 gravity and the czech used a pencil"
+17.12.18 16:44:04<editable-dog>and then the graphite got into all their delicate equipment and the space station exploded
+17.12.18 16:45:35<stoopkid> yea the introduction of the temporal element breaks the methods of analysis i've used on the other systems
+17.12.18 16:46:09<stoopkid> so i'm still wondering whether or not it matters
+17.12.18 16:46:18<editable-dog>its not really temporal, or at least you can look at it as structural i think
+17.12.18 16:48:09<editable-dog>but it seems that i can already tell by now, that even if i have a guarantee for eventual termination, it seems its just a nicety, because in practice, even simple kb+query can run for a long long time
+17.12.18 16:49:09<editable-dog>and then the findall vs predvars thing...idk either
+17.12.18 16:50:38<editable-dog>but the way i feel about both is ... alright, we have something, we've got to build more stuff, put it to use, we have the questions, we kinda understand the tradeoffs and answers..
+17.12.18 16:51:18<editable-dog>so we just need to put the system to use so we can get definive answers
+17.12.18 16:51:30<editable-dog>so, i dont feel like these are roadblocks
+17.12.18 16:52:48<stoopkid> with the termination there's reasons for "total functional", but i can't tell how it matters except for *above* the type theory layer already, and there's proof-checking.. proof-checking should be terminating (lot's of results about how logics even work at all simply just don't even apply if proof-checking isn't terminating) but... you don't even want this to simply be terminating you want it to be fast like basically
+                 <stoopkid> linear in the size of the proof
+17.12.18 16:54:02<stoopkid> but then, proof-checking in type theories isn't terminating/efficient because of how the inferencing system works, it's terminating/efficient because of the specific set of rules that are given in an inferencing system that has all the potential to infloop on other rulesets
+17.12.18 16:54:13<stoopkid> or even the same ruleset with a different kind of query than proof-checking
+17.12.18 16:55:36<stoopkid> it only terminates because the rules that describe the proof-checking are already structurally recursive
+17.12.18 16:58:22<stoopkid> which comes to another thing i still just don't really understand about HMC's plans: what is all this other stuff we're doing "outside" of the type theory
+17.12.18 16:58:56<stoopkid> and i think my failure to grasp that is part of why i can't figure out how that all that extra stuff is supposed to work
+17.12.18 16:59:29<editable-dog>the only thing i understand wrt typechecking and termination checking is the thing with deriving a contradiction from having a recursive function without a base case, and it doesnt seem to matter if we limit such a function with a "maximum depth counter" or with some variety of ep check
+17.12.18 16:59:55<editable-dog>like what?
+17.12.18 17:00:54<stoopkid> well like all these considerations about termination of arbitrary rulesets below the type-theory layer, the open-phase stuff, etc...
+17.12.18 17:03:58<stoopkid> the thing with the termination checking thing wrt deriving a contradiction from like x = 1 + x : Nat, that only applies above the type theory layer
+17.12.18 17:04:45<stoopkid> at the inferencing layer, it legitimately doesn't matter, as far as the type theory is concerned
+17.12.18 17:06:26<stoopkid> i.e. it's the difference between "letting your proof search run for a while or not" and "having a proof that a finite thing is infinite"
+17.12.18 17:07:20<editable-dog>mm
+17.12.18 17:08:06<stoopkid> like take the  type theory rule {pair(a,b) : A ^ B} <= (a : A . b : B}
+17.12.18 17:09:13<stoopkid> when you provide both the term, and the type, and type-check, it's structurally recursive
+17.12.18 17:09:56<stoopkid> it might be able to infloop if you leave one or the other variable, or both, but if you provide both you just have some data that you're structurally recursing on
+17.12.18 17:10:29<stoopkid> the only place that there's any kind of divergence from this is when you type-check dependent types
+17.12.18 17:10:43<stoopkid> i.e. you run some function during type-checking
+17.12.18 17:12:20<stoopkid> but a) it's always only a function that was already known terminating from being previously type-checked, and b) i've shown that you can actually describe the type theory in a way that functions actually don't run during type-checking (except for just a single step) and it would be equivalent and structurally recursive
+17.12.18 17:13:25<stoopkid> (it just forces the reduction steps to be explicit in the proof)
+17.12.18 17:15:51<stoopkid> so, query "?x : Nat"... there's no reason except for human time-constraints that this shouldn't return all infinitely many Nats right?
+17.12.18 17:17:00<editable-dog>yea..
+17.12.18 17:18:10<stoopkid> but "suc (suc 0) : Nat" will check "suc 0 : Nat" which will check "0 : Nat" and then it's done, just by the structure of the rules
+17.12.18 17:20:01<stoopkid> so that's what i mean that i don't understand what constraints are requiring us to have termination of the query "?x : Nat" except for "whenever the human user decided it should stop"
+17.12.18 17:20:09<stoopkid> "if ever"
+17.12.18 17:20:38<stoopkid> it's not the type theory
+17.12.18 17:23:26<stoopkid> non-termination of the inferencing wouldn't even let you construct the terms like x = 1 + x : Nat in the type-theory
+17.12.18 17:23:31<stoopkid> because it wouldn't type-check
+17.12.18 17:24:43<stoopkid> agda's termination-check here is just kind of a weird way of saying you didn't make valid usage of the elimination rule for Nat
+17.12.18 17:25:51<stoopkid> like, they present it like you're writing a generally recursive function like in haskell, and then it gets "checked for termination"
+17.12.18 17:27:29<stoopkid> but if you look at the actual elimination rule for Nat in natural deduction, termination check is "built-in", you only had the option to write a proof in terms of a specific form of structural induction in the first place
+17.12.18 17:29:55<editable-dog>hmm
+17.12.18 17:31:32<editable-dog>well, the typecheck is trying to build the proof, right?
+17.12.18 17:32:01<stoopkid> no it's just checking the proof
+17.12.18 17:32:49<stoopkid> "suc (suc 0) : Nat" as opposed to "?x : Nat"
+17.12.18 17:34:21<stoopkid> cause "suc (suc 0)" encodes the rule-applications that were applied in a particular proof of Nat, so the inferencing is basically just tracing this backwards: "suc (suc 0) : Nat" because "suc 0 : Nat" because "0 : Nat"
+17.12.18 17:37:06<stoopkid> so it's just checking that a proof-tree is actually a proof-tree instead of trying to find the proof-tree in the first place
+17.12.18 17:37:51<editable-dog>ah,ok
+17.12.18 17:41:53<stoopkid> so the only way you really break it is if the queries with no variables like "suc (suc 0) : Nat" can either a) not terminate or b) be wrong
+17.12.18 17:43:20<stoopkid> anything with a variable in it (not including lambda variables, cause those are actually just objects in the proofs), it can't really have any bearing on the type theory itself, because only the judgements of the form "this object has this type" are considered to be the "facts" of the system
+17.12.18 17:46:01<stoopkid> and these are always terminating, logical, well-behaved... so all of our considerations here wrt termination of arbitrary queries on arbitrary rule-sets are completely entirely independent of anything type theory really says about it
+17.12.18 17:46:18<editable-dog>cool
+17.12.18 17:46:22<stoopkid> unless we had some kind of interpretation that this was already supposed to "be" the type theory in the first place
+17.12.18 17:46:54<stoopkid> but if that's the case it's just another case of "i really don't get the plan"
+17.12.18 17:51:16<stoopkid> now with your implementation idk what to make of it cause on the one hand i don't see anything wrong with it, but then on the other hand i don't see how it would fit into HMC's vision
+17.12.18 17:53:18<editable-dog>well, as far as im concerned, when i have a grammar encoded as rules, and i want to use them to both parse and generate with, then if i had no ep check, then i'd need to tread a depth parameter through all the rules. With ep check in place, i only need that parameter to do meaningful generation. But all in all it doesnt matter
+17.12.18 17:54:52<editable-dog>whats the problem with it fitting? We've shown that we need existentials, and its trivial to see that the ep rules need to be extended to account for them
+17.12.18 17:55:25<editable-dog>and my scheme fits the bill, whats the vision?
+17.12.18 17:56:54<stoopkid> well, that's part of the problem, i don't really know
+17.12.18 17:57:09<stoopkid> but whatever it is it seems to be extremely specific
+17.12.18 17:59:21<editable-dog>well, he keeps being wrong in all the extreme specifics
+17.12.18 18:02:34<stoopkid> this is true but if we change it up from "we're doing HMC's plan for autonomic" then we might as well just be doing our own thing at which point i'm reconsidering all kinds of things including whether to even be building a nomic block-chain in the first place, whether to even consider entirely arbitrary rule-sets (or rather, whether to concern myself with the termination or any other property of general inferencing
+                 <stoopkid> over them), etc..
+17.12.18 18:04:58<stoopkid> if i were to design a nomic block-chain myself it would only use proof-checking as a fundamental operation, not proof-search, and would specifically leave proof-search an open-ended between-block operation
+17.12.18 18:06:02<stoopkid> the rules up to a certain block simply describe the type of the next block and then you're just type-checking
+17.12.18 18:06:55<stoopkid> maybe i'd have a design flaw because i didn't worry enough about homoiconicity but w/e
+17.12.18 18:07:37<editable-dog>yea i like the homoiconicity part
+17.12.18 18:09:05<editable-dog>i dont have a good idea about proof-search vs proof-checking there, but..
+17.12.18 18:09:32<editable-dog>whoever wants to play a nomic on a blockchain can experiment with that
+17.12.18 18:10:00<editable-dog>like, its total nonsense that there'd only be one chance to get tau right
+17.12.18 18:10:29<editable-dog>you imagine we release it and everyone jumps onto it?
+17.12.18 18:10:38<editable-dog>nobody gives a fuck
+17.12.18 18:12:07<editable-dog>but i can tell you've been thinking about this long enough to be able to design such a system
+17.12.18 18:15:12<editable-dog>i'll be happy to discuss things back and forth with hmc, but he doesnt seem able/willing to even get back to conversations about these details
+17.12.18 18:16:46<editable-dog>like, nilli was the only one able to try to secure some funding for a bit, and before moving on, she said this will never get done until we make it ours and do it our own way
+17.12.18 18:19:38<stoopkid> i mean yea i'd keep working on whatever HMC keeps explaining but he doesn't seem to be explaining anything or even responding to any of my technical q's so idk
+17.12.18 18:21:33<editable-dog>i need to know if youre still interested enough that if i add findall, we can try to tackle the typing of rules
+17.12.18 18:22:26<editable-dog>i suspect its related to reasoning over graphs vs reasoning over the default graph, so ill probably have to ask hmc to explain this bit to me
+17.12.18 18:23:08<stoopkid> hrm...
+17.12.18 18:24:26<editable-dog>then i can add some general syscall capability, and that might just be almost enough to play a nomic even? idk
+17.12.18 18:24:38<stoopkid> i'm still interested but if we were to be doing it our own way i would probably do it a different way
+17.12.18 18:27:23<stoopkid> i would probably revert to something explicitly non-terminating in proof-search, add predvars, and simulate the natural deduction rules for type theory directly that way
+17.12.18 18:31:49<stoopkid> and then adjust from there as necessary/desired
+17.12.18 18:34:49<stoopkid> afaict there wouldn't really need to be any adjustments from that in order to host a nomic
+17.12.18 18:36:12<editable-dog>i think i can add predvars to pyco without too much changes, and it definitely will have the advantage, at least for us, over findall, in having at least seemingly obvious semantics, and if it makes the typing rules cleaner, its a no brainer
+17.12.18 18:36:37<editable-dog>as on removing the ep check, that one is trivial
+17.12.18 18:37:47<editable-dog>although im not sure i see any advantage in that, because i think our ep check already only cuts things that would otherwise really just loop forever until running out of memory
+17.12.18 18:42:42<stoopkid> well, above the type theory layer, where the nomic will play out, the only real "rules" are the type theory rules and the only move is providing a proof, so everything's just already terminating and in time linear in the size of the proof (including in the time-dimension if you're employing the syntactic sugar of "running functions during type-checking")
+17.12.18 18:44:33<stoopkid> so the only time ep-check should matter is in what other kinds of inferencing you do "around" the nomic, in between block-checking (proof-checking) operations
+17.12.18 18:46:58<stoopkid> and i basically want to leave that entirely open-ended, like you could hypothetically try to use a neural net to try to come up with the next block, all that will matter is that whatever your search process generated, no matter what method was employed, will only be accepted if it successfully passes the deterministic proof-checking according to the type theory rules
+17.12.18 18:48:11<stoopkid> and we can ofc have some "sane" defaults
+17.12.18 18:48:52<stoopkid> but i mean, if somebody hypothetically wants to just have their inferencer run in trivial loops...
+17.12.18 18:49:35<stoopkid> ok they're not the one who finds the next block, too bad, no hash-cash for them
+17.12.18 18:51:55<stoopkid> i mean, bitcoin doesn't tell you how to run your mining rig
+17.12.18 18:53:07<editable-dog>yeah, makes sense from that perspective
+17.12.18 18:54:40<stoopkid> from what i can tell the thing that this cuts out from HMC's plans is basically the whole open-phase thing
+17.12.18 18:56:04<stoopkid> from what i can tell that was basically just supposed to be a default environment to deliver untyped turing-complete applications into, to run in parallel to the normal "basically just pure math proof-checking of the block-chain"
+17.12.18 18:57:05<stoopkid> so in bitcoin, you've got wallets, mining rigs, etc...
+17.12.18 18:59:57<stoopkid> but, i don't see why we need this, i don't even necessarily see that it offers any particular convenience
+17.12.18 19:01:40<editable-dog>its definitely something to be left out for now
+17.12.18 19:03:38<stoopkid> ideally what would eventually accumulate on the chain would be solid math proofs of how to actually compile those kinds of "open-phase" applications down to the bare metal of whatever machine you're working on, and then you would just run that directly anyway
+17.12.18 19:05:30<stoopkid> there's maybe a couple issues that would come up with the universe-hierarchy and the kind of self-referential stuff you start doing with having a self-modifying rule-set, but... i think we can cross that bridge when we come to it
+17.12.18 19:10:11<stoopkid> i mean, i think there's still some potentially non-trivial considerations we've yet to take into account but i think we probably need to see what happens with a default vanilla implementation of dependent type theory with no particular constraints on the open-phase stuff
+17.12.18 19:14:01<editable-dog>time for bed o/
+17.12.18 19:14:14<stoopkid> ok catch ya later
+18.12.18 13:13:18<editable-dog>  f : forall (n : Nat) , P n
+18.12.18 13:13:54<editable-dog>is this like "n -> P n"?
+18.12.18 13:14:38<editable-dog>like for example "n -> IsEven n"?
+18.12.18 14:37:01<stoopkid> yea,  or (n : Nat) -> IsEven n
+18.12.18 14:44:14*** Connecting...
+                 -Server Notice- *** Looking up your hostname...
+                 -Server Notice- *** Checking Ident
+                 -Server Notice- *** No Ident response
+18.12.18 14:44:15-Server Notice- *** Couldn't look up your hostname
+18.12.18 14:44:20*** [sasl.login from editable-dog (editable-l@104.168.57.22)] editable-dog
+                 *** SASL: You are now logged in as editable-dog.
+                 *** SASL authentication successful
+18.12.18 14:44:25*** Mode change: +Zi on editable-dog by editable-dog (server)
+                 -freenode-connect- Due to the ongoing spam, all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+                 *** CTCP VERSION request from freenode-connect (frigg@freenode/utility-bot/frigg) to editable-dog: 
+18.12.18 14:44:50*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+20.12.18 16:03:00*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-maeebayinxexkulp) left #atlas-project: Quit: Connection closed for inactivity
+20.12.18 17:19:16*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-fodefpojcwzpmfog, stoopkid: stoopkid)
+21.12.18 01:53:00*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-fodefpojcwzpmfog) left #atlas-project: Quit: Connection closed for inactivity
+21.12.18 07:33:52*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-qakppefbmujnfvlz, stoopkid: stoopkid)
+22.12.18 02:53:31*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-qakppefbmujnfvlz) left #atlas-project: Quit: Connection closed for inactivity
+22.12.18 08:02:49*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-xqlaavgxnlhdturu, stoopkid: stoopkid)
+23.12.18 04:02:32*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-xqlaavgxnlhdturu) left #atlas-project: Quit: Connection closed for inactivity
+23.12.18 09:19:17*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-bwehpxlcweksmqnb, stoopkid: stoopkid)
+24.12.18 07:38:20*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-bwehpxlcweksmqnb) left #atlas-project: Quit: Connection closed for inactivity
+24.12.18 07:55:52*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ibnvnyoqmrsylmxz, stoopkid: stoopkid)
+25.12.18 04:38:18*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ibnvnyoqmrsylmxz) left #atlas-project: Quit: Connection closed for inactivity
+25.12.18 09:29:49*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-mucssfrhnxwnjwqf, stoopkid: stoopkid)
+25.12.18 12:20:08*** Join: sifar (~sifar@117.208.216.236, (unauthenticated): sifar)
+25.12.18 12:20:09*** Quit: sifar (~sifar@117.208.216.236) left #atlas-project: Changing host
+                 *** Join: sifar (~sifar@unaffiliated/sifar, sifar: sifar)
+25.12.18 12:40:41*** Quit: sifar (~sifar@unaffiliated/sifar) left #atlas-project: Quit: Leaving
+25.12.18 20:11:46<editable-dog>err, soo, natural deduction corresponds to typing lc
+25.12.18 20:12:15<editable-dog>but none of that actually says anything about typing logic programs, correct?
+26.12.18 01:59:30*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-mucssfrhnxwnjwqf) left #atlas-project: Quit: Connection closed for inactivity
+26.12.18 08:07:12*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-nqknfejzwgzexhsg, stoopkid: stoopkid)
+26.12.18 08:22:04<stoopkid> correct
+26.12.18 08:29:05<stoopkid> well, mostly correct anyway
+26.12.18 08:29:48<stoopkid> you can simulate functional programming in logic programming and vice versa
+26.12.18 08:51:37*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-wgxpwapemfzgqjma, (unauthenticated): kook)
+26.12.18 08:52:03<sirccloud> Ok, now this has cleared quite a bit of my confusion
+26.12.18 15:41:04*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-wgxpwapemfzgqjma) left #atlas-project: Quit: Connection closed for inactivity
+27.12.18 07:26:42*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-nqknfejzwgzexhsg) left #atlas-project: Quit: Connection closed for inactivity
+27.12.18 16:52:48*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-pspeedlutibdwlxd, stoopkid: stoopkid)
+27.12.18 17:04:30*** Join: sifar (~sifar@117.206.15.150, (unauthenticated): sifar)
+27.12.18 17:04:31*** Quit: sifar (~sifar@117.206.15.150) left #atlas-project: Changing host
+                 *** Join: sifar (~sifar@unaffiliated/sifar, sifar: sifar)
+27.12.18 17:08:08*** Quit: sifar (~sifar@unaffiliated/sifar) left #atlas-project: Client Quit
+27.12.18 20:27:54*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-pspeedlutibdwlxd) left #atlas-project: Quit: Connection closed for inactivity
+27.12.18 21:16:46*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-noilmfgugexqaoiw, stoopkid: stoopkid)
+29.12.18 09:27:53*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-noilmfgugexqaoiw) left #atlas-project: Quit: Connection closed for inactivity
+29.12.18 14:40:37*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-lddixjnuupdhosio, stoopkid: stoopkid)
+30.12.18 06:55:11*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-jqkwiypneqocmixb, (unauthenticated): kook)
+30.12.18 09:24:49*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-jqkwiypneqocmixb) left #atlas-project: Quit: Connection closed for inactivity
+31.12.18 08:28:54*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-lddixjnuupdhosio) left #atlas-project: Quit: Connection closed for inactivity
+31.12.18 10:12:22*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-xvxykhtxxkcwnunc, stoopkid: stoopkid)
+03.01.19 00:35:28*** Disconnected
+03.01.19 00:35:30*** Connecting...
+03.01.19 00:36:08*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+05.01.19 02:38:55*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-xvxykhtxxkcwnunc) left #atlas-project: Quit: Connection closed for inactivity
+05.01.19 11:00:08*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-jgabdpcadfkgdgjd, stoopkid: stoopkid)
+06.01.19 02:29:50*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-jgabdpcadfkgdgjd) left #atlas-project: Quit: Connection closed for inactivity
+06.01.19 21:19:57*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-znhwhzhgrxvqiuok, stoopkid: stoopkid)
+07.01.19 23:14:50*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-znhwhzhgrxvqiuok) left #atlas-project: Quit: Connection closed for inactivity
+08.01.19 10:30:07*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-dvggvlfsesubonno, stoopkid: stoopkid)
+#atlas-project> 09.01.19 04:09:47*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+11.01.19 15:45:07*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-dvggvlfsesubonno) left #atlas-project: Quit: Connection closed for inactivity
+11.01.19 16:10:44*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-xlmwxpymrzifvrjs, stoopkid: stoopkid)
+#atlas-project> 12.01.19 00:13:56*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+16.01.19 04:05:12*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-xlmwxpymrzifvrjs) left #atlas-project: Quit: Connection closed for inactivity
+16.01.19 10:12:00*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-jccstxogekcxhdxq, stoopkid: stoopkid)
+17.01.19 04:31:16*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-jccstxogekcxhdxq) left #atlas-project: Quit: Connection closed for inactivity
+17.01.19 07:46:28*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-vtomzjfbvzgekfib, stoopkid: stoopkid)
+#atlas-project> 18.01.19 13:07:06*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+19.01.19 18:46:52*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-fcyjqxwvxctxwdab) left #atlas-project: Quit: Connection closed for inactivity
+19.01.19 23:45:47*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-wilvlbsfxgqesjnx, stoopkid: stoopkid)
+20.01.19 08:55:00*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-wilvlbsfxgqesjnx) left #atlas-project: Quit: Connection closed for inactivity
+20.01.19 12:51:02*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-dnwljzdvjrwcbiiw, stoopkid: stoopkid)
+#atlas-project> 21.01.19 15:45:08*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+#atlas-project> 21.01.19 15:52:05*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+#atlas-project> 21.01.19 15:53:51*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+#atlas-project> 21.01.19 16:00:11*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+24.01.19 06:54:51*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-dnwljzdvjrwcbiiw) left #atlas-project: Quit: Connection closed for inactivity
+24.01.19 10:01:51*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rdxzoaomwcfxqzug, stoopkid: stoopkid)
+24.01.19 15:01:34*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rdxzoaomwcfxqzug) left #atlas-project: Quit: Connection closed for inactivity
+24.01.19 18:23:06*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-thtwlwwwoiovmgfu, stoopkid: stoopkid)
+25.01.19 00:42:49*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-thtwlwwwoiovmgfu) left #atlas-project: Quit: Connection closed for inactivity
+25.01.19 11:20:53*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-vbfmaewcvqpfxtze, stoopkid: stoopkid)
+25.01.19 12:45:56<stoopkid> man, business is hard
+25.01.19 12:46:08<stoopkid> how's your job situation coming along?
+25.01.19 12:47:46<stoopkid> i realized my desire to do freelance is futile if i'm only studying the tech cause idk shit about business, marketing or professional networking
+25.01.19 12:51:38<stoopkid> so i've been studying that a lot more recently, but it kinda sucks, for me it's one of those things where after studying it you've got better perspective but... only enough perspective to realize how far behind on it you really are
+25.01.19 12:53:18<stoopkid> now i find myself focused on things i never even thought i'd ever be studying like.. "personal branding" and "writing effective sales copy"
+25.01.19 12:57:08<stoopkid> it's kind of interesting actually cause after studying this stuff, i feel like i'm even further from being able to start successfully freelancing than i originally thought, but i'm finding that the business principles actually apply directly to a lot of the problems i have just on the pure tech side (or at least, my time-management and planning abilities relative to the pure tech)
+25.01.19 12:58:30<stoopkid> ex. "personal branding" is just my decisions about what i want to work on and my ability to clearly convey that
+25.01.19 13:00:16<stoopkid> "writing effective sales copy" just translates to my ability to clearly express the motivations behind the things i want to work on
+25.01.19 13:02:07<stoopkid> analyzing where i fail at these things leads me to find a whole bunch of "unnecessary", "overkill", "not clearly defined" etc.. things i've been trying, which seemed motivated to me from pure tech goals but which are kind of diversions from my actual life goals
+25.01.19 13:03:35<stoopkid> so i'm finding the business stuff to be the study of how to connect my actual work to my actual life goals, which when phrased like that it's like... wtf why haven't i been doing that the whole time
+25.01.19 13:06:48<stoopkid> but ofc i can point to at least several reasons; first and foremost being that i've had a general disdain for all this stuff like personal branding etc.. that just seems like "business fluff" from a pure tech perspective
+25.01.19 13:08:51<stoopkid> secondly, that disdain is actively reinforced by the "pure techie" community, especially in the hardcore open-source and academic communities
+25.01.19 13:10:12<stoopkid> thirdly, i prioritize pure tech goals over my own life goals, partly because they're just genuinely more intriguing to me than the mundane stuff of "taking care of myself", and also easier than "figuring out how to solve my actual problems"
+25.01.19 13:13:27<stoopkid> so from that perspective, no wonder i've never been able to push myself into any kind of business-wise success for myself: i actively disdain and avoid everything that could help me do that
+25.01.19 13:17:14<stoopkid> so i'm realizing now: the brand is literally 100% of everything
+25.01.19 13:19:18<stoopkid> the brand is equivalent to the sum-total of the perceptions of the purpose and reliability of everything under that brand. without branding, the work is effectively a non-object
+25.01.19 13:23:37<stoopkid> and it's not just other peoples' perceptions of what they're buying from us, it's how we've self-defined our *own* perceptions of what we're even working on, when & how we're working on it, and why
+25.01.19 13:27:04<stoopkid> luckily, what i've found as i've been studying all this, is that all the actual "fluff" is actually generally regarded as ridiculous by business analysts, being "fluff" at best and actually damaging to the business at worst
+25.01.19 13:29:30<stoopkid> ex. buying followers on social media to appear more successful than you actually are to get people to start following because they think you're already successful
+25.01.19 13:30:22<stoopkid> seems like every analyst from forbes agrees that if somebody finds themselves doing something like that, then they should seriously re-evaluate their business
+25.01.19 13:32:07<stoopkid> iow: the more "tricks" are involved in a marketing strategy, the poorer the long-term outlook of the business
+25.01.19 13:33:26<stoopkid> seems obv. but to somebody like me with no ounce of business sense i have to actually hear that from an expert otherwise i start worrying like "do i need to be doing all these tricks and fluff that it sounds like all the marketing folks do? jeez i hope not but where do i start"
+25.01.19 13:34:44<stoopkid> apparently the answer is: branding, branding, branding and more branding
+25.01.19 13:38:40<stoopkid> apparently the main goal is: maximum speed that somebody can get an accurate idea of every aspect of what you can/do provide
+25.01.19 13:40:28<stoopkid> and then long-term commitment to developing under that same brand
+25.01.19 13:42:28<stoopkid> then general gist i'm getting is: you don't even have any tech work to do until its brand is defined
+25.01.19 13:45:42<stoopkid> this is basically equivalent to saying you don't write a program until you know its specs, but with a much broader interpretation of "specs"
+25.01.19 13:52:54<stoopkid> so these analysts gave me an exercise: try to define your own personal brand in a short paragraph
+25.01.19 13:53:26<stoopkid> and indeed, currently i find that i can't
+25.01.19 13:53:40<stoopkid> i could maybe define it in an essay
+25.01.19 13:54:40<stoopkid> and i can define other brands, but none that quite sums up "what it is that i'm personally about"
+25.01.19 13:57:58<stoopkid> it took me a while to realize, for example, that in some sense i split my mind up into different parts that i keep separate
+25.01.19 13:58:44<stoopkid> ex. when i go apply for a job, i'm purposely omitting the vast majority of what it is that i'm about
+25.01.19 13:59:05<stoopkid> when i think about branding for freelancing, i'm purposely omitting the vast majority of what it is that i'm about
+25.01.19 13:59:41<stoopkid> these forbes analysts would ask: why?
+25.01.19 14:00:42<stoopkid> i could go through my justifications for it, like ex. i don't want the potential employer to know that i'm a socialist/anarchist, only really interested in supporting co-ops, and that i hate their software stack
+25.01.19 14:01:02<stoopkid> and these forbes analysts would again ask: why?
+25.01.19 14:01:17<stoopkid> they'd say: make a brand out of that
+25.01.19 14:06:33<stoopkid> they'd say: how are all these co-ops gonna find your services or differentiate you from the rest unless you're advertising that in your branding
+25.01.19 14:10:10<stoopkid> or, how would people get a sense of the full variety of work you would want to do, along with a sense of where exactly are the boundaries of that
+25.01.19 14:11:06<stoopkid> say i market myself as a web dev... does this mean *anything* web-dev? well, no...; does it mean *only* web dev? well... also no, i would actually prefer to work on other things
+25.01.19 14:11:39<stoopkid> so web dev is a really bad personal brand for myself
+25.01.19 14:16:33<stoopkid> but there is definitely some web dev stuff i would work on; literally anything for any worker-owned business for example; the web stuff i wouldn't want to work on is mostly a matter of whether or not i support that particular organization
+25.01.19 14:26:19<stoopkid> i could generalize to software dev, but similar thing, it's not all software, and not necessarily limited to software, actually most of the things i would actually want to work on don't have anything to do with software and the software is just a means to many different ends
+25.01.19 14:34:22<stoopkid> and then most of the stuff i've actually been working on with software dev has nothing to do business, most of it has literally just been researching how to potentially side-step reliance on a) proprietary software, with a goal of full personal control over your personal computing, and b) centralized services, with a goal of replacing them with decentralized public utilities
+25.01.19 14:35:30<stoopkid> and i still have those goals but most of the paid software work i could get would literally be for the purposes of producing proprietary software w/ centralized services for a business that probably really strongly disagree with
+25.01.19 14:35:51<stoopkid> that i*
+25.01.19 14:47:14<stoopkid> so branding myself as a software dev at all is fairly counterproductive to my actual goals; most of the software *products* i want to produce would just be open-source freeware, there are software services i want to provide but only to the right businesses, and ideally i would be not just trying to give them the functionality they're demanding but actually fit them into the open-source & decentralized ecosystems
+25.01.19 14:57:55<stoopkid> some of my goals are actually purely economic, ex. i want to have a direct stake in many different parts of local industry and actually network the co-ops to share capital resources and cooperate on shared projects to actually have like a self-sustaining and non-exploitative economy
+25.01.19 15:15:24<stoopkid> now, that's starting to get quite a ways away from what i'm actually capable of providing right now, but no wonder, since while i've seriously considered that kind of stuff, i've never seriously incorporated it into any of my actual work, leaving it as an abstract hypothetical, and certainly not communicating it to anybody who might be able to materially support it
+25.01.19 15:16:28<stoopkid> and then instead of addressing whatever issues prevent me from doing that, i say something like "well maybe i should just stick to web dev for now"
+25.01.19 15:19:37<stoopkid> apparently the forbes analysts would just call that "procrastination"
+25.01.19 15:26:24<stoopkid> so i can see now that my inability so far to clearly define all of my objectives even to myself, and then commit to working under that definition, has been a major contributing factor in my general failures in life especially surrounding my employment
+25.01.19 15:28:57<stoopkid> and then also in my open-source work, leaving pretty much everything open to indefinite scope creep (and usually in the "wrong" direction)
+25.01.19 15:37:16<stoopkid> we *almost* did all this with the software for immortality thing, but then didn't, i'd say mostly because we just did pretty much exactly like we were doing before that and just continued to focus only on the tech
+25.01.19 15:38:57<stoopkid> cause i think we were pretty much on the right track in our initial discussions of it and the things we started doing right after that cleaning things up and starting to get a couple more resources out there, but then i guess we just focused on the job we were already getting paid for and never actually built that brand that we were talking about
+25.01.19 15:42:12<stoopkid> so i guess the best i can sum up my essay of a "personal brand" there would be: "Cooperative economic & technical solutions"
+25.01.19 15:44:32<stoopkid> "cooperative economic solutions" ex. worker's cooperatives, fair trade, local sustainable agriculture, etc.., also the political aspects are implicit in "cooperative" ex. socialism, anarchism, etc..
+25.01.19 15:45:08<stoopkid> government-sponsored open-data projects, etc..
+25.01.19 15:46:47<stoopkid> and then "cooperative technical solutions", seems to maybe encompass: open-source software & open data, decentralized public utilities, and full personal control over personal computing (maybe in the sense of "you need my cooperation in order to exert control over my machines")
+25.01.19 15:47:26<stoopkid> (or my content, identity, etc..)
+25.01.19 15:48:17<stoopkid> or maybe in the sense of, it's not really "cooperative" if the people "cooperating" don't have full control over their own "cooperation"
+25.01.19 15:55:53<stoopkid> now, i said the "cooperative economic solutions" stuff seems quite a far stretch from a service i'm actually able to provide right now, but on the other hand, if i didn't have any "cooperative economic solutions", how could i start a cooperative software dev company in the first place? by the time we had everything figured out wrt our branding, marketing, scheduling, payment processing, accounting, and policy as a
+                 <stoopkid> cooperative organization, we would actually have that..
+25.01.19 16:12:26<stoopkid> maybe there's some umbrella term for "economic & technical" that doesn't dilute the meaning
+26.01.19 20:10:29*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-vbfmaewcvqpfxtze) left #atlas-project: Quit: Connection closed for inactivity
+28.01.19 12:05:33*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-uiotybabltahdgdz, stoopkid: stoopkid)
+28.01.19 12:07:15<stoopkid> editable-dog: "stoopkid wanna team up on some frontend development?" probably yea, what's the job?
+28.01.19 12:10:29<stoopkid> man, i used to be able to find all kinds of work on craigslist but now they charge between $5-$25 to post job/service ads so it's not even really affordable for me to post my tutoring ads anymore
+28.01.19 12:13:02<stoopkid> i wish they would've just plastered their site with ads instead of pushing the bill onto us
+29.01.19 06:15:16*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-uiotybabltahdgdz) left #atlas-project: Quit: Connection closed for inactivity
+29.01.19 15:12:54*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-gbtilukvepnkbwph, stoopkid: stoopkid)
+29.01.19 16:26:42<editable-dog>hey
+29.01.19 16:30:13<stoopkid> yo
+29.01.19 16:31:39<editable-dog>ok well, i guess thats more motivation for me to finally clean up the repo
+29.01.19 17:47:24<editable-dog>i actually feel that i'm/we're in a much better position now, wrt actually presenting some finished work and writing about it
+29.01.19 17:53:04<editable-dog>wrt my job search, i didnt hear back from the bootcamp guys, but im still keeping hope
+29.01.19 17:53:55<editable-dog>im gonna wait one more month, thats when i was supposed to start
+29.01.19 17:54:19<editable-dog>i still have things to do
+29.01.19 17:56:27<editable-dog>so, in one month, either they will get back to me, or i'll review all the other offers, check out what new opportunities are out there, and i'll go for one of them, i guess
+29.01.19 17:57:28<editable-dog>money should last somewhat longer, but ideally i'd like to keep some reserve
+29.01.19 17:58:11<editable-dog>so, what i meant by the frontend dev, i'd like to make a better proof trace visualizer
+29.01.19 17:58:44<editable-dog>right now pyco dumps the whole tree at every step, i want to make it incremental
+29.01.19 17:59:26<editable-dog>because ive been trying to finish the ldl stuff, but the visualization we have now isnt up to the task
+29.01.19 18:00:25<editable-dog>ive made some progress and at least finished a couple of bugs in pyco, but it was a huge struggle
+29.01.19 18:19:52<stoopkid> probably a good idea, wanna go over the details tomorrow? i'll be busy tonight cause the semester just started
+29.01.19 18:20:10<stoopkid> we could probably make pretty quick work of that tho
+29.01.19 18:41:46<editable-dog>yeah, cool, im not in a hurry
+29.01.19 18:42:17<editable-dog>not even sure if ill have already started poking at the trace generation code
+29.01.19 18:42:52<editable-dog>yeah it seems like a reasonably sized task
+30.01.19 05:12:38*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gbtilukvepnkbwph) left #atlas-project: Quit: Connection closed for inactivity
+30.01.19 14:41:53*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-mykrzlymsbstffyr, stoopkid: stoopkid)
+30.01.19 16:25:31<editable-dog>yo
+30.01.19 21:49:53<stoopkid> woops didn't see this, sup?
+31.01.19 11:00:20<editable-dog>and i was writing here because i didnt see your messages in #AutoNomic
+31.01.19 11:06:04<editable-dog>anyway, https://github.com/koo5/AutoNomic-pyco
+01.02.19 03:17:44*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-ladfcyukauwynyez, (unauthenticated): kook)
+01.02.19 03:18:43<sirccloud> I wonder if i should call the new repo just AutoNomic, since the only reason i really have to create a new repo is that the old's called univar
+01.02.19 04:46:23*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-mykrzlymsbstffyr) left #atlas-project: Quit: Connection closed for inactivity
+01.02.19 05:47:23*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-ladfcyukauwynyez) left #atlas-project: Quit: Connection closed for inactivity
+01.02.19 06:00:48*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-urbfpndztgtlhbgv, (unauthenticated): kook)
+01.02.19 06:43:08<editable-dog>so, i was thinking about tracing, and id like to avoid any half-assed solutions
+01.02.19 06:43:27<editable-dog>especially if you can help out too
+01.02.19 06:43:49<editable-dog>so, the goal is not slowing the reasoner too much with it
+01.02.19 06:44:27<editable-dog>so, i already got the kbdbg output describe all rules when the reasoner is starting
+01.02.19 06:44:43<editable-dog>the format is n3, so im thinking we could load that with some rdf.js
+01.02.19 06:45:40<editable-dog>next, im splitting the tracing output into 100mb files, which i found is about the max that the browser can load at once
+01.02.19 06:47:37<editable-dog>maybe we could talk about a different scheme for this if we want to engage a backendd for the webapp, but i dunno
+01.02.19 06:48:09<editable-dog>ok lets keep this detail irrelevant and state it like this: the tracing output should be a stream with:
+01.02.19 06:49:21<editable-dog>every once in a while, a full dump of the reasoner state. This is all the coro states (and their locals'es)
+01.02.19 06:50:19<editable-dog>after this full dump, we will keep writing just incremental changes
+01.02.19 06:50:29<editable-dog>state with id and parent id added/removed
+01.02.19 06:51:05<editable-dog>variable bound/unbound, i guess
+01.02.19 06:52:29<editable-dog>so every once in a while, there will be a full dump, they are not so costly, theyre already implemented (sans the locals part), and they'll make seeking usable
+01.02.19 07:54:58<editable-dog>think i should probably change the name of the repo?
+01.02.19 07:55:15<editable-dog>i just have a bit of an issue with AutoNomic, its a beautiful name, but not googleable
+01.02.19 08:07:23*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-urbfpndztgtlhbgv) left #atlas-project: Quit: Connection closed for inactivity
+01.02.19 18:27:09*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-uhyaavohlnovszfi, stoopkid: stoopkid)
+02.02.19 05:56:13*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-uhyaavohlnovszfi) left #atlas-project: Quit: Connection closed for inactivity
+02.02.19 09:37:32*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-dcbrmuqxkookxevc, stoopkid: stoopkid)
+03.02.19 06:36:53*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-dcbrmuqxkookxevc) left #atlas-project: Quit: Connection closed for inactivity
+03.02.19 09:44:55*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-hagymcnahjbonmgs, stoopkid: stoopkid)
+03.02.19 15:36:38<editable-dog>still wanna work on that tracing?
+03.02.19 15:37:50<editable-dog>i know i wanna continue on my ldl stuff, but i keep thinking maybe i should switch to xsb
+03.02.19 15:47:34*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-hagymcnahjbonmgs) left #atlas-project: Quit: Connection closed for inactivity
+04.02.19 11:14:42*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-kakdumrdqqalawyz, stoopkid: stoopkid)
+04.02.19 13:35:28<stoopkid> yo
+04.02.19 13:37:18<stoopkid> ended up being busy all weekend and now i've got some more school assignments to do today but yea hopefully tomorrow or wednesday i can actually start looking at it
+04.02.19 13:43:01<stoopkid> wrt no half-assed solutions, i'm always in agreement w/ that, though i'll leave it up to you make the determination wrt whether some proposed solution is half- or full- assed
+04.02.19 13:43:47<stoopkid> since if left to my own devices i seem to always end up like "well i guess i have to build a computer now"
+04.02.19 13:47:16<stoopkid> my assignments won't take too long i could probably start looking at the code tonight but maybe we should just spend some time first writing up a plan for it
+04.02.19 13:49:18<stoopkid> wrt slowing down the reasoner.. not sure whether that's an important concern for the tracing, the user is obv much more limited in speed w/ examining the trace than the actual reasoning and trace-outputting combined
+04.02.19 13:49:45<stoopkid> like 99% of the time it should just be waiting on the user
+04.02.19 13:50:35<stoopkid> but then maybe the user wants to "collapse" some of the things, like maybe you just wanna see it spit out the results-list in the same interface
+04.02.19 13:53:38<stoopkid> i would maybe even think if we wanted to show a collapsed view of the *entire* proof trace, no matter how large it is, and let a user expand *any* section, at *any* time, we should do maybe like a breadth-first search instead and even repeat the reasoning under particular collapsed sections rather than actually storing it
+04.02.19 13:56:38<stoopkid> so then we don't have trace-output slowing down the inferencing hardly at all because we're not trace-outputting anything that we're not immediately displaying
+04.02.19 13:59:18<stoopkid> so you could have like two modes for that: 1) just start tracing, don't wait for results, i.e. you don't get a result until you actually expand the trace out to where it reaches a result; 2) wait for results and then display a collapsed proof-trace
+04.02.19 14:01:23<stoopkid> so in the first mode, we're basically only waiting on the user, not worrying about trace slowing it down; in the 2nd mode we're not worried about trace slowing it down because we've decoupled the inferencing from the trace-outputting for the purposes of printing out the results-list before actually stepping into the trace output tree, and then at that point we're back to the situation of just waiting on the user
+04.02.19 14:07:09<stoopkid> or some kind of combination of that
+04.02.19 14:07:23<stoopkid> wrt the name, yea... AutoNomic was an unfortunate choice
+04.02.19 14:07:45<stoopkid> it sounds good, but that's maybe ironically part of the problem :)
+04.02.19 14:08:40<stoopkid> plus it's also already a regular word
+04.02.19 14:11:48<stoopkid> idk, i'm not good at names :)
+04.02.19 14:13:50<stoopkid> AutoNomic-pyco is more searchable but pyco is probably just a temporary phase for AutoNomic so.. i kind of feel like AutoNomic itself needs to change too
+04.02.19 14:16:56<stoopkid> maybe we should just decouple the underlying inferencer from the "AutoNomic decentralized nomic blockchain"
+04.02.19 14:22:17<stoopkid> so we could maybe just have a basic "univar" inferencer, and maybe try to figure out how to make the built-ins be easily extensible so that we can make AutoNomic just be a special set of built-ins over the independent univar system
+04.02.19 14:30:14<stoopkid> wrt ldl... honestly that's kinda where i think we should start wrt getting towards a more final phase of implementation
+04.02.19 14:33:13<stoopkid> what i'd want wrt an ldl, as a starting point, would be a chosen language (syntax and semantics) for specifying unrestricted grammars over arbitrary alphabets
+04.02.19 14:35:10<stoopkid> so the alphabets could be ex. binary... ascii (which is really just a special case (or cases) of binary)... unicode (which is actually *not* just a special case of binary).. etc..
+04.02.19 14:36:32<stoopkid> so ex. if i want to type a grammar that specifies some binary files, it needs to actually be interpreted as binary and not ex. ascii-encoded or unicode-valued 0s and 1s
+04.02.19 14:36:41<stoopkid> or vice-versa
+04.02.19 14:42:52<stoopkid> so ofc the general format for an unrestricted grammar is simple, and we don't have to be auto-generating parsers for all of them ofc, so the core of that is fairly straight-forward but there's a decent amount that actually needs to happen wrt the semantics of the choice of alphabet
+04.02.19 14:43:53<stoopkid> so for example.. i don't actually directly type binary on this keyboard i type in ascii-encoded 0s and 1s (i'm pretty sure)
+04.02.19 14:45:00<stoopkid> so things have to exist in the program to take into account the semantic interpretation of what i'm typing as binary 0s and 1s, or as unicode-valued 0s and 1s, or etc..
+04.02.19 14:46:08<stoopkid> so ex.. the set of strings i can directly type on my particular keyboard is a grammar
+04.02.19 14:46:58<stoopkid> and other strings over other alphabets have encodings in this, which are also grammars
+04.02.19 14:48:13<stoopkid> so basically i think it really just needs to start with a well laid out system for "syntax and semantics of strings themselves, relative to user input"
+04.02.19 14:55:22<stoopkid> so basically just an unrestricted grammar language but with a well-defined system for switching out the underlying alphabet, and a way to collect all your languages into "here is every single one of my languages" (as opposed to random grammar files scattered around various repos in your file-system)
+04.02.19 14:58:19<stoopkid> now.. it should also be self-hosting
+04.02.19 15:02:39<stoopkid> what that means wrt the semantic interpretation is kind open for interpretation but at the very least it should have a grammar (or grammars) describing itself (possibly specialized to the platform it's running on)
+04.02.19 15:07:29<stoopkid> having all that in place, i would want to add some stuff that allows you to describe a program as having input in one grammar over some alphabet and output in another grammar over another alphabet
+04.02.19 15:10:15<stoopkid> so ex.. hexASCII -> binary (which should probably have extra labeling as being just an alphabet-encoding); C++ -> ELF x86 binary; JSON <-> XML <-> RDF
+04.02.19 15:17:39<stoopkid> so basically you would attach metadata to files that describe their grammar, and metadata to programs describing that they take input in one grammar and give output in another, so it's just interpreting grammars as sets, files as objects in those sets, and then is interpreting certain programs be edges in a directed graph where these sets are the objects
+04.02.19 15:19:32<stoopkid> no type-system or anything yet so... it's ok if things are wrongly labeled at this point it should just be keeping track of intentions, but at least have it be well-defined what specific grammar is actually intended, even if this isn't actually enforced yet
+04.02.19 15:24:22<stoopkid> only issue i might have with describing the unrestricted grammar system in N3 is that the standards are specifically unicode-valued and we'd have to add extra interpretation beyond what's in the standards to account for binary (i think? i think we certainly do in our implementation at least)
+04.02.19 15:30:31<stoopkid> so ex. if i have a binary term that's say.. 5 bits long, and another term that's 3 bits long, that's gonna suck to describe in terms of something that can only see bytes
+04.02.19 15:35:26<stoopkid> and then some things are gonna be easiest to type in as hexASCII, like a specific op-code, but it shouldn't be like "ok and then go pass that to xxd to translate it from hexASCII to actual binary", all that kind of basic character translation stuff should be abstracted away before any actual interpretation of grammars is built over it
+04.02.19 15:46:21<stoopkid> i'm thinking the only built-in alphabet we need is the one for binary
+04.02.19 15:48:34<stoopkid> https://www.archive.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
+04.02.19 15:50:25<stoopkid> so, look at figures 2.1, 2.2 and 2.3 on page 2
+04.02.19 15:52:53<stoopkid> so this self-hosting compiler is extending the escape characters it can interpret
+04.02.19 15:54:58<stoopkid> first you add `if "\v" then return interpretation of "\v"`, then after recompiling your compiler, you can change that line to `if "\v" then return "\v"` and your compiler will still work
+04.02.19 15:55:37<stoopkid> if you recompile this new code you'll get the same binary for the compiler again, but with different (more convenient) source
+04.02.19 16:03:15<stoopkid> i don't know how well this would actually work for totally arbitrary changes, but at least for the purposes of just extending character sets i think it could be a clean method of implementation if we could work out a good pattern just for that purpose
+04.02.19 16:34:42<stoopkid> https://en.wikipedia.org/wiki/Partial_evaluation#Futamura_projections
+04.02.19 18:00:04<stoopkid> i'd maybe also want to see if we could base any of what we're doing wrt the inferencer or ldl around the work in the Bootstrappable Builds project
+05.02.19 07:15:19*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-hofhbdsqmlvzjjyn, (unauthenticated): kook)
+05.02.19 07:19:15<sirccloud> I think i was overthinking the speed issues wtr tracing
+05.02.19 07:27:48<sirccloud> My issue with AutoNomic-pyco is more with the -pyco part, it would be nice to have one repo forever
+05.02.19 07:28:38<sirccloud> Anyway, i keep working in univar for now lol
+05.02.19 08:15:15<editable-dog>as on arbitrary alphabets...we may want to define an extended version of n3(rdf?) that has binary literals, sure
+05.02.19 08:19:09<editable-dog>but...say i wanted to parse a binary file with ldl now..i'd proabably add a builtin that reads a file and returns a list like (1 0 0 1 1 1 0 0 ..)
+05.02.19 08:20:41<editable-dog>well, if it was like ("1
+05.02.19 08:20:48<editable-dog>("1" 
+05.02.19 08:20:52<editable-dog>damn enter
+05.02.19 08:21:29<editable-dog>you get it, digits enclosed it quotes, then my ldl can already work with it without any adjustments
+05.02.19 08:23:22<editable-dog>from a practical perspective, since ive been holding off actually worrying about unicode support, it would be neat if we would use our own rule system for it
+05.02.19 08:24:20<editable-dog>but i dont know how to go about partially evaluating/optimizing/compiling a set of rules to make it fast enough for parctical purposes
+05.02.19 08:28:00<editable-dog>honestly im more concerned with building towards the practical applications that i have in mind
+05.02.19 08:28:11<editable-dog>while keeping the system extensible both upwards and downwards ofc
+05.02.19 08:29:14<editable-dog>self-hosting - yes, thats what im attempting, although i think of it more as self-describing
+05.02.19 09:34:58*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-hofhbdsqmlvzjjyn) left #atlas-project: Quit: Connection closed for inactivity
+05.02.19 13:16:42<stoopkid> i'd be cool w/ extending the n3 inferencer to handle arbitrary alphabets, or even just binary literals, instead of building a new system for it. one way we could do that would be to make IRIs from some namespace to represent characters in different alphabets, describe encodings of them into literals, and maybe even add some built-ins allowing to treat string literals as lists
+05.02.19 13:18:14<stoopkid> from my experience writing binary and hex, you don't want to be writing "1" "0" "1", it's 4x as many characters and a lot harder to think and type, w/ shifts and punctuation chars
+05.02.19 13:19:10<editable-dog>i already have strXlst
+05.02.19 13:19:17<stoopkid> iow you want to be able to type actual "strings" (let's define as: typeable lists w/ members in the alphabet, represented directly by simple concatenation of the characters)
+05.02.19 13:19:21<editable-dog>just hunting a bug in it lol
+05.02.19 13:20:22<editable-dog>yeah we can do some to and from string everywhere
+05.02.19 13:20:34<editable-dog>no need for true new kinds of rdf literals
+05.02.19 13:23:14<stoopkid> so maybe the only new semantics we really need is just at the I/O boundary when reading/writing binary files (and maybe some optimized builtins for functions on binary data, like bitwise logical operations, shifts, etc..)
+05.02.19 13:23:59<stoopkid> it needs to be able to take input and give output in the right binary formats, i guess that's really the only "special" thing
+05.02.19 13:26:09<stoopkid> ah hrm, i forgot about the "lexical form" and "datatype IRI" components of a literal
+05.02.19 13:26:10<stoopkid> https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal
+05.02.19 13:29:17<stoopkid> so hrm, is there a list of standard datatype IRIs and does it include binary?
+05.02.19 13:35:03<stoopkid> https://www.w3.org/TR/2004/REC-rdf-mt-20040210/#DTYPEINTERP
+05.02.19 13:38:19<stoopkid> so i guess RDF actually did leave it specifically open for us, and XSD: namespace i guess would be the default standard
+05.02.19 13:43:24<stoopkid> hrm, so they have boolean and hexBinary, but not bitSequence
+05.02.19 13:46:57<stoopkid> https://www.w3.org/TR/xmlschema-2/#hexBinary
+05.02.19 13:50:33<stoopkid> so, that's basically exactly what it should do; "inside of" n3 you type strings in hexASCII, but applying the xsd:hexBinary datatype to the strings means that it will input/output that in terms of the actual binary that it's representing
+05.02.19 13:51:23<stoopkid> but it should be able to do that with pure bit-sequences too so we might have to add that one as our own built-in
+05.02.19 14:14:48<stoopkid> https://www.w3.org/TR/swbp-xsch-datatypes/#sec-userDefined
+05.02.19 14:16:28<stoopkid> so i guess my question now is, do the RDF + XMLSchema specs contain enough semantics for describing RDF datatype IRIs for representing strings in arbitrary user-defined alphabets
+05.02.19 14:18:01<stoopkid> i.e. can i write a triple-set that defines a new RDF datatype IRI, such that it will actually work relative to RDF + XMLSchema spec semantics
+05.02.19 14:23:47<stoopkid> well, actually simpler than that, we really only want a particular subset of datatypes, namely strings over some finite alphabet
+05.02.19 14:25:35<stoopkid> https://www.w3.org/TR/xmlschema-2/#string
+05.02.19 14:57:15<stoopkid> so, on the programming side we basically just need a small abstraction layer that will parse strings from binary files in an arbitrary binary-encoded alphabet, and then a means to signal which alphabet we're using
+05.02.19 14:57:43<stoopkid> so that's maybe equivalent to what the semantics of this is supposed to be? https://www.w3.org/TR/xml/#charencoding
+05.02.19 15:02:51<editable-dog>all i have to say is .. damn segfaults
+05.02.19 15:17:56<stoopkid> interesting chicken-vs-egg problem here: https://www.w3.org/TR/REC-xml/#sec-guessing
+05.02.19 15:22:34<stoopkid> so XML does leave it open to switch out the interpretation of their characters to arbitrary encodings, so that would include bitstrings represented by ascii 1s and 0s, or whatever we'd want (in that sense, their hexBinary and base64Binary built-in datatypes might be redundant)
+05.02.19 15:24:50<stoopkid> and they provide the mechanism to signal the choice, and they provide some fairly complex builtins for defining user-defined types, so i guess now we'd want to see if you can actually apply the latter to make something recognized as a character encoding
+05.02.19 15:25:21<stoopkid> and then really we'd want to see if RDF itself has this kind of semantics already in its standards
+05.02.19 15:27:03<stoopkid> the XML goes further with it, in XML they're not just dealing with character-encodings for literals they're dealing with character-encodings for the entire document
+05.02.19 16:04:59<editable-dog>https://www.youtube.com/watch?v=KTf5j9LDObk
+05.02.19 16:05:02<editable-dog>still rocks
+05.02.19 16:05:30<editable-dog>ive really been ignoring even literal datatypes for now
+05.02.19 16:06:09<editable-dog>if you have a "0" and a 0 in one testcase, it doesnt compile
+05.02.19 16:51:03<stoopkid> interesting to note the IANA registration process for language tags in section 3 here: https://www.ietf.org/rfc/rfc3066.txt
+05.02.19 20:01:30<stoopkid> so it looks like XML specs do define a way to construct a boolean-list data-type from their built-in boolean type
+05.02.19 20:02:33<stoopkid> it also looks like we can use that to handle arbitrary data-types
+05.02.19 20:02:41<stoopkid> i mean, arbitrary alphabets
+05.02.19 20:07:24<stoopkid> https://www.w3schools.com/xml/el_list.asp
+05.02.19 20:08:31<stoopkid> ok so then we just need a way to define the alphabets themselves
+05.02.19 20:09:09<stoopkid> using the boolean data-type, it kind of gets into the question of... what actually is a boolean
+05.02.19 20:11:08<stoopkid> if i say "a list of booleans" do i necessarily mean a binary file? in many programming languages  and probably XML processors too it will actually specifically not mean this
+05.02.19 20:12:24<stoopkid> the XML specs don't seem to force an interpretation on this, i.e. the "value" of a boolean literal is just the abstract concept of that boolean, implemented however you've implemented it
+05.02.19 20:14:48<stoopkid> which is nice that they leave it open that we *can* interpret a binary file as providing this data, but also not quite where we need it as it doesn't give the option to force that interpretation
+05.02.19 20:22:03<stoopkid> hrm.. the hexBinary and base64Binary data types do seem to force the interpretation in their value spaces
+05.02.19 20:24:22<stoopkid> so we could maybe treat boolean lists as always being short-hand for 4 booleans, to map into hex chars
+05.02.19 20:25:19<stoopkid> or i mean, always with trailing 0s added to make it a multiple of 4 bools to map into the hexBinary value space
+05.02.19 20:28:40<stoopkid> so the only complication with that is compositionality of bit-sequences
+05.02.19 20:30:57<stoopkid> hrm.. actually there are some issues with this in general; if you want to store a reference to less than 8 bits, you need more data than the bits you're actually storing in order to indicate that you actually don't want the whole byte
+05.02.19 20:32:15<stoopkid> so you actually can't store a non-multiple-of-8 amount of bits in a totally "flat" binary format, it needs to have some extra metadata attached to tell what bits in the final byte are actually relevant
+05.02.19 20:44:37<stoopkid> and then that metadata is ultimately contained in some bytes so.. i guess maybe bit-level processing really should be a higher level of abstraction
+05.02.19 20:46:06<stoopkid> even moreso since you need complex instructions to do bit-level manipulations
+05.02.19 20:46:51<stoopkid> otoh, i would probably want that abstraction layer to be taken care before going further into ldl
+05.02.19 20:46:57<stoopkid> taken care of*
+05.02.19 20:48:09<stoopkid> so the issue is for describing, say, x86 opcodes
+05.02.19 20:48:35<stoopkid> they're complex instructions divided up into 2 or 3 or 4 bit chunks that mean different things..
+05.02.19 20:50:29<stoopkid> if we were describing a grammar for that, we would want to be able to describe it directly in terms of those chunks (even if we only ever store or process 8-bit or N-bit chunks at a time due to the way our particular processor works)
+05.02.19 20:52:41<stoopkid> i think the issue here with boolean vs. hexBinary & base64Binary is that the latter two define themselves in terms of "bytes" and "flat binary files", which.. we implicitly assume we know what that means.. as being a flat array of *physical* octets of bits
+05.02.19 20:53:28<stoopkid> "boolean" otoh... just specifies that it's the abstract concept of boolean values
+05.02.19 20:54:24<stoopkid> makes it more obvious that what we mean by "binary" is not quite as straightforward
+05.02.19 20:55:04<stoopkid> "byte" could hypothetically be an arbitrary sequence of booleans, regardless of format but.. we obv wouldn't interpret it that way because of... well.. "byte" always means 8 physical bits
+05.02.19 21:18:26<stoopkid> so to store binary chunks of arbitrary length, you only need 3 extra bits, but ofc you can only store that using a whole byte so it's always 1 more byte than the actual length of the file
+05.02.19 21:18:43<stoopkid> so to store specifically 1 bit, you actually need 2 bytes
+05.02.19 21:20:16<stoopkid> to store 0 bits though, you can use 1 byte
+05.02.19 21:21:36<stoopkid> i think that's probably the space-optimal representation
+05.02.19 21:27:53<stoopkid> does it make sense to store 0 bits? sure it's representing an empty list of bits
+05.02.19 21:31:29<stoopkid> so i'd think probably the reason that byte can always be interpreted to mean 8 ordered consecutive physical bits in a single unit that the machine can process, and boolean can't be is probably exactly this, the machine needs more complex data-format and processing for anything smaller than the single unit it can process, which has historically always been a byte at a time. "boolean" actually is a more complex thing,
+                 <stoopkid> for any machine that only processes in chunks bigger than a boolean at a time
+05.02.19 21:35:33<stoopkid> so you need some kind of abstraction layer above it, but everything's always represented in terms of the smallest chunk the machine can see at a time
+05.02.19 21:37:16<stoopkid> hypothetically this should actually be taken into account in the standards but idk that would probably fall under something more like... posix standards or something..
+06.02.19 01:46:04<stoopkid> so, we should probably define our own namespace
+06.02.19 01:47:39<stoopkid> i think with enough checking of specs and taking as liberal as possible interpretation of them we could probably find a way to smash bit-sequence representation into something approximately like i would want it but another route is to just define our own namespace and assert the semantics we want directly
+06.02.19 01:49:49<stoopkid> so this gets into a question... how do we "get" a namespace ?
+06.02.19 01:50:36<stoopkid> imo the answer is probably public key crypto
+06.02.19 01:51:31<stoopkid> i kinda want to address some general naming issues while we're going over these basics
+06.02.19 01:52:39<stoopkid> ultimately we can't really "own" a human-readable namespace, or really any namespace that we can't cryptographically sign the contents of it
+06.02.19 01:54:39<stoopkid> like, how do you actually "own" a URI or IRI? some DNS registrar sells it to you basically
+06.02.19 01:56:15<stoopkid> even w/ namecoin... it's decentralized but still needs a block-chain and then what if that crashes for w/e reason? even in that event the public-key crypto for just having a globally unique address still works
+06.02.19 02:04:08<stoopkid> so basically, anything in the specs that calls for some centralized service (including a block-chain) to allocate names/numbers/codes, i want to explicitly call that deprecated functionality that we're only maintaining backwards-compatibility with, and add replacement functionality that handles it purely in terms of user-chosen naming, optionally enforceable via crypto
+06.02.19 02:05:32<stoopkid> we don't necessarily have to implement all that crypto yet ofc, but i would basically want to at least keep track of where we're gonna be diverging from the standards to add that kind of stuff
+06.02.19 02:17:34<stoopkid> so the question here would be: are there well-formed URIs and IRIs that we can use that aren't interpreted by those standards to have their referents be indicated by some sort of registry?
+06.02.19 02:19:58<stoopkid> ex. <https://<my-public-key>.com/>, definitely a syntactically wellformed IRI but.. technically considered to be "owned" by VeriSign according to ICANN
+06.02.19 02:24:21<stoopkid> do we care what ICANN thinks? maybe not, but we should maybe go under a) the IETF-approved design strategy "be conservative in what you send"; b) probably assume unless we have good indication otherwise that the web specifications we're using don't actually indicate that some registry is interpreted by the specs to have authority over the namespace we're going to be pulling names from
+06.02.19 02:26:51<stoopkid> err, probably assume unless we have good indication otherwise that the namespaces indicated in the web standards *are* interpreted by those standards to be allocated by some registry, ex. ICANN/IANA/Unicode/whatever
+06.02.19 02:36:38<stoopkid> ex. language tags seem to be something that's allocated by an IANA registry
+06.02.19 02:39:01<stoopkid> same with Unicode character groups, not entirely sure about URIs / IRIs or whether or not there's a space of URIs/IRIs we could use for this purpose
+06.02.19 02:39:55<stoopkid> there's IANA registered charsets, IANA registered IP addresses, etc..
+06.02.19 02:40:41<stoopkid> we want to maintain within the web standards as much as possible, but make sure that there's still clear distinction as to the referent of our "IRIs" (or whatever equivalent, if we need an equivalent that isn't technically an IRI)
+06.02.19 02:42:50<stoopkid> i.e. there's nothing stopping you from making <https://<my-public-key>.com/> but then there's still nothing stopping VeriSign from assigning that actual domain name to some other actual server
+06.02.19 02:43:53<stoopkid> that other server might not be able to sign for <my-public-key>, but what do the standards actually recognize?
+06.02.19 04:27:05<editable-dog>well thats what protocols are for
+06.02.19 04:27:08<editable-dog>onion://
+06.02.19 04:27:11<editable-dog>file://
+06.02.19 04:27:18<editable-dog>namecoin://
+06.02.19 16:06:33<editable-dog>ugh my brain is fried
+06.02.19 16:10:33*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-kakdumrdqqalawyz) left #atlas-project: Quit: Connection closed for inactivity
+06.02.19 16:56:21*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-cdfsrsihbdiooenv, stoopkid: stoopkid)
+06.02.19 17:21:24<stoopkid> not sure if you saw my discussions w/ dmiles in #logicmoo about the binary file processing thing; i realized the actual problem is more complex than i originally thought because ofc you can't use fully arbitrary character encodings, unless you're willing to accept ambiguity of parsing already at the level of character tokenizing
+06.02.19 17:23:59<stoopkid> so i tried to see if there's actually a general algorithm that will determine whether a particular character encoding is unambiguous. looks like there is because you can make a regex for arbitrary character encodings: (char1 | char2 | ... | charN)*, and apparently there's an algorithm for deciding if a regex is ambiguous
+06.02.19 17:26:51<stoopkid> it also looks like unambiguity is actually maybe a weaker criteria than having characters be "self-delimiting" (i guess unambiguous with no lookahead)
+06.02.19 17:28:11<stoopkid> i.e. that you can read the next character w/o having to read any more than the next character
+06.02.19 17:36:26<stoopkid> https://stackoverflow.com/questions/5253816/are-there-such-a-thing-as-ll0-parsers
+06.02.19 17:37:29<stoopkid> hrm, not sure if "no lookahead" is quite the criteria i'm looking for there, since each of the different chars is a possible production
+06.02.19 17:44:34<editable-dog>well, i noticed it
+06.02.19 17:46:43<stoopkid> well, you don't need to read it or anything, the conclusion was basically just 1) what i wrote just now; 2) still not quite sure whether binary literals can be crammed into plain RDF+XML semantics
+06.02.19 17:49:22<editable-dog>i'll trust your conclusions
+06.02.19 17:51:57<editable-dog>i'll just finish the code to serialize this initial ldl and then life will be good
+06.02.19 18:15:07<stoopkid> ok so the proper criteria for self-delimiting is that tokenizing a char will only require at most as many bits of lookup as the number of bits in that char, so we can say at least that it's LL(k bits) at most where k is the max number of bits in a char
+06.02.19 18:22:20<stoopkid> i think a consequence of these criteria (definitely at least the first criteria) is that no character can contain another character; is that also sufficient criteria?
+06.02.19 18:26:27<stoopkid> i think that is sufficient criteria; if you've read out far enough to determine that you've matched a character, and you know that no other character can contain that character, then you know you don't have to read any farther
+06.02.19 18:33:17<editable-dog>hm, i think theres a name for this
+06.02.19 19:27:43<editable-dog>prefix code
+06.02.19 19:27:55<editable-dog>i guess you already knew that
+06.02.19 20:01:50<stoopkid> nope
+06.02.19 20:02:56<stoopkid> so if you have a sorted list of codes, there's a linear time algorithm to determine if it's a prefix code
+06.02.19 20:06:07<stoopkid> just go through the list, taking the nth and (n+1)th codes, pick the shorter one, which will have k bits, and xor that with the first k bits of the longer one; if it's 0, then fail and it's not a prefix code, and if it's non-zero then continue with (n+1) and (n+2)
+06.02.19 20:55:53*** Join: Marflutter (~Marflutte@136.0.2.194, (unauthenticated): Marflutter)
+06.02.19 20:55:54*** Part: Marflutter (~Marflutte@136.0.2.194) left #atlas-project: [No reason given]
+06.02.19 22:08:35*** Join: rusaltson (~rusaltson@103.25.59.88, (unauthenticated): rusaltson)
+06.02.19 22:08:36*** Part: rusaltson (~rusaltson@103.25.59.88) left #atlas-project: [No reason given]
+06.02.19 22:39:12*** Join: khorqreks (~khorqreks@103.25.59.88, (unauthenticated): khorqreks)
+06.02.19 22:39:13*** Part: khorqreks (~khorqreks@103.25.59.88) left #atlas-project: [No reason given]
+07.02.19 00:50:33*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-cdfsrsihbdiooenv) left #atlas-project: Quit: Connection closed for inactivity
+07.02.19 07:39:03*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-fltwwyqwoxcpgawp, stoopkid: stoopkid)
+07.02.19 08:01:39<editable-dog>second line of ldl bootstrap parsed
+07.02.19 08:02:20<editable-dog>my effectivity is about 1 line per two weeks
+07.02.19 08:13:45<editable-dog>if youre still at it, i wonder if you can come up with some alternative to escaping
+07.02.19 08:14:40<editable-dog>string_literal_raw_body_item ++> any char except [\\n\\[\\]\\\\].
+                 <editable-dog>string_literal_raw_body_item ++> [\\\\n].
+                 <editable-dog>string_literal_raw_body_item ++> [\\\\\\[].
+                 <editable-dog>string_literal_raw_body_item ++> [\\\\\\]].
+                 <editable-dog>string_literal_raw_body_item ++> [\\\\\\\\].
+07.02.19 08:14:44<editable-dog>this is hell
+07.02.19 08:18:46<editable-dog>it also segfaults but that another matter
+07.02.19 08:22:14<editable-dog>++> [<backslash>n].
+07.02.19 08:22:28<editable-dog>++> [<backslash><openbracket>].
+07.02.19 08:23:31<editable-dog>mm
+07.02.19 08:30:58<editable-dog>well, everyone is used to backslash escaping and it has its uses, so id add the other scheme in addition to it
+07.02.19 08:35:13<editable-dog>it would be nice to be able to express the "literalness" of an escape sequence with a number instead of with the number of repetitions
+07.02.19 08:36:05<editable-dog>or...not necessarily number, coz that seems kind of confusing, lets just space out the repetitions maybe
+07.02.19 08:36:13<editable-dog><backslash!>
+07.02.19 08:36:24<editable-dog>(literally <backslash>)
+07.02.19 08:36:33<editable-dog><!backslash!>
+07.02.19 08:36:46<editable-dog>= literally <backslash!>
+07.02.19 08:37:02<editable-dog>id allow the placement of these bangs anywhere, just count them
+07.02.19 08:37:29<editable-dog>wait, that doesnt work
+07.02.19 08:38:35<editable-dog>well maybe it does, interpreting the escape sequence would just eat off the first bang it finds
+07.02.19 08:39:12<editable-dog>nah, probably leaves us in the same situation as \\\\\\\
+07.02.19 09:24:00<stoopkid> i havent thought much about escaping yet but ill mull it over
+07.02.19 09:38:56<stoopkid> the issue seems less a matter of the actual backlash-prefixed encoding and more a matter of the fact that you have to read it
+07.02.19 10:11:17*** Connecting...
+07.02.19 10:11:18-Server Notice- *** Looking up your hostname...
+                 -Server Notice- *** Checking Ident
+                 -Server Notice- *** No Ident response
+                 -Server Notice- *** Couldn't look up your hostname
+                 *** Nick name in use: editable-dog
+07.02.19 10:11:27*** [sasl.login from ditable-doge (editable-l@104.168.57.22)] editable-dog
+                 *** SASL: You are now logged in as editable-dog.
+                 *** SASL authentication successful
+07.02.19 10:11:31*** Mode change: +Zi on ditable-doge by ditable-doge (server)
+                 -freenode-connect- Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+                 *** CTCP VERSION request from freenode-connect (frigg@freenode/utility-bot/frigg) to ditable-doge: 
+07.02.19 10:11:36-NickServ- editable-dog has been ghosted.
+                 *** [nickserv.ghosted from nil] 
+07.02.19 10:11:59*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: ditable-doge stoopkid @ChanServ
+                 *** End of /NAMES list.
+07.02.19 10:12:26*** [nickserv.regained from nil] 
+                 *** Nick change: You are now known as editable-dog
+07.02.19 11:15:01<editable-dog>read, write, edit , check..
+07.02.19 11:47:34<stoopkid> writing it's not so bad. consider ex. emacs uses \ to start typing a unicode character and then it actually renders the unicode character so you're never actually reading \'s. you could do other things too like color-coding escaped chars. then the only issue would be characters like "\n" where the backslash-prefixed escape-code is how we actually print it
+07.02.19 12:02:24<stoopkid> so if you have a printable but non-typeable non-control character, like w/ unicode, you can just replace the escape sequence with the printed character. if you have a control character (ex. quote or \) then you can render the text differently like w/ color-coding. if you have a non-printable character then you need some kind of printable encoding of it. so we should probably split up the problem to treat these
+                 <stoopkid> different situations as independently as possible (if possible)
+07.02.19 12:05:51<stoopkid> so ex. "\n" is encoded as 0x0a but rendered as "\n" and typed the same way. literal backslash is typed and encoded as two backslashes but rendered as a single red "\". special unicode chars are typed w/ some code but rendered as the character's actual glyph and encoded by that character's actual encoding, etc...
+07.02.19 12:06:45<stoopkid> in any case, the rendering is kinda more important than a lot of applications treat it, and i think even more important for an LDL
+07.02.19 12:07:35<stoopkid> iow, the rendering of your character encoding should probably a first class concept the same way describing the encoding itself would be
+07.02.19 12:08:22<stoopkid> otoh, the rendering could maybe just be treated as a special case of encoding
+07.02.19 12:09:08<stoopkid> so you have one abstract character set and 3 encodings: the encoding you actually store the data as, the encoding you actually type the data as, and the encoding you use to actually render the data
+07.02.19 12:12:37<stoopkid> and ofc for this particular purpose (of typing quoted literal strings in some source lang) that encoding has to be checked to see that it actually "plays nicely" w/ those same encodings for the source lang itself
+07.02.19 12:20:16<stoopkid> i'll have to think of whether there's any general criteria for determining whether string data plays nicely w/ the source lang; not sure so far since there's multiple options for how the source lang initiates a literal data section, how it terminates it, and how it handles escaping and stuff in the middle. ex. in some languages you default to text etc..
+07.02.19 12:21:30<stoopkid> i'm thinking there's a criteria that there exists at least one character in the source lang that can't be used in a literal data section w/ the same encoding that's used in the source lang
+07.02.19 12:45:36<stoopkid> actually there's at least one situation where that's not the case: if nothing can terminate a literal except for an EOF, then you don't need a special character
+07.02.19 12:46:27<stoopkid> ofc that wouldn't be very useful; another situation is where the lengths of strings are known before you start reading them; if they don't have to delimit themselves you don't need a special character
+07.02.19 12:54:39<stoopkid> still not particularly useful, you'd have to explicitly write the length of every string in the source code before you actually write that string. otoh, both options are technically usable; there isn't anything you couldn't do in these hypothetical source languages that you couldn't do in standard language with escapes, it would just be clunky
+07.02.19 13:02:56<stoopkid> that you could* do in standard languages
+07.02.19 13:03:25<editable-dog>pruning duplicate results is something we want to be doing for each rule or just the query result?
+07.02.19 13:03:36<editable-dog>for each rule, seems to me
+07.02.19 13:04:59<stoopkid> for each rule should be fine but ofc it needs to reset when something else calls that rule
+07.02.19 13:05:21<stoopkid> so, not per-rule but per-rule-call
+07.02.19 13:05:34<editable-dog>right right
+07.02.19 13:07:05<stoopkid> and i guess that means that if a rule is called with all non-var args then you can cut that rule-call after the first result
+07.02.19 13:11:27<editable-dog>yeah
+07.02.19 13:14:29<editable-dog>it would be nice to have some counters and a printout of rules that generate duplicate results
+07.02.19 13:15:01<editable-dog>and it would be nice to have something analogous for grammars
+07.02.19 13:15:33<stoopkid> is there anything you'd want to use those counters/printouts for in the program or would it just be for the programmer to review their kb to see if they could write those rules better to eliminate as many duplicates as possible ?
+07.02.19 13:15:38<editable-dog>and some standalone functionality for finding differences between proofs
+07.02.19 13:15:54<editable-dog>second case
+07.02.19 13:20:40<stoopkid> the cutting prevents some of the counting, i.e. you wouldn't be able to count "how many times does this rule duplicate this result" you can only count "how many results did this rule duplicate once"
+07.02.19 13:22:02<stoopkid> not sure if that really matters for the purpose
+07.02.19 13:22:39<stoopkid> maybe just in case we could have the cutting and counting be done by two independent toggles
+07.02.19 13:29:02<stoopkid> i'm thinking that if literals are required to be self-delimiting, and every representation of a character within a literal needs to be self-delimiting, then you basically don't have any other option but escaping the end-of-literal delimiter and the escape character itself. it seems any other solution would be basically equivalent and more complex
+07.02.19 13:29:59<stoopkid> so afaict the only actual "solution" beyond what we already do w/ backslash is to mess with the relationship between typing, rendering and storing source code
+07.02.19 13:32:27<stoopkid> which really means, afaict, that rendering tricks are the only available option for improvement
+07.02.19 13:34:46<editable-dog>toggles sound like a good idea. im also thinking maybe also counting per pred invocation instead of rule invocation
+07.02.19 13:36:44<editable-dog>hmm
+07.02.19 13:42:59<stoopkid> well, you could do a number like "the next N characters are all escaped", but i'm thinking this has relatively limited utility; you basically only need it for escaping the escape character and in any other situation it would probably actually be more confusing than helpful like ex.. \3n\n
+07.02.19 13:43:22<stoopkid> translating to \n\\\n; not sure if it's really an improvement
+07.02.19 13:44:58<stoopkid> what might be better is using single quotes like 'n\n' but tbh i still find this more confusing than \n\\\n
+07.02.19 13:45:31<stoopkid> and then that's just adding another control character that needs to be escaped
+07.02.19 13:45:43<stoopkid> and it can't escape itself
+07.02.19 13:45:54<stoopkid> like '''''' ?
+07.02.19 13:47:00<stoopkid> you could do \' to write a single-quote inside of single-quotes but then you're using the backslash as a control character when the single-quotes were supposed to escape it, like: '\\\\\\'' ?
+07.02.19 13:47:49<stoopkid> otoh, it would maybe make sense to have the single-quotes be reserved just for typing long sections of literal \'s
+07.02.19 13:48:57<stoopkid> but not for other things; i.e. you generally probably do want to write the \ in \n in every case, and same with \" and \'
+07.02.19 13:49:40<stoopkid> (unless you're doing rendering tricks for \" and \' instead)
+07.02.19 13:51:32<stoopkid> although technically \n is superfluous if your lang lets you actually use the actual 0x0a character in your literals (i.e. multi-line literals), but then even that's kinda weird because... how should it interpret my indentation tabs? etc..
+07.02.19 14:36:53<editable-dog>well there are times when multiline string is right, and times when \n is
+07.02.19 14:37:19<editable-dog>also, python already has 3 string notations, ', " and """
+07.02.19 14:37:57<editable-dog>and thats pretty useful, when you have a "-heavy string, you switch to ' or """
+07.02.19 14:43:18<stoopkid> switching delimiters can make it easier in certain situations yea but you still end up needing escapes for whatever delimiter you do use for that particular string, and then escapes for the escape, and some way to render non-printable characters which is usually via escaping
+07.02.19 14:44:47<stoopkid> and then whitespace is just kind of a weird middle ground of "printable but the way its printed doesn't necessarily make sense in all cases"
+07.02.19 14:55:14<stoopkid> yea it looks like that under the fairly minimal constraints i described, it's nearly the same situation as w/ prefix-codes. the characters (as you type them into the string) have to be a prefix code over the alphabet of your source lang, and the end-of-literal delimiter is unavailable for use. you have to assign it a code, but you can only use a sequence of characters from the source lang, or otherwise you're just
+                 <stoopkid> deferring the problem to the character that you replaced it with
+07.02.19 14:57:54<stoopkid> so you have no way to access a the end-of-literal delimiter from within the literal unless you represent it with a sequence of multiple characters in the source lang
+07.02.19 14:59:37<stoopkid> since this must still be a prefix code, that means all the prefixes of this multi-char encoding are unavailable for use, so typically it would just be a one-char prefix from the source-lang, and then *that* one is also necessarily unavailable for use just by the prefix-code conditions
+07.02.19 15:00:57<stoopkid> we could say the prefix-code conditions are maybe slightly too strong... let's say "\g" is not actually an escape sequence then you could realistically have this be interpreted as literal "\" followed by literal "g", which would break the property of it being a prefix code but... "not by much"
+07.02.19 15:02:42<stoopkid> so, technically you don't need to escape the escape characters in all situations
+07.02.19 15:05:54<stoopkid> ex. we could say that "\\\"" actually represents \\", i.e. it tries the first two characters and says "\\" is not actually an escape-sequence, so the first \ is just a \, then try chars 2 and 3, also "\\" so the second char is also just a \, and then chars 3 and 4 are "\"" which is actually an escape sequence so this is "
+07.02.19 15:07:41<stoopkid> but then, what about "\\n" ? so that interpretation gets screwed up when we're using escaped printable non-control characters to represent non-printable/whitespace characters
+07.02.19 15:08:51<stoopkid> otoh, if we used a different escape-character for this situation, like %n instead of \n
+07.02.19 15:09:50<stoopkid> then we could say "\%n" = literal backslash + literal newline; and "%\n" means literal %\n
+07.02.19 15:10:51<stoopkid> and "%%%%%n" means %%%% + newline; "\\\\"" means \\\ + "
+07.02.19 15:13:28<stoopkid> so making two escape chars, one for the situation where it's followed by a control character and one for the situation where it's followed by a non-control character, that might be able to solve most of the actual issue without requiring any rendering tricks, at the expense of a slight increase in complexity
+07.02.19 15:16:00<stoopkid> the language for literals is objectively more complex from a formal grammars standpoint because the character sequences are explicitly not self-delimiting, though again, not by much; you still only need the max length of any escape sequence in order to read the next character
+07.02.19 15:16:46<stoopkid> so your tokenizer can still be LL(max char length)
+07.02.19 15:22:19<stoopkid> "lookahead" is kind of a misleading concept though. consider parsing by derivatives, you can parse arbitrary CFGs just one character at a time by doing tricks that will follow each possible production simultaneously. derivatives-parsing handles this by actually modifying the grammar as each character is read
+07.02.19 15:24:10<stoopkid> the "lookahead" concept still applies, it still takes that many tokens to actually decide on a production rule, but if you have some way to follow each production simultaneously you don't ever have to actually "look ahead" in order to parse
+07.02.19 15:46:03<stoopkid> would probably make more sense to have % be the one for literal control-characters and \ be the one for regular characters printed differently since people are used to writing things like "\n"; so "\\n" would be \ + newline; "%\n" would be \ + n; then you'd have each escape character escape the other one; so "%\" is \, "\%" is % and "\\" is \\ and "%%" is %%
+07.02.19 15:47:34<stoopkid> mmm, maybe not, still tricky
+07.02.19 15:51:03<stoopkid> %%%" ... would this be "%%\%"" ? and if so why wouldn't that be %\%" ? (i.e. applying the preceding % to the backslash instead of applying the backlash to the following % )
+07.02.19 15:59:16<stoopkid> i guess you would write that as "%%%%""
+07.02.19 16:01:21<stoopkid> i guess this works; not sure if i'm missing anything
+07.02.19 16:14:00<editable-dog>https://github.com/koo5/univar/blob/master/tests/ldl/ldl0
+07.02.19 16:14:01<editable-dog>finally
+07.02.19 16:26:00<editable-dog>i think the duplicity check should be maybe only on pred level
+07.02.19 16:27:07<editable-dog>if you have multiple rules for one pred, each yielding the same result, then the yields just unnecessarily propagate to the callers, only to eventually be pruned on a higher level
+07.02.19 16:29:30<editable-dog>cutting is just a special optimization for all-consts calls, i'll leave that out for now
+07.02.19 17:08:01<stoopkid> ah, yea, per pred-call
+07.02.19 17:10:20<editable-dog>the fun part is gonna be the check for equality of results
+07.02.19 17:11:19<editable-dog>gonna need a table of correspondences of vars
+07.02.19 17:11:59<editable-dog>but i guess it shouldnt be hard
+07.02.19 17:24:28<editable-dog>in traversing the bnodes, i will make the code also be able to print out everything that was checked so far and wasnt decidedly different, and show where the first difference is
+07.02.19 17:24:54<editable-dog>i guess ill only want to print it for the toplevel query level
+07.02.19 23:18:05*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-fltwwyqwoxcpgawp) left #atlas-project: Quit: Connection closed for inactivity
+09.02.19 12:01:47*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-ghwxnwkebtnrliop, (unauthenticated): kook)
+09.02.19 15:41:19*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-ghwxnwkebtnrliop) left #atlas-project: Quit: Connection closed for inactivity
+09.02.19 16:38:09-ilbelkyr- [Global Notice] Hi all, those of you using mIRC to connect should update as soon as possible due to a security issue affecting 7.54 and below; see https://www.mirc.com/news.html for further information
+11.02.19 20:51:10*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-znaqfqatrzcoczou, stoopkid: stoopkid)
+12.02.19 03:00:55*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-znaqfqatrzcoczou) left #atlas-project: Quit: Connection closed for inactivity
+13.02.19 16:38:27*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-beeqrtvernxwuqgu, stoopkid: stoopkid)
+13.02.19 17:14:56<editable-dog>yo
+13.02.19 17:17:17<stoopkid> yo
+13.02.19 17:18:07<stoopkid> been like 100% busy for the last week
+13.02.19 17:18:11<stoopkid> how goes
+13.02.19 17:19:24<editable-dog>surely but slowly
+13.02.19 17:24:52<editable-dog>havent actually found much time to get anything done last few days myself
+13.02.19 17:25:25<editable-dog>and when i did, i soon ran into questions that made me take a break
+13.02.19 17:27:32<editable-dog>but the new parser is slowly shaping up
+14.02.19 04:28:10*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-beeqrtvernxwuqgu) left #atlas-project: Quit: Connection closed for inactivity
+14.02.19 12:39:16*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-wkgwcykvuwenxtrl, stoopkid: stoopkid)
+14.02.19 19:18:25*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-wkgwcykvuwenxtrl) left #atlas-project: Quit: Connection closed for inactivity
+14.02.19 22:58:59*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-xvcsfdhrxjrayntk, stoopkid: stoopkid)
+15.02.19 03:38:40*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-xvcsfdhrxjrayntk) left #atlas-project: Quit: Connection closed for inactivity
+15.02.19 12:12:26*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi, stoopkid: stoopkid)
+#atlas-project> 
