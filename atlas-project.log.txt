@@ -744,4 +744,80 @@
 14.02.19 22:58:59*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-xvcsfdhrxjrayntk, stoopkid: stoopkid)
 15.02.19 03:38:40*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-xvcsfdhrxjrayntk) left #atlas-project: Quit: Connection closed for inactivity
 15.02.19 12:12:26*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi, stoopkid: stoopkid)
+16.02.19 10:14:23*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi) left #atlas-project: Quit: Connection closed for inactivity
+16.02.19 12:20:16*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu, stoopkid: stoopkid)
+16.02.19 15:02:12*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu) left #atlas-project: Quit: Connection closed for inactivity
+19.02.19 13:50:57*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu, stoopkid: stoopkid)
+19.02.19 13:52:12<stoopkid> hey, sorry, still been pretty busy and probably still gonna be busy til like monday or so
+19.02.19 13:52:44<stoopkid> me and megan are getting married this friday
+19.02.19 13:57:49<stoopkid> so.. that's taken up a lot of time.. which for me is mostly just kinda blah cause for me it's really mostly just a legal status thing
+19.02.19 14:01:34<stoopkid> if anything the whole thing's kind of ironic for me considering how often i still rant about abolishing the legal institution of marriage lol
+19.02.19 14:04:31<stoopkid> i mean if people wanna waste a lot of money on bourgeois judeo-christian rituals to celebrate their first steps in the direction of divorce, w/e, more power to them.. but that shouldn't have much anything to do with hospital visitation rights, tax incentives, shared insurance plans, etc.. or at least nobody's convinced me yet that this should be the case
+19.02.19 14:08:30<stoopkid> so to save a lot of money, megan's mom is actually an ordained minister so we're just gonna do a flash wedding at a free art museum down in baltimore and then go out to dinner with the family and then me and megan are gonna go on a cabin trip for the weekend
+19.02.19 14:08:53<stoopkid> and then maybe (fingers crossed) i'll have some more free time after i get back lol
+19.02.19 14:25:20<stoopkid> other thing i've been working on a bit since i'm taking physics this semester is studying into dimensional analysis and looking at its relationship with type systems
+19.02.19 14:26:11<stoopkid> which is pretty interesting and doesn't seem like it's been studied nearly enough yet
+19.02.19 14:26:46<stoopkid> anyway, i have to go try on suits for the wedding so ill bbl
+19.02.19 16:30:41*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu) left #atlas-project: Quit: Connection closed for inactivity
+19.02.19 17:23:52<editable-dog>lol thats quite unexpected
+19.02.19 17:23:58<editable-dog>wish you both good luck with it
+19.02.19 17:24:43<editable-dog>everybodys alright? since you mention hospital visits
+19.02.19 17:25:28<editable-dog>yeah you can do a simple ceremony and divorce can be an even simpler one
+19.02.19 17:26:33<editable-dog>i am playing with vue...its almost doing what i want it to..almost..
+19.02.19 17:28:11<editable-dog>well i hope youre gonna keep finding time for hacking...
+21.02.19 00:28:07*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti, stoopkid: stoopkid)
+21.02.19 00:45:42<stoopkid> i don't think i have any plain-text back-up of the old wiki, just scattered notes that had gone into it
+21.02.19 03:24:02<editable-dog>yo
+21.02.19 03:24:06<editable-dog>ok hmm
+21.02.19 05:27:49*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti) left #atlas-project: Quit: Connection closed for inactivity
+25.02.19 15:20:12*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj, stoopkid: stoopkid)
+25.02.19 15:23:39* stoopkid is now married
+25.02.19 15:23:41<stoopkid> weird
+25.02.19 15:24:18<stoopkid> still not quite non-busy yet
+25.02.19 15:26:24<stoopkid> also probably not totally got a handle on my analysis paralysis either yet
+25.02.19 15:29:23<stoopkid> im thinking at least part of that is just not having a single chosen mental model for algorithms like i have for data-structures
+25.02.19 15:30:00<stoopkid> (definitely also some other things i'm missing beyond that, but this is definitely one of the main things)
+25.02.19 15:32:11<stoopkid> example: deducing how character encodings & escapes and such are supposed to work, etc..
+25.02.19 15:32:51<stoopkid> i can actually get to an answer, or a well-defined range of acceptable vs. unacceptable answers, parameterized by particular situation etc..
+25.02.19 15:34:43<stoopkid> something like ex.. "if the tokenizer can simply read off a token without needing anymore lookahead than the length of the token, then the character encoding must necessarily be a prefix code"
+25.02.19 15:42:21<editable-dog>lool, gratz
+25.02.19 15:43:28<editable-dog>well, thats great information to try to encode in your agdas
+25.02.19 16:10:53<stoopkid> i'm thinking that it seems to be something that humans in general have difficulty with: https://en.wikipedia.org/wiki/Computation
+25.02.19 16:11:06<stoopkid> contrast this with the topic of information theory
+25.02.19 16:11:33<stoopkid> where very very little is disputed
+25.02.19 16:13:01<stoopkid> i think what i've been hoping to find is something like giunti's description at the bottom there
+25.02.19 16:21:24<stoopkid> actually i guess really that (dynamical systems description), but constrained by some combination of each of the 3 other "accounts" from the "Physical phenomenon" section
+25.02.19 16:24:12<stoopkid> and i guess that's sort of what i mean, once we bring in the elements of time+change, it's like "is that exactly what i mean? it definitely *almost* is but i can't tell exactly if it's missing something" and then you read something else and realize "oh yea my conception definitely was missing ex.. 'the semantic account'" or w/e whereas data-structures are just data-structures
+25.02.19 16:35:57<editable-dog>well, i wouldnt necessarily bring in the space-time constraint
+25.02.19 16:37:27<editable-dog>the only definition that would approach any sense of validity to me would be intentionally subjective
+25.02.19 16:38:06<editable-dog>something about getting useful information out of something
+25.02.19 16:38:52<editable-dog>a clock on a wall is computing time for me, but also a leaking jug of water might be
+25.02.19 16:41:10<editable-dog>as on space and time, you never know when we might transcend those
+25.02.19 16:42:10<editable-dog>ever managed to lucid dream?
+25.02.19 16:53:51<stoopkid> nope, most of the time i don't even regular-dream
+25.02.19 16:55:24<stoopkid> i've had a couple where i had some semblance of free-will / agency but nothing approaching "lucidity"
+25.02.19 16:57:16<editable-dog>well, afaik theres nothing more to it than that free will, free in the sense that youre fully aware that youre actually laying in bed
+25.02.19 16:59:16<stoopkid> right, nothing like that, just a couple times where i was maybe "vaguely suggesting" a direction for the dream to go, not really aware that i was actually just dreaming and not w/ any real kind of control or w/e
+25.02.19 17:54:21<editable-dog>im still messing with ldl
+25.02.19 17:54:37<editable-dog>progress is super slow
+26.02.19 04:29:32*** Connecting...
+26.02.19 04:29:33-Server Notice- *** Looking up your hostname...
+                 -Server Notice- *** Checking Ident
+                 -Server Notice- *** Couldn't look up your hostname
+26.02.19 04:29:39-Server Notice- *** No Ident response
+                 *** Nick name in use: editable-dog
+26.02.19 04:29:41*** [sasl.login from ditable-doge (editable-l@104.168.57.22)] editable-dog
+                 *** SASL: You are now logged in as editable-dog.
+                 *** SASL authentication successful
+26.02.19 04:29:45*** Mode change: +Zi on ditable-doge by ditable-doge (server)
+                 -freenode-connect- Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+                 *** CTCP VERSION request from freenode-connect (frigg@freenode/utility-bot/frigg) to ditable-doge: 
+26.02.19 04:29:50-NickServ- editable-dog has been ghosted.
+                 *** [nickserv.ghosted from nil] 
+26.02.19 04:30:14*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: ditable-doge stoopkid @ChanServ
+                 *** End of /NAMES list.
+26.02.19 04:30:41*** [nickserv.regained from nil] 
+                 *** Nick change: You are now known as editable-dog
+26.02.19 07:27:32*** Connecting...
 #atlas-project> 

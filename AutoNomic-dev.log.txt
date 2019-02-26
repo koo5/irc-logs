@@ -9843,4 +9843,22 @@ editable-dog (IRC) joined the room.
 14.02.19 22:59:11*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-xvcsfdhrxjrayntk, stoopkid: stoopkid)
 15.02.19 03:38:40*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-xvcsfdhrxjrayntk) left #autonomic-dev: Quit: Connection closed for inactivity
 15.02.19 12:12:38*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi, stoopkid: stoopkid)
+16.02.19 10:14:23*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi) left #autonomic-dev: Quit: Connection closed for inactivity
+16.02.19 12:20:28*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu, stoopkid: stoopkid)
+16.02.19 15:02:12*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu) left #autonomic-dev: Quit: Connection closed for inactivity
+19.02.19 13:51:09*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu, stoopkid: stoopkid)
+19.02.19 16:30:41*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu) left #autonomic-dev: Quit: Connection closed for inactivity
+21.02.19 00:28:18*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti, stoopkid: stoopkid)
+21.02.19 05:27:49*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti) left #autonomic-dev: Quit: Connection closed for inactivity
+25.02.19 02:04:43*** Quit: Deadhandd (~deadhand@kntaon1614w-grc-11-76-66-96-100.dsl.bell.ca) left #autonomic-dev: Read error: Connection reset by peer
+25.02.19 02:06:21*** Join: Deadhand (~deadhand@kntaon1614w-grc-11-76-66-96-100.dsl.bell.ca, (unauthenticated): deadhand)
+25.02.19 15:20:24*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj, stoopkid: stoopkid)
+26.02.19 04:29:32*** Connecting...
+26.02.19 04:29:59*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #autonomic-dev: instead of eating, i read pdfs; instead of sleeping, i read pdfs; instead of seeing my friends, family and fiancee, i read pdfs; instead of making myself financially stable, i read pdfs. logs: http://loworbit.now.im/logs/
+                 *** Topic set by editable-dog on Wed Oct 10 07:40:28 2018, 4 months 18 days 21 hours 49 minutes 32 seconds ago
+                 *** Names: ditable-doge stoopkid Deadhand HMCb koo5[m]
+                 *** End of /NAMES list.
+26.02.19 04:30:41*** Nick change: You are now known as editable-dog
+26.02.19 07:27:32*** Connecting...
 #autonomic-dev> 

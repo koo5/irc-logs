@@ -31658,4 +31658,241 @@ editable-dog (IRC) joined the room.
 16.02.19 08:26:32<nili> also money is created as credit (all types of money...something bitcoin maximalists do not understand)
 16.02.19 08:28:04<nili> (in fact very few of bitcoin enthusiasts understand what is credit or anything at all regarding economy)
 16.02.19 08:30:02<nili> bitcoin is not money
+16.02.19 08:34:13<nili> is a unit, a medium of exchange and a store of value
+16.02.19 08:36:45<nili> but is a commodity since it is created as a result of work, not as a promise to create work
+16.02.19 08:37:34<nili> and as a commodity using it is like a barter
+16.02.19 08:39:19<nili> credit on the other hand means that what you hold is a contract between two or more parties.
+16.02.19 08:40:22<nili> money is a contract that is a unit of account , a medium of exchange and a store of value
+16.02.19 08:47:58<nili> So the bitcoin itself is not money but the blockchain is a crucial part of  the technology that enable the creation of true money and bitcoin was the means to achieve a decentralized working network
+16.02.19 08:48:53<nili> bitcoin created the economy of a decentralized net work
+16.02.19 08:50:21<nili> so let talk about a contract now.
+16.02.19 08:52:24<nili> a contract defined as an agreement
+16.02.19 08:53:04<nili> but an agreement is a very complex beast
+16.02.19 08:54:54<nili> it is made of rules and KB and is possible only once on the parties shares the same network
+16.02.19 08:55:50<nili> in other words an agreement requires a functioning network
+16.02.19 08:57:21<nili> however to reach a state of a functioning network one need to reach agreement as a participant or be forced to participate
+16.02.19 08:59:42<nili> well it is clear that we all are forced into a agreement as we are born to our parents ,tribe, state ext.
+16.02.19 09:01:14<nili> but many agreements are such that we can choose.
+16.02.19 09:03:24<nili> and the most important of all is the one that result in enforcing our agreement on another.
+16.02.19 09:04:53<nili> I will let you figure out the love game regarding this, while we move on to some very practical levels.
+16.02.19 09:15:59<nili> "The construct loves you" means that the network is programmed to calculate what is best for each of the participants considering all the participants but it let you chose it
+16.02.19 09:21:23<nili> in practice the only thing to program is a name (you as a name in the network, how it is created) and your power to fork and rejoin with others...
+16.02.19 09:22:09<nili> a name is a timestamped string of symbols
+16.02.19 09:25:02<nili> fork is a result of any disagreement on any of the rules.
+16.02.19 09:26:12<nili> if created on a blockchain such disagreement have a distinct cost in term of energy
+16.02.19 09:28:59<nili> the actual value of this cost is the energy consumption that is dependent on the number of units of participation in the network
+16.02.19 09:29:53<nili> (one name can contribute as many units as it wishes)
+16.02.19 09:41:58<nili> the question left to resolve in terms of the economic theory (not the actual programming and theory of programming) is now on a simpler level, that similar of bank credit but decentralized
+16.02.19 09:48:52<nili> ... saying all this I have to make clear that other than "the construct loves you" anyone can come up with a better idea or plan for execution. my idea is only the best that i could come with
+16.02.19 09:49:51<nili> and thus the best to demonstrate what see as the meaning of "the construct loves you"
+16.02.19 09:52:25<nili> So unless you will find it intriguing and relevant, there is no point in spending more time on these concrete levels at this point and time.
+16.02.19 09:57:53<nili> maybe then its a good time to talk about autonomic and my participation here. For me it failed and i was on my way out
+16.02.19 10:00:11<nili> I could leave and leave behind all my investment in it (time, energy, care, money), or I could use it in my projects for my work
+16.02.19 10:00:43<nili> I chose the later
+16.02.19 10:03:22<nili> however in some point it meant using HMC work in a way that have a potential to harm his work.
+16.02.19 10:05:50<nili> despite the fact that he had no problem do it to others in the past, I could not choose to do it to him.
+16.02.19 10:10:23<nili> he trusted me on that and he could trust me like he could trust the construct if he could build it.
+16.02.19 10:13:33<nili> it is a very fine line to walk and I hope i managed to do it.
+16.02.19 10:14:23*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi) left #AutoNomic: Quit: Connection closed for inactivity
+16.02.19 10:14:27<nili> That is all for today... maybe all there is to it.
+16.02.19 10:30:11*** Quit: nili (4d7c7a7a@gateway/web/freenode/ip.77.124.122.122) left #AutoNomic: Ping timeout: 256 seconds
+16.02.19 12:20:41*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu, stoopkid: stoopkid)
+16.02.19 12:29:14<stoopkid> @ nili well... idk
+16.02.19 12:30:00<stoopkid> i think i vaguely follow what you're trying to say, and it seems like a nice thought.. but...
+16.02.19 12:32:27<stoopkid> well, i guess it sounds great but i guess i don't really know how to make that happen unfortunately and really tend to be extremely skeptical that anything even approximating that would be the result of this design
+16.02.19 12:34:59<stoopkid> i mean, we're literally right now getting back into a cold-war style nuclear arms race...
+16.02.19 12:36:03<stoopkid> people are so disgusting that half the time i wonder why i even worry about it ¯\_(ツ)_/¯
+16.02.19 12:40:55<stoopkid> i talk to people on a daily basis who say that we should literally murder immigrants. you think these people are ready for self-sacrifice in the name of love?
+16.02.19 12:43:29<stoopkid> hopefully one day your idea will work for a species that's actually deserving of it
+16.02.19 12:45:14<stoopkid> HMC's even too afraid to not be anonymous in this effort, so.. what does that tell you about how he really feels about it
+16.02.19 12:46:59<stoopkid> that's why his motto is less of "love/respect/trust" and more like "try to love, maybe respect i guess, and don't trust anyone"
+16.02.19 12:48:08<stoopkid> and i sort of tend to agree with that, i sometimes wish i could go back in time and actually be anonymous instead, unfortunately
+16.02.19 14:28:10<editable-dog>guys, its really hard to work in this gloomy mood
+16.02.19 14:28:35<editable-dog>i set up the new repo which actually looks like something finally presentable
+16.02.19 14:28:58<editable-dog>ive fixed a ton of bugs over the last weeks
+16.02.19 14:29:46<editable-dog>theres a lot of new testcases that i produced while working on my ldl stuff
+16.02.19 14:29:55<editable-dog>which is almost usable now too
+16.02.19 14:30:36<editable-dog>we now have issues written up that in the rare case somebody new wanted to tackle, they could
+16.02.19 14:31:47<editable-dog>we've done a ton of work in the year, and understood a lot of stuff
+16.02.19 14:33:46<editable-dog>nilli you're dissapointed because you couldnt change hmc, and because you didnt see results instantaneously...oh well
+16.02.19 14:35:17<editable-dog>stoop is working to change his life for the better now, and thats only thanks to you
+16.02.19 14:35:30<editable-dog>(and thanks to ohad, youll add)
+16.02.19 14:36:10<editable-dog>we both are now im a better position to do great stuff, be it autonomic or something else
+16.02.19 15:02:12*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu) left #AutoNomic: Quit: Connection closed for inactivity
+17.02.19 04:00:10*** Join: nili (1fa87b21@gateway/web/freenode/ip.31.168.123.33, (unauthenticated): bzq-123-168-31-33.red.bezeqint.net/31.168.123.33)
+17.02.19 04:10:33<nili> stoopkid, first you.... I need you to understand that all our morals and nice good deeds are nothing but part of a mechanism not yet programmed into the group level
+17.02.19 04:10:46<nili> it is programmed into our DNA]
+17.02.19 04:11:45<nili> makes "me" and "you" each be that construct
+17.02.19 04:13:59<nili> the program exist in a language and technology we cant copy&paste to our need as human organisation.
+17.02.19 04:15:24<nili> Love is not flowers, it have this image in our mind since we know how central it is to secure our survival.
+17.02.19 04:22:21<nili> so first thing that you need to do in order to keep working is to think of everything in terms of equations .
+17.02.19 04:23:08<nili> the more factors you can put into your equation the closer it will get to express love.
+17.02.19 04:23:58<nili> that is if you look a the universe as  one
+17.02.19 04:26:03<nili> while realize that you and the universe will never be one and the same.
+17.02.19 04:28:08<nili> this inherent contradiction between being an individual and being part of the whole is the most fundamental problem life had to resolve in order to be.
+17.02.19 04:29:12<nili> the solution is love as I have described it to you in the long explanation yesterday.
+17.02.19 04:29:56<nili> love is a solution.
+17.02.19 04:30:55<nili> the solution to life itself. life could not be existed if it was not for this solution to be present in everything.
+17.02.19 04:33:22<nili> this is not a spiritual talk. this is logic, and techology,
+17.02.19 04:40:03<nili> stoopkid, your problem that you are working for fix now, is that you are whiling to give out much more than take in. and it is not sustainable.
+17.02.19 04:47:32<nili> The one issue I disagree and strongly resent HMC  actions in regards to it , is his willingness to over look his partners needs and scarify their well being for the cause
+17.02.19 04:50:26<nili> I also always believed that if he cant see it, there is not chance he can understand what he want to get build.
+17.02.19 04:52:55<nili> I made huge efforts to make him understand it. and I did it because I believe that he understand and posses the ability to break it down to a programming logic.
+17.02.19 04:55:44<nili> I went as far as trying to use that same language , knowing that I cant do it, only if I am lucky I can point to the direction in a much more precise way.
+17.02.19 04:58:02<nili> stoopkid the only reason that I could go as far as that was your actual open mind and respect that you had for me. as well as your devotion and depth in searching for asnwers.
+17.02.19 05:04:02<nili> but when I tried to push further I needed HMC to make that same effort. and he chose not to do it .
+17.02.19 05:07:09<nili> It made me become irrelevant on my expense and I walked away because there was nothing else for me do here.
+17.02.19 05:11:24<nili> stoopkid for you and mostly for koo it was the financial resources which I had that mattered. and it was also only that eventually that mattered to HMC as well regarding my involvement.
+17.02.19 05:25:03<nili> I dont at all look down at the financial contribution and I also appreciate Ohad for his ability to create that value, but this was never my strongest point
+17.02.19 05:26:43<nili> what I could contribute is a very very deep technical understanding of how we as human operate. and understanding that I have no language to express
+17.02.19 05:28:37<nili> I use human language but I understand much of it as a technical code. words like love are logic phrases not spiritual ones....ext.
+17.02.19 05:31:12<nili> there is a handful of people who can understand what I talk about, so mostly I ruther talk to myself or not use words at all. but words makes it closer to decode the code
+17.02.19 05:33:31<nili> ok stoopkid I hope this explain a bit more. koo I still owe you a few words which I will write later today.
+17.02.19 05:38:15*** Quit: nili (1fa87b21@gateway/web/freenode/ip.31.168.123.33) left #AutoNomic: Ping timeout: 256 seconds
+17.02.19 06:32:00*** Join: nili (4d7c7a7a@gateway/web/freenode/ip.77.124.122.122, (unauthenticated): 77.124.122.122 - http://webchat.freenode.net)
+17.02.19 06:32:12<nili> 16.02.19 14:31:47<editable-dog>we've done a ton of work in the year, and understood a lot of stuff
+17.02.19 06:33:16<nili> 16.02.19 14:36:10<editable-dog>we both are now im a better position to do great stuff, be it autonomic or something else
+17.02.19 06:36:39<nili> so koo you surprised me and it is a good surprise. I don't really understand what you do now but i realized that it takes a lot of work. I didn't think that you will be up to it
+17.02.19 06:38:47<nili> but i was planing to check in the log as long it is working. :)
+17.02.19 06:39:29<nili> So it seemed that the work that you did was worth your time.
+17.02.19 06:39:53<nili> and that stoopkid took care of the things he had to
+17.02.19 06:40:35<koo5[m]> I would say so, yes
+17.02.19 06:41:13<nili> so that is more then I could ask for
+17.02.19 06:43:34<nili> also getting HMC to understand and work with what I tried to convey is more than I could ask for
+17.02.19 06:47:26<nili> so since both actualy are happening I should feel very good about it all
+17.02.19 07:05:31*** Quit: nili (4d7c7a7a@gateway/web/freenode/ip.77.124.122.122) left #AutoNomic: Ping timeout: 256 seconds
+17.02.19 07:26:04<koo5[m]> stoopkid do you have a plaintext backup of what was on the old wiki, or do i have to go digging into the db dump?
+17.02.19 07:27:04<koo5[m]> I'd put it on the github wiki
+17.02.19 12:10:36<editable-dog>also, if you still want to play with the proof tracing, i'e finally started working on it
+17.02.19 12:16:12<editable-dog>the core that needs to be done is changing the frontend to accept a json dump of the proof tree, and incremental changes, that is, add_state with id and parent id, and remove state id
+17.02.19 12:16:23<editable-dog>and set_comment for id
+17.02.19 12:17:10<editable-dog>i think vue will actually do most of the work, we just need to manipulate the data structure
+17.02.19 12:18:28<editable-dog>then there are two nice-to-have extensions: first is using rdf.js to load the rules description, so we dont have to emit them as state comment strings 
+17.02.19 12:19:32<editable-dog>second would be offloading the task of keeping track of variable bindings to the frontend 
+17.02.19 12:20:44<editable-dog>these both would allow for adding further nice-to-have features to the frontend, but number one is all that we really need
+18.02.19 15:46:17*** Quit: lexx_[m] (lexxusmatr@gateway/shell/matrix.org/x-colvvoptzpbjqlie) left #AutoNomic: Quit: removing from IRC because user idle on matrix for 30+ days
+19.02.19 13:51:22*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu, stoopkid: stoopkid)
+19.02.19 16:30:41*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu) left #AutoNomic: Quit: Connection closed for inactivity
+20.02.19 13:04:19*** Join: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net, discardedes: unknown)
+20.02.19 13:50:46*** Quit: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net) left #AutoNomic: Read error: Connection reset by peer
+20.02.19 13:51:17*** Join: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net, discardedes: unknown)
+20.02.19 14:51:47*** Quit: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net) left #AutoNomic: Remote host closed the connection
+20.02.19 15:00:09*** Join: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net, discardedes: unknown)
+20.02.19 15:20:46*** Quit: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net) left #AutoNomic: Remote host closed the connection
+20.02.19 19:21:43*** Join: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net, discardedes: unknown)
+20.02.19 21:17:12*** Quit: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net) left #AutoNomic: Remote host closed the connection
+21.02.19 00:28:32*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti, stoopkid: stoopkid)
+21.02.19 05:27:49*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti) left #AutoNomic: Quit: Connection closed for inactivity
+21.02.19 09:55:09*** Join: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net, discardedes: unknown)
+21.02.19 10:20:03*** Quit: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net) left #AutoNomic: Ping timeout: 268 seconds
+21.02.19 19:21:50<koo5[m]> Well, number 1 accomplished, but tracing is still too slow, so, onto steps 2 and 3
+22.02.19 03:57:02<editable-dog> nope, fixed
+24.02.19 07:09:55*** Join: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net, discardedes: unknown)
+24.02.19 08:04:23<editable-dog>heya discardedes 
+24.02.19 08:04:33<discardedes> hey editable-dog !!!
+24.02.19 08:04:36<discardedes> :-D
+24.02.19 08:04:39<discardedes> long time no see, eh?
+24.02.19 08:04:43<editable-dog>yeah
+24.02.19 08:04:49<editable-dog>how are you doing?
+24.02.19 08:04:59<discardedes> .... computing ....
+24.02.19 08:05:06<discardedes> optimistic
+24.02.19 08:05:09<discardedes> you?
+24.02.19 08:05:16<editable-dog>so-so
+24.02.19 08:05:34<discardedes> you ever mess with qemu?
+24.02.19 08:05:57<editable-dog>well i use it under virt-manager, but never directly
+24.02.19 08:06:08<discardedes> huh.... ok
+24.02.19 08:06:30<discardedes> i have a plan for working with code i am learning about
+24.02.19 08:07:00<discardedes> run a VM and have two layers of OSs with basic security settings in place
+24.02.19 08:07:06<discardedes> two linuxs
+24.02.19 08:08:00<discardedes> something that is nice about qemu is that... i remember reading in the past, that its VERY efficient
+24.02.19 08:08:06<discardedes> not sure if your familiar
+24.02.19 08:08:24<discardedes> i think i remember reading you can get ALMOST native performance
+24.02.19 08:09:12<editable-dog>well, i use a couple of vms for everything
+24.02.19 08:09:14<discardedes> sorry to jump into the prickly bushes so quickly
+24.02.19 08:09:16<discardedes> :-P
+24.02.19 08:09:41<discardedes> how do you set it up editable-dog ?
+24.02.19 08:09:42<editable-dog>kvm i think is what gets you basically native performance, yeah
+24.02.19 08:09:50<editable-dog>virt-manager :p
+24.02.19 08:10:21<discardedes> huh... i could get it
+24.02.19 08:10:29<discardedes> without a problem
+24.02.19 08:10:43<discardedes> ill install it and check out the docs
+24.02.19 08:10:46<editable-dog>i'll be back in a minute
+24.02.19 08:10:49<editable-dog>ok
+24.02.19 08:10:51<discardedes> ok
+24.02.19 08:11:09<editable-dog>dont read docs, you can just click around
+24.02.19 08:12:16<discardedes> ok.... ill open it in i3
+24.02.19 08:14:01<discardedes> "no active connection to connect on"
+24.02.19 08:14:05<discardedes> wonder what thats about
+24.02.19 08:14:47<discardedes> oh... i think i have to start a systemd daemon
+24.02.19 08:59:47<discardedes> ..........
+24.02.19 09:00:13<discardedes> apparently, to use kvm, my processor needs virtualization support
+24.02.19 09:00:37<discardedes> i dont have this.... but now i know its something that i would want to have
+24.02.19 09:12:34<editable-dog>yeah, no near-native performance without it
+24.02.19 09:13:47<editable-dog>luckily, cpus have been getting them for quite a few years now, so even a second-hand computer will do
+24.02.19 09:15:11<editable-dog>another stack to try instead of virt-manager is qubes
+24.02.19 09:15:31<editable-dog>when you get that new computer, try qubes first maybe
+24.02.19 09:17:17<discardedes> that new computer is not forthcomming in the near future
+24.02.19 09:18:30<discardedes> well.... i shall see what kind of performance i get without it
+24.02.19 09:18:44<discardedes> editable-dog: how bad do you think the performance hit might be?
+24.02.19 09:18:50<discardedes> you ever experiment with this kind of thing?
+24.02.19 09:20:54<editable-dog>dont even try
+24.02.19 09:21:12<editable-dog>unless all you want to do is experiment with bootloaders or run old dos games
+24.02.19 09:21:42<editable-dog>or do something else cpu-nonintensive, i'd guess
+24.02.19 09:21:56<editable-dog>but i dont think youll be able to just browse the web or whatever
+24.02.19 09:22:10<editable-dog>not sure though
+24.02.19 09:25:13<discardedes> ok
+24.02.19 09:25:35<discardedes> i can try it and see what happens
+24.02.19 09:25:39<discardedes> i suspect you are correct
+24.02.19 09:27:14<editable-dog>but you can play with docker or other container solution
+24.02.19 09:27:39<editable-dog>docker isnt a security solution, but i think lxc actually is?
+24.02.19 09:27:48<editable-dog>hmc would probably know
+24.02.19 09:33:43<editable-dog>im a bit hazy on the details, probably docker uses lxc or whatever
+24.02.19 09:47:15<discardedes> using vr manager, can i install any OS?
+24.02.19 09:47:24<discardedes> or am i limited to the menu in the dropdown?
+24.02.19 09:57:18<discardedes> tryying to activate the network now
+24.02.19 09:57:49<discardedes> within virtual-manager setup
+24.02.19 10:00:58<editable-dog>the dropdown is just for indication, you have to give it the iso yourself
+24.02.19 10:01:24<editable-dog>network should just work
+24.02.19 10:05:46<discardedes> it doesnt.... im following a tutorial
+24.02.19 10:06:19<discardedes> yeah... it looks like it worked for ... the OS container selection box
+24.02.19 10:06:40<discardedes> i was able to select an OS iso and .... now im working on the network
+24.02.19 10:08:43<editable-dog>maybe just reboot if youve just installed everything
+24.02.19 12:41:20<discardedes> editable-dog: how hard would it be to rout network traffic through a program? Any ideas?
+24.02.19 12:46:50<editable-dog>well, if you just want to watch, just install wireshark
+24.02.19 12:48:44<discardedes> i want it to behave based on the traffic
+24.02.19 12:48:54<discardedes> bb in 5
+24.02.19 12:48:56<discardedes> have to walk the dog
+24.02.19 12:49:29<discardedes> but im imagining
+                 <discardedes> traffic-in -> program -> traffic-out
+24.02.19 12:49:40<discardedes> and program is basically a hook
+24.02.19 12:49:53<discardedes> to create behavior based on the network traffic
+24.02.19 12:57:20<editable-dog>maybe tcpdump
+24.02.19 13:05:18<discardedes> im wondering about a server on a virtual machine
+24.02.19 13:05:34<discardedes> no....
+24.02.19 13:05:45<discardedes> hmmm....
+24.02.19 13:13:35<discardedes> im going to skip this for now.... but thanks editable-dog
+24.02.19 13:14:03<discardedes> just being able to use a bridge to daisychain the internet connection would be awesome
+24.02.19 13:14:39<discardedes> trying to work with the traffic..... in the way i am imagining, i think i would need to use raw sockets
+24.02.19 13:15:09<discardedes> ive looked into them in the past, and it was out of my reach
+24.02.19 13:15:33<discardedes> more optimistic of a second pass this time round
+24.02.19 13:15:40<discardedes> but not a priority
+24.02.19 13:16:55<editable-dog>im not much into sysadmining and networking
+24.02.19 13:17:22<editable-dog>but i think you already have a bridge when you create a vm with virt-manager
+24.02.19 13:17:29<editable-dog>but reconfiguring things is gonna be fun
+24.02.19 13:21:11<editable-dog>just not my kind of fun
+24.02.19 13:22:45<discardedes> Well..... this is exactly the kind of thing that im interested in ATM
+24.02.19 19:08:44*** Quit: discardedes (~user@75.97.112.182.res-cmts.brd4.ptd.net) left #AutoNomic: Read error: Connection reset by peer
+25.02.19 02:04:43*** Quit: Deadhandd (~deadhand@kntaon1614w-grc-11-76-66-96-100.dsl.bell.ca) left #AutoNomic: Read error: Connection reset by peer
+25.02.19 02:06:21*** Join: Deadhand (~deadhand@kntaon1614w-grc-11-76-66-96-100.dsl.bell.ca, (unauthenticated): deadhand)
+25.02.19 03:19:50*** Join: mewmew[m] (homelessne@gateway/shell/matrix.org/x-basaxjoyxsvsnsbv, (unauthenticated): @homeless_neko:matrix.org)
+25.02.19 03:20:16*** Part: mewmew[m] (homelessne@gateway/shell/matrix.org/x-basaxjoyxsvsnsbv) left #AutoNomic: "User left"
+25.02.19 15:20:37*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj, stoopkid: stoopkid)
+26.02.19 04:29:32*** Connecting...
+26.02.19 04:30:02*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #AutoNomic: AutoNomic project | Please ask anything | Wiki: 167.88.171.233/AutoNomic | Log: 167.88.171.233/logs/AutoNomic.log | Dev channel: #autonomic-dev | ncatlab.org/nlab/show/computational+trinitarianism | rbjones.com/rbjpub/logic/cl/tlc001.htm | www.cse.chalmers.se/research/group/logic/book/book.pdf
+                 *** Topic set by stoopkid on Fri Jan 26 17:10:47 2018, 1 year 1 month 5 days 11 hours 19 minutes 16 seconds ago
+                 *** Names: ditable-doge stoopkid Deadhand HMCb @ChanServ Tamara_ cantora koo5[m] reedhhw[m]
+                 *** End of /NAMES list.
+26.02.19 04:30:41*** Nick change: You are now known as editable-dog
+26.02.19 07:27:32*** Connecting...
 #AutoNomic> 

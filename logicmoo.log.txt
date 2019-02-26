@@ -22131,4 +22131,416 @@ o10.01.19 00:18:34<stoopkid> everyone is usually wrong most of the time
 16.02.19 04:39:56*** Quit: T_K (~TK@82.131.64.193.cable.starman.ee) left #logicmoo: Read error: Connection reset by peer
 16.02.19 04:42:11*** Join: T_K (~TK@82.131.64.193.cable.starman.ee, (unauthenticated): purple)
 16.02.19 04:48:23*** Quit: T_K (~TK@82.131.64.193.cable.starman.ee) left #logicmoo: Ping timeout: 245 seconds
+16.02.19 09:00:37<dmiles> stoopkid, you are correct i think.. that we can allow the LarKC (which is CYC) load/save RDF in any form we like
+16.02.19 09:01:24<dmiles> though would XML be stroed ina plain literal? 
+16.02.19 09:02:17<dmiles> :foo :bar "<xm/>"^^XSD:Xml..
+16.02.19 09:03:45<dmiles> oops i suppose these are not "plain" if i used ^^..  my terminolgy was off there
+16.02.19 09:07:31<dmiles> on top of that there are verious XSD for semantic content http://dev.cyc.com/xsd/index.html 
+16.02.19 10:08:07*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+16.02.19 10:14:23*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-bthnkpqblzrrwioi) left #logicmoo: Quit: Connection closed for inactivity
+16.02.19 10:40:12*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 268 seconds
+16.02.19 12:20:24*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu, stoopkid: stoopkid)
+16.02.19 15:02:12*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-nuizzfogjrdimvvu) left #logicmoo: Quit: Connection closed for inactivity
+16.02.19 16:55:58*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+16.02.19 17:58:57*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Remote host closed the connection
+16.02.19 17:59:21*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+16.02.19 19:37:34*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+17.02.19 06:44:09*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+17.02.19 06:45:37*** Join: swamps (~radiognom@128-71-210-126.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+17.02.19 07:00:06*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+17.02.19 07:00:24*** Join: swamps (~radiognom@128-71-210-126.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+17.02.19 07:52:56*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+17.02.19 07:53:40*** Join: swamps (~radiognom@128-71-210-126.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+17.02.19 08:01:42*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 255 seconds
+17.02.19 08:05:52*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+17.02.19 08:18:53*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+17.02.19 08:19:16*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+17.02.19 08:20:25*** Join: swamps (~radiognom@128-71-210-126.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+17.02.19 13:02:35*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+17.02.19 13:24:50*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+17.02.19 14:05:02*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+17.02.19 14:05:34*** Join: swamps (~radiognom@128-71-210-126.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+17.02.19 14:06:07*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Remote host closed the connection
+17.02.19 14:09:09*** Join: swamps (~radiognom@128-71-210-126.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+18.02.19 04:20:49*** Join: aindilis (~aindilis@172.12.3.117, aindilis: Andrew Dougherty)
+18.02.19 09:14:16*** Join: kaumi (~kaumi@93-33-82-108.ip43.fastwebnet.it, (unauthenticated): realname)
+18.02.19 09:14:20<kaumi> hi
+18.02.19 09:17:00<kaumi> i'have problem with prolog i'm reading the free book Logic Programming with Prolog 2nd Edition 2013.pdf and i have problem on page 68 with operator, ther'is someone in this channel?
+18.02.19 09:36:30*** Quit: kaumi (~kaumi@93-33-82-108.ip43.fastwebnet.it) left #logicmoo: Quit: Leaving
+18.02.19 11:36:57*** Quit: aindilis (~aindilis@172.12.3.117) left #logicmoo: Ping timeout: 246 seconds
+18.02.19 11:40:02*** Topic for #logicmoo: http://www.logicmoo.org | https://docs.google.com/document/d/1XCDnWMjNh4y2Um_1B-HE4x5Q34oxHRxBl-Oy9eNUzTI/edit#  https://drive.google.com/drive/folders/0B0QA19UX0ehlV1ZEaXEzc3hjTWM   http://www.csee.umbc.edu/~finin/prolog/pfc/man/pfc.pdf
+                 *** Topic set by dmiles on Mon May 28 20:31:51 2018, 8 months 25 days 16 hours 8 minutes 12 seconds ago
+18.02.19 11:46:06*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+19.02.19 02:40:13*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+19.02.19 12:16:19*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+19.02.19 13:20:07*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 258 seconds
+                 *** Quit: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 240 seconds
+19.02.19 13:20:16*** Quit: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 272 seconds
+19.02.19 13:28:27*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+19.02.19 13:45:19*** Join: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): anonymous)
+19.02.19 13:47:18*** Join: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): see http://prologmoo.com/)
+19.02.19 13:51:05*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu, stoopkid: stoopkid)
+19.02.19 13:52:02*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+19.02.19 15:46:15*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+19.02.19 16:30:41*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgawxssbeaqnlcyu) left #logicmoo: Quit: Connection closed for inactivity
+19.02.19 16:31:01*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+19.02.19 17:09:00*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+20.02.19 04:40:15*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+20.02.19 05:05:10*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+20.02.19 12:07:41*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+20.02.19 12:09:00<dmiles> [09:04] <dmiles> NASA AI Today
+                 <dmiles> [09:05] <dmiles> Video Conference URL: https://zoom.us/j/689971575
+20.02.19 13:25:32<aindilis> dmiles: ping
+20.02.19 14:23:45*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+20.02.19 16:23:41<aindilis> dmiles: ping
+20.02.19 17:23:15*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+20.02.19 17:24:01*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+20.02.19 17:53:53*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+20.02.19 19:25:00*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+20.02.19 21:30:52*** Nick change: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) is now known as Richard_Torvalds
+20.02.19 21:31:41*** Nick change: Richard_Torvalds (~elonsatos@unaffiliated/elon-satoshi/x-2794555) is now known as Elark_Muskerberg
+21.02.19 00:28:16*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti, stoopkid: stoopkid)
+21.02.19 03:55:16*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+21.02.19 05:27:49*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-qnoccmiirmgjztti) left #logicmoo: Quit: Connection closed for inactivity
+21.02.19 06:11:59<aindilis> dmiles: ping
+21.02.19 07:00:56*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+21.02.19 08:17:03<aindilis> dmiles: ping
+21.02.19 09:03:30*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+21.02.19 11:00:16*** Quit: Elark_Muskerberg (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+21.02.19 11:08:37*** Join: Elark_Muskerberg (~elonsatos@2001:5b0:42dd:ab48:9d88:2873:6672:642d, (unauthenticated): elonsatoshi)
+21.02.19 11:13:07<aindilis> dmiles: ping
+21.02.19 12:35:58*** Quit: Elark_Muskerberg (~elonsatos@2001:5b0:42dd:ab48:9d88:2873:6672:642d) left #logicmoo: Quit: So long, and thanks for all the fish! 2.3 Weechat is best Weechat
+21.02.19 12:38:17*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+21.02.19 15:06:16<dmiles> aindilis: pong
+21.02.19 17:58:43*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+22.02.19 03:49:41*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 255 seconds
+22.02.19 03:55:47*** Quit: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 240 seconds
+22.02.19 03:57:42*** Quit: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 246 seconds
+22.02.19 04:10:51*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+22.02.19 04:21:54*** Join: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): anonymous)
+22.02.19 04:22:19*** Join: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): see http://prologmoo.com/)
+22.02.19 06:44:31*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+22.02.19 07:44:24*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+22.02.19 08:50:41*** Quit: swamps (~radiognom@128-71-210-126.broadband.corbina.ru) left #logicmoo: Ping timeout: 244 seconds
+22.02.19 09:04:12*** Join: swamps (~radiognom@128-71-214-220.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+22.02.19 09:17:22<dmiles> it looks liek i haver persistence jsut for the .ts files
+22.02.19 09:58:13<aindilis> wow
+22.02.19 10:03:50<aindilis> how is it going otherwise?
+22.02.19 10:46:01*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+22.02.19 13:25:44*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+22.02.19 13:33:40*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+22.02.19 13:43:48*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+22.02.19 17:46:10<aindilis> dmiles: ping
+22.02.19 18:26:58<aindilis> any luck with metaplanning?
+23.02.19 02:31:15*** Join: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, (unauthenticated): Andrew Dougherty)
+23.02.19 02:44:53*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 255 seconds
+23.02.19 04:12:18*** Quit: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Excess Flood
+23.02.19 04:13:30*** Join: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): see http://prologmoo.com/)
+23.02.19 07:04:04*** Quit: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+23.02.19 07:25:21*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+23.02.19 07:30:58<aindilis> ping
+23.02.19 08:27:41<aindilis> ping
+23.02.19 11:03:31<aindilis> dmiles: how is the MIFE coming along?  jbalint and I are discussing making a game using LarKC_CL
+23.02.19 11:07:58*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+23.02.19 11:13:40*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+23.02.19 11:54:38<aindilis> does LarKC_CL work with OpenCYC now?
+23.02.19 16:49:35<aindilis> ping
+23.02.19 17:14:40<dmiles> good question.. i need to test that
+23.02.19 17:15:27<dmiles> one edition of CYC they chnages an abstracty class out for an interface 
+23.02.19 17:16:09<dmiles> a verification error might occur for that.. i saw that a while ago.. but havent tested the 4.0 version of opencyc
+23.02.19 17:17:39<dmiles> i been mostly working on restoring the Logicmoo's customzed Prolog interpretoer that came for CycMOO i wrote in 2002
+23.02.19 20:36:38*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+23.02.19 20:43:21*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+23.02.19 20:52:43*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+23.02.19 21:00:03*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+23.02.19 21:01:54*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+23.02.19 21:45:00*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+24.02.19 02:22:27*** Quit: swamps (~radiognom@128-71-214-220.broadband.corbina.ru) left #logicmoo: Ping timeout: 240 seconds
+24.02.19 02:27:10*** Join: swamps (~radiognom@128-71-140-87.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+24.02.19 03:36:30*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+24.02.19 03:38:37*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+24.02.19 04:17:01<aindilis> ping
+24.02.19 12:39:35<aindilis> ping
+24.02.19 12:40:54<dmiles> pong
+24.02.19 12:41:00<aindilis> hey how goes it?
+24.02.19 12:41:24<dmiles> well my code is broken.. and i have to restart work i begun 4 days ago :P
+24.02.19 12:41:30<aindilis> :/
+24.02.19 12:41:38<aindilis> I read your convo in ##idni
+24.02.19 12:41:57<dmiles> probably a very important conversaion is one that you missed.. i will paste it here
+24.02.19 12:42:45<dmiles> [16:13] <dmiles> well i/we have non-JVM port of my system but users have to sign NDAs with Cycorp and buy a AllegroCL site licence if they even want to kick the tires
+24.02.19 12:42:46<dmiles> [16:14] <dmiles> but JVM version is at least free :P
+                 <dmiles> [17:24] <dmiles> a lot of the worlk to is if scheme programmers demand access to code on CYC
+                 <dmiles> [17:24] <dmiles> no one is really demanding access :P
+24.02.19 12:42:47<dmiles> [17:25] <dmiles> i think people assumed the CYC project was a failure and switched to god knows what
+                 <dmiles> [17:26] <dmiles> dont people realize CYC is 100-1000 faster than every prover/datalog implemation out there?
+24.02.19 12:42:48<dmiles> [17:27] <dmiles> because the govt put at least a 1/2 billion dollars into optimizaiong it
+24.02.19 12:42:49<dmiles> [17:28] <dmiles> of course the system is slighty complex
+                 <dmiles> [17:28] <dmiles> took me a several months of trying to fake it until i make it to understand how to code in it
+24.02.19 12:42:50<dmiles> [17:30] <dmiles> it really is just the bookcode of PAIP on nuclear steroids
+24.02.19 12:42:51<dmiles> [17:34] <dmiles> where i am focusing on event-calc reasoning 
+                 <dmiles> [17:34] <dmiles> the nice part is that the language i am using is more epxressive than english
+24.02.19 12:42:52<dmiles> [17:35] <dmiles> the human language i mean is more expressive than the human natural language
+24.02.19 12:42:53<dmiles> [17:37] <dmiles> the language is a Conscriptive Event Calculus created by JohnMcCarthy in 1960s.. when you ne3eded to create a language that was completely logical but paraconsitent to handle new logical elaborations
+24.02.19 12:42:54<dmiles> [17:38] <dmiles> A language that describes its own shortcomings
+24.02.19 12:42:55<dmiles> [17:39] <dmiles> A language that can be surgically underspecific 
+24.02.19 12:43:19<dmiles> [17:39] <dmiles> (whereas NL can be.. but not in a surgical way)
+                 <dmiles> [17:40] <dmiles> in order to convery ambiguity in CycL we acutally trace out logically our ambiguity levels
+                 <dmiles> [17:41] <dmiles> keeping a completely openworld 4 valued logic
+24.02.19 12:43:20<dmiles> [17:42] <dmiles> in order to not deal with para-incompletness
+                 <dmiles> [17:42] <dmiles> sorry i mean deal with it correctly
+24.02.19 12:43:21<dmiles> [17:44] <dmiles> so for exmaple if  (and (loves joe sue) (loves john sue)) .. we know that the two even overlap temporally.. we also know that the Sue is the same woman and that the "loves" predicate *must* mean something differnt .. but intersect at the commonalities of the prototypical meaning of loves/2
+24.02.19 12:43:22<dmiles> [17:46] <dmiles> "loves" predicate *must* mean something differnt .. by this i mean is is cannonicalized to  (and (?L1 joe sue) (?L2 john sue)  (dif ?L1 ?L2) (subclass ?L1 (PrototypeFn loves) ) (subclass ?L2 (PrototypeFn loves) ) )
+24.02.19 12:43:23<dmiles> [17:47] <dmiles> well the cannonical form even include the modalities of time of them holding to be true
+                 <dmiles> [17:48] <dmiles> i dont think anyone but cycorp/mccarthy discovered we had to do it this way
+24.02.19 12:43:24<dmiles> [17:56] <dmiles> to really canonicalize the infinite world of discourse we had to create a logically circonscription language that was able to imprecisly define the top and bottem.. and then without using any "probablity" continue to be consistent
+24.02.19 12:43:25<dmiles> [17:56] <dmiles> circonscriptive language
+                 <dmiles> [17:57] <dmiles> a dynamic (non-monotonic) logic where McCarthy's circonscription theory is used
+24.02.19 12:43:26<dmiles> [17:58] <dmiles> an introduction link is https://en.wikipedia.org/wiki/Circumscription_(logic)
+24.02.19 12:43:27<dmiles> [17:59] <dmiles> how it partially works is by the system tracking both fixed and varying predicates into a 4 to 6 valued logic
+                 <dmiles> [18:00] <dmiles> CYC database language design was to accomadate this
+24.02.19 12:43:29<dmiles> [18:02] <dmiles> where every consequent is returned in a way that still tracks that open/closedness of the truth values
+                 <dmiles> [18:03] <dmiles> like when i say (isa Fido ?W) and ?W=Dog as a result.. i know that this Dog is a complete underspecifation 
+24.02.19 12:43:30<dmiles> [18:04] <dmiles> it is really  "if Fido was a ?W, and ?W was a Dog, it is a special instensional subrealm of how we meant Dog"
+                 <dmiles> [18:04] <dmiles> "so Dog in this case is Fido-Specfic-Dog
+24.02.19 12:43:31<dmiles> [18:05] <dmiles> where (subrealm Fido-Specfic-Dog Dog)
+24.02.19 12:43:32<dmiles> [18:05] <dmiles> "
+                 <dmiles> [18:17] <dmiles> how that value is returned is a bit like natural language
+24.02.19 12:43:33<dmiles> [18:18] <dmiles> ?W = `(SubProtTypicalFn Dog (InstanceFn Fido))
+24.02.19 12:43:34<dmiles> [18:18] <dmiles> in this case ?W is conveyed to have infinite, yet, scoped meaning
+24.02.19 12:44:06<dmiles> [18:20] <dmiles> unification results in   (MeaningsIntersetFn (SubProtTypicalFn Dog (InstanceFn Fido)) `(SubProtTypicalFn Dog (InstanceFn Fido)))
+                 <dmiles> [18:21] <dmiles> converyable also by the term:  `(SubProtTypicalFn Dog (InstanceFn (MeaningsIntersectFn Fido Snoopy)))
+24.02.19 12:44:07<dmiles> [18:21] <dmiles> conveyable
+                 <dmiles> [18:22] <dmiles> RDF/Prolog dont have such infinite terms
+                 <dmiles> [18:24] <dmiles> though prolog's attributed variables can implement this 6-domains-at-once cosntraint system 
+24.02.19 12:44:08<dmiles> [01:01] <amz3> o/
+                 <dmiles> [01:02] <amz3> dmiles: nice write up
+24.02.19 12:48:10<aindilis> great
+24.02.19 12:48:16<aindilis> is that the extent of the conversation?
+24.02.19 12:48:40<dmiles> yes.. but now i see exactly how that impl works
+24.02.19 12:49:20<dmiles> PrologPlusCG was one of the first attempts outside Cycorp to impliment it
+24.02.19 12:49:54<aindilis> yeah my tts read it before it got pasted to the screen so I'll have to reread to grok
+24.02.19 12:50:12<aindilis> this is the elaboration tolerant logic you often speak of?
+24.02.19 12:50:52<dmiles> yes
+24.02.19 12:50:56<aindilis> cool
+24.02.19 12:51:37<dmiles> i been going on for 3 years wondering so hard how i might be wrong i havent focused on the parts i got right
+24.02.19 12:52:04<aindilis> you mean with PrologMUD/LogicMOO?
+24.02.19 12:52:35<dmiles> yes.. part of the reason progress has been so slow in that is i wasnt sure about the theory
+24.02.19 12:53:13<dmiles> i knew of course PrologMUD/LogicMOO's use of CycL was very important
+24.02.19 12:53:49<dmiles> but i been struggling with what a First Order Term was going to be
+24.02.19 12:54:44<dmiles> mainly from conversations i was having in #AutoNomic and ##idni trying to figure out how they got thinjgs so screwed up and wrong
+24.02.19 12:55:14<aindilis> due to impedence mismatch?
+24.02.19 12:55:15<swamps> <user> Too often in our experience, organizations and teams suffer from homogeneity on multiple fronts, limiting their ability to think expansively and drive transformational business and cultural initiatives. // source: https://su.org/blog/singularity-university-at-ten-years-the-global-grand-challenges/
+24.02.19 12:55:46<swamps> i'm sure that ai and true nlu are key to a maximum heterogeneity
+24.02.19 12:55:48<dmiles> due to not seeign that all logical symbols had a set number of views
+24.02.19 12:56:42<aindilis> what is it that you have to return to from 4 days ago?
+24.02.19 12:57:07<dmiles> for exmaple in my (isa Fido ?W) returns a Dog that looks liek a FORT (first order term) but it s  FORT tered in a single dirrect towrd Fido
+24.02.19 12:57:42<dmiles> that all first torder terms have to be view as existentials
+24.02.19 12:58:23<aindilis> you have to do this to get Prolog LogicBase to represent all the knowledge for LarKC_CL?
+24.02.19 12:58:35<dmiles> there is anywhere from 6 to 14 .. vectors in which all terms can be transformed towards
+24.02.19 12:59:12<dmiles> yes.. in 2002 when i wrote the Prolog system i was porting 4 days ago it was to allow these special terms
+24.02.19 12:59:25<aindilis> ah CycMOO
+24.02.19 12:59:30*** Nick change: swamps (~radiognom@128-71-140-87.broadband.corbina.ru) is now known as egp_
+24.02.19 12:59:31<dmiles> yes
+24.02.19 13:00:18<dmiles> swamps: it's lile a true NL that appears to be a logic like CycL
+24.02.19 13:00:27<dmiles> lile/like
+24.02.19 13:00:53<dmiles> the NL is Ued 
+24.02.19 13:01:48<dmiles> though it maybe a wide berth to human thinking
+24.02.19 13:02:05<dmiles> but ideally a truely usefull logic for machines
+24.02.19 13:02:08<aindilis> what vectors?
+24.02.19 13:02:20<dmiles> vectors can be thought of like this...
+24.02.19 13:02:50<dmiles> (NotAnyColetionFn Dog)
+24.02.19 13:03:06<dmiles> (GenlsFn Dog)
+24.02.19 13:03:14<dmiles> (SubGenlsFn Dog)
+24.02.19 13:03:28<dmiles> (PrototypicalFn Dog)
+24.02.19 13:03:33<aindilis> ah k
+24.02.19 13:04:14<dmiles> uses of Dog genrally are about only using a set of such NARTs
+24.02.19 13:04:33<dmiles> erm some of those subsets that is
+24.02.19 13:05:03<dmiles> Aristotal though anout 3 such vectors 
+24.02.19 13:05:19<dmiles> thought and described in the meaning triangle
+24.02.19 13:05:47<dmiles> whereas Descripotion Logic/RDF thought about 2
+24.02.19 13:06:09<dmiles> Prolog about 1
+24.02.19 13:06:40<dmiles> etc
+24.02.19 13:07:00<dmiles> CYC to actually work thinks about arround 4
+24.02.19 13:07:15<dmiles> i found the list of 14 the other day.. i need to find them!
+24.02.19 13:07:21<aindilis> ah yeah, like assertion authors
+24.02.19 13:08:01<aindilis> gister
+24.02.19 13:08:08<dmiles> describe assertion authors
+24.02.19 13:08:11<aindilis> http://www.ai.sri.com/~gister/
+24.02.19 13:08:23<aindilis> CycAdministrator etc
+24.02.19 13:08:40<aindilis> #$Witbrock etc
+24.02.19 13:08:51<aindilis> #$Lenat
+24.02.19 13:09:44<aindilis> http://www.ai.sri.com/~seas/
+24.02.19 13:09:53<dmiles> oh yes http://www.ai.sri.com/~gister/ thought along the lines .. we can say that with everyt cosntant it brings slightly some Fuzz
+24.02.19 13:10:25<dmiles> the Fuzz maxes out to 6 difenrt versions of Fuzz in CYC
+24.02.19 13:10:35<aindilis> well I just mean to reference the evidential aspects of CYC here since these dimensions seem along those lines (Logos, Pathos, Ethos)
+24.02.19 13:11:19<dmiles> terms start out with a meanig inside a logical sentenced
+24.02.19 13:11:26<aindilis> it's amazing that I can remember these systems so quickly and cannot remember where to put the dishes when drying them
+24.02.19 13:11:56<aindilis> two theories, one I don't care about dishes and two my pre-psychosis memory is intact
+24.02.19 13:12:03<dmiles> (loves Joe Mary) (eats Poe pizza1)  (knows Joe (genls Pizza Food))
+24.02.19 13:12:31<dmiles> Joe in those three senses is a different Joe
+24.02.19 13:12:41<aindilis> interesting
+24.02.19 13:13:13<dmiles> each predicate is accribling Joe along some vector
+24.02.19 13:13:30<aindilis> what are the vectors?
+24.02.19 13:13:32<dmiles> not Fuzz vectors but Fuzz an enter into it 
+24.02.19 13:14:28<dmiles> Joe in all 3 setences are the same Joe under aristole  Referant class
+24.02.19 13:14:36<dmiles> in the refernt vector
+24.02.19 13:14:45<dmiles> in the Referent vector
+24.02.19 13:15:11<aindilis> so a vector is similar to a slot?
+24.02.19 13:16:20<dmiles> https://en.wikipedia.org/wiki/Triangle_of_reference
+24.02.19 13:16:51<dmiles> The relations between the triangular corners may be phrased more precisely in causal terms as follows[citation needed][original research?]:
+                 <dmiles> The matter evokes the writer's thought.
+                 <dmiles> The writer refers the matter to the symbol.
+24.02.19 13:16:52<dmiles> The symbol evokes the reader's thought.
+                 <dmiles> The reader refers the symbol back to the matter.
+24.02.19 13:18:01<dmiles> those 4 steps are what happening allong a domain for referent
+24.02.19 13:18:28<dmiles> a Vector in my lanuage is a liek a Dimention of Domain
+24.02.19 13:18:59<dmiles> the vector is about the postion in teh domain
+24.02.19 13:19:35<dmiles> Joe moves in and out of 3 differnt domains in (loves Joe Mary) (eats Poe pizza1)  (knows Joe (genls Pizza Food))
+24.02.19 13:20:12<aindilis> srry I had to step out quickly
+24.02.19 13:20:13<aindilis> back
+24.02.19 13:20:37<aindilis> ah so that's the triange you were referring to
+24.02.19 13:21:03<aindilis> not the logos pathos ethos
+                 <dmiles> for exmaple.. immagine this,..  (exists ?J (loves ?J Mary) (eats ?J pizza1)  (knows ?J (genls Pizza Food))
+24.02.19 13:22:11<dmiles> right the Triangle_of_reference is what i meant:  SYMBOL THOUGHT REFERENT
+24.02.19 13:22:13<aindilis> huh I'll have to study this triangle better
+24.02.19 13:22:32<dmiles> we easlily understand SYMBOL THOUGHT  are quite differnt
+24.02.19 13:22:48<dmiles> but  SYMBOL and REFERENT?!?
+24.02.19 13:22:58<aindilis> meta/object?
+24.02.19 13:23:45<dmiles> most logicians like try to combine the two into a  SYMBOL
+24.02.19 13:23:55<dmiles> which then breaks everyhting
+24.02.19 13:24:08<aindilis> quine corner notation?
+24.02.19 13:24:17<dmiles> perhaps yes
+24.02.19 13:25:14<dmiles> the differnce between Datalog/RDF and CycL is that CycL is the only languafge that keep them separate
+24.02.19 13:25:37<aindilis> alright, well I'll have to reread all this again when I'm not so tired
+24.02.19 13:25:52<dmiles> mathematics has a simualr problem
+24.02.19 13:26:13<dmiles> is 2 frogs the same as 2 birds?
+24.02.19 13:26:32<dmiles> the 2-ness part yes
+24.02.19 13:26:44<dmiles> but not the frog and birds part
+24.02.19 13:27:03<dmiles> this frog example is what i mean by vectors
+24.02.19 13:27:10<aindilis> types?
+24.02.19 13:27:22<aindilis> as one particular vector
+24.02.19 13:27:28<aindilis> I do apologize, I am still tired from all the preparations, I was curiuos though how things were progressing with LarKC_CL.  You heard that jbalint and I are currently thinking about making a game with it?  also, any luck with the C++ bindings?
+24.02.19 13:27:29<dmiles> 2 is a vector size of two refernats
+24.02.19 13:27:35<aindilis> |v|
+24.02.19 13:27:49<dmiles> frog/bird is a vector sitw of two referents
+24.02.19 13:28:02<aindilis> sitw?
+24.02.19 13:28:15<dmiles> site as in data website
+24.02.19 13:28:18<aindilis> k
+24.02.19 13:29:06<aindilis> yeah sorry cannot grasp it, have to review the wikipage and stuff, but a bit too tired at this point
+24.02.19 13:29:16<dmiles> frog and bird live in a vector that we can say  2Frogs are proably closer to the frog postion
+24.02.19 13:29:20<aindilis> I'm sure I'll get it on rereading everything
+24.02.19 13:29:33<aindilis> ah I see
+24.02.19 13:29:34<aindilis> 1 frog
+24.02.19 13:30:02<dmiles> 1 frog vs 2 frogs
+24.02.19 13:30:05<aindilis> yeah
+24.02.19 13:30:25<dmiles> 1 frog vs 1 bird
+24.02.19 13:30:32<dmiles> are the two domains
+24.02.19 13:30:59<dmiles> on top of these 2 domains (vectors) there are more
+24.02.19 13:31:15<dmiles> 1 frog vs  All frogs
+24.02.19 13:31:24<dmiles> 1 frog vs  no frogs
+24.02.19 13:31:50<dmiles> 1 frog vs the frog you are thinking of
+24.02.19 13:32:01<dmiles> that os the right slope of the triangle
+24.02.19 13:32:15<dmiles> that is the right slope of the meaning triangle
+24.02.19 13:32:22<aindilis> 2019-01-25 04:35:31 <aindilis> dmiles: kind of like coral growth?                                                                                                                                                                                                                                                              
+                 <aindilis> 2019-01-25 04:35:51 <dmiles> yeah where we describe how to grow coral and that                                                                                                                                                                                                                                                 
+24.02.19 13:32:24<aindilis>       is the recusion  
+24.02.19 13:32:40<aindilis> that was a perceptive analogy
+24.02.19 13:32:53<aindilis> same here with these semantic vectors
+24.02.19 13:32:57<aindilis> / 0 and all that
+24.02.19 13:33:10<dmiles> yeah each of these recursions can be thought about how they effect things in a vector/domain
+24.02.19 13:33:31* dmiles wishes he used "domain" over "vetor" intially here :
+24.02.19 13:33:34<aindilis> this is kind of like mereological topology or something
+24.02.19 13:33:42<dmiles> yes
+24.02.19 13:34:01<aindilis> hey I have to brb
+24.02.19 13:34:06<aindilis> bbiab 10
+24.02.19 13:34:28<dmiles> i have a lot i need to write out for maintly even jsut myself .. so i might write more to be written down later
+24.02.19 13:34:40<aindilis> great!  will read
+24.02.19 13:34:41<aindilis> ty!
+24.02.19 13:35:28<dmiles>  (exists ?J (and (loves ?J Mary) (eats ?J pizza1)  (knows ?J (genls Pizza Food))) surely put ?J inmto 3 diffenrt domains
+24.02.19 13:36:57<dmiles> also  Food is in context only with the intersection of ?Js mind with the system
+24.02.19 13:37:20<dmiles>  (exists (?J ?F) (and (loves ?J Mary) (eats ?J pizza1)  (knows ?J (genls Pizza ?F)))
+24.02.19 13:38:13<dmiles> we pass the SYMBOL "Food" arround 
+24.02.19 13:39:00<dmiles> but the REFERENT "Food" is what we *meant*
+24.02.19 13:39:30<dmiles> the SYMBOL "Food" is alike a function that returns a  REFERENT "Food"
+24.02.19 13:40:31<dmiles> REFERENT "Food" though in that query means somethng very  ?J specific
+24.02.19 13:40:42<dmiles> SYMBOL "Food" would be too datalossy
+24.02.19 13:41:48<dmiles> ?F's is ?J specific = intersection of ?Js mind with the system
+24.02.19 13:43:02<dmiles> we dont have to pretned we are complete enough to "realize" Js mind.. we jsut have to prevent ourselves for doing anything too silly
+24.02.19 13:43:59<dmiles> and allow for ?J  to be used consistently
+24.02.19 13:44:20<dmiles> within CYC
+24.02.19 13:44:38<dmiles> (within Circumscriptive Logic)
+24.02.19 13:45:48<dmiles> this isnt about AI wide open it is about cracking symbolic logic 
+24.02.19 13:46:23<dmiles> this isnt about crakcing AI wide open, it is about cracking symbolic logic into finnaly somethjing that isnt full of paradoxes and full of crap 
+24.02.19 13:47:22<dmiles> crap that Skolem, Godel and Löwenheim show us logic is filled with
+24.02.19 14:01:31<dmiles> [10:49] <dmiles> A paraconsistent logic is a way to reason about inconsistent information due to incompleteness without lapsing into absurdity. 
+24.02.19 14:01:32<dmiles> [10:50] <dmiles> The first paraconsistent logic was developed by Jaśkowski, a student of Lukasiewicz, in Poland in 1948. He gave some basic criteria for a paraconsistent logic:
+24.02.19 14:01:33<dmiles> [10:50] <dmiles> Jaśkowski’s idea is to prevent the inconsistent information from co-mingling. He does so, in effect, by blocking the rule of adjunction:
+                 <dmiles> [10:50] <dmiles> A, B ⊢ A & B.
+24.02.19 14:01:34<dmiles> [10:51] <dmiles> which creates a problem when SYMBOL and REFERNT are confused 
+24.02.19 14:01:35<dmiles> [10:52] <dmiles>  In dynamic logics, rules of inference change as a function of what has been derived to that point, and so some sentences which were derivable at a point in time are no longer derivable, and vice versa. The program has been developed by Dederik Batens and his school in Ghent.
+24.02.19 14:01:36<dmiles> [10:53] <dmiles> One of the first pioneers of paraconsistent logic was Newton C. A. da Costa in Brazil, in the 1950s. Da Costa’s interests have been largely in paraconsistent mathematics (with applications to physics)
+24.02.19 14:01:37<dmiles> [10:53] <dmiles>  Richard Routley and Graham Priest in Australia in the 1970s. Priest continues to be the best known 
+                 <dmiles> [10:54] <dmiles> John McCarthy Circumscription again Learning, Beliefs, and AI
+24.02.19 14:01:38<dmiles> [10:54] <dmiles> Some work has been done to apply paraconsistency to modeling cognition. The main idea here is that the limitations on machine reasoning as (apparently) dictated by Gödel’s incompleteness theorems no longer hold.
+24.02.19 14:01:39<dmiles> [10:55] <dmiles> Gödel’s incompleteness theorems no longer hold due to we created a new mathmatical language for higher order terms in CycL
+                 <dmiles> [10:56] <dmiles> higher order terms in CycL are still FORTs!
+24.02.19 14:01:40<dmiles> [10:57] <dmiles> FORT = This class implements a Cyc Fort (First Order Reified Term).
+24.02.19 14:01:41<dmiles> [10:58] <dmiles> we only reify them under REFERENT logics.. not SYMBOL logics
+                 <dmiles> [10:58] <dmiles> Though i dont go so far as to claim this is AI
+24.02.19 14:01:42<dmiles> [10:58] <dmiles> but it is a logic powerfull enough to build an AI program
+                 <dmiles> [10:59] <dmiles> a logic powerfull enough to avoid being caught up the myths 
+24.02.19 14:01:43<dmiles> [10:59] <dmiles> the myths being taught about limits of logic
+24.02.19 14:01:44<dmiles> [11:00] <dmiles> oh bloody crap! wrong room! this was for #logicmoo!
+                 <dmiles> [11:01] <dmiles> where we had been discussing REFERENT logics vs SYMBOL logics!
+24.02.19 14:07:08<dmiles> since the goal is to write a program that is qualified to be be trusted to write computer applications for us.. evne an AI program
+24.02.19 14:15:44<dmiles> btw this is the song that inspired the name of SxxMachine https://www.youtube.com/watch?v=tHlDfejCHkc
+24.02.19 14:18:01<dmiles> sorry please dont watch that.. whatch this instead https://www.youtube.com/watch?v=AcmrYhDq9ms
+24.02.19 14:21:37<dmiles> well this is for aindilis's beard:  https://youtu.be/CKJj2kvQDqo?t=133
+24.02.19 20:52:36<aindilis> ping
+25.02.19 03:30:39*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+25.02.19 04:25:34*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+25.02.19 12:03:00<aindilis> ping
+25.02.19 15:20:20*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj, stoopkid: stoopkid)
+25.02.19 16:04:10*** Join: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+25.02.19 16:07:38*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 244 seconds
+25.02.19 17:10:12*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+25.02.19 17:11:55*** Join: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, (unauthenticated): Andrew Dougherty)
+25.02.19 17:23:30*** Quit: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+25.02.19 17:23:55*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+25.02.19 19:01:34<aindilis> ping
+25.02.19 19:15:05<logicmoo> pong 
+25.02.19 19:15:11*** Nick change: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) is now known as dmiles
+26.02.19 01:22:00<egp_> <dmiles> well this is for aindilis's beard:  https://youtu.be/CKJj2kvQDqo?t=133 --- this musician plays distantly like the pyotr mamonov's music
+26.02.19 01:22:28<egp_> mamonov doesn't have such an instrument though =)
+26.02.19 01:30:18<egp_> for searching on youtube: пётр мамонов звуки му
+26.02.19 01:36:15<dmiles> wow mamonov is so awesome i cant belive i missed him all those years
+26.02.19 01:37:06<dmiles> oh, i do recognise "Can Opener"
+26.02.19 01:38:10<dmiles> this one: https://www.youtube.com/watch?v=Hol9q9GhonM
+26.02.19 01:39:34<dmiles> i just always thought it was german
+26.02.19 01:40:22<dmiles> damn i love his music 
+26.02.19 01:44:28<egp_> dmiles, mamonov has an education in the area of pantomime
+26.02.19 01:45:20<dmiles> hah like: https://youtu.be/ngtA6cncdSo?list=RDEMUaYznTJ2xsNVUZYcl5HYtg&t=223
+26.02.19 01:49:47<egp_> гадопятикна is mamonov's neologism. гад is bad guy, пятна is spots
+26.02.19 01:50:13<egp_> it is unknown what his word means as a whole
+26.02.19 01:51:01<egp_> this sone is from Crimea (крым) album afair
+26.02.19 01:51:03<egp_> song
+26.02.19 01:53:53<egp_> another meaning for гад is snake-like
+26.02.19 01:55:24<egp_> he has a joint album with some famous western guy as a producer, forgot his name
+26.02.19 01:56:37<egp_> found his(?) youtube channel https://www.youtube.com/channel/UCwdRFvoiksaXhR3ggnqiAhQ
+26.02.19 01:56:44<egp_> mamonov's
+26.02.19 01:58:18<egp_> rutracker.org seems to host a mamonov/zvuki mu discography
+26.02.19 01:58:23<egp_> mu/moo
+26.02.19 02:09:02*** Quit: jbalint (~jbalint@unaffiliated/jbalint) left #logicmoo: Ping timeout: 244 seconds
+26.02.19 02:10:32*** Join: jbalint (~jbalint@71-90-85-113.dhcp.ftbg.wi.charter.com, (unauthenticated): Jess Balint)
+                 *** Quit: jbalint (~jbalint@71-90-85-113.dhcp.ftbg.wi.charter.com) left #logicmoo: Changing host
+                 *** Join: jbalint (~jbalint@unaffiliated/jbalint, jbalint: Jess Balint)
+26.02.19 04:29:32*** Connecting...
+26.02.19 04:29:56*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+26.02.19 04:29:57*** Topic for #logicmoo: http://www.logicmoo.org | https://docs.google.com/document/d/1XCDnWMjNh4y2Um_1B-HE4x5Q34oxHRxBl-Oy9eNUzTI/edit#  https://drive.google.com/drive/folders/0B0QA19UX0ehlV1ZEaXEzc3hjTWM   http://www.csee.umbc.edu/~finin/prolog/pfc/man/pfc.pdf
+                 *** Topic set by dmiles on Mon May 28 20:31:51 2018, 9 months 3 days 8 hours 58 minutes 6 seconds ago
+                 *** Names: ditable-doge jbalint aindilis dmiles stoopkid egp_ Copenhagen_Bram PrologMUD yesbot michalisko @ChanServ CoderForLife
+                 *** End of /NAMES list.
+26.02.19 04:30:41*** Nick change: You are now known as editable-dog
+26.02.19 05:13:50*** Quit: jbalint (~jbalint@unaffiliated/jbalint) left #logicmoo: Ping timeout: 255 seconds
+26.02.19 07:27:32*** Connecting...
 #logicmoo> 

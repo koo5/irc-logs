@@ -4067,4 +4067,549 @@
 15.02.19 18:05:06<Poka> also reading.. random draft IETF specs.. https://datatracker.ietf.org/person/Phillip%20Hallam-Baker .. great diversions in there about NSA and 'faked moon landings'
 16.02.19 02:06:31*** Quit: AAA_awright_ (~aaa@2607:5300:60:7d4::1) left #swig: Ping timeout: 250 seconds
 16.02.19 02:37:04*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:207d:bd02:6d4e:a031, semanticfire: Bart van Leeuwen)
+16.02.19 10:40:12*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Ping timeout: 268 seconds
+16.02.19 11:56:49*** Join: sivoais (~zaki@unaffiliated/sivoais, sivoais: Zaki Mughal (enetdown.org))
+16.02.19 14:34:01*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:207d:bd02:6d4e:a031) left #swig: Ping timeout: 250 seconds
+16.02.19 17:58:57*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #swig: Remote host closed the connection
+16.02.19 18:06:20*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+16.02.19 19:37:58*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+17.02.19 04:08:40*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:207d:bd02:6d4e:a031, semanticfire: Bart van Leeuwen)
+17.02.19 04:14:24*** Join: koma5 (~marco@souffle.byteli.net, koma5: marco)
+17.02.19 08:01:42*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Ping timeout: 255 seconds
+17.02.19 08:19:14*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+17.02.19 11:15:48*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:207d:bd02:6d4e:a031) left #swig: Ping timeout: 268 seconds
+17.02.19 11:28:06*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+17.02.19 13:02:35*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Read error: Connection reset by peer
+17.02.19 15:26:00*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+17.02.19 15:46:47*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Ping timeout: 250 seconds
+17.02.19 15:52:22*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 02:11:45*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 02:27:37*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 02:28:05*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 02:28:30*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 02:28:56*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 02:31:12*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 02:32:31*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 03:00:03*** Join: Semanticfire (~Semanticf@bluelink.nl, semanticfire: Bart van Leeuwen)
+18.02.19 03:03:09*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 03:23:28*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Ping timeout: 258 seconds
+18.02.19 03:25:44*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 03:30:45*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Ping timeout: 268 seconds
+18.02.19 03:40:15*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 04:15:14*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 04:21:09*** Join: aindilis (~aindilis@172.12.3.117, aindilis: Andrew Dougherty)
+18.02.19 04:55:49*** Join: shellac (~textual@2001:630:e4:1402:f07e:1f1b:2d61:6adb, shellac: Textual User)
+18.02.19 05:02:16*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 05:02:54*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 05:05:47*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 05:06:07*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 06:12:48*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+18.02.19 06:26:56*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Remote host closed the connection
+18.02.19 06:27:09*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+18.02.19 06:44:18*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 06:44:57*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 06:48:14*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 06:48:32*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 07:19:38*** Quit: shellac (~textual@2001:630:e4:1402:f07e:1f1b:2d61:6adb) left #swig: Quit: Computer has gone to sleep.
+18.02.19 07:42:41*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 244 seconds
+18.02.19 08:26:26*** Join: shellac (~textual@2001:630:e4:1402:bd7a:779:de82:9098, shellac: Textual User)
+18.02.19 09:00:14*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 09:17:25*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 09:49:18*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+18.02.19 09:51:33*** Quit: libby (~libby@unaffiliated/libby) left #swig: Client Quit
+18.02.19 09:55:33*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 09:56:07*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 10:30:54*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+18.02.19 10:31:53*** Join: mischat__ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 10:35:35*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+18.02.19 10:45:39*** Quit: mischat__ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 10:46:17*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 11:36:57*** Quit: aindilis (~aindilis@172.12.3.117) left #swig: Ping timeout: 246 seconds
+18.02.19 11:40:06*** Quit: Semanticfire (~Semanticf@bluelink.nl) left #swig: Ping timeout: 246 seconds
+18.02.19 11:46:27*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+18.02.19 11:53:36*** Quit: libby (~libby@unaffiliated/libby) left #swig: Remote host closed the connection
+18.02.19 12:38:21*** Quit: shellac (~textual@2001:630:e4:1402:bd7a:779:de82:9098) left #swig: Ping timeout: 268 seconds
+18.02.19 12:56:58*** Join: mischat__ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 12:59:35*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+18.02.19 13:01:43*** Quit: mischat__ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+18.02.19 14:26:57*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+18.02.19 14:28:37*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 14:32:11*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 15:03:16*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 15:07:27*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 240 seconds
+18.02.19 15:27:58*** Quit: klip (tomas@klapka.cz) left #swig: Ping timeout: 245 seconds
+18.02.19 15:31:10*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 15:33:33*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 15:34:06*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 15:36:07*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 15:36:43*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 16:11:57*** Join: klip (tomas@klapka.cz, klip: Tomáš Klapka)
+18.02.19 16:51:27*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+18.02.19 16:53:39*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Ping timeout: 268 seconds
+18.02.19 17:02:16*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Remote host closed the connection
+18.02.19 18:01:38*** Join: monokrome (~monokrome@206.189.221.66, _monokrome: Bailey Stoner)
+18.02.19 19:45:29*** Quit: sivoais (~zaki@unaffiliated/sivoais) left #swig: Ping timeout: 255 seconds
+18.02.19 19:48:47*** Join: sivoais (~zaki@unaffiliated/sivoais, sivoais: Zaki Mughal (enetdown.org))
+18.02.19 21:49:47*** Quit: Madars (~null@unaffiliated/madars) left #swig: Read error: Connection reset by peer
+18.02.19 22:10:48*** Join: Madars (~null@unaffiliated/madars, Madars: Madars)
+18.02.19 23:05:09*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+18.02.19 23:09:34*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+19.02.19 00:59:48*** Join: zopsi (zopsi@2600:3c00::f03c:91ff:fe14:551f, Zopsi: zopsi)
+19.02.19 02:52:10*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+19.02.19 03:42:00*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331, mischat: mischat)
+19.02.19 03:46:27*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:b1a4:23d4:bf56:5331) left #swig: Ping timeout: 252 seconds
+19.02.19 04:30:02*** Join: shellac (~textual@2001:630:e4:1402:a839:505:f84e:f3e5, shellac: Textual User)
+19.02.19 06:01:44*** Join: bblfish (~bblfish@x5f751694.dyn.telefonica.de, bblfish: bblfish)
+19.02.19 06:01:51*** Quit: bblfish (~bblfish@x5f751694.dyn.telefonica.de) left #swig: Read error: Connection reset by peer
+19.02.19 06:19:26*** Join: bblfish (~textual@x5f751694.dyn.telefonica.de, bblfish: Textual User)
+19.02.19 06:53:35*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+19.02.19 07:16:33*** Join: mischat (~mischat@92.40.248.62.threembb.co.uk, mischat: mischat)
+19.02.19 07:24:18*** Quit: shellac (~textual@2001:630:e4:1402:a839:505:f84e:f3e5) left #swig: Quit: ["Textual IRC Client: www.textualapp.com"]
+19.02.19 07:26:31*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+19.02.19 07:31:12*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+19.02.19 07:31:13*** Join: shellac (~textual@2001:630:e4:1402:5c2:fc94:4146:27a7, shellac: Textual User)
+19.02.19 07:34:04*** Quit: bblfish (~textual@x5f751694.dyn.telefonica.de) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+19.02.19 07:36:39*** Quit: shellac (~textual@2001:630:e4:1402:5c2:fc94:4146:27a7) left #swig: Quit: Computer has gone to sleep.
+19.02.19 07:37:57*** Join: shellac (~textual@it025253.wks.bris.ac.uk, shellac: Textual User)
+19.02.19 07:39:35*** Quit: shellac (~textual@it025253.wks.bris.ac.uk) left #swig: Client Quit
+19.02.19 07:47:30*** Quit: mischat (~mischat@92.40.248.62.threembb.co.uk) left #swig: Remote host closed the connection
+19.02.19 08:12:05*** Join: shellac (~textual@2001:630:e4:1402:5414:d04d:c5ae:36a, shellac: Textual User)
+19.02.19 08:33:50*** Join: bblfish (~textual@x5f751694.dyn.telefonica.de, bblfish: Textual User)
+19.02.19 08:34:35*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+19.02.19 08:51:57*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+19.02.19 08:52:27*** Quit: shellac (~textual@2001:630:e4:1402:5414:d04d:c5ae:36a) left #swig: Ping timeout: 250 seconds
+19.02.19 09:32:32*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+19.02.19 09:33:09*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+19.02.19 10:49:00*** Join: TallTed (~Thud@c-73-60-151-137.hsd1.ma.comcast.net, TedThibodeauJr: That Guy There)
+19.02.19 11:22:51*** Join: shellac (~textual@2001:630:e4:1402:28d6:b29:eb53:f4be, shellac: Textual User)
+19.02.19 11:36:11*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+19.02.19 12:07:15*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+19.02.19 12:10:10*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+19.02.19 12:10:27*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+19.02.19 12:10:28*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+19.02.19 12:25:50*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+19.02.19 12:27:57*** Join: mischat (~mischat@97e1b223.skybroadband.com, mischat: mischat)
+19.02.19 12:32:35*** Quit: mischat (~mischat@97e1b223.skybroadband.com) left #swig: Ping timeout: 255 seconds
+19.02.19 12:32:46*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 272 seconds
+19.02.19 12:39:24*** Quit: shellac (~textual@2001:630:e4:1402:28d6:b29:eb53:f4be) left #swig: Ping timeout: 252 seconds
+19.02.19 12:47:05*** Quit: bblfish (~textual@x5f751694.dyn.telefonica.de) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+19.02.19 13:02:45*** Quit: TallTed (~Thud@c-73-60-151-137.hsd1.ma.comcast.net) left #swig: 
+19.02.19 13:20:07*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #swig: Ping timeout: 258 seconds
+19.02.19 13:59:03*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+19.02.19 14:05:17*** Quit: zopsi (zopsi@2600:3c00::f03c:91ff:fe14:551f) left #swig: Quit: Oops
+19.02.19 14:25:20* dbs still trying to understand a vocab decision to use a literal form of a URI when it is used as an identifier, rather than as a URI
+19.02.19 14:26:27<dbs> https://listserv.loc.gov/cgi-bin/wa?A2=ind1902&L=BIBFRAME&D=0&P=4599 for context
+19.02.19 14:28:41<dbs> This seems to violate principle #1 of linked data. (also the blank node makes me wince)
+19.02.19 15:14:30<Poka> the URL makes me wince, if it's for a vocab
+19.02.19 15:14:57<Poka> oh worldcat. that's OCLC. the folks behind the semibroken PURL/DC redirect-fest
+19.02.19 15:15:07<Poka> and 'slash URIs' rather than anchors within a vocab doc
+19.02.19 15:16:49<Poka> yea why is it not bf:identifiedBy <http://worldcat.org/entity/work/id/638612>
+19.02.19 15:17:03<Poka> definitely a chance they don't understand RDF syntax and general concepts fully
+19.02.19 15:18:52<Poka> i have used string identifiers, with the DC:identifier predicate, for emails, since you can't resolve a message-ID directly. prob should change that to mid: URI-scheme using some draft RFC recommendations and then implement mid: resolution as a browser plugin? or some type-prefixed hash IPLD-y method?
+19.02.19 15:19:48<Poka> whatever their ideas are for philsophical purity, doing what theyre doing is goign to be  alot more complicated for data consumers. they probably should stop. Schema.org even uses "slash URIs" and the world hasnt come to an end. Tim even said slash URis are "livable" over on the gitter
+19.02.19 15:30:24*** Join: gkellogg_ (~gkellogg@unaffiliated/gkellogg, gkellogg: Gregg Kellogg)
+19.02.19 15:58:56*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 15:59:11<csarven> dbs Poka Probably of interest: https://www.w3.org/DesignIssues/QuotingURIs.html
+19.02.19 16:02:15*** Join: mischat_ (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 16:02:23*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Remote host closed the connection
+19.02.19 16:03:26*** Join: bblfish (~textual@x5f751694.dyn.telefonica.de, bblfish: Textual User)
+19.02.19 16:05:47*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Ping timeout: 250 seconds
+19.02.19 16:17:23*** Quit: gkellogg_ (~gkellogg@unaffiliated/gkellogg) left #swig: Quit: gkellogg_
+19.02.19 16:30:07*** Join: gkellogg_ (~gkellogg@unaffiliated/gkellogg, gkellogg: Gregg Kellogg)
+19.02.19 16:43:10*** Quit: gkellogg_ (~gkellogg@unaffiliated/gkellogg) left #swig: Quit: gkellogg_
+19.02.19 18:09:25<dbs> csarven: THANK YOU
+19.02.19 18:09:54<dbs> Poka: thanks for your thoughts too
+19.02.19 18:11:00* dbs will suggest that the bf:identifiedBy docs, or some design documentation, link to that design note
+19.02.19 18:14:02<dbs> But... I think the design note meant "whenever it is used as a symbol, https://uni.edu/students#JRMeadow is replaced with https://example.com/people#Joe"
+19.02.19 18:14:38<dbs> and in the "smushed onto one symbol" example, the final triple should be "<https://example.com/people#Joe>   contact:preferredURI <https://example.com/people#Joe>"
+19.02.19 18:50:23*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+19.02.19 18:54:49*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 244 seconds
+19.02.19 18:59:38*** Quit: bblfish (~textual@x5f751694.dyn.telefonica.de) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+19.02.19 19:16:00*** Quit: mischat_ (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Remote host closed the connection
+19.02.19 19:16:38*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 19:21:15*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 252 seconds
+19.02.19 19:48:37*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 20:21:01*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 258 seconds
+19.02.19 20:55:04*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 21:08:20*** Quit: jadesoturi (~jadesotur@unaffiliated/kfj) left #swig: Read error: Connection reset by peer
+19.02.19 21:08:31*** Join: jadesoturi (~jadesotur@unaffiliated/kfj, kFj: jadesoturi)
+19.02.19 21:22:33*** Quit: sebbu (~sebbu@unaffiliated/sebbu) left #swig: Ping timeout: 245 seconds
+19.02.19 21:27:43*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 258 seconds
+19.02.19 21:30:26*** Join: sebbu (~sebbu@unaffiliated/sebbu, sebbu: sebbu)
+19.02.19 21:55:21*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 21:57:40*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+19.02.19 22:01:51*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 244 seconds
+19.02.19 22:27:42*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 252 seconds
+19.02.19 23:04:13*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+19.02.19 23:37:40*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 258 seconds
+20.02.19 00:09:56*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+20.02.19 00:42:27*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 258 seconds
+20.02.19 01:14:33*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+20.02.19 01:47:46*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Ping timeout: 250 seconds
+20.02.19 02:02:24*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+20.02.19 02:12:01*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57, mischat: mischat)
+20.02.19 03:19:57*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:83a:927d:c138:1a57) left #swig: Remote host closed the connection
+20.02.19 03:34:55*** Join: bblfish (~textual@x5f725635.dyn.telefonica.de, bblfish: Textual User)
+20.02.19 03:35:22*** Quit: bblfish (~textual@x5f725635.dyn.telefonica.de) left #swig: Client Quit
+20.02.19 03:52:12*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 03:57:20*** Quit: libby (~libby@unaffiliated/libby) left #swig: Read error: Connection reset by peer
+20.02.19 04:53:38*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 05:37:48*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 05:38:30*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 05:38:48*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 05:39:21*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 05:40:47*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 240 seconds
+20.02.19 05:55:06*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 05:59:40*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 05:59:51*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 06:00:57*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 06:01:31*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 06:02:09*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+20.02.19 06:04:08*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 06:18:01*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 06:18:49*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 06:24:02*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+20.02.19 06:50:16*** Join: shellac (~textual@2001:630:e4:1402:3d03:8c20:479f:768f, shellac: Textual User)
+20.02.19 06:57:05*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 07:01:34*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 268 seconds
+20.02.19 07:12:04*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 07:16:36*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+20.02.19 07:42:54*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 07:49:11*** Quit: shellac (~textual@2001:630:e4:1402:3d03:8c20:479f:768f) left #swig: Quit: Computer has gone to sleep.
+20.02.19 08:04:12*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 08:22:33*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 08:22:50*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 08:36:19*** Join: shellac (~textual@2001:630:e4:1402:b9c5:9845:811b:78aa, shellac: Textual User)
+20.02.19 08:54:07*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 08:56:53*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 268 seconds
+20.02.19 08:56:59*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 244 seconds
+20.02.19 08:58:17<earldouglas> Is there a standard/commonly-used ontology for web pages?  Sort of like FOAF, but for HTML pages and links as nodes and edges?
+20.02.19 08:58:33*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+20.02.19 09:01:23<csarven> earldouglas: schema.org
+20.02.19 09:01:26<csarven> dcterms
+20.02.19 09:41:01*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 09:43:57*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 09:59:09*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+20.02.19 10:12:36*** Join: mischat_ (~mischat@92.40.248.179.threembb.co.uk, mischat: mischat)
+20.02.19 10:15:33*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+20.02.19 10:19:58*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 10:22:56*** Quit: mischat_ (~mischat@92.40.248.179.threembb.co.uk) left #swig: Ping timeout: 250 seconds
+20.02.19 10:30:03*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 10:52:28*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+20.02.19 10:59:15*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 11:39:40<earldouglas> csarven: Awesome; thanks!
+20.02.19 12:12:01*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+20.02.19 12:17:48*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 12:18:06*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 12:21:02*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+20.02.19 12:21:38*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+20.02.19 12:24:27*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 12:33:52*** Quit: shellac (~textual@2001:630:e4:1402:b9c5:9845:811b:78aa) left #swig: Ping timeout: 268 seconds
+20.02.19 12:35:45*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: 
+20.02.19 12:36:12*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+20.02.19 12:50:18*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+20.02.19 12:55:53*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 245 seconds
+20.02.19 15:53:13*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Quit: Ik ga weg
+20.02.19 15:53:23*** Join: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:48a0:d2a0:d6ae:b3e5, semanticfire: Bart van Leeuwen)
+20.02.19 17:23:15*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Remote host closed the connection
+20.02.19 17:24:22*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+20.02.19 17:30:29*** Quit: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:48a0:d2a0:d6ae:b3e5) left #swig: Ping timeout: 268 seconds
+20.02.19 17:52:17*** Join: mischat (~mischat@2a02:c7f:c01b:ef00:21e2:20a5:9f7:6565, mischat: mischat)
+20.02.19 17:53:53*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Read error: Connection reset by peer
+20.02.19 18:10:31*** Quit: mischat (~mischat@2a02:c7f:c01b:ef00:21e2:20a5:9f7:6565) left #swig: Remote host closed the connection
+20.02.19 19:25:21*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+21.02.19 01:20:31*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Ping timeout: 256 seconds
+21.02.19 02:50:18*** Join: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:48a0:d2a0:d6ae:b3e5, semanticfire: Bart van Leeuwen)
+21.02.19 06:25:31*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 07:07:57*** Quit: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:48a0:d2a0:d6ae:b3e5) left #swig: Ping timeout: 250 seconds
+21.02.19 07:34:01*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+21.02.19 07:34:44*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 07:39:38*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+21.02.19 07:43:48*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 07:48:13*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+21.02.19 07:52:48*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 07:53:21*** Join: Semanticfire_2 (~Semanticf@62.140.132.63, semanticfire: Bart van Leeuwen)
+21.02.19 08:08:35*** Quit: Semanticfire_2 (~Semanticf@62.140.132.63) left #swig: Ping timeout: 250 seconds
+21.02.19 08:36:02*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 08:39:32*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 268 seconds
+21.02.19 08:39:44*** Join: Semanticfire_2 (~Semanticf@145.118.84.35, semanticfire: Bart van Leeuwen)
+21.02.19 08:53:04*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+21.02.19 08:57:16*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 09:01:12*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+21.02.19 09:01:32*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+21.02.19 09:01:58*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Remote host closed the connection
+21.02.19 09:57:28*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+21.02.19 09:58:38*** Quit: Semanticfire_2 (~Semanticf@145.118.84.35) left #swig: Ping timeout: 272 seconds
+21.02.19 10:13:36*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 10:17:39*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+21.02.19 10:20:11*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 10:54:25*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Remote host closed the connection
+21.02.19 10:57:53*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+21.02.19 11:08:03*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+21.02.19 11:08:52*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+21.02.19 11:08:54*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+21.02.19 11:34:12*** Join: Semanticfire_2 (~Semanticf@62.140.132.86, semanticfire: Bart van Leeuwen)
+21.02.19 11:45:02*** Quit: Semanticfire_2 (~Semanticf@62.140.132.86) left #swig: Ping timeout: 258 seconds
+21.02.19 12:09:39*** Quit: LotR (~martijn@li60-27.members.linode.com) left #swig: Ping timeout: 244 seconds
+21.02.19 12:13:41*** Join: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+21.02.19 14:33:17*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Ping timeout: 256 seconds
+21.02.19 15:02:37*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+21.02.19 15:35:01*** Join: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2, mischat: mischat)
+21.02.19 16:08:54*** Quit: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Ping timeout: 264 seconds
+21.02.19 17:23:54*** Quit: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2) left #swig: Read error: Connection reset by peer
+22.02.19 00:02:13*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Ping timeout: 256 seconds
+22.02.19 00:17:45*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+22.02.19 02:05:01*** Join: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2, mischat: mischat)
+22.02.19 02:48:04*** Join: Semanticfire_2 (~Semanticf@bluelink.nl, semanticfire: Bart van Leeuwen)
+22.02.19 02:59:07*** Quit: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2) left #swig: Remote host closed the connection
+22.02.19 03:49:41*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #swig: Ping timeout: 255 seconds
+22.02.19 04:04:44*** Join: shellac (~textual@it025253.wks.bris.ac.uk, shellac: Textual User)
+22.02.19 04:17:50*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+22.02.19 04:41:28*** Join: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2, mischat: mischat)
+22.02.19 04:58:53*** Quit: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2) left #swig: Ping timeout: 258 seconds
+22.02.19 05:04:18*** Join: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2, mischat: mischat)
+22.02.19 05:11:54*** Quit: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2) left #swig: Ping timeout: 264 seconds
+22.02.19 05:35:49*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 07:13:17*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: 
+22.02.19 07:22:51*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 07:33:51*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Ping timeout: 256 seconds
+22.02.19 07:43:20*** Quit: shellac (~textual@it025253.wks.bris.ac.uk) left #swig: Quit: Computer has gone to sleep.
+22.02.19 08:10:56*** Join: shellac (~textual@it025253.wks.bris.ac.uk, shellac: Textual User)
+22.02.19 08:33:11*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 08:35:47*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 240 seconds
+22.02.19 08:38:31*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+22.02.19 08:53:23*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+22.02.19 09:38:08*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 09:52:19*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 09:55:02*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 272 seconds
+22.02.19 09:56:49*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 244 seconds
+22.02.19 10:19:41*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 10:24:15*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+22.02.19 10:24:34*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 10:25:52*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 10:29:19*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 259 seconds
+22.02.19 10:46:51*** Quit: Semanticfire_2 (~Semanticf@bluelink.nl) left #swig: Ping timeout: 246 seconds
+22.02.19 11:34:27*** Quit: shellac (~textual@it025253.wks.bris.ac.uk) left #swig: Ping timeout: 240 seconds
+22.02.19 11:47:40*** Join: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+22.02.19 11:58:11*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+22.02.19 11:58:49*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 12:02:58*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+22.02.19 12:51:55*** Quit: pointfree (sid204397@gateway/web/irccloud.com/x-fnwvlaqahvgbzddn) left #swig: Excess Flood
+22.02.19 12:52:51*** Join: pointfree (sid204397@gateway/web/irccloud.com/x-winrqbmljgljqxst, pointfree: Andreas Wagner)
+22.02.19 13:15:29*** Join: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2, mischat: mischat)
+22.02.19 13:20:28*** Quit: mischat (~mischat@2a02:c7f:c011:e600:8c27:87f8:a0ee:13e2) left #swig: Ping timeout: 264 seconds
+22.02.19 13:25:44*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Read error: Connection reset by peer
+22.02.19 13:34:01*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+22.02.19 13:51:27*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 13:55:53*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 245 seconds
+22.02.19 14:55:08*** Join: Malvolio (~Malvolio@unaffiliated/malvolio, Malvolio: Malvolio)
+22.02.19 15:24:57*** Quit: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Ping timeout: 250 seconds
+22.02.19 15:39:59*** Join: mro_name (~mro0@port-92-195-142-190.dynamic.qsc.de, mro0: mro0)
+22.02.19 16:16:41*** Join: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0, mischat: mischat)
+22.02.19 17:37:47*** Quit: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0) left #swig: 
+22.02.19 17:38:10*** Join: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0, mischat: mischat)
+22.02.19 18:14:22*** Quit: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0) left #swig: Remote host closed the connection
+22.02.19 18:15:01*** Join: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0, mischat: mischat)
+22.02.19 18:19:17*** Quit: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0) left #swig: Ping timeout: 259 seconds
+22.02.19 18:24:36*** Quit: mro_name (~mro0@port-92-195-142-190.dynamic.qsc.de) left #swig: Quit: WeeChat 2.3
+22.02.19 19:21:01*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 19:25:12*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 246 seconds
+22.02.19 20:16:32*** Join: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0, mischat: mischat)
+22.02.19 20:21:27*** Quit: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0) left #swig: Ping timeout: 252 seconds
+22.02.19 23:42:32*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+22.02.19 23:46:43*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 245 seconds
+23.02.19 02:14:14*** Join: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0, mischat: mischat)
+23.02.19 02:40:39*** Quit: jadesoturi (~jadesotur@unaffiliated/kfj) left #swig: Excess Flood
+23.02.19 02:40:42*** Quit: sivoais (~zaki@unaffiliated/sivoais) left #swig: Write error: Broken pipe
+23.02.19 02:40:49*** Join: jadesoturi_ (~jadesotur@unaffiliated/kfj, kFj: jadesoturi)
+23.02.19 02:44:53*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Ping timeout: 255 seconds
+23.02.19 02:50:42*** Quit: mischat (~mischat@2a02:c7f:c011:e600:b0fc:223e:d29b:5ff0) left #swig: 
+23.02.19 03:31:22*** Join: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa, semanticfire: Bart van Leeuwen)
+23.02.19 04:17:33*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 04:35:14*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+23.02.19 05:55:42*** Quit: Semanticfire_2 (~Semanticf@2001:984:fe7e:1:f8c9:8374:6f1b:11aa) left #swig: Ping timeout: 264 seconds
+23.02.19 06:34:16*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 07:25:45*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+23.02.19 07:25:55*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:75b3:a495:a034:fea, semanticfire: Bart van Leeuwen)
+23.02.19 08:23:41*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+23.02.19 11:15:49*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Remote host closed the connection
+23.02.19 13:42:09*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+23.02.19 14:46:17*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 15:17:59*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:75b3:a495:a034:fea) left #swig: Ping timeout: 250 seconds
+23.02.19 15:30:14*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535, semanticfire: Bart van Leeuwen)
+23.02.19 16:06:57*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535) left #swig: Ping timeout: 250 seconds
+23.02.19 16:31:13*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+23.02.19 16:36:28*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 19:08:09*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+23.02.19 19:33:51*** Join: sec0nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+23.02.19 19:35:07*** Quit: sec^nd (~second@gateway/tor-sasl/sec0nd) left #swig: Ping timeout: 256 seconds
+23.02.19 19:38:49*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 20:12:33*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 257 seconds
+23.02.19 20:42:20*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 21:15:49*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 252 seconds
+23.02.19 22:13:08*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+23.02.19 22:45:30*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 258 seconds
+23.02.19 23:42:54*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 00:16:16*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 264 seconds
+24.02.19 01:13:42*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 01:45:54*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+24.02.19 01:46:13*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 03:15:12*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535, semanticfire: Bart van Leeuwen)
+24.02.19 03:36:30*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Read error: Connection reset by peer
+24.02.19 03:38:04*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+24.02.19 04:00:57*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+24.02.19 04:18:46*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 04:27:05*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 250 seconds
+24.02.19 04:29:27*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535) left #swig: Ping timeout: 268 seconds
+24.02.19 04:36:16*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535, semanticfire: Bart van Leeuwen)
+24.02.19 04:44:18*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535) left #swig: Ping timeout: 264 seconds
+24.02.19 11:11:55*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 11:14:18*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+24.02.19 12:39:13*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 12:44:21*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 250 seconds
+24.02.19 12:56:04*** Join: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398, a_chou: Andrew Chou)
+24.02.19 12:56:05*** Quit: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398) left #swig: Remote host closed the connection
+24.02.19 12:56:41*** Join: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398, a_chou: Andrew Chou)
+24.02.19 12:57:42*** Quit: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398) left #swig: Client Quit
+24.02.19 12:58:15*** Join: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398, a_chou: Andrew Chou)
+24.02.19 12:58:23*** Quit: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398) left #swig: Client Quit
+24.02.19 12:59:13*** Join: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398, a_chou: Andrew Chou)
+24.02.19 13:20:06*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 13:27:10*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 258 seconds
+24.02.19 13:31:23*** Quit: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398) left #swig: Ping timeout: 258 seconds
+24.02.19 13:41:54*** Join: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398, a_chou: Andrew Chou)
+24.02.19 13:51:15*** Quit: a_chou (~Thunderbi@2601:182:c900:6874:3921:ed1e:dd4:a398) left #swig: Quit: a_chou
+24.02.19 15:10:03*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 15:28:23*** Join: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535, semanticfire: Bart van Leeuwen)
+24.02.19 15:59:33*** Quit: Semanticfire (~Semanticf@2001:984:fe7e:1:c80f:3f7e:df00:9535) left #swig: Ping timeout: 250 seconds
+24.02.19 17:28:07*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+24.02.19 17:28:55*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 17:44:06*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Remote host closed the connection
+24.02.19 17:45:14*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 17:50:08*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 258 seconds
+24.02.19 18:24:14*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 18:29:18*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 264 seconds
+24.02.19 20:00:05*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 20:04:41*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 258 seconds
+24.02.19 20:51:16*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 20:55:54*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 252 seconds
+24.02.19 21:00:08*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 21:10:45*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 252 seconds
+24.02.19 21:13:56*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 21:18:40*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 258 seconds
+24.02.19 21:26:48*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 21:39:30*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 264 seconds
+24.02.19 21:48:49*** Join: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0, mischat: mischat)
+24.02.19 21:53:10*** Quit: mischat (~mischat@2a02:c7f:c011:e600:7434:ade0:602d:9fc0) left #swig: Ping timeout: 258 seconds
+25.02.19 03:09:52*** Join: Semanticfire (~Semanticf@095-096-149-061.static.chello.nl, semanticfire: Bart van Leeuwen)
+25.02.19 04:32:43*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+25.02.19 04:39:56*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 268 seconds
+25.02.19 04:42:36*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 04:43:56*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+25.02.19 04:43:58*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 04:44:15*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 04:50:44*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: 
+25.02.19 04:51:05*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:00:39*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:04:17*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+25.02.19 05:05:44*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+25.02.19 05:08:55*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:16:30*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 05:17:08*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:18:22*** Quit: jadesoturi_ (~jadesotur@unaffiliated/kfj) left #swig: Remote host closed the connection
+25.02.19 05:21:29*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+25.02.19 05:34:55*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:40:48*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 05:41:24*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:45:44*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 05:46:11*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 06:09:37*** Join: shellac (~textual@2001:630:e4:1402:606d:41f:bc8f:5d9e, shellac: Textual User)
+25.02.19 06:21:26*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 06:22:07*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 06:26:01*** Join: jadesoturi (~jadesotur@unaffiliated/kfj, kFj: jadesoturi)
+25.02.19 06:26:38*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 272 seconds
+25.02.19 06:28:27*** Quit: Semanticfire (~Semanticf@095-096-149-061.static.chello.nl) left #swig: Ping timeout: 240 seconds
+25.02.19 06:41:54*** Join: Semanticfire (~Semanticf@136-144-155-46.colo.transip.net, semanticfire: Bart van Leeuwen)
+25.02.19 06:44:14*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 07:29:15*** Quit: shellac (~textual@2001:630:e4:1402:606d:41f:bc8f:5d9e) left #swig: Quit: Computer has gone to sleep.
+25.02.19 08:10:27*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+25.02.19 08:23:49*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 08:26:46*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 244 seconds
+25.02.19 08:27:22*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 08:27:56*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 08:28:29*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 08:32:25*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 268 seconds
+25.02.19 08:36:14*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+25.02.19 08:39:29*** Join: shellac (~textual@2001:630:e4:1402:bdc9:93ab:cdbb:9d2c, shellac: Textual User)
+25.02.19 08:54:42*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+25.02.19 08:56:59*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+25.02.19 09:06:29*** Quit: Semanticfire (~Semanticf@136-144-155-46.colo.transip.net) left #swig: Ping timeout: 255 seconds
+25.02.19 09:25:34*** Join: Semanticfire (~Semanticf@136-144-155-46.colo.transip.net, semanticfire: Bart van Leeuwen)
+25.02.19 10:00:28*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 10:01:21*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 10:07:10*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+25.02.19 10:18:30*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+25.02.19 10:19:19*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 10:19:46*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+25.02.19 10:21:11*** Quit: jadesoturi (~jadesotur@unaffiliated/kfj) left #swig: Quit: Even death needs to sleep sometimes...
+25.02.19 10:21:35*** Join: jadesoturi (~jadesotur@unaffiliated/kfj, kFj: jadesoturi)
+25.02.19 11:23:39*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 11:26:47*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 240 seconds
+25.02.19 11:28:14*** Quit: Semanticfire (~Semanticf@136-144-155-46.colo.transip.net) left #swig: Ping timeout: 255 seconds
+25.02.19 12:10:24*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+25.02.19 12:11:03*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+25.02.19 12:13:10*** Quit: libby (~libby@unaffiliated/libby) left #swig: Quit: My MacBook has gone to sleep. ZZZzzz…
+25.02.19 12:16:23*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+25.02.19 12:17:17*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 255 seconds
+25.02.19 12:34:07*** Quit: shellac (~textual@2001:630:e4:1402:bdc9:93ab:cdbb:9d2c) left #swig: Ping timeout: 250 seconds
+25.02.19 12:54:27*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 240 seconds
+25.02.19 13:03:02*** Join: mischat (~mischat@2a02:c7f:c011:e600:e8e5:5daf:8f34:ec28, mischat: mischat)
+25.02.19 13:24:48*** Quit: mischat (~mischat@2a02:c7f:c011:e600:e8e5:5daf:8f34:ec28) left #swig: Remote host closed the connection
+25.02.19 13:55:15*** Join: mischat (~mischat@2a02:c7f:c011:e600:e8e5:5daf:8f34:ec28, mischat: mischat)
+25.02.19 15:37:22*** Quit: sknebel (~quassel@v22016013254630973.happysrv.de) left #swig: Ping timeout: 250 seconds
+25.02.19 16:02:45*** Join: sknebel (~quassel@v22016013254630973.happysrv.de, sknebel: sknebel)
+25.02.19 16:05:34*** Quit: sec0nd (~second@gateway/tor-sasl/sec0nd) left #swig: Remote host closed the connection
+25.02.19 16:05:51*** Join: sec^nd (~second@gateway/tor-sasl/sec0nd, sec0nd: incognito)
+25.02.19 16:07:38*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #swig: Ping timeout: 244 seconds
+25.02.19 16:11:10*** Join: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+25.02.19 17:10:12*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #swig: Read error: Connection reset by peer
+25.02.19 17:24:16*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+25.02.19 17:45:05*** Quit: mischat (~mischat@2a02:c7f:c011:e600:e8e5:5daf:8f34:ec28) left #swig: Remote host closed the connection
+25.02.19 19:15:11*** Nick change: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) is now known as dmiles
+26.02.19 03:08:36*** Join: Semanticfire (~Semanticf@136-144-155-46.colo.transip.net, semanticfire: Bart van Leeuwen)
+26.02.19 04:21:10*** Join: shellac (~textual@2001:630:e4:1402:a8a7:b95e:4cd3:4de0, shellac: Textual User)
+26.02.19 04:29:32*** Connecting...
+26.02.19 04:29:53*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #swig: Semantic Web Interest Group 24x7 publicly logged hack-'n'-chat. http://www.w3.org/2001/sw/interest/ | http://swig.planetrdf.com/  Use http://pastebin.com/ for code/graph snippets [often confused with the Interface Generator, http://www.swig.org/ which is on irc.oftc.net channel #swig] - RIP AaronSw
+                 *** Topic set by dajobe on Sat Jan 12 13:47:41 2013, 6 years 2 months 15 days 14 hours 42 minutes 13 seconds ago
+                 *** Names: ditable-doge shellac Semanticfire aindilis dmiles sec^nd sknebel jadesoturi Malvolio pointfree sebbu Madars monokrome klip koma5 kuno Phae karstensrage rhiaro bjonnh sbp JamesHarrison ironChicken chrysn darkling bjonnh[m] rom1504 Anchakor kasei fr33domlover wagle jo0nas csarven dbs gsnedders riddle earldouglas Poka
+                 *** End of /NAMES list.
+                 *** Channel homepage for #swig: http://esw.w3.org/topic/ScheduledTopicChat
+26.02.19 04:30:06*** Quit: earldouglas (~james@unaffiliated/jamestastic) left #swig: Ping timeout: 245 seconds
+26.02.19 04:30:28*** Quit: wagle (~wagle@quassel.wagle.io) left #swig: Remote host closed the connection
+26.02.19 04:30:41*** Nick change: You are now known as editable-dog
+26.02.19 04:32:07*** Join: wagle (~wagle@quassel.wagle.io, wagle: Perry Wagle,,,,)
+26.02.19 04:33:13*** Join: mischat (~mischat@78.32.137.134, mischat: mischat)
+26.02.19 04:33:29*** Join: dbs_ (~dan@pdpc/supporter/professional/dbs, dbs: Dan Scott)
+26.02.19 04:35:08*** Quit: dbs (~dan@pdpc/supporter/professional/dbs) left #swig: Ping timeout: 245 seconds
+26.02.19 04:37:45*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+26.02.19 04:37:50*** Quit: mischat (~mischat@78.32.137.134) left #swig: Ping timeout: 255 seconds
+26.02.19 04:53:44*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+26.02.19 04:57:44*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 268 seconds
+26.02.19 05:02:03*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+26.02.19 05:33:14*** Join: mischat (~mischat@78.32.137.134, mischat: mischat)
+26.02.19 06:08:08*** Join: libby (~libby@unaffiliated/libby, libby: foo bar)
+26.02.19 06:08:52*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+26.02.19 06:11:20*** Quit: mischat (~mischat@78.32.137.134) left #swig: Ping timeout: 246 seconds
+26.02.19 06:13:08*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+26.02.19 06:17:39*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+26.02.19 06:19:52*** Quit: libby (~libby@unaffiliated/libby) left #swig: Ping timeout: 272 seconds
+26.02.19 06:31:12*** Join: mischat_ (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+26.02.19 06:33:56*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 250 seconds
+26.02.19 06:36:20*** Quit: mischat_ (~mischat@78-32-137-134.static.enta.net) left #swig: Ping timeout: 272 seconds
+26.02.19 06:49:08*** Join: mischat (~mischat@78.32.137.134, mischat: mischat)
+26.02.19 06:53:01*** Quit: mischat (~mischat@78.32.137.134) left #swig: Remote host closed the connection
+26.02.19 06:56:43*** Join: mischat (~mischat@78-32-137-134.static.enta.net, mischat: mischat)
+26.02.19 07:23:23*** Quit: mischat (~mischat@78-32-137-134.static.enta.net) left #swig: Remote host closed the connection
+26.02.19 07:27:32*** Connecting...
 #swig> 
