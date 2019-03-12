@@ -820,4 +820,1355 @@
 26.02.19 04:30:41*** [nickserv.regained from nil] 
                  *** Nick change: You are now known as editable-dog
 26.02.19 07:27:32*** Connecting...
+#atlas-project> 26.02.19 10:11:27*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+26.02.19 10:12:18<editable-dog>yo
+27.02.19 12:17:20<stoopkid> man... i wish i had never learned anything about politics and economics; i've been looking for jobs (main reason i'm still not quite non-busy yet) and there's relatively few that i'm not just outright morally opposed to; like i have ~5% of the options i would have if i just didn't care what the product of my labor was
+27.02.19 12:18:32<stoopkid> and unfortunately that's only like ~5% tolerated as an excuse for unemployment :)
+27.02.19 12:21:30<stoopkid> and more unfortunately i think i need to admit to myself that i just have way way way too much analysis paralysis to be successful w/ freelancing, especially since even if i were freelancing it's still only ~5% of potential clients that i'm not just outright morally opposed to
+27.02.19 12:22:27<stoopkid> i think my "personal branding" exercises helped a bit.. but.. ultimately mostly just helped me reach conclusions that were unfortunately not the conclusions i would have liked to have reached, but are nevertheless the truth
+27.02.19 12:27:53<stoopkid> worse is my analysis paralysis really screws me on the main employable skill i have which is ofc sw dev
+27.02.19 12:30:09<stoopkid> i do predict i could and probably eventually will reach a point where i've just actually broken through it with a workable answer to my fundamental issues that i always eventually come back to any time i get deep into some sw dev problem, but i don't think i'm there yet
+27.02.19 12:35:26<stoopkid> one thing that i think will probably help me w/ that going forward is i've realized that if i want to actually develop software in the real world i can't take a formalist approach i have to take an empiricist/scientific approach (moreso since that would make me a lot more employable in my main field of relative expertise within sw dev i.e. static analysis, and yet moreso cause it's probably a fruitful direction for
+                 <stoopkid> coming up with useful formal methods in the first place)
+27.02.19 12:37:32<stoopkid> but i haven't really practiced that or developed a mental framework for that (already "standard" practice) empirical method of static analysis
+27.02.19 12:41:44<stoopkid> and even w/ that i have to sort of unlearn this habit i've gotten into of completely depending on static analysis as a crutch for development
+27.02.19 12:44:57<stoopkid> in some sense this might ultimately be the fundamental "moral" of godel's work
+27.02.19 12:52:11<stoopkid> otoh, it's a bit beyond analysis-paralysis as definitely part of my analysis paralysis is due to missing critical CS basics that would have just answered many of my questions/concerns (both practical & philosophical)
+27.02.19 12:53:04<stoopkid> things like, for example, simply reading the wikipedia page for "Computation"
+27.02.19 12:59:56<stoopkid> certainly part of the issue is that the vast majority of CS kind of slacks on the fundamental question of "what actually is a computation in the first place"; we defer to "algorithm; a sequence of instructions", but then that itself begs further clarity; for that further clarity, we defer to *specific* systems of turing-complete computation, and then to the "equivalence class of all those under bisimulation" but even
+                 <stoopkid> that doesn't address the fundamental questions/concepts raised on the wikipedia for "Computation"
+27.02.19 13:01:48<stoopkid> for example it doesn't really direct address your main criteria "the only definition that would approach any sense of validity to me would be intentionally subjective
+                 <stoopkid> 4:38 PM something about getting useful information out of something"
+27.02.19 13:04:01<stoopkid> that would correspond to "the mapping account" on the wikipedia page, but just looking at a specific system of computation on its own doesn't tell you anything about what it's representing
+27.02.19 13:05:47<stoopkid> although it does partially/indirectly address "a clock on a wall is computing time for me, but also a leaking jug of water might be", i.e. the "multiple realizability" thing mentioned on the wikipedia page
+27.02.19 13:28:49<stoopkid> i don't necessarily know if we meaningfully formulate a notion of computation that isn't dependent on space & time, as even in the mapping account of getting useful information out of something, that "getting something" seems to imply some kind of time dimension where there is a previous state where you lack the information and a subsequent state where you "have" the information (also still sort of begging the question
+                 <stoopkid> of what it means to "have" information)
+27.02.19 13:30:14<stoopkid> this also seems to imply that a time dimension is implicit (if not explicit) in the entire field of information theory
+27.02.19 13:31:29<stoopkid> that information itself then seems to be equivalent to some space dimension
+27.02.19 13:32:11<stoopkid> or rather exists within some space dimension
+27.02.19 13:36:12<stoopkid> so hypothetically we could maybe transcend our physical 3D space + 1D time dimensions but idk that we could transcend computational memory space + information-yielding time-steps dimensions and still keep a meaningful notion of computation or information theory
+27.02.19 14:04:39<stoopkid> it also seems to imply some kind of topology on this space, to allow for a meaningful notion of "flow" of information, i.e. the topology represents the informal notion of "communications channels"
+27.02.19 14:41:19<stoopkid> so, formally, information theory is based on probability theory which is based on measure theory which in turn is based on this thing: https://en.wikipedia.org/wiki/Sigma-algebra
+27.02.19 14:43:48<stoopkid> but i think that's mostly because information theorists have a lot of focus on assigning an actual number to the "amount" of information, but this still kind of begs the question of "what exactly is being measured"
+27.02.19 14:44:55<stoopkid> but then, that's essentially what the sigma-algebra is, a space where you can "measure" its subspaces in a "reasonable" way
+27.02.19 14:47:13<stoopkid> so looking at the formal definition it's given a set S, a sigma-algebra is a subset of the set of all subsets of S, that is closed under complement and countable union
+27.02.19 14:48:36<stoopkid> so if the subset P is in the sigma-algebra then the set of everything not in P is also in the sigma-algebra, and if the subsets P1, P2, P3, ... are in the sigma-algebra then their union is also in the sigma-algebra
+27.02.19 14:50:34<stoopkid> but what are these subsets, from an information theoretic perspective we should think that they correspond to logical propositions on objects in the base set S, cause what is it that you get "information" about? some question/proposition
+27.02.19 14:51:41<stoopkid> complement corresponds to negation, and union corresponds to logical OR
+27.02.19 14:57:48<stoopkid> and that's functionally complete, you can represent every boolean proposition with negation and disjunction; it's not necessarily convenient for us but in terms of just looking at what sets are selected using these connectives, all sets are represented, so ex. adding intersection (i.e. logical AND) wouldn't give us anything extra aside from convenience
+28.02.19 05:42:16<editable-dog>re job searching, arent you still studying?
+                 <editable-dog>i filter out allmost all job ads as well. The mentoring job didnt work out btw. So now im kinda on a lookout again, but not very seriously yet. Kinda want to finish the new proof trace viewer and the basic ldl... 
+                 <editable-dog>>and still keep a meaningful notion of computation or information theory
+                 <editable-dog>well, my computation and your computation will never be the same thing, so i guess what we used to tell nilli applies, you should call it stoop's general computation 1.0 and figure out what goals your definition has, ie what models does it aim to generalize etc
+28.02.19 08:16:04<stoopkid> hm, possibly
+28.02.19 08:21:46<stoopkid> wrt job searching, yea my parents are still helping me out w/ rent while im in school but this still leaves us just slightly above barely scraping by, so its ok that i don't have a job at the moment but less ok for me to not be actively looking for one, if that makes sense
+28.02.19 08:27:39<stoopkid> plus idk, it's like not having a job is ironically more of a distraction & time-sink than having one (well, assuming they don't try to have me working 12 hours a day like at my last job)
+28.02.19 08:34:40<stoopkid> i just end up spending a lot of time worrying about ex. not having a job, if i was gonna get a job which job should i get, whether i should freelance, whether instead of freelance i should work on our projects and try to figure out how to eventually monetize them or something related, etc..
+28.02.19 08:36:20<stoopkid> this is really probably mostly just a time-management issue when it comes down to it but that's probably the thing i'm worst at despite lots of attempts to work on it
+28.02.19 08:48:54<stoopkid> wrt "stoop's general computation 1.0", i guess my idea/hypothesis is that this should basically be able to just be information theory, with units of computation being associated with transfers of information, and programs being defined in terms of how a series of atomic information transfers leads to providing the "useful information" you're trying to extract from the computation in the first place
+28.02.19 08:56:48<stoopkid> i would probably assert that the abstract computational time & space dimensions do exist as basic assumptions of the theory, due to the information-theoretic considerations, and i would maybe go further to assert that these actually do need to be mapped onto space-time (currently for practical purposes) due to time being the dimension along which we actually experience an asymmetry between a state of lacking
+                 <stoopkid> information followed by having it potentially followed by losing it
+28.02.19 09:02:58<stoopkid> the specific model of time might vary but it seems there's gotta be some kind of space in which we can say that information-havingness can vary
+28.02.19 09:58:42<editable-dog>ok makes sense
+28.02.19 09:58:48<editable-dog>>not having a job is ironically more of a distraction & time-sink than having one 
+                 <editable-dog>good thinking. 
+                 <editable-dog>>(well, assuming they don't try to have me working 12 hours a day like at my last job)
+                 <editable-dog>my mental capacity is a lot more limited, i think about 25 hours of focused coding a week is a max for me
+                 <editable-dog>my main worry right now is if i should continue making pyco usable, or try to do my ldl stuff in xsb
+                 <editable-dog>anyway, i guess we should really give a try to freelancing together now, since we are both willing and able at the same time, it might not happen again. I will start monitoring upwork for anything that might seem approachable
+28.02.19 10:44:16<stoopkid> https://www.upwork.com/job/Creation-searchable-filterable-database-pages-for-our-professional-membership-website-WordPress_~0150cfb4d2765866d2/
+28.02.19 10:55:53<stoopkid> https://www.upwork.com/job/crypto-trading-bot_~018e0c7428c4fa188b/
+28.02.19 10:57:12<stoopkid> https://www.upwork.com/job/Data-Extraction-ETL_~01e3a22332c0e68766/
+28.02.19 11:03:10<stoopkid> https://www.upwork.com/job/Software-engineer-for-system-creation_~017e3390d10f2fc6cf/
+28.02.19 11:04:14<stoopkid> idk all of these look "approachable", and others, at least with some prior negotation limiting the scope of the contracts to something reasonable relative to the price
+28.02.19 11:08:57<stoopkid> the Data-Extraction-ETL gig.. i'd put that at about a week to have the bulk of it done and be at the polishing stage?
+28.02.19 11:15:19<stoopkid> https://www.upwork.com/job/Python-code-conversion_~014ec80eb4b75ae2a9/
+28.02.19 11:18:18<stoopkid> https://www.upwork.com/job/Full-stack-developer-design-and-develop-innovative-restaurant-menu-search-application_~01e190ec98618c655a/
+28.02.19 11:18:55<stoopkid> like, this one maybe doesn't look "approachable", but then.. relative to $15,000 ?
+28.02.19 11:20:58<stoopkid> i think it would probably be completable in the amount of time that $15,000 would warrant us spending on it, which is.. quite a big chunk of time for us probably, then it's just a matter of whether or not our projections match their deadlines
+28.02.19 11:29:21<stoopkid> https://www.upwork.com/job/Developer-needed-for-creating-online-tutoring-website_~01a1a2141647129cec/
+28.02.19 11:32:07<stoopkid> https://www.upwork.com/job/Data-cleanup-Microsoft-Dynamics-CRM_~012becb5836f11058f/
+28.02.19 11:41:17<stoopkid> https://www.upwork.com/job/Php-sql-add-functionality_~017933cf627dbe9e83/
+28.02.19 11:42:53<stoopkid> this one not paying all that much relative to what our initial investment on this would be (looks like they want to set up a payment processing system) *but* this is probably the kind of thing that could/should be relatively routine for us if we were doing this regularly
+28.02.19 15:39:44<editable-dog>wordpress isnt approachable. Ive dealt with a php cms before, and once is enough
+28.02.19 15:41:37<editable-dog>i like the crypto trading bot ad, work sounds boring, but i like that the client is well-rated with long history on upwork
+28.02.19 15:42:22<editable-dog>the scraping job sounds like a great deal. Funny that once i logged it, it bacame "unavailable in your location"
+28.02.19 15:43:36<editable-dog>Software engineer for system creation.
+28.02.19 15:43:39<editable-dog>sounds good
+28.02.19 15:48:07<editable-dog>the R to python job isnt approachable..
+28.02.19 15:50:15<editable-dog>the $15000 one... idk
+28.02.19 15:51:40<editable-dog>they use the word "advanced" too many times
+28.02.19 15:52:43<editable-dog>i'd decide if i'd see a detailed spec from them
+28.02.19 15:53:04<editable-dog>"e-commerce functionality"
+28.02.19 15:53:24<editable-dog>half of these bullet points could explode into a $15000 project on its own
+28.02.19 15:55:46<editable-dog>online tutoring website for $1000 sounds like possibly way too little money, but its still go for it as a first project
+28.02.19 15:56:57<editable-dog>data cleanup...well in a way it may be a nice job, not as demanding as sw dev
+28.02.19 15:59:53<stoopkid> i figure we gotta assume they're lowballing and try to negotiate the price up and/or the feature-set down, and then potentially some kind of paid on-going support / iterations
+28.02.19 16:12:25<editable-dog>sounds good
+28.02.19 16:13:47<editable-dog>meh, i tried changing location to usa, so i could get my set up keywords and all the jobs i apparently cant see when logged in, but they want my tax numbers and stuff
+28.02.19 16:15:55<stoopkid> hm, i haven't made an account yet
+28.02.19 16:16:42<stoopkid> oh nvm i guess i did a while back
+28.02.19 16:56:19<editable-dog>lots of qt jobs
+28.02.19 17:04:38<editable-dog>https://www.upwork.com/job/Php-sql-add-functionality_~017933cf627dbe9e83/
+28.02.19 17:05:24<editable-dog>im feeling so lazy tho, are you also feeling this lazy when actually faced with actual descriptions of actual work?
+28.02.19 17:16:04<stoopkid> hm, yes/no, it's mostly just customer relations that i feel lazy about at the moment
+28.02.19 18:04:18<editable-dog>hm, tomorrow i'll be trying to get done papers that i'd need for serious freelancing. Im doing it to have a more advantageous way to tax the nilli money from last year, but we can consider it a step towards freelancing too
+28.02.19 18:06:12<editable-dog>i found  a couple upwork jobs that ill try to respond to i guess
+28.02.19 18:08:51<editable-dog>but mostly stuff that i have some expertise in, not sure that i found anything that we could truly work together on
+28.02.19 18:08:58<editable-dog>maybe a few, ill post them tomorrow
+28.02.19 18:40:25<editable-dog>messing with jsonld framing today...it doesnt work
+28.02.19 19:01:05<editable-dog>i cant really find anything about lists in the framing spec
+28.02.19 22:49:57*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj) left #atlas-project: Quit: Connection closed for inactivity
+01.03.19 06:52:57*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-gvjotcyfrqrytmjc, stoopkid: stoopkid)
+01.03.19 06:53:16*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gvjotcyfrqrytmjc) left #atlas-project: Excess Flood
+01.03.19 06:53:37*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ztjtnuldzkjcraya, stoopkid: stoopkid)
+01.03.19 08:31:08<stoopkid> haven't used qt yet but i'd be down to learn, it does look pretty popular
+01.03.19 08:46:20<stoopkid> so i think one of our biggest hurdles (or at least one of mine) is gonna be just getting started, in the sense of just reaching out to potential clients in the first place. is that something you're also feeling lazy with or just me?
+01.03.19 09:16:39<stoopkid> hm, why don't you think the R to python job is approachable?
+01.03.19 09:25:21<stoopkid> we might wanna look at stuff related to CRM/ERP/BI etc.. high-value, not too inherently complicated as far as actual coding goes, and actually relevant to us starting/managing a business
+01.03.19 11:49:39<editable-dog>yea crm etc is interesting
+01.03.19 11:49:54<editable-dog>theres at least one company doing semweb-powered bi
+01.03.19 11:51:39<editable-dog>anyway yeah its also difficult for me to get to answering these ads
+01.03.19 11:51:58<editable-dog>answering the is difficult, i can go two hours writing a perfect response just to get no reply
+01.03.19 11:52:12<editable-dog>or a fast response and also get no reply
+01.03.19 11:57:55<editable-dog>i definitely have to get into the right mood to feel like communicating
+01.03.19 11:57:59<editable-dog>and it doesnt happen often
+01.03.19 11:58:21<editable-dog>i hate phone calls, either i get anxious or bored
+01.03.19 12:18:37<editable-dog>well the R to python job.. it would be a hard job transcribing algorithms from a language i dont know, when i also dont understand the algorithms and the principles behind them
+01.03.19 12:19:02<editable-dog>i guess if you took care of this domain knowledge part, id take care of R and python knowledge
+01.03.19 12:19:05<editable-dog>not sure if it would work
+01.03.19 12:20:01<editable-dog>also, its not so much money, given that what i write above, i fear that we could get stuck on something
+01.03.19 12:31:57<stoopkid> i think it's doable, especially with stuff like sympy and numpy; maybe not something to start with though
+01.03.19 12:47:06<editable-dog> Hourly Rate 20.00
+01.03.19 12:47:07<editable-dog>The estimated amount you'll receive after service fees
+01.03.19 12:47:12<editable-dog>16.00
+01.03.19 12:47:20<editable-dog>Cover Letter
+01.03.19 12:47:24<editable-dog>Hello. We are a two-men team based in USA and Europe, with experience in both computer science research and practical software development.
+01.03.19 12:47:29<editable-dog>Describe past experience with GUI / HMI work.
+01.03.19 12:48:44<editable-dog>I have been writing GUI applications in VB, Delphi, and recently two years with QT Widgets. I am strongly user-focused, with usability always in mind, but i can also work with electronics, and anywhere in-between. We have experience with PLC HMIs too.
+01.03.19 12:49:05<editable-dog>https://www.upwork.com/ab/proposals/job/~015c60eca751dd3691/apply/#/
+01.03.19 12:59:06<editable-dog>send?
+01.03.19 12:59:16<editable-dog>hahaha: https://www.upwork.com/jobs/Java-Scala-Python-Full-Stack-Software-Developer_~0188988ae4fd2975d9
+01.03.19 12:59:31<editable-dog>you read all that and at the bottom: 
+                 <editable-dog>You will be asked to answer the following questions when submitting a proposal:
+                 <editable-dog>    This type of job requires to be in Ukraine or Russia and fluent Ukrainian or Russian, do you meet these requirements?
+01.03.19 13:01:35<stoopkid> lol
+01.03.19 13:02:41<stoopkid> two-man* and sure let's try it
+01.03.19 13:03:14<editable-dog>alright, thanks
+01.03.19 13:15:31<stoopkid> probably wanna do fixed price/length contracts in general but i figure at this point we probably just need to be applying as much as possible
+01.03.19 13:33:53<editable-dog>hmm, do you feel like spending some time doing the research to actually answer this guy's question here? : https://www.upwork.com/jobs/Vector-blockchain-visualization-art-programming_~019c88c38dad0c5223
+01.03.19 13:39:56<stoopkid> think they'd send us laser projectors to play with? :)
+01.03.19 13:52:58<stoopkid> you mean this question? "If hired, give some details about the blockchain visualizer would adapt first for our software."
+01.03.19 13:55:51<editable-dog>yeah
+01.03.19 13:56:35<stoopkid> well, probably not the globes lol
+01.03.19 13:59:08<stoopkid> https://fiatleak.com/
+01.03.19 14:00:18<stoopkid> something like the stock-ticker thing at the top there, as some kind of reusable widget that you could insert into other light-shows, would probably be a good visualizer to start with
+01.03.19 14:02:05<stoopkid> i'd say it's definitely at least a 2-phase job: 1) get the crypto integrations in place, 2) make fancier visualizations
+01.03.19 14:02:58<stoopkid> so we would want like the simplest possible visualization that they could still actually reasonably use
+01.03.19 14:04:44<stoopkid> price-ticker that you can put into other light-shows seems like it could work for that, i mean, how much serious financial analysis is somebody gonna be doing with this thing they're basically just gonna be "celebrating the fact that bitcoin is happening" with a laser light-show
+01.03.19 14:08:31<stoopkid> not necessarily "just" the price-ticker thing but y'know something that's not like geometrically challenging
+01.03.19 14:18:21<editable-dog>well i like playing with graphics like that
+01.03.19 14:18:32<editable-dog>but ok ticker is great idea
+01.03.19 14:19:22<editable-dog>but theres no single crypto integrations, we'd have to query various exchanges or whatnot
+01.03.19 14:21:49<stoopkid> i wonder if they have a matrix setting
+01.03.19 14:23:27<stoopkid> could definitely do a matrix version of bitcoin rain
+01.03.19 14:23:56<editable-dog>ok answered
+01.03.19 14:28:22<stoopkid> what did you send them? i'm gonna try to keep track of this stuff to make templates/scripts
+01.03.19 14:29:33<editable-dog>We are a two-man team based in USA and Europe, with experience in both computer science research and practical software development. I have over 5 years C experience, two years QT widgets experience, and some experience with both 2D and 3D graphics and visualization. We are also building our own blockchain platform. We will do our best to move your project forward, at a reasonable price. less
+                 <editable-dog>    If hired, give some details about the blockchain visualizer would adapt first for our software.
+                 <editable-dog>    We are thinking a good starting point might be simply implementing a price ticker.
+01.03.19 14:32:04<editable-dog>its all saved in my proposals page, we can try setting up a vnc session with a browser
+01.03.19 14:32:35<editable-dog>or you could just log in with my credentials any time i suppose
+01.03.19 14:34:32<stoopkid> does upwork let you make team/company accounts?
+01.03.19 14:36:50<editable-dog>Agency membership
+                 <editable-dog>$20/month
+                 <editable-dog>Add and support unlimited multi-person teams and team members
+                 <editable-dog>80 Connects/month
+01.03.19 14:38:04<editable-dog>might be worth it, i was thinking that the basic $10 plan might be worth it to see competitors bids
+01.03.19 14:40:30<stoopkid> 20% wasn't already enough? lol
+01.03.19 14:41:46<stoopkid> yea maybe, let's wait on it though
+01.03.19 14:42:00<editable-dog>what 20%?
+01.03.19 14:45:02<stoopkid> doesn't upwork charge a 20% "service fee" on the price of the contract?
+01.03.19 14:46:11<stoopkid> https://support.upwork.com/hc/en-us/articles/211062538-Freelancer-Service-Fees
+01.03.19 14:50:58<editable-dog>ah
+01.03.19 14:51:00<editable-dog>yeah
+01.03.19 14:57:13<stoopkid> i figure for a fixed-price job we can probably filter out anything under $500 ?
+01.03.19 15:02:45<stoopkid> especially after 20% fee i figure that's basically what it costs to even start a project and negotiate its completion, let alone do the actual implementation & deployment
+01.03.19 15:12:35<stoopkid> for the lasers one we could hypothetically contact them directly instead of going through upwork
+01.03.19 15:21:15<stoopkid> well, nvm i guess part of what they're paying upwork for is to make them look like a good employer which they get by making it look like they've spent lots of $ on lots of development and they only get that by doing at least some of it through upwork
+01.03.19 15:22:34<editable-dog>i dunno, i suppose it dependes on how well the job is specified
+01.03.19 15:23:07<editable-dog>i do consider even jobs like finding a bug in an arduino sketch
+01.03.19 15:24:10<editable-dog>well everyone's saying that upwork only protects the clients, so yeah we probably just as well might
+01.03.19 15:27:04<stoopkid> idk there's certainly cases i could imagine where i could totally just get in & get out and charge $50-$100 and feel satisfied but i'm also imagining that to be relatively low probability situation that something that small would be worth the initial "just getting our bearings on the problem" time-investment or *actually* have 0% "just get our bearings" investment
+01.03.19 15:29:03<stoopkid> like by the time we've got our bearings on the problem we might've spent all day, which should already be $50-$100, and then we should assume there will be at least 1 snag, upwork is already taxing 20% and the client isn't giving much confidence that they have the right kind of budget flexibility
+01.03.19 15:30:24<editable-dog>i definitely agree that bigger projects are prefferable
+01.03.19 15:30:27<stoopkid> so i figure that even pursuing those jobs in the first place is gonna be a net loss except maybe in the context of on-going familiarity with a particular project, like that's maintenance service kind of fees
+01.03.19 15:37:03<stoopkid> if we had a bigger team we could probably break up the tasks easier to make smaller jobs more profitable and that's something we should probably think about but with just the two of us at this point it's like thinking in terms of an hourly wage we're already spending ~$50 just to even seriously consider the job in the first place let alone take it & actually do it
+01.03.19 15:47:41<stoopkid> ex. this looks approximately reasonable for a "client's initial low-ball" https://www.upwork.com/o/jobs/browse/t/1/details/~01fa84c2087755e1a9/?amount=500-&page=3&q=sql&sort=recency&user_location_match=2
+01.03.19 15:51:08<editable-dog>" help update and improve functionalities" could mean anything
+01.03.19 15:51:29<editable-dog>.
+01.03.19 15:51:49<editable-dog>that period was my cat.
+01.03.19 15:54:19<stoopkid> right and in terms of if we were imagining working hourly wage at some full-time sw dev job it might cost us $500 worth of labor just to even interact with this client and figure out what it is we even actually need to implement
+01.03.19 15:56:24<stoopkid> i mean ideally with a good client it will be less but... i figure on average clients will be less good about having well-defined specifications and not trying to keep expanding the scope on us
+01.03.19 15:57:17<stoopkid> plus i  figure a general rule will be that our first implementation is always wrong, no matter what
+01.03.19 15:59:34<editable-dog>well, im sure such nightmarish clients abound, but in mylimted experience of doing stuff for people, .....actually there was one project where it was like that, i dont even remember now if we had some agreed on hour rate or fixed or if i was doing it just out of enthusiasm, but i ended up being dragged into having to do a ton of research and specification, and the guy was smart enough to see that and we cut it off
+01.03.19 16:00:54<editable-dog>i guess we are best off approaching the high-rating clients, and approaching the rest with caution
+01.03.19 16:02:19<editable-dog>and theyre doing the same
+01.03.19 16:03:06<editable-dog>and we can either start building a reputation or putting up a portfolio, or both
+01.03.19 16:10:11<editable-dog>and i guess we need to get into cranking out websites/apps whatever like the other folks do
+01.03.19 16:10:29<stoopkid> both probably although i've tended to have trouble making a portfolio out of our own projects due to having too much room for overthinking everything
+01.03.19 16:10:56<editable-dog>my problem is theres not much worth showing, it seems
+01.03.19 16:11:52<editable-dog>like, my open source projects are my playground
+01.03.19 16:12:10<editable-dog>i cant show what ive done at my previous job (mm actually i could show one thing)
+01.03.19 16:12:33<editable-dog>i cant show the results of the maybe 4 gigs ive done over the years
+01.03.19 16:13:13<editable-dog>but...yeah, with a bit of thought, maybe its possible to put something together
+01.03.19 16:14:25<editable-dog>i cant show all the toy programs ive done 10+ years back, because i dont have them anymore
+01.03.19 16:15:56<stoopkid> same pretty much, i have a publication related to database work so that helps but a relevant portfolio would definitely be better
+01.03.19 16:16:09<stoopkid> ex. if we're doing websites/apps we should actually have a website/app
+01.03.19 16:20:52<stoopkid> one way i figure we might (try to) go about this is we can try to find jobs building something for somebody's business that we also need for our business, and do them both at the same time
+01.03.19 16:25:10<stoopkid> like what would be a proper portfolio for us: a website with a demonstration of our paid & open-source software work in states of completion & as many ways as possible to send money to us for things
+01.03.19 16:27:31<editable-dog>https://www.upwork.com/job/Developer-needed-for-creating-online-tutoring-website_~01a1a2141647129cec/
+01.03.19 16:27:52<editable-dog>im thinking if this guy accepted a vue-based solution, i might go for it
+01.03.19 16:28:49<stoopkid> the specifications sound flexible enough heh
+01.03.19 16:30:32<editable-dog>im quite enjoying vue and the novelty of learning it and learning js
+01.03.19 16:31:47<editable-dog>so i figure if the guy was ok with it taking a month...
+01.03.19 16:32:00<editable-dog>or less, if we'd both work on it
+01.03.19 16:32:27<editable-dog>and a next similar job would be reasonably profitable
+01.03.19 16:33:21<editable-dog>well, at least thats one vision of how things may go
+01.03.19 16:35:35<stoopkid> if they don't have any constraints other than that it run in a browser and interact with a SQL or mongo db then i think we could knock something out with professional quality (even if not "fully featured") in a couple weeks if they're a good client, depending on what their "detailed sketches" actually look like
+01.03.19 16:43:21<editable-dog>ok, if youre down for this one, youre gonna have to answer it, as its blocked for me
+01.03.19 16:44:56<editable-dog>https://www.upwork.com/job/Php-sql-add-functionality_~017933cf627dbe9e83/
+01.03.19 16:44:58<editable-dog>same this one
+01.03.19 16:46:37<editable-dog>except im actually fairly confident with the php+mysql stack, so it would be just a matter of deciphering student spaghetti code and figuring out some payment api
+01.03.19 17:05:38<editable-dog>yeah on a second thought this job sounds quite good
+01.03.19 17:05:57<editable-dog>maybe except the client doesnt have any history
+01.03.19 17:08:14<editable-dog>as on the R into Python, if you actually feel like studying the ML theory where necessary, then we can definitely try it
+01.03.19 17:10:05<editable-dog>i just think it souunds a little bit too much like going through hell for not even twice as much $$$ as the php payment button/tab job
+01.03.19 17:51:50<editable-dog>https://www.upwork.com/jobs/firmware-checking_~01e61e9157da65b3ef
+01.03.19 17:52:00<editable-dog>i think you would enjoy this one, if they are serious
+01.03.19 17:52:10<editable-dog>by being serious i mean having any idea what theyre asking for
+01.03.19 17:53:36<editable-dog>i'd be down for working on it too ofc
+01.03.19 17:53:57<editable-dog>anyway i think im done responding to everything i found interesting
+01.03.19 17:54:12<editable-dog>6 jobs
+01.03.19 17:54:34<editable-dog>i didnt reply to the firmware one
+01.03.19 18:09:25<stoopkid> ok for the tutoring job, how long do you think for an initial proposal based on knowing nothing about it
+01.03.19 18:11:35<editable-dog>what initial proposal?
+01.03.19 18:13:01<stoopkid> one of the questions is "How long will this project take?"
+01.03.19 18:13:54<editable-dog>oh
+01.03.19 18:13:56<editable-dog>one month
+01.03.19 18:17:35<stoopkid> would you say that's "less than 1 month" or "1 to 3 months"
+01.03.19 18:21:30<editable-dog>idk, what do you think?
+01.03.19 18:22:37<editable-dog>i guess 1 to 3 is safe bet
+01.03.19 18:23:15<editable-dog>well, its Last viewed by client:  1 month ago
+01.03.19 18:23:30<editable-dog>we probably dont even need to try
+01.03.19 18:24:19<editable-dog>less than 5 proposals, do you think people thought its too little $$$?
+01.03.19 18:27:40<editable-dog>i would say it would depend on the actual scope, that would only be visible from the specs/sketches
+01.03.19 18:27:49<editable-dog>apparent
+01.03.19 18:36:26<stoopkid> didn't notice the "last viewed" but maybe they'll check it at some point; so maybe we could set a baseline for what kind of scope we think would be reasonable for the price / timeframe in the question "Do you have suggestions to make this project run successfully?"
+01.03.19 18:38:51<editable-dog>all i can say at this point is that we need to see their materials first
+01.03.19 18:43:55<stoopkid> wrt whether people thought it was too little $, probably, especially relative to vaguely-defined specs in a non-standard domain, but i figure we have to assume that part of our job is to help the client come up with what is actually a realistic job for us that will actually realistically start achieving their purposes
+01.03.19 18:44:35<stoopkid> ex. in this case for $1000 i figure the client should probably not be focused on whatever their fancy sketches are but instead focused on going from 0 -> users as fast as possible
+01.03.19 19:15:23<editable-dog>maybe the  interexchange arbitrage bot isnt such a bad idea
+01.03.19 19:23:43<stoopkid> i'm open to it
+01.03.19 19:40:41<editable-dog>its more of your cuppa, so ill leave the answering to you
+01.03.19 19:41:07<editable-dog>i registered on freelancer and im looking at some other sites now
+01.03.19 19:41:46<editable-dog>but it seems that all that anyone wants is web, web, web
+01.03.19 19:42:00<editable-dog>guess we have to get into it
+01.03.19 19:44:02<stoopkid> for the tutoring one: https://pastebin.com/eprkMz33
+01.03.19 19:45:28<editable-dog>holy shit, i found my cnc hdd
+01.03.19 19:45:43<editable-dog>you wouldnt believe the amount of old hdds i had to go through to find it
+01.03.19 19:46:00<editable-dog>ok checking
+01.03.19 19:47:22<editable-dog>so, they say fixed price $1000 and you bid 1200? i thought fixed was like...fixed
+01.03.19 19:49:45<editable-dog>very nice response
+01.03.19 19:50:08<editable-dog>i wouldnt be able to write this
+01.03.19 19:51:50<stoopkid> thanks, i hate writing fluff like this lol
+01.03.19 19:53:48<stoopkid> yea i figured there's probably relatively little chance we'd actually fulfill this client's goals at $850 after upwork-tax and before regular taxes without going over budget / deadline, but $1000 after upwork tax i would feel relatively confident that we could deliver *something* that roughly meets specifications and can accommodate users
+01.03.19 19:56:47<stoopkid> now what i don't know is how haggling works on upwork, or if you even can or if you're just stuck with the bid
+01.03.19 19:57:03<stoopkid> ah i can change terms / withdraw proposal
+01.03.19 19:59:29<stoopkid> so if they can only swing $1000 our initial bid gives us some room to start the discussion off with us talking them down on feature requirements
+01.03.19 20:03:04<stoopkid> ah i think clients & freelancers are actually legally obligated not to circumvent upwork for some duration
+01.03.19 20:04:33<editable-dog>https://www.scalablepath.com/
+01.03.19 20:06:51<stoopkid> for php/mysql job what do you think about the $550 bid price and "less than 1 month" ?
+01.03.19 20:07:20<editable-dog>ok, im sleeping in the chair, so, catch you tomorrow i guess
+01.03.19 20:07:25<editable-dog>the payment thing?
+01.03.19 20:07:32<stoopkid> yea
+01.03.19 20:07:33<editable-dog>yeah sounds good
+01.03.19 20:10:17<stoopkid> alright i'll probably be busy with some things tomorrow but i'll find some time in between to post some more applications
+01.03.19 20:33:22<stoopkid> https://pastebin.com/75ZvLcWw
+01.03.19 20:36:40<stoopkid> crypto trading bot was 2 months ago, not sure, i guess we can assume we have some time to mull that one over a bit
+01.03.19 20:38:30<stoopkid> especially since short answer to the 1 question they ask is "no, we don't" so i think we'd have to really consider how close our current experience is to actually being able to do that, although the price is certainly right (assuming a scope limited to reason ofc)
+01.03.19 20:39:48<stoopkid> like if they just have some specific given formulas they want us to apply, sure
+01.03.19 20:40:55<stoopkid> if they want us to be like... creative with machine-learning, that might be out of scope for what we could currently take on
+01.03.19 20:41:10<stoopkid> even with the $7k
+01.03.19 20:45:58<stoopkid> that on top of the economics on top of the meat of the integrations? we'd probably be at least $1k worth of labor in before we even really got a handle on what was required / whether or not we could even do it
+01.03.19 20:50:28<stoopkid> wrt getting in on the web craze, i don't really have an issue with it, the web stack isn't really difficult it's just that the jobs tend to be on the boring side and it's often as much a creative design gig as it is an actual sw development gig, plus making a portfolio and etc etc..
+01.03.19 20:58:51<stoopkid> but i figure that's something we already have to do anyway, like we also need a website, which needs creative design etc..
+01.03.19 21:02:01<stoopkid> also i figure with freelancing we don't necessarily have like... job stability around any specific type of thing, and every business is gonna have some crazy different scenario than the last one so i figure we can't really look at "what it is we do" as some specific type of software work or w/e it has to more along the lines of "we're in business to help businesses do business better"
+01.03.19 21:19:57<stoopkid> here's probably a good way to address the issue of "vague client specs", instead of asking the client what specifically they want out of their vague specs, we present our own conception of what approaching a project like this means, like a birds-eye break-down of the component parts of projects similar to what they describe, and what each component represents in terms of a development milestone, and let them use that
+                 <stoopkid> as a concrete basis for figuring out how they want to allocate their time
+01.03.19 21:21:05<stoopkid> i figure it's probably not the best practice to bid up from their price but rather break it down into components and show what options of components can actually be done for the stated price, along with what it would cost for the rest
+01.03.19 21:22:19<stoopkid> it's maybe a more polite way to accomplish the goal of bidding up and starting the process of talking them down on features
+01.03.19 21:25:04<stoopkid> so ex. when they say "i want a website", we already know the general idea of what goes into a website, from hosting, to domain registration, to graphic design, to front-end dev, to back-end dev, to databases, to security, to payment processing, to etc...
+01.03.19 21:28:51<stoopkid> we can do all of that, but always subject to the iron triangle
+01.03.19 21:42:19<stoopkid> regarding the payment processing ones, we might want to be careful about those before we're sure we're personally protected from liability
+01.03.19 21:44:53<stoopkid> https://www.upwork.com/o/jobs/browse/t/1/details/~0160f9525e8e921b97/?q=sql&sort=recency&user_location_match=2
+01.03.19 21:47:09<stoopkid> "We have a series of datasets from different places, each in CSV form and need to integrate them into a single, merged database, which will require some scrubbing and integration work. We have built the initial Ontology frameworks and have additional data series to add. "
+01.03.19 21:47:22<stoopkid> for $10k yea i think this sounds approachable
+01.03.19 22:35:27<stoopkid> i figure for fixed-price projects we don't wanna do upwork's "per milestone" cause it's a bit rigid on what kind of initial expectations that sets for the client, but rather just do "per project", at their stated price, and then use the cover letter & attachments to elaborate on what we can provide for them at various prices & time-frames
+02.03.19 00:12:08<stoopkid> https://www.upwork.com/o/jobs/browse/t/1/details/~0195ac94b41fc3bda0/?amount=500-&q=vue&sort=recency&user_location_match=2
+02.03.19 00:13:28<stoopkid> https://www.upwork.com/o/jobs/browse/t/1/details/~01af7ef57ea66de310/?amount=500-&q=vue&sort=recency&user_location_match=2
+02.03.19 00:20:15<stoopkid> https://www.upwork.com/o/jobs/browse/t/1/details/~014b322f873197fa1b/?amount=500-&q=vue&sort=recency&user_location_match=2
+02.03.19 02:14:40<editable-dog>yo
+02.03.19 02:21:39<editable-dog>the haasbot thing also already has two hires
+02.03.19 02:21:47<editable-dog>and its not us afaict
+02.03.19 02:22:22<editable-dog>but theyre a well-rated client, so we might as give it a try
+02.03.19 02:23:26<editable-dog>i cant see the questions they ask in the proposal form from here though
+02.03.19 02:23:59<editable-dog>neither when logged out
+02.03.19 02:30:37<editable-dog>>instead of asking the client what specifically they want out of their vague specs, we present
+02.03.19 02:30:43<editable-dog>yeah sounds great
+02.03.19 02:31:13<editable-dog>just first need to have one similar project under belt, then it will be easy
+02.03.19 02:33:18<editable-dog>yeah i always find the "milestones" form offputting, like, i do want to do it by milestones, but the clients never even provide in the posting whatever specs they already have, so how can we set milestones at this time
+02.03.19 02:36:02<editable-dog>the ETL sounds good, but What’s your preferred method of integration across multiple, similar datasets.
+02.03.19 02:36:14<editable-dog>idk, show me the datasets
+02.03.19 02:41:27<editable-dog>ive looked at http://openrefine.org/ once, it seemed nice
+02.03.19 02:41:59<editable-dog>but my preferred method is probably python scripts
+02.03.19 02:46:13<editable-dog>i guess if its Client's budget: $10,000.00 USD
+02.03.19 02:46:27<editable-dog>and What is the full amount you'd like to bid for this job?
+02.03.19 02:46:38<editable-dog>people are actually expected to bid lower prices
+02.03.19 02:47:40<editable-dog>how can they bid on a price when they havent seen any of the work actually involved or the scope
+02.03.19 02:55:08<editable-dog>$10,000.00
+02.03.19 02:55:13<editable-dog>We are a two-man team based in USA and Europe, with experience in both computer science research and practical software development. We have experience working with both linked data technologies, as well as relational databases. We can work on a per-day or fixed price basis.
+                 <editable-dog>What’s your preferred method of integration across multiple, similar datasets.
+02.03.19 02:55:14<editable-dog>Python scripting
+02.03.19 03:17:35<editable-dog>laravel...i would be picking it up, you'd be picking up even php...so ,  There is no time to learn on the job.  ..
+02.03.19 03:55:05<editable-dog>not sure about the vue job...guess i gotta really learn vue first
+02.03.19 03:55:12<editable-dog>theres quite a lot to it
+02.03.19 08:46:46<editable-dog>https://itunes.apple.com/us/app/2-3-4-player-games/id1269516792?mt=8
+02.03.19 08:46:50<editable-dog>awesome
+02.03.19 08:47:17<editable-dog>we could do something like that for the laser thing
+02.03.19 08:47:27<editable-dog>we could also propose a game with bitcoin theme
+02.03.19 08:49:22<editable-dog>or one that gives you the option to store your highscore in bitcoin
+02.03.19 09:51:41<stoopkid> rather than "Python scripting" maybe something more like "Schema crosswalks and object-relational mapping in Python"
+02.03.19 09:55:02<stoopkid> heh, online tutoring job closed
+02.03.19 10:04:28<stoopkid> i've worked with PHP before i wouldn't be too worried about it, it would be mostly a matter of getting up to speed on laravel
+02.03.19 10:06:36<stoopkid> though if there's actually "no time to learn on the job" maybe not the right job for that
+02.03.19 10:11:16<editable-dog>cool
+02.03.19 10:14:50<editable-dog>so, idk if this is the right thing to do now, but i went back to my jsonld issue, and im trying to go through the library's code to understand whats going on
+02.03.19 10:15:07<editable-dog>i met some funky new js syntaxes in the proces, so im trying to figure those out now
+02.03.19 10:46:11<editable-dog>what do you think about those games? should i try to update the proposal?
+02.03.19 13:39:10-ilbelkyr- [Global Notice] Hi all, as you may have noticed we are currently being hit by a wave of spambots. We have enabled server-side filtering measures to mitigate the spam; you can find details at https://freenode.net/news/spamfilter and, as always, staff are happy to answer any questions you may have.
+02.03.19 14:07:56<stoopkid> id be open to that do you have any specific game proposals though?
+02.03.19 14:08:28<stoopkid> probably wouldnt anything too much beyond the complexity of say.. pong or w/e
+02.03.19 14:39:42<editable-dog>lets say a simple 2d car racing game
+02.03.19 14:42:13<editable-dog>or a simple 3d first person shooter
+02.03.19 14:43:44<editable-dog>yeah actually i think about this once in a while, i used to write various game-like things and graphical toys, and it was a lot of fun
+02.03.19 14:44:02<editable-dog>i think that it would make me enjoy programming more again
+02.03.19 15:19:56<stoopkid> hm how would you relate the game to btc tho?
+02.03.19 15:37:26<editable-dog>i suppose i wouldnt try to relate car racing to btc
+02.03.19 15:37:57<editable-dog>one job was games, one job was btc stuff
+02.03.19 15:38:00<editable-dog>http://koo5.github.io/squares.html
+02.03.19 16:11:11<editable-dog>meh, finally progress with jsonld
+02.03.19 17:01:09<editable-dog>sorry, im gonna go to be early today
+02.03.19 17:05:52<editable-dog>bed
+02.03.19 18:20:25<stoopkid> https://www.upwork.com/o/jobs/browse/t/1/details/~0192e1936cefa0e6cd/?amount=500-&q=sql&sort=recency&user_location_match=2
+02.03.19 18:51:55<stoopkid> https://www.upwork.com/o/jobs/browse/t/1/details/~01e99bc2188e3140fc/?amount=500-&q=python&sort=recency&user_location_match=2
+02.03.19 18:52:08<stoopkid> 10-15 proposals within 2 hours
+02.03.19 23:47:08<stoopkid> been studying react, angular & vue a bit
+02.03.19 23:47:51<stoopkid> seems like they need to just give up w/ HTML and CSS already and just make a browser that runs by having js directly control the rendering tree
+03.03.19 02:22:08<editable-dog>im not sure if making everything go through js fixes much
+03.03.19 02:22:16<editable-dog>did you reply to those two?
+03.03.19 02:22:50<editable-dog>its quite a difference between scopes for $500 hehe
+03.03.19 08:29:38<stoopkid> didn't reply yet wanted to see what you thought about it
+03.03.19 10:12:16<editable-dog>well the scraping one definitely seems worth replying to
+03.03.19 10:12:40<editable-dog>but i doubt we have any chance there with 0 reputation
+03.03.19 10:15:59<stoopkid> same, unfortunately
+03.03.19 10:21:05<editable-dog>i'll try to browse freelancer when i get home
+03.03.19 10:22:23<stoopkid> i'm looking at fiverr too
+03.03.19 10:23:09<stoopkid> i guess we might have to bite the bullet and take some unprofitable jobs to gain some initial rep
+03.03.19 10:24:48<stoopkid> i assume we could hold out and "eventually" get a couple initial jobs at the right price but i think the faster we can get to having *any* job the better
+03.03.19 10:25:24<stoopkid> and i guess if there's any time to do that, it would be now
+03.03.19 10:29:01<stoopkid> have you worked with any python web-scraping frameworks yet?
+03.03.19 10:29:45<stoopkid> also i looked at the univar github issues but i didn't see any, did you get them all or am i looking in the wrong place?
+03.03.19 10:46:41<stoopkid> https://www.freelancer.com/projects/graphic-design/need-another-website/?w=f
+03.03.19 10:47:25<stoopkid> i figure we can probably assume that the range of bids on upwork is probably similar to the range of bids on freelancer
+03.03.19 11:04:17<stoopkid> people seem to be recommending BeautifulSoup for python web-scraping
+03.03.19 12:16:26<editable-dog>wrong place, https://github.com/koo5/AutoNomic-pyco/issues
+03.03.19 12:16:40<editable-dog>i kinda didnt finish the migration
+03.03.19 12:17:05<editable-dog>from univar, that is
+03.03.19 12:17:49<editable-dog>ive used BeautifulSoup once, which is a scraping library
+03.03.19 12:17:55<editable-dog>just one script
+03.03.19 12:19:37<editable-dog>i wouldnt quite know where to start nowadays
+03.03.19 12:20:00<editable-dog>he wants a cms? where..
+03.03.19 12:21:22<editable-dog>i was figuring i'd start writing down a past projects page. cant hurt, right?
+03.03.19 13:05:45<editable-dog>i accidentally two freelancer profiles
+03.03.19 15:14:11<editable-dog>pondering https://www.freelancer.com/projects/python/code-sender/?w=f
+03.03.19 15:14:58<editable-dog>i actually do know a bit about gcode and the tools
+03.03.19 15:15:11<editable-dog>but..we'd have to come up with a proposal of what can be done for this little money
+03.03.19 15:15:43<editable-dog>anyway keep an eye out for this cnc stuff
+03.03.19 15:32:23<editable-dog>https://github.com/koo5/destroy_all_capitalist_e-ink
+03.03.19 15:32:44<editable-dog>probably not good fit for portfolio
+03.03.19 15:33:08<editable-dog>could probably get banned from github for this lol
+03.03.19 17:35:58<editable-dog>okay, just had a chat with some guy and was fixing his code, while he was awarding the project to someone else, and stopped writing
+03.03.19 17:36:12<editable-dog>i sent him the fixed code anyway, why not lol
+03.03.19 17:36:37<editable-dog>i quite like the jobs on freelancer, answering to a few more
+03.03.19 17:37:26<editable-dog>the site just seems to live off freelancers taking tests for $5 and "sponsoring" bids for $5 and i imagine its similar on the client side
+03.03.19 17:38:09<editable-dog>https://www.freelancer.com/projects/php/python-language-expert-needed/?w=f#placebid
+03.03.19 17:38:21<editable-dog>im wondering if everyone sees the text i wrote in the bid there?
+03.03.19 17:46:54<editable-dog>jjjforever
+                 <editable-dog>￼
+                 <editable-dog>￼
+                 <editable-dog>￼
+                 <editable-dog>￼
+                 <editable-dog>￼￼Choose File
+                 <editable-dog>Simple python project correction
+                 <editable-dog>03 MAR 2019 · 10:26 PM
+                 <editable-dog>hi
+03.03.19 17:46:55<editable-dog>￼
+                 <editable-dog>￼ RealTimeDays_src.py
+                 <editable-dog>￼
+                 <editable-dog>run this file and show me the result. I will tell you what you have to do.
+                 <editable-dog>working on it
+                 <editable-dog>hi
+                 <editable-dog>￼
+                 <editable-dog>did you?
+                 <editable-dog>hi
+                 <editable-dog>the output is rather long
+                 <editable-dog>koom@koom-KVM ~/f/RealTimeDays> python RealTimeDays_src.py 
+                 <editable-dog>run ticker
+                 <editable-dog>run signal
+                 <editable-dog>run signal
+                 <editable-dog>[datetime.datetime(2019, 3, 3, 22, 34, 56, 549007), 420724, 0.01, 2, 0.0, 0.4, 0.8]
+                 <editable-dog>[datetime.datetime(2019, 3, 3, 22, 34, 56, 562048), 420724, 0.01, 2, 0.0, 0.4, 0.8]
+                 <editable-dog>[datetime.datetime(2019, 3, 3, 22, 34, 56, 572976), 420724, 0.01, 2, 0.0, 0.4, 0.8]
+                 <editable-dog>[datetime.datetime(2019, 3, 3, 22, 34, 56, 807989), 420725, 0.01, 2, 0.0, 0.4, 0.8]
+                 <editable-dog>...
+                 <editable-dog>do you want to add reconnection functionality?
+                 <editable-dog>show me the screenshot
+                 <editable-dog>You can see that the program get the data in real time.
+                 <editable-dog>But I want to get the data only once when the program runs.
+                 <editable-dog>￼
+                 <editable-dog>understand?
+                 <editable-dog>maybe, just until it says "run signal"?
+                 <editable-dog>￼
+                 <editable-dog>Do you know about websocket?
+                 <editable-dog>something, not too much
+                 <editable-dog>￼
+                 <editable-dog>￼
+                 <editable-dog>￼ Screenshot from 2019-03-03 22-39-56.png
+                 <editable-dog>Yes, when the program runs, it show so many data.
+                 <editable-dog>But I want to get only one data at the moment when the program runs.
+                 <editable-dog>Without using thread.
+                 <editable-dog>￼
+                 <editable-dog>understand?
+                 <editable-dog>ok understood, let me read the code a bit
+                 <editable-dog>￼
+                 <editable-dog>Can you do it in 30 minutes?
+03.03.19 17:46:56<editable-dog>cannot promise
+                 <editable-dog>￼
+                 <editable-dog>As soon as possible, I want.
+                 <editable-dog>understood
+                 <editable-dog>ok playing with the code a bit..
+                 <editable-dog>do you want just one ticker line, like this: [datetime.datetime(2019, 3, 3, 22, 52, 51, 89033), 420600, 0.009, 1, 0.27272728, 0.33636364, 0.4]
+                 <editable-dog>and end?
+                 <editable-dog>koom@koom-KVM ~/f/RealTimeDays> python RealTimeDays_src.py 
+                 <editable-dog>run signal
+                 <editable-dog>run signal
+                 <editable-dog>[datetime.datetime(2019, 3, 3, 23, 6, 5, 530273), 420556, 0.362, 2, -0.27272728, -0.2030303, -0.13333334]
+                 <editable-dog>done
+                 <editable-dog>(x) koom@koom-KVM:/home/koom/freelancer/RealTimeDays$
+                 <editable-dog>like this?
+                 <editable-dog>￼
+                 <editable-dog>RealTimeDays_src.py
+                 <editable-dog>3.02 KB
+                 <editable-dog>￼
+03.03.19 17:47:04<editable-dog>You cannot chat with this user
+03.03.19 18:06:01<editable-dog>ok, i think i just did another work for free lol
+03.03.19 18:08:20<editable-dog>its kinda like stack overflow, but youre supposed to be paid but then you arent
+03.03.19 18:48:21<stoopkid> ouch
+03.03.19 18:48:35<stoopkid> do you at least get to add it to your reputation somehow? heh
+03.03.19 18:50:13<editable-dog>no lol
+03.03.19 18:50:27<editable-dog>well, still communicating with the second guy
+03.03.19 18:52:52<editable-dog>or trying to
+03.03.19 18:52:58<editable-dog>he's probably stoned or something
+03.03.19 18:53:50<editable-dog>educational to read the bods that built up here https://www.freelancer.com/projects/graphic-design/need-another-website/?w=f
+03.03.19 18:53:55<editable-dog>bids
+03.03.19 18:57:39<editable-dog>something keeps adding stuff to my google calendar
+03.03.19 18:58:39<editable-dog>at first it was a Painting class, then Sex every wednesday night
+03.03.19 18:58:59<editable-dog>yesterday Camping appeared and today i apparently have planned a Funeral
+04.03.19 07:12:12<stoopkid> how much would you charge for a client-side-only web page from a template?
+04.03.19 07:16:13<stoopkid> or rather, how cheaply do you think we could reasonably do a simple page from a template
+04.03.19 08:00:45<stoopkid> https://www.freelancer.com/projects/php/build-website-blog-18864522/?w=f
+04.03.19 08:01:29<stoopkid> bid range $250-$750, first bid "$2000 in 14 days"
+04.03.19 08:20:13<stoopkid> more web scraping https://www.freelancer.com/projects/python/Scrape-historical-price-data-from/?w=f
+04.03.19 08:20:33<stoopkid> might be an easier thing to break into than web design
+04.03.19 08:40:43<stoopkid> so, for front-end work the standards seem to be react, angular and vue, and all of these seem pretty approachable, so i don't think front-end dev would be any problem for us we're probably gonna have more trouble with graphic design
+04.03.19 08:43:17<stoopkid> mainly cause there's high expectations of conforming to a very specific standard that i don't think either of us have spent a lot of time studying for its own sake
+04.03.19 08:45:22<stoopkid> like knowing how to take some geometry specs and create an invoice document out of that as opposed to already knowing what the "proper" geometry of an invoice is supposed to be
+04.03.19 08:56:00*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-dfagxmuifvsqgvsc, (unauthenticated): kook)
+04.03.19 08:56:33<sirccloud> https://www.freelancer.com/projects/python/NLP-Recruitment-Portal-Development.html
+04.03.19 08:57:13<stoopkid> hm definitely looks interesting
+04.03.19 08:57:53<stoopkid> probably too much AI though i think
+04.03.19 08:58:51<stoopkid> i can understand the math & algorithms that implement AI but i'm not at the level that i know how to pick the algorithms to apply to some real-world domain
+04.03.19 09:01:22<stoopkid> side-note: megan said she can help us with graphic design if/when we have a job that involves it, and also for our portfolio site
+04.03.19 09:02:25<sirccloud> Cool
+04.03.19 09:02:44<sirccloud> Im out of bids:(. Will fix it in the evening
+04.03.19 09:03:08<sirccloud> Can you bid on this? https://www.freelancer.com/projects/php/MAKE-SOME-CHANGES-INSTAGRAM-REQUESTS.html
+04.03.19 09:03:46<stoopkid> how much / how long ?
+04.03.19 09:03:56<stoopkid> $750 ?
+04.03.19 09:04:29<sirccloud> 1300 7 days?
+04.03.19 09:05:23<sirccloud> I wouldnt bid the lowest
+04.03.19 09:05:52<sirccloud> Lets stand out lol
+04.03.19 09:06:41<sirccloud> Or as you think
+04.03.19 09:06:52<sirccloud> Wait whats the script in
+04.03.19 09:06:59<stoopkid> $500 would also stand out lol
+04.03.19 09:07:24<stoopkid> html, js, php, looks like
+04.03.19 09:14:34<sirccloud> I think theres no script
+04.03.19 09:14:45<sirccloud> Its probably againsr their tos even
+04.03.19 09:15:03<sirccloud> I would propose an android app
+04.03.19 09:16:06<sirccloud>  / mobile app
+04.03.19 09:16:59<stoopkid> yea i'm still not exactly sure what an instagram requests acceptor script is or what you're allowed to do with their API
+04.03.19 09:21:31<sirccloud> Id build a little android demon that sends a signal on new requests and handles an accept signal
+04.03.19 09:22:42<sirccloud> Then the automation itself could be handled with AutomateIT, without breakingToS
+04.03.19 09:24:13<stoopkid> so what exactly is the ToS issue? could we include this in the cover-letter?
+04.03.19 09:29:24<stoopkid> side-note: wondering about using nodejs as a webscraper since it's already a js interpreter
+04.03.19 09:37:43<stoopkid> ah nice, that's what puppeteer's for
+04.03.19 09:41:52<stoopkid> https://www.freelancer.com/projects/javascript/NodeJS-Puppeteer-scraper-for-entire/?w=f
+04.03.19 09:46:05<stoopkid> maybe eventually we can make ourselves a webscraper to find us jobs lol
+04.03.19 09:49:30<stoopkid> wanna see if you like any of these portfolio designs? https://onextrapixel.com/60-clean-and-simple-examples-of-portfolio-design/
+04.03.19 09:50:47<stoopkid> not necessarily just for our own portfolio but also keep an eye out for designs you'd want to showcase / use as templates
+04.03.19 09:54:43<stoopkid> i'm thinking when we design our portfolio we should maybe try to make the process be basically acting out the actual process we would go through w/ a client, i.e. more or less the same design documentation to go along w/ the site itself
+04.03.19 09:55:49<stoopkid> more ideally, we could use that design documentation as a basic outline of the site itself
+04.03.19 10:01:27<stoopkid> so like: https://en.wikipedia.org/wiki/Systems_development_life_cycle#Phases
+04.03.19 10:04:15<stoopkid> each phase basically a different page, page layout roughly corresponding to the actual documentation we would provide to the client in that phase, so it's like "here, you can see more or less exactly what methodology we're going to apply to your project"
+04.03.19 10:38:07<stoopkid> https://recursivelyrecursive.files.wordpress.com/2015/04/cat.jpg
+04.03.19 10:41:04<stoopkid> could be an interesting thing to build on the portfolio site, i was thinking about having something to showcase how we can make the display change responsively according to display size & resolution, but we could also make it start out as a replica of the user's current display and have it look like an infinite-repeating image that you can scroll in/out of
+04.03.19 11:02:20<stoopkid> well, i've got the basics of vue down so now i think it's mostly a matter of getting from basics to "here's a site in vue"
+04.03.19 11:08:47<stoopkid> i guess it's less a matter of vue or w/e front-end and more a matter of knowing what page layout/geometry/styling to be aiming for in the first place
+04.03.19 11:14:12<sirccloud> Yeah headless browser defimitely has advamtages over just parsing html
+04.03.19 11:14:33<sirccloud> Their ToS prohibit using their api in automated fashion
+04.03.19 11:15:07<sirccloud> Well i definitely wanted to make a script to fetch me RSS feeds from upwork..
+04.03.19 11:15:50<stoopkid> so basically if a user clicks a button that uses their API, that's ok, but having a machine click the button is not?
+04.03.19 11:19:46<stoopkid> seems like it might still apply to using AutomateIT to accomplish that?
+04.03.19 11:31:56<sirccloud> Well, but we wont be the ones making automateIT click it
+04.03.19 12:25:51<stoopkid> https://coolors.co
+04.03.19 12:34:35<sirccloud> Meh, web design people make me want to puke
+04.03.19 12:35:09<sirccloud> "Design is how it works"? I dont think so
+04.03.19 12:35:17<stoopkid> lol
+04.03.19 12:37:28<stoopkid> where did you see that
+04.03.19 12:40:24<sirccloud> Olly Sorsby
+04.03.19 12:40:37<sirccloud> In the portfolio page
+04.03.19 12:40:50<stoopkid> ah
+04.03.19 12:44:22<stoopkid> yea
+04.03.19 12:45:10<stoopkid> this stuff all looks nice as far as graphic design and maybe there's some elements like color scheme & typography we can get out of it but i hate sites like this that are pretty much just a graphic design and not actually a website
+04.03.19 14:01:25<stoopkid> so i think on pretty much any code we do we need some kind of watermarking along with some way to demonstrate the product w/o revealing the source code
+04.03.19 14:17:29<stoopkid> https://www.javascriptobfuscator.com/
+04.03.19 14:18:34<stoopkid> maybe instead of "Design is how it works" we could have "Designed to work"
+04.03.19 14:19:10<stoopkid> then again it doesn't say much, hypothetically all designs should be designed to work lol
+04.03.19 14:47:09<sirccloud> Yeah obfuscator sounds like a great way to do previews
+04.03.19 14:49:14<sirccloud> Translation service: English to binary and back. For You.
+04.03.19 14:50:16<sirccloud> Something raw like that, what we are about, not what the fluffies are about
+04.03.19 14:50:29<sirccloud> Acessibility and usability first
+04.03.19 14:50:41<stoopkid> works for me
+04.03.19 14:53:36<stoopkid> now we just need a good way to communicate that to clients through page layout
+04.03.19 15:10:05<stoopkid> now.. to try to avoid as much as possible having to fiddle with specific styling elements, any graphic design we do we should probably design as a template w/ just a couple options for configurability (assuming they aren't already provided for in the CMS), color schemes & fonts probably being the #1
+04.03.19 15:20:19<stoopkid> so, how much do you think you would charge for a simple static site, following some standard layout, where all we were doing was figuring out how to fit the client's text/image content and styling into the layout without any dynamically configured content, possibly not even any js, no database / server-side processing, and no customized graphic design
+04.03.19 15:23:38<stoopkid> just to kinda get a baseline
+04.03.19 15:30:05<stoopkid> it's kinda weird because a job that simple could itself be automated without much further effort than the job itself, and then we're looking at an entirely different thing from a business perspective
+04.03.19 15:30:52<editable-dog>strstrstrs
+04.03.19 15:34:15<editable-dog>idk really, i haven't done this for 20 years
+04.03.19 15:35:05<editable-dog>gotta pick a site generator / templating engine or whatever, get a site done and see
+04.03.19 15:38:19<editable-dog>in 20 years
+04.03.19 15:51:39<editable-dog>https://github.com/koo5/Gremble09.github.io
+04.03.19 15:51:59<editable-dog>like this, i dont even know what this "runs" on
+04.03.19 15:59:54<editable-dog>https://github.com/koo5/sitegen/blob/master/melon.inform/Source/story.ni muhehe
+04.03.19 16:04:55<editable-dog>i guess i'll be trying workana today
+04.03.19 16:06:21<editable-dog>i should probably work on the pyco visualization a bit, before i forget where i left off
+04.03.19 16:07:42<editable-dog>well the idea with static sites should be that you maybe have your content in some database with a nice administration ui, or in plain files
+04.03.19 16:07:52<editable-dog>then you just run a generator over it
+04.03.19 16:08:44<editable-dog>and you download/buy some design from somewhere and you should be done
+04.03.19 16:08:45<editable-dog>idk
+04.03.19 16:19:45<editable-dog>https://www.workana.com/job/api-integration?ref=projects_2
+04.03.19 16:19:53<editable-dog>might try to talk the price up
+04.03.19 16:32:37<editable-dog>https://github.com/software-for-immortality/past_projects
+04.03.19 16:55:45<editable-dog>https://medium.com/tech-tajawal/why-headless-cms-is-becoming-so-popular-57d262b1e096
+04.03.19 17:10:21<stoopkid> seems reasonable
+04.03.19 18:45:23*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-dfagxmuifvsqgvsc) left #atlas-project: Quit: Connection closed for inactivity
+04.03.19 20:22:58<stoopkid> git-backed headless CMS looks interesting
+04.03.19 20:23:09<stoopkid> forestry or netlify-cms or some such
+05.03.19 00:37:32<stoopkid> so im taking a russian language class to fulfill the "diversity" requirement for my degree, do you happen to have the equivalent of ы in czech? i'm trying to understand what this sound actually .. "is".. lol
+05.03.19 00:40:48<stoopkid> it's like, not quite "wi" as in "we"/"win" or somewhere in between, not quite "ye" as in "boy"
+05.03.19 00:41:22<stoopkid> best i can understand it it's like trying to say "ee" while trying to gulp at the same time, if that makes sense
+05.03.19 04:52:18*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-nsjymtjiyblrvugq, (unauthenticated): kook)
+05.03.19 05:02:46<sirccloud> No we dont pronounce i and y differently
+05.03.19 05:04:24<sirccloud> I think i always attributed this sound to russian people just being rough lol
+05.03.19 05:05:14<sirccloud> I  czech y and i is the same sound, so a huge part of czech classess is dedicated to the rules of what to write where
+05.03.19 05:05:22<sirccloud> In
+05.03.19 06:23:54<editable-dog>re cms, i think i'll play with the graphql one
+05.03.19 07:21:58*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-nsjymtjiyblrvugq) left #atlas-project: Quit: Connection closed for inactivity
+05.03.19 08:16:31<editable-dog>https://www.freelancer.com/projects/php/Website-Platform-Incorporating-Website-18872860/?w=f
+05.03.19 08:16:36<editable-dog>templates marketplace
+05.03.19 09:22:16<editable-dog>https://www.upwork.com/jobs/_~0194347fdb647ac19e/
+05.03.19 09:30:43<editable-dog>yea i like the whole headless cms direction
+05.03.19 09:56:25<editable-dog>still not sure what it is though
+05.03.19 13:02:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ztjtnuldzkjcraya) left #atlas-project: Quit: Connection closed for inactivity
+05.03.19 13:12:15<editable-dog>https://chipmunkdev.com/
+05.03.19 13:12:19<editable-dog>nice ideas here
+05.03.19 13:52:02*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgztkksocykulbfz, stoopkid: stoopkid)
+05.03.19 14:24:45<stoopkid> seems like it's basically just a buzzword for storing content data in a presentation-independent format, but i may be missing some of the finer details implied by the term
+05.03.19 14:41:32<stoopkid> probably one trend is gonna be CMS tools that can work offline / asynchronously so i figure the git-backed headless CMS are gonna have some popularity, especially since they're already integrated w/ de facto standard version control system
+05.03.19 14:42:59<stoopkid> plus their structure is basically just file-system & files, basically at the technical level that content developers can manage, not like a DBMS or w/e
+05.03.19 14:46:15<stoopkid> so the content developers' job should basically just be producing content and appropriately labeling the content w/ labels that are semantically relevant to what the content actually semantically represents to their business or to the user or w/e, ex. instead of "this is a div with a span and etc.." just "this is a tweet"
+05.03.19 14:49:11<stoopkid> another benefit w/ the file-system is ofc that it's already basically equipped to handle whatever arbitrary kind of data the user might put in it, just a directory of arbitrary files and then let the presentation stack figure out what to do w/ it
+05.03.19 14:53:28<stoopkid> so then integration w/ a particular front-end design should just be a matter of a schema crosswalk mapping their semantic elements to display elements
+05.03.19 14:57:42<stoopkid> we/ should probably get on some diagram-drawing site or something and when we're looking at a serious gig try to sketch out our initial impressions of what the project might look like
+05.03.19 15:00:00<stoopkid> i'm also thinking a trend w/ the headless CMS is we're gonna eventually see it expand beyond web and start becoming just a buzzword describing a standard way of integrating techies w/ fluffies in any project
+05.03.19 15:22:07<editable-dog>hmm, ive been pronouncing the word appear wrong all this time
+05.03.19 15:22:43<editable-dog>hehe
+05.03.19 15:22:57<editable-dog>yeah your analysis sounds about right
+05.03.19 15:24:13<editable-dog>i think though, it was written somewhere on GraphCMS website, that they are right, that git isnt actually how users want to manage their content
+05.03.19 15:24:27<editable-dog>its a programmer thing
+05.03.19 15:24:59<editable-dog>so, administration ui is needed, hence "decoupled" cms i suppose
+05.03.19 15:26:42<editable-dog>https://www.gatsbyjs.org/features/
+05.03.19 15:27:21<editable-dog>https://www.gatsbyjs.org/docs/headless-cms/
+05.03.19 15:27:32<editable-dog>i feel like this one might be worth learneng
+05.03.19 15:27:41<editable-dog>if we want to get into this kind of business
+05.03.19 15:28:16<editable-dog>im still randomly answering ads on freelancer, upwork and now also workana
+05.03.19 15:28:45<editable-dog>building up profiles and stuff
+05.03.19 15:39:20<editable-dog>nice, theres actually something like gatsby for vue
+05.03.19 15:46:19<stoopkid> vuepress?
+05.03.19 15:55:40<editable-dog>https://gridsome.org/
+05.03.19 17:38:48<stoopkid> so, we should probably pick some stack to test and try implementing our portfolio site
+05.03.19 17:39:45<stoopkid> before we do that though we should probably get in some collaborative diagram editor and lay out the high-level design
+05.03.19 17:42:11<stoopkid> (the content management & delivery strategy, not the site outline.. but also that)
+05.03.19 17:48:23<stoopkid> gridsome/graphql looks interesting, we'd need to pick some headless CMS to go w/ it and some example content to try to build
+05.03.19 18:20:24<editable-dog>ok, i suppose an architecture diagram makes sense in this case, we can also use it as content for the site
+05.03.19 18:22:16<editable-dog>yeah just give me some more time for more research/trying out
+05.03.19 18:33:27<stoopkid> well we might want to make a diagram of what frameworks even fit together / how, and then we'd have documentation of the research that might help us pick out specific strategies easier by just selecting them out the diagram
+05.03.19 18:50:54<stoopkid> i'm thinking that w/ stuff like git-backed headless CMS we're probably gonna see it shift away from the paradigm of storing the entire site in git and into something more like using git to store a history of (potentially undoable) content developer/manager actions relative to a set of resources, since the git paradigm doesn't really scale to stuff like ex. a large database
+05.03.19 19:13:18<editable-dog>well, we definitely should be taking notes from this research
+05.03.19 19:14:15<editable-dog>like, gatsby is built on react
+05.03.19 19:14:45<editable-dog>gridsome and vuepress on js
+05.03.19 19:14:58<editable-dog>vuepress is created by vue author
+05.03.19 19:15:27<editable-dog>vuepress is mainly for docs, and it still doesnt even have its own docs in itself
+05.03.19 19:15:48<editable-dog>gridsome is general purpose
+05.03.19 19:18:44<editable-dog>now it just a matter of finishing the cnl and making a search box:p
+05.03.19 19:19:38<editable-dog>or just organizing and tagging things a bit and making a searchbox
+05.03.19 19:20:15<editable-dog>metalsmith is weird
+05.03.19 20:08:07<editable-dog>the rabbit hole goes on and on..
+05.03.19 20:12:42<editable-dog>funilly enough, while i feel very comfortable with PHP, not only have i never used any frameworks in it, i also dont have any project in it to show, and since yo usay you know it too, we might want to think about showcasing it somehow
+05.03.19 20:13:43<editable-dog>it actually has some nice frameworks nowadays, i hear
+05.03.19 20:14:05<editable-dog>but then you run into: how do i make a rest api, theres not a single good library for it, lol
+05.03.19 20:14:19<editable-dog>or something like that
+05.03.19 20:23:41<stoopkid> sure, i figured we'd maybe get to that by starting w/ some light-weight static site just to get a basic feel for putting a whole site together and then add in server-side stuff in another iteration
+05.03.19 21:38:40<stoopkid> megan said she can potentially help out with custom graphic design as well
+05.03.19 21:41:34<stoopkid> she might also be open to content-writing, depending on the job (would kind of go hand-in-hand w/ the graphic design in a lot of cases)
+05.03.19 21:48:47<stoopkid> kind of outside of "what we do" but that might help round out our service a bit, she can basically help us out w/ those fluffier aspects that we don't want to be having to deal with but probably can't assume we can avoid if we're gonna be living off freelancing
+05.03.19 22:00:19<stoopkid> another thing we might want to look into is mapping tools, it wasn't that complicated to do google maps APIs & cesiumJS etc.. back when we were working on that, and that's a bit higher-value job and would probably be a good thing to showcase
+05.03.19 22:32:48<stoopkid> something else i think we're probably gonna want to work on, which we've discussed some before: automated build/deployment of a collaborative dev environment
+05.03.19 22:42:50<stoopkid> i'm thinking that after we get a light-weight static portfolio site and before we get into server-side stuff we should spend some time collecting APIs that we can use in fully client-side applications
+05.03.19 23:01:19<stoopkid> here's basically my general idea for how i want to approach this i wanna know if you're on more or less the same page or if you'd take a different approach so that we can make sure we're putting our efforts into the same direction and that it's the right direction for us:
+05.03.19 23:03:53<stoopkid> so, there's a wide range of work out there from hardcore down-to-the-bits hacking & problem-solving (what we maybe hypothetically want to be doing, for the right price & timeframe) to pure business fluff content-writing graphic design SEO etc.. (what we generally hate doing)
+05.03.19 23:06:26<stoopkid> i'm thinking if we're gonna pursue this freelancing thing i would maybe want to start as close to the latter as possible
+05.03.19 23:14:10<stoopkid> i guess starting out i want to be more focused on business than code, if that makes sense?
+05.03.19 23:21:09<stoopkid> like i guess 6 months from now when we're in the middle of some major coding disaster project that was seriously underfunded and we're struggling to find other work i don't want to still be lacking general business fundamentals like portfolio, marketing ourselves (even to lowest common denominator fluff if that's what's necessary), etc.. that we neglected due to pursuing some particular interesting job (ex. like what
+05.03.19 23:21:10<stoopkid> we did w/ autonomic after we had previously talked about still pursuing freelancing etc..)
+05.03.19 23:27:38<stoopkid> like i don't want much serious coding to be too much of a distraction right now while we're trying to do our own business fluffing (not to mention also still getting our general bearings in the modern web ecosystem) and i don't want lack of business fluffing & business planning to be a distraction later when we actually do have some major coding disaster
+05.03.19 23:31:33<stoopkid> not that we should necessarily avoid the more interesting/challenging custom jobs or that we should intentionally seek out actual fluff like content-writing and graphic design, but, say for example we're trying to market ourselves for CRM/ERP work
+05.03.19 23:45:18<stoopkid> also because, at least under our current business model, i figure we're not in business for software we're in business for business
+05.03.19 23:51:13<stoopkid> what are our goals? #1 is obviously money, that's what's dragging us into thinking about doing random mundane freelancing jobs in the first place instead of working on our own creative endeavors
+05.03.19 23:54:07<stoopkid> #2 i figure is professional/personal independence within the parameters of cautiously assuming we can't/shouldn't necessarily wait around for any of our own creative golden eggs to hatch before we start independently bringing in income
+05.03.19 23:57:03<stoopkid> and #3 i would say is to *eventually* be working on the exact kind of things we want to be working on, while maintaining the financial security & independence from #1 and #2
+05.03.19 23:58:23<stoopkid> (ofc lemme know if you'd disagree w/ that selection/order)
+06.03.19 00:03:12<stoopkid> obv money being #1 probably isn't really how either of us really feel "on the inside" or w/e, but, i also think we can't really afford to prioritize it differently?
+06.03.19 00:05:55<stoopkid> like our fundamental objective here is to solve "the money problem" so that we can even begin working on #2 and #3
+06.03.19 00:25:02<stoopkid> like idk, that's basically what that means to me in prioritizing money as #1, not like we'd sacrifice our ethics for money or like we're out to be the richest or anything like that ofc but i want to make the problem go away without sacrificing #2 and #3
+06.03.19 00:29:54<stoopkid> there's plenty of interesting pure coding, game dev, etc.. work out there but i guess that to me isn't (in and of itself) what represents financial security, what represents financial security to me is financial security (i.e. the study & implementation thereof)
+06.03.19 00:32:59<stoopkid> not to mention that in essentially all cases the pure coding, game dev, reasoner dev, whatever etc.. is simply a function of somebody else's business process where their entire reason for existence let alone commissioning work on this particular code is to also solve their own financial security problem
+06.03.19 00:37:22<stoopkid> how are we currently trying to get the $? via upwork etc.. where we can see 99% of jobs are somebody else has latched onto some demand and is trying to get somebody to help streamline the interface between their supply & that demand
+
+06.03.19 00:41:53<stoopkid> the way i look at that business model is that for probably any high-valued job (one where we're in charge of implementing any significant component of their operations), we're basically not just "here implement this thing according to this spec", we're basically taking over & automating some entire division of business for them, whether we're looking at it that way or not
+06.03.19 01:04:44<stoopkid> i guess being confronted with the kinda staggering challenges involved with actually trying to seriously start doing business as independent professionals has given me some more respect for all these potential clients' attempts at doing their own business, however fluffy they might be
+06.03.19 01:13:42<stoopkid> so consider ex. CRM/ERP work
+06.03.19 01:20:26<stoopkid> our objective is to tap into the flow of money, this business commissioning the work is a source of money to us, where's that money coming from? it's all flowing through that CRM/ERP we build
+06.03.19 01:24:21<stoopkid> also consider work on ex. microcontrollers, arduinos or w/e
+06.03.19 01:26:24<stoopkid> we could implement some software for an arduino
+06.03.19 01:27:41<stoopkid> if we got the hang of it we might think we could reasonably create an actual electronic product, or at least a prototype of one
+06.03.19 01:28:37<stoopkid> we were looking at a laser light-show thing
+06.03.19 01:33:01<stoopkid> we've both got some experience developing control systems software, if we got the hang of it we might think we could reasonably provide the automation for a factory
+06.03.19 01:34:14<stoopkid> the factory commissioning the work is a source of money to us.. where's that money coming from?
+06.03.19 01:36:16<stoopkid> if we were to provide the automation for a factory, on business-side, industrial-side or both, how far of a distance is that business-wise from actually "taking over operations" of the factory?
+06.03.19 01:45:15<stoopkid> this might sound like i'm talking about pie-in-the-sky stuff like we're just figuring out how to sell static fluff sites on upwork and now i'm talking about taking over operations of factories, but it's more a matter of long-term goal/strategy/mindset
+06.03.19 01:48:53<stoopkid> like we're freelancers scraping by for random small-bid work right now, but what are we 10, 20, 30, .. 100 years from now
+06.03.19 01:56:55<stoopkid> if we were to design the CRM/ERP for a bank (meaning assess their business needs and implement a solution that runs their business better), how far is that, from a technical perspective, from taking over technical/general directorship of the bank?
+06.03.19 01:59:28<stoopkid> so let's say 10, 20, 30 years from now etc.. we were actually in that position of actually taking over / starting some bank
+06.03.19 02:03:59<stoopkid> imagine those future selves had to go back to random freelancing work again and magically this "own a bank" job appears on the freelancing site, and they're just the right people for the job, due to decades of experience in CRM/ERP/BI/PR/HR/SEO/security and yada yada yada
+06.03.19 02:04:42<stoopkid> obv those future selves should take that job
+06.03.19 02:10:12<stoopkid> so if those future selves should take that job, our current selves should hypothetically take that job if it were to actually be available, only problem (aside from that this is a completely unrealistic scenario exaggerated for effect) is that we're not equipped to actually perform the business functions
+06.03.19 02:28:17<stoopkid> obv owning the bank is more financial security than just doing a one-time job dev-ing the bank's CMS/CRM/ERP/etc..
+06.03.19 02:29:36<stoopkid> so, that's all completely exaggerated just to make sure the mindset is clear, but what does this matter to us in concrete terms now or 10, 20, 30, .. 100 years from now
+06.03.19 02:33:51<stoopkid> consider rather than pie-in-the-sky bank/factory, instead <insert arbitrary profitable business venture that we happen to equipped to handle at whatever point in time>..
+06.03.19 02:41:47<stoopkid> web hosting service? sure why not; cloud-hosting service? sure why not; automated crypto-trading service? sure why not..
+06.03.19 02:50:11<stoopkid> these look a lot more reasonable but long-run where is the boundary on this? there isn't one, risk is unlimited over the long-run so long-run there shouldn't be any limit to financial/personal security precautions either
+06.03.19 02:53:14<stoopkid> from a freelancing perspective it seems like the answer to "can my business do it" needs to always be tending towards "yes", in the long run
+06.03.19 02:57:47<stoopkid> imagining what our future selves are doing, looking for some source of $ cause they actually need to make it happen because now they've got wives & kids & "livelihoods" or whatever and being equipped to handle <insert arbitrary profitable venture>, there's not a situation i would think where we'd think our future selves shouldn't "acquire that business and run it profitably" ?
+06.03.19 03:22:49<stoopkid> so this still seems somewhat unreasonable (and also kind of greedy maybe?) to expect out of just the two of us ofc but now consider in the context of working with a team of 10 more people, or with a network of 100, etc.. with ethical business operations in whatever venture, structured as some kind of workers/consumers cooperative etc..
+06.03.19 05:41:15<editable-dog>i think ill just look into this Ionic thing a bit, then go back to gridless. Gridless lets us make a markdown-files based site first, then add other sources when needed
+06.03.19 05:47:29<editable-dog>so, one maybe not so obvious aspect of my general idea about this whole freelancing thing is that im ok if this ends up being a long run
+06.03.19 05:48:41<editable-dog>in the unlikely event that i stumble into another part-time job of my dreams, for example
+06.03.19 05:49:17<editable-dog>also, if i wanted to go a bit on the non-lubed side (which i dont want to), i still got about a year worth of savings
+06.03.19 05:51:09<editable-dog>i figure ill just continue trying to get any gig we can, but i suppose nobody is gonna hire us for anything big anyway
+06.03.19 05:53:35<editable-dog>im in the middle of my fourth negotiation on freelancer hehe
+06.03.19 05:54:28<editable-dog>anyway, except the exceptions i stated, i agree with the business-first approach
+06.03.19 05:55:16<editable-dog>especially as long as it also means catching up with webdev and maybe mobile dev
+06.03.19 05:56:05<editable-dog>ive been ignoring this for so long, and i guess the time has come that this field has matured a bit, and ive been surpressing the feeling of inadequacy about this for very long now
+06.03.19 05:57:13<editable-dog>will continue later, gotta dig into this guy's code..
+06.03.19 07:41:28<editable-dog>wrt golden eggs..i still feel strongly about my cnl/ui ideas...if theyre best carried out within the tau framework is a question. I do feel it at least gives it some story wrt future expansion into a real programming language, which would be a huge plus. But i end up working mostly on tau alone, instead of getting to some mvp
+06.03.19 07:48:01<stoopkid> i like your cnl/ui ideas & also some of the math / verification ideas i've been working on, among other ideas we've had, but the question for me there isn't do we think those ideas can be successful but rather when will they be successful & what does that success look like as far as income & longer-term financial security
+06.03.19 07:49:04<stoopkid> especially seeing as how if anything we seem to be generally inclined to give away our work for free
+06.03.19 07:55:32<stoopkid> like i still wouldn't really want to go into some kind of proprietary software product business-model, but then we need some other kind of business model
+06.03.19 07:59:53<stoopkid> probably also wouldn't want to ex. get commissioned to basically dev & sell those ideas to somebody else who's just gonna run on the proprietary model cause then ofc we could've just done that ourselves
+06.03.19 08:02:07<stoopkid> like i sort of want to keep a clear separation between "these are our personal projects" and "this is our business model" unless we're specifically intending to orient the business model around one of those projects
+06.03.19 08:05:55<stoopkid> so, you feel strongly about your cnl/ui ideas, but what does that mean for you in terms of short-term / long-term business model
+06.03.19 08:14:15<stoopkid> iow, do you feel strongly that they would be beneficial to the world, or do you feel strongly that we have clear shorter & longer-term path to monetization?
+06.03.19 08:30:16<editable-dog>i feel its probably beneficial to the world, and i probably just cant stop working on it, unless for example it becomes irrelevanted by nars
+06.03.19 08:31:10<editable-dog>so, i might as well have an idea of a business model, which would be making it into an android app focusing on providing an unified ui/virtual assistant on a phone
+06.03.19 08:32:21<editable-dog>targeting phones also brings with it an obvious monetization venue, with the business model modelled after other open source with proprietary addons and proprietary distribution projects
+06.03.19 08:33:26<editable-dog>but its definitely on the long term/just hopefully side
+06.03.19 08:34:21<editable-dog>but short term the relevant work is also on the portfolio-building side
+06.03.19 08:35:10<editable-dog>my idea is to finish the proof trace visualizer a bit, so it acts as a showcase for the whole reasoner work we've done so far and showcase for vue skills
+06.03.19 08:35:27<editable-dog> / way to acquire vue skills
+06.03.19 08:36:29<editable-dog>and when thats done, i will hopefully quickly finish the current iteration of the ldl, and be able to showcase that a well
+06.03.19 08:37:11<editable-dog>which will actually make us look like doing something cool and advanced and really cutting edge
+06.03.19 08:39:04<editable-dog>after that, we might decide that we want to make a new iteration with pmcfg, or i might actually start using the current system to build and organize my stuff
+06.03.19 08:54:00<stoopkid> possibly, but this is something i would maybe come back to at some later point, same reasoning as i don't necessarily want to be stuck w/ major technical problems simultaneously as the problem of dealing with all the separate complexities of just trying to start a business, or ending up back in the same situation due to having put our eggs in some "cool and advanced feature" basket w/out having developed & refined our
+                 <stoopkid> general business model & operations & methodologies
+06.03.19 08:59:45<stoopkid> i feel like if we just focus on the business fundamentals first then we will come back to our projects with better methodology to apply to them
+06.03.19 09:14:12<stoopkid> and with more financial breathing room, like you said you've got a years worth of savings, and i've got my parents helping me out w/ rent for school, but eventually that's gonna run out and then we would need to have some income stream.. so i feel like instead of trying to take this as an opportunity to work on our personal projects we should maybe take this as an opportunity to just work on getting as quickly as
+                 <stoopkid> possible to actually running a business, and then next year or whenever our current income sources run out, we're already relatively secure in business and will have already laid a lot of the groundwork to actually either start to turn our personal projects into income generators or even just develop them as freeware due to having other income streams freeing us up from having to rely on  monetizing them
+06.03.19 09:18:00<stoopkid> the way i figure, we're not gonna have a problem show-casing our cool & advanced stuff, the cool & advanced features aren't what cause us any difficulty, it's not what we have a lack of
+06.03.19 09:20:44<stoopkid> we're not fluffies so it's not like we spend a year doing business & fluff & simple web design but just as vacuous self-promotion, we spend a year doing business & fluff & simple web design and then we actually have cool features we can start show-casing
+06.03.19 09:26:12<stoopkid> i think "looking like we're doing something cool & advanced & really cutting edge" isn't really how i think of it
+06.03.19 09:27:54<stoopkid> i think if i could pick one word i would want us to look like it would be "reliable"
+06.03.19 09:31:04<stoopkid> i figure if our model is "reliability" we will eventually be able to work on all the cool & advanced features we would ever want to
+06.03.19 09:40:55<stoopkid> so concretely on a technical level what that means to me is that we shouldn't focus on developing advanced features outside the context of already having developed the fully-featured system (or business model for developing those systems for clients) in which those advanced features would be hosted
+06.03.19 09:43:17<stoopkid> so ex. our we gonna build our personal project as a web / mobile application? then we should already know how to develop a fully-featured web / mobile application & run a business model around a sw dev lifecycle for web / mobile apps
+06.03.19 09:43:23<stoopkid> are* we
+06.03.19 09:59:02<stoopkid> like, it would look better to be missing the advanced feature but have the solid fully-featured foundation that could support that advanced feature than to have the advanced feature but be missing that foundation
+06.03.19 10:01:53<editable-dog>im not so convinced here, doing a personal project is how one acquires the skills to build proffesional projects
+06.03.19 10:02:35<editable-dog>unles you get to play with the new technology on your current job
+06.03.19 10:02:56<editable-dog>first build something for yourself, then for a friend, then for money
+06.03.19 10:04:59<editable-dog>the mental framework im operating in now is getting oriented in freelancing sites, getting some experience there, trying to get some reputation there, and in parallel with it working up towards having a protfolio to show
+06.03.19 10:05:58<editable-dog>we happen to have the reasoner and ldl at an almost presentable state, so im thinking it would be a waste not to finish it/polish it
+06.03.19 10:06:43<editable-dog>now that i think of it, even my new_shit could be made into something presentable, maybe with megane's writing help
+06.03.19 10:07:25<editable-dog>sooo...you probably want to sit down to create some business ideas/plans/idk, and im totally fine with that
+06.03.19 10:08:33<editable-dog>its not like any of the things i think i should be doing now seem threatening to consume all my time
+06.03.19 10:10:58<editable-dog>if you think we want to figure out if we can actually start appearing like/being a business that doesnt scrape for customers on upwork, but instead start a brand and figure out if we can offer some product (and maybe hire more people after that) thats fine, maybe we can come up with something
+06.03.19 10:11:55<editable-dog>but otoh, i think we may as well find that we can compete on the freelancer sites, and form a few long-term relations with some actually well-paying clients
+06.03.19 10:14:36<editable-dog>i guess i need to know if i can rely on you doing some gig together if i actually manage to get one, or you want to focus solely on some other path, but whichever way is fine with me
+06.03.19 10:15:59<editable-dog>but i think continuing to map out this freelancer sites terrain is worthwhile
+06.03.19 10:17:02<editable-dog>if you have some sort of product or similar idea in mind, i want to hear it
+06.03.19 10:17:47<editable-dog>if you want to get down to building static websites, likewise, we'll do it together
+06.03.19 10:18:35<editable-dog>i'll just need to have your abstract ideas translated into something concrete, as usual
+06.03.19 10:18:49<editable-dog>before i can really get behind them
+06.03.19 10:19:40<stoopkid> well yea ofc, if we have a gig then idk what other path i would be focused on that would imply not doing the gig
+06.03.19 10:29:13<editable-dog>on these freelance sites you get both types of gigs, the ones where things at least seem to be specced out, and your task is to just code for somebody who is also a coder (like the one im spending some time on today), and the "i think i need a website or something" kind
+06.03.19 10:29:20<editable-dog>not really, but almost
+06.03.19 10:29:50<editable-dog>theres a ton of opportunities to practice analyzing clients business needs
+06.03.19 10:38:22<editable-dog>so, what can we actually do, business-development-wise?
+06.03.19 11:01:51<stoopkid> first thing i would think (other than just continuing to grab for w/e gigs we can get our hands on) is to actually start putting together a suite of specific solutions that we offer, but those should be like.. things that are fully ready to design/implement/deploy into a production environment w/ a fully modern UX, and with some kind of actual business plan formulated around providing that specific solution, like i
+                 <stoopkid> would feel more comfortable aiming for "simple but complete" as opposed to "cool/advanced but partial" and then over-time expanding our range of fully-completable systems to eventually actually include our personal projects
+06.03.19 11:04:15<stoopkid> so ex. simple static websites, not advanced but extremely completable and with the right kind of concerns for us to focus on in this initial phase
+06.03.19 11:15:12*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-cekphtxhgojjrolk, (unauthenticated): kook)
+06.03.19 11:16:33<stoopkid> so it's basically two things going in parallel like you said, first just going out scraping up w/e jobs we can find, second is developing things on the business/branding/portfolio side but... i guess to me it's a bit more than developing a portfolio in the sense of it's also isolating specific services we can provide and then just refining them and expanding them
+06.03.19 11:18:20<stoopkid> a bit more than developing a portfolio in the sense of "here's a listing of various jobs i've worked on"** it's also isolating... **
+06.03.19 11:18:50<sirccloud> Yeah, makes sense
+06.03.19 11:22:05<stoopkid> web is extremely versatile environment so it's not like we'd be shoe-horning ourselves into just doing that kind of work it's basically just starting off like "hey i'm here w/ a business, i have a simple but comprehensive business solution and can do other custom work" followed by "hey again, check out this cool new feature that's part of our suite of comprehensive business solutions", etc..
+06.03.19 11:24:16<stoopkid> i mean we can get from there to e-commerce work, to mapping work, to online tutoring systems, to etc.. etc.. we're basically adjacent to every application
+06.03.19 11:26:43<sirccloud> Like, long long time ago, i was fairly practiced in building desktop programs in VB and later Delphi. It never went beyond maybe one completed paid project and two stuck due to "customers" and abandoned, but looking back, it felt wholesome
+06.03.19 11:27:35<sirccloud> Somebody needed something, i would analyze the situation, propose solution, and know how to implement it confidently
+06.03.19 11:29:01<sirccloud> But what ive been doing last 15 years was taking a break from programming followed by jumping from thing to thing
+06.03.19 11:29:20<sirccloud> And only gaining expertise in fringe/esoteric areas
+06.03.19 11:29:50<sirccloud> Granted, all that seems to be going towards some eventual payoff
+06.03.19 11:30:30<sirccloud> And i could do what i did back then with Qt
+06.03.19 11:30:50<sirccloud> But the biggest demand is in web/mobile now
+06.03.19 11:41:32<stoopkid> i'd be open to working with other systems besides web, i'd just have the same kind of approach (at least if it was something to start off the business with), come up with as close to a "hello world" service as we can, but make sure it's actually "a complete product/service" and expand from there, like we don't want to keep jumping from thing to thing w/o picking up comprehensive mainstream expertise, and we also can't
+                 <stoopkid> afford to start off with any "heroic" projects as our first endeavors into a new ecosystem for us
+06.03.19 11:51:14<stoopkid> like we need to be thinking small, but scalable and most importantly ready asap, and then we actually  have all the basic standard groundwork necessary to actually provide for the fully-featured scaffolding to actually carry the next-gen code we've been working on
+06.03.19 11:53:48<stoopkid> like it's a pretty quick progression, in the grand scheme of things: you have some simple static sites, then some simple static sites with search bars, and then we're immediately adjacent to CNL work as a specific well-defined kind of service we can offer, and already have web framework stuff ready to bring that CNL into a production environment
+06.03.19 12:17:07<stoopkid> so, even with jobs we get while we're just scraping and jumping around doing little patches here and there in other peoples' systems / code, this should be a particular service we offer
+06.03.19 12:20:30<stoopkid> ex. we can isolate & classify standard sub-services of this (code/system patches vs. code/system take-overs vs. from-scratch dev/deployment outside of our standard service models) and refine them
+06.03.19 12:33:57<stoopkid> i think we might want to avoid making any kind of service model around server-side work for a while and focus on maximizing what we can squeeze out of lightweight client-side applications
+06.03.19 12:36:31<editable-dog>https://github.com/software-for-immortality/past_projects/blob/master/kbdbg2graphviz
+06.03.19 12:45:59<sirccloud> 17:53:48 <stoopkid> like it's a pretty quick progression, in the grand scheme of things: you have some simple static sites, then some simple static sites with search bars, and then we're immediately adjacent to CNL work as a specific well-defined kind of service we can offer, and already have web framework stuff ready to bring that CNL into a production environment
+06.03.19 12:46:32<sirccloud> Ok, i like that idea, obviously
+06.03.19 12:48:49<sirccloud> So, what i wrote up above there, i dont consider this a "past project" to present on its own, more like a blog post kind of content
+06.03.19 12:49:35<sirccloud> Its also for our own reference as well
+06.03.19 12:56:55<stoopkid> so how long would you estimate it "should" take for us to pick some arbitrary stack at random out of the ones we've been looking at and test whether it can make a simple static site that we can actually consider a complete finished product?
+06.03.19 12:57:16<stoopkid> i'm thinking this should be approximately a 1 day job
+06.03.19 12:58:54<stoopkid> and then to actually implement another site in it should be (ideally substantially) less than a day (not including the time spent holding the client's hand through the process)
+06.03.19 13:00:56<stoopkid> like assuming the chosen stack actually works we should be able to properly deploy one in a day
+06.03.19 13:06:32<stoopkid> if it turns out it's not the right stack for us, oh well, it should only take another day to test the 2nd one
+06.03.19 13:18:04<stoopkid> one thing that would probably speed up the process of trying out these different stacks is if we already had a clear picture of what we needed to be aiming for in terms of "design a custom but fully modern web site/app layout & stylings from scratch"
+06.03.19 13:21:50<stoopkid> so that we'd basically have some baseline functionality to aim for
+06.03.19 13:24:29<stoopkid> one thing we could do to try to give ourselves a baseline and start integrating megan into the process w/o needing her to get too involved right away is we could take some of the graphic design stuff she's already done and try to replicate some of it as web designs in w/e stack we're trying to tackle
+06.03.19 13:29:29<stoopkid> maybe try to replicate it as exactly as possible even if we don't even necessarily want it as a web design, just so that we can be objective about quickly testing the front-end's capabilities for easily implementing an arbitrary graphic design, and not have to waste our time having to bring our own artistic input into the process until we actually need it ex. on the actual portfolio site
+06.03.19 13:35:34<stoopkid> once we have some SSG stack where we actually have a complete development process for from-scratch design,implementation, deployment, & maintenance, that we're comfortable with, then we can use that to implement the first iteration of our site, and this SSG stack can be the first specific service we advertise on the site as well, so we'd already have: a site with good web design (fit for the ecosystem we're competing
+                 <stoopkid> in), and some meaningful site content & a service to go on it
+06.03.19 13:37:42<stoopkid> i figure if we actually sat down and really thought out how we want our site to look and what content we want on there, that should again be approximately a 1 day job
+06.03.19 13:40:17<stoopkid> if on the first day where we learned the stack, we took meticulous documentation of the entire process and how it fit into a mock business model, then this documentation is already site-content to use on the 2nd day where we're designing our site
+06.03.19 13:52:15<stoopkid> this documentation should also be able to start forming the basis of our actual business documentation, like we're gonna need to be able to provide professional-quality project documentation, financial documentation, actual cover letters, business plans, & standard 8" x 11" print media and etc..
+06.03.19 14:05:26<stoopkid> we should also be working out any kinks in our collaborative dev process, including w/ megan, like be generally ready to go w/ what dev process we would follow doing the same job for a client so that we can avoid having to figure that out on the job
+06.03.19 14:11:56<stoopkid> so i figure that's basically just 2-3 days (not necessarily consecutive) that would bootstrap us from here to a ready-to-go & implemented business model that we can just start expanding on
+06.03.19 14:24:22<stoopkid> then i also don't think we need to think of it like we're just gonna do this for a little bit until we've "outgrown" this line of work or w/e, like even if we end up eventually incorporating CNL and other fancy features and start landing higher-valued jobs for fancier work it's not like we need to stop providing simple SSG as a legitimate part of the ecosystem of services we can provide, most importantly because even
+                 <stoopkid> those bigger jobs might still use it for some smaller component
+06.03.19 14:35:14<stoopkid> now, every one of the things we do on those 2-3 days can be expanded on, look at everything we did from a business perspective and see if we can do it more quickly, methodically & professionally, ex. what was the process for integration of unstructured site content, what documentation did we produce for this, can anything we did be isolated into a specific service that we can provide to complement the SSG service we
+                 <stoopkid> already provide, etc..
+06.03.19 14:35:45<stoopkid> like, if we need it, we can already be 100% positive that "they" need it
+06.03.19 15:01:35<stoopkid> like on the getting up to speed day we need to be writing content, like professional writing content to be put on the site to describe what the service is and why we thought this stack makes for a good option, and when would it / wouldn't it make sense for a business to use
+06.03.19 15:08:45<stoopkid> like maybe thinking of it less like "we're deploying this stack" and more like we're writing professional-quality documentation & analyses about deploying that stack and how it fits into a hypothetical business's operations (like ours for example)
+06.03.19 15:24:43*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-cekphtxhgojjrolk) left #atlas-project: Quit: Connection closed for inactivity
+06.03.19 16:33:30<editable-dog>well, all good ideas
+06.03.19 16:33:56<editable-dog>i wouldnt really dare to guess an estimate, but im happy to go with yours
+06.03.19 16:34:30<editable-dog>ill just add that if we're also trying to document the process in the process, its gonna take possibly substantially longer
+06.03.19 16:34:48<editable-dog>like, five times more
+06.03.19 16:35:37<editable-dog>buut...yeah, lets go with a mock site first, lets just use content from somewhere
+06.03.19 16:41:47<editable-dog>the only thing with higher priority for me will be setting up a vulkan dev environment
+06.03.19 16:42:23<editable-dog>so im prepared for one gig that i could land
+06.03.19 16:43:14<editable-dog>i didnt win it originally but today the guy wrote me that the guy who won it isnt responding..
+06.03.19 16:44:56<editable-dog>so, i guess we just copy somebody's site word for word, and never publish it
+06.03.19 16:50:47<editable-dog>btw, an acquaintance of mine thinks i could have a part-time job where he works, he thinks they would be ok with two days a week
+06.03.19 16:52:23<editable-dog>i remember that what was oficially 20 hours a week and in practice usually a bit more but sometimes also less, but also a lot of thinking about work outside of it, i remember that job kept me fairly exhausted
+06.03.19 16:52:40<editable-dog>but still i am quite tempted to try this one
+06.03.19 16:53:36<editable-dog>in the ideal case, it wont leave me exhausted, i will still have most of the week left, and it could stop my savings from thickening
+06.03.19 16:55:05<editable-dog>+ experience and contacts in a field you would find interesting, they "optimize processess" in banks etc, whatever that means
+06.03.19 17:03:57<editable-dog>haha well, im sure we could build something in a day, but lets consider this https://joes-gardening-services.business.site/#details
+06.03.19 17:05:19<editable-dog>lets just steal the content and try to replicate it with gridless as fast as we can
+06.03.19 17:20:30<editable-dog>sudo apt install whois
+06.03.19 17:20:34<editable-dog>oops
+06.03.19 17:20:53<editable-dog>anyway, i think we should try this one http://www.joesgardeningservice.com
+06.03.19 17:21:41<editable-dog>our version will be naturally single-page, so navigation should be faster
+06.03.19 17:21:55<editable-dog>and we can fix the background on the mobile version and maybe other things
+06.03.19 17:22:26<editable-dog>in the end we can offer the new version to them
+06.03.19 17:22:37<editable-dog>if we actaully couple it with a cms, that is
+06.03.19 17:27:21<editable-dog>there is a chance that what we would offer them would also save the money on subscriptions to their current service
+06.03.19 17:28:51<editable-dog>hehe
+06.03.19 17:29:44<editable-dog>anyway, im sure that implementing/copying a design like that will take more than one day
+06.03.19 23:02:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgztkksocykulbfz) left #atlas-project: Quit: Connection closed for inactivity
+07.03.19 04:01:53<editable-dog>or do you want to try something simple first?
+07.03.19 04:02:09<editable-dog>i would go for this, but idk
+07.03.19 07:55:15*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-fvtqismofbnskjna, stoopkid: stoopkid)
+07.03.19 08:19:11<stoopkid> the layout shouldn't take more than a day, we could do that layout in a day in pure HTML/CSS
+07.03.19 09:22:02<stoopkid> i showed my niece a little bit of how you make a website.. i think she needs a CMS lol
+07.03.19 09:42:15*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-bpfihpoizkhfgjkm, (unauthenticated): kook)
+07.03.19 09:43:59<sirccloud> The kid that was around when we were there?
+07.03.19 09:44:13<stoopkid> yea
+07.03.19 09:45:08<sirccloud> Well, i have a bit of time now, so i guess ill go play with gridless
+07.03.19 09:50:17<stoopkid> this one? https://github.com/thatcoolguy/gridless-boilerplate
+07.03.19 09:51:11<editable-dog>oops, i meant gridsome
+07.03.19 10:08:22<editable-dog>you ok with me just starting to build Joe's?
+07.03.19 10:08:35<editable-dog>should we jump into screen?
+07.03.19 10:08:42<stoopkid> sure
+07.03.19 10:09:44<editable-dog>ok, can you install gridsome there while i push the repo?
+07.03.19 10:09:57<editable-dog>will need to download node first too
+07.03.19 10:10:39<editable-dog>probably lets work under "user"
+07.03.19 10:19:32<editable-dog>we should proabably get used to voice chatting while we do this
+07.03.19 10:19:37<editable-dog>but i cant now, shitty signal
+07.03.19 11:17:54<sirccloud> Gonna continue in a hour or so
+07.03.19 11:18:33<sirccloud> So you know about Pavel, my friend?
+07.03.19 11:19:26<sirccloud> I just talked to him and he agreed that we can advertise also his expertise areas and he'd be down for working together
+07.03.19 11:20:12<sirccloud> So, we'll try to get something written down, maybe next week
+07.03.19 11:20:22<stoopkid> not sure if you've told me about him before, what kind of work does he do?
+07.03.19 11:35:19<sirccloud> Mostly sysadmin, networking, av
+07.03.19 11:35:34<sirccloud> We did some sort of logging daemon once
+07.03.19 11:35:47<sirccloud> Ldap integration
+07.03.19 11:37:34<sirccloud> His latest big project is a kodi-powered av system in in conference/teaching rooms
+07.03.19 11:38:19<sirccloud> With kivy and brython
+07.03.19 11:38:27<sirccloud> I think
+07.03.19 11:38:52<stoopkid> nice
+07.03.19 11:44:10<stoopkid> hm, FATAL: kernel too old when installing gridsome via npm
+07.03.19 11:49:07<sirccloud> Alllroght, i guess we need a new vps
+07.03.19 12:56:53<stoopkid> might just need to install this libpng-dev package
+07.03.19 13:01:12<editable-dog>so, progress?
+07.03.19 13:05:03<stoopkid> maybe? apt wants a root password
+07.03.19 13:07:34<editable-dog>o
+07.03.19 13:20:17<stoopkid> installing locally worked fine, then `gridsome create my-gridsomesite` worked fine, then `gridsome develop` said: "Error: stderr is null - this should never happen. Please open up an issue at https://github.com/facebook/jest"
+07.03.19 14:01:44*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-bpfihpoizkhfgjkm) left #atlas-project: Quit: Connection closed for inactivity
+07.03.19 14:17:43<editable-dog>ok new vps ready
+07.03.19 14:21:53<stoopkid> nice what's the user/site ?
+07.03.19 14:24:05<editable-dog>sfi@npm install --global @gridsome/cli
+07.03.19 14:24:12<editable-dog>sfi@51.140.155.227
+07.03.19 14:24:19<editable-dog>im in tmux
+07.03.19 14:33:27<editable-dog>exactly the same stderr on this macchine
+07.03.19 14:33:44<editable-dog>i wonder if its just some unlucky update in some package
+07.03.19 14:38:20<stoopkid> nice
+07.03.19 14:40:57<editable-dog>ssh -v -L 8080:localhost:8080 sfi@51.140.155.227
+07.03.19 14:41:21<editable-dog>to tunnel the port
+07.03.19 16:14:12<editable-dog>im gonna go to bed early today
+07.03.19 21:44:42*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-fvtqismofbnskjna) left #atlas-project: Quit: Connection closed for inactivity
+07.03.19 22:03:21*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-jvsxknztiowymlsh, stoopkid: stoopkid)
+08.03.19 00:14:59*** Connecting...
+08.03.19 00:15:01-Server Notice- *** Looking up your hostname...
+                 -Server Notice- *** Checking Ident
+                 -Server Notice- *** No Ident response
+                 -Server Notice- *** Couldn't look up your hostname
+                 *** Nick name in use: editable-dog
+08.03.19 00:15:10*** [sasl.login from ditable-doge (editable-l@104.168.57.22)] editable-dog
+                 *** SASL: You are now logged in as editable-dog.
+                 *** SASL authentication successful
+08.03.19 00:15:16*** Mode change: +Zi on ditable-doge by ditable-doge (server)
+                 -freenode-connect- Welcome to freenode. To protect the network all new connections will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+                 *** CTCP VERSION request from freenode-connect (frigg@freenode/utility-bot/frigg) to ditable-doge: 
+08.03.19 00:15:19-NickServ- editable-dog has been ghosted.
+                 *** [nickserv.ghosted from nil] 
+08.03.19 00:15:45*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+08.03.19 00:15:46*** Names: ditable-doge stoopkid @ChanServ
+                 *** End of /NAMES list.
+08.03.19 00:16:13*** [nickserv.regained from nil] 
+                 *** Nick change: You are now known as editable-dog
+08.03.19 01:58:07<editable-dog>yo
+08.03.19 01:58:21<stoopkid> yo
+08.03.19 02:07:43<editable-dog>so i have a couple of thoughts from yesterday
+08.03.19 02:09:35<editable-dog>gridsome is a framework for building websites
+08.03.19 02:10:04<editable-dog>i guess it sums up to...we're gonna have a hard time competing against wordpress
+08.03.19 02:10:27<editable-dog>wordpress gives users a cms
+08.03.19 02:11:24<editable-dog>and the price of hosting it for each user is probably lowered by the number of users/clients
+08.03.19 02:16:36<editable-dog>basically i set out to just copy the website, but then realized that if we should try to keep also the real business side in mind, then the task isnt to copy a website, but to find/set up a wordpress competitor
+08.03.19 02:16:57<editable-dog>so..maybe there is something out there, so im gonna google that today
+08.03.19 02:21:29<stoopkid> i mean.. there's people hiring for wordpress work so i don't really see wordpress as a competitor right now just another framework to potentially learn
+08.03.19 02:22:54<stoopkid> https://www.freelancer.com/projects/php/Bid-for-Wordpress-Commerce-18896124/?w=f
+08.03.19 02:27:41<stoopkid> and also i figured the idea w/ gridsome was that it was decoupled so you could have a vue front-end w/ arbitrary content through the graphql layer, so i.e. it would be gridsome + <some CMS(s) / ETL services>
+08.03.19 02:29:47<editable-dog>yeas, it just brings the question what cms, where to host it, and where to host the resulting website
+08.03.19 02:30:37<editable-dog>i just figured wordpress is something i want to stay away with, given all the horrorr security stories, that could only possibly come from horrorr php code inside
+08.03.19 02:31:40<editable-dog>and given that its an estabilished industry already
+08.03.19 02:32:20<editable-dog>but idk
+08.03.19 02:36:13*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-rhtzvnwrjhhnndku, (unauthenticated): kook)
+08.03.19 02:38:14<stoopkid> well, benefit of static sites is it makes the "where to host the resulting website" question a lot easier; plus these are probably questions we should be answering anyway, as part of being a web dev service
+08.03.19 02:39:15<stoopkid> in some cases it's actually the client's problem unless they're hiring us as long-term sysadmins, like where to host resulting website & what to do about its maintenance, although yea they do need a CMS
+08.03.19 02:43:33<sirccloud> Well technically they woudlnt need a cms, they could edit stuff on theit pc
+08.03.19 02:43:35<sirccloud> Their
+08.03.19 02:44:21<stoopkid> well i guess i mean GUI content editor, running wherever
+08.03.19 02:44:51<sirccloud> Yea me too i guess
+08.03.19 02:47:59<stoopkid> https://forestry.io/
+08.03.19 02:51:21<stoopkid> wrt hosting though we should probably at least have options ready for the client, so we should probably look at the standard ones ex. https://gridsome.org/docs/deploy-to-netlify
+08.03.19 03:06:56<stoopkid> the ideal would really be something like a fully browser-side content editor that just connects to a publishing service via js
+08.03.19 03:18:28<editable-dog>pretty much, and since all this code is already js, there might as well be the option to run the whole site-generation in the browser, and just pushing the result to an ftp
+08.03.19 03:19:56<editable-dog>ok, ill check out the links later, gonna head off to my makeshift office now
+08.03.19 03:20:22<editable-dog>i think after i finish exploring gridsome a bit, i might go back to pure vue, i got some videos stashed
+08.03.19 03:20:39<editable-dog>and thats probably gonna lead me back to the proof trace visualizer
+08.03.19 03:20:51<editable-dog>but it shouldnt be that long of a detour
+08.03.19 03:21:32<editable-dog>but probably getting some actual practice with vue first is a good idea
+08.03.19 03:25:17<editable-dog>you probably gonna go sleep now, right?
+08.03.19 03:27:13<stoopkid> soon yea
+08.03.19 03:27:51<stoopkid> maybe we should try a site replica in just vue rather than gridsome
+08.03.19 03:29:07<editable-dog>yeah makes sense
+08.03.19 03:29:18<editable-dog>or maybe we should really do the visualizer
+08.03.19 03:29:34<editable-dog>im sure i can come up with plenty of data/content for it
+08.03.19 03:36:36<stoopkid> hrm, i'd probably rather have a portfolio/site up + also some basic web layout for that visualization to fit into before we jump back into the visualizer, like i don't think difficulty setting up simple static sites implies we should jump into a more complex web layout task that relies on a reasoner
+08.03.19 03:40:17<editable-dog>its not a more complex layout task, i got the basic thing set up with just one vue component
+08.03.19 03:40:26<editable-dog>i was learning vue basics on it
+08.03.19 03:40:59<editable-dog>so now i would continue with that
+08.03.19 03:41:17<editable-dog>like, once you master components, you should get an idea of vuex and nuxt
+08.03.19 03:41:46<editable-dog>but im probably gonna stick with just a couple more components
+08.03.19 03:43:57<editable-dog>yeah the more i think about it the more i think this is the way to go
+08.03.19 03:44:15<editable-dog>we can each do something else for a while
+08.03.19 03:45:22<editable-dog>im positive that i wont have to waste too much time on the reasoner-specific logic part
+08.03.19 03:48:32<editable-dog>and i guess im gonna take part in the site-building youre gonna be doign
+08.03.19 03:50:08<editable-dog>im gonna give you a link to some vue videos that im probably gonna be re-watching too
+08.03.19 03:55:25<stoopkid> hrm, if you really want to bring the reasoner into it at this point can we at least figure out how that's actually gonna fit into a specific business model? cause it's kind of advertising that we do reasoners which is maybe just half-correct in the same sense that "we do web dev" is currently only half-correct.. the difference being that the latter is a lot easier/faster to make actually correct
+08.03.19 04:08:04<stoopkid> but, yea, in any case i could work on the general site layout / styling stuff and we could see how to integrate that w/ your visualizations in a clean way so then we could actually have it presented as a more-or-less complete web application on a more-or-less complete site
+08.03.19 04:09:53<sirccloud> Well, doing practical reasoners aka business rule engines wouldnt entail all the formal correctness difficulties..but..
+08.03.19 04:10:51<sirccloud> I dont have a business plan other than this being a part of our past projects/portfolio useful for getting gigs
+08.03.19 04:12:07<sirccloud> Having something to show wrt doing sparql, linked data, business rule engines, maybe comp sci research because this thing really is cutting edge in terms of comp sci
+08.03.19 04:13:23<sirccloud> And in general, if we end up applying for jobs again, its an answer to "what have you been doing in 2018?"
+08.03.19 04:13:40<stoopkid> so can we come up with a specific "not jumping around" service (or set of services) to go along with this?
+08.03.19 04:20:10<sirccloud> Not sure about not jumping around
+08.03.19 04:22:59<sirccloud> In a awy, im already offering skills in a considerable number of areas just by myself
+08.03.19 04:23:59<sirccloud> With you and pavel and taking on modern web dev, we're gonna have a long list of kinds of gigs we're open to
+08.03.19 04:25:28<sirccloud> Talking about more own-business case though, this should tie into something linked data
+08.03.19 04:26:37<sirccloud> Pavel is working in national technical library btw, and libraries are big on linked data
+08.03.19 04:28:28<sirccloud> We can consider rdf as a cms format/source
+08.03.19 04:30:25<sirccloud> Well, rdf should make *our* life easier, thats why we necame interested in it in the first place
+08.03.19 04:32:08<sirccloud> Well, its definitely a good question that i'll keep pondering
+08.03.19 04:34:43<stoopkid> i guess w/ the sem-web stuff we can fit at least that component into the web app dev/design model
+08.03.19 04:37:47<stoopkid> w/ the reasoner aspect, i guess it's the question of.. how do we actually apply reasoners that fits into somebody's business model
+08.03.19 04:41:30<sirccloud> I guess in a way, we're doing two or three things here. I feel confident with C-level hacking and maybe some other stuff, and im trying to build up a gig-landing portfolio. You have frontend skills but need to expand them to do gigs. The third thing is trying to develop a own-product set of skills/services
+08.03.19 04:42:24<sirccloud> s/need/want
+08.03.19 04:43:40<stoopkid> sounds about right
+08.03.19 04:51:51<stoopkid> i've no idea how to showcase any of my agda work lol
+08.03.19 05:29:55<sirccloud> I think we should
+08.03.19 05:31:29<sirccloud> What do you consider teasonably finished, of your agda stuff?
+08.03.19 05:34:38<sirccloud> Wrt doing 3 things at once, theres still the possibility that i can take a 2-days-per-week job
+08.03.19 05:34:55<sirccloud> Maybe that'd make it easier to re-prioritize in some way
+08.03.19 06:52:52<editable-dog>well, i guess the same goes for getting a reasonable amount of random freelance jobs
+08.03.19 06:53:09<editable-dog>im in communication with two guys for c++ and c++/qt work
+08.03.19 07:33:27<editable-dog> Jindrich Kolman sent the proposal
+                 <editable-dog>Hello. We are a two-man team based in USA and Europe, with experience in both computer science research and practical software development.
+                 <editable-dog>View details
+                 <editable-dog>PH
+                 <editable-dog>4:07 AM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>hello, i have attached a powerpoint overview for a real time chart recorder , monitoring tool for welding.
+                 <editable-dog>spec requirements.pptx 7.26 MB
+                 <editable-dog>Yesterday
+                 <editable-dog>9:46 AM
+                 <editable-dog>Jindrich Kolman
+08.03.19 07:33:28<editable-dog>removed this message
+                 <editable-dog>hi there, sorry for late reply
+                 <editable-dog>10:20 AM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>if it is still relevant, i checked out your slides, I have worked a similar job before, so i should get up to speed with your current codebase reasonably quickly
+                 <editable-dog>10:24 AM
+                 <editable-dog>i see upwork has video call option, would you like to use it to give me an idea of the work required?
+                 <editable-dog>PH
+                 <editable-dog>12:22 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>hello Jindrich, I thank you for the reply. I should be able to review after i speak with my colleague.
+                 <editable-dog>12:41 PM
+08.03.19 07:33:29<editable-dog>Jindrich Kolman
+                 <editable-dog>Thank you too, looking forward for further messages
+                 <editable-dog>Today
+                 <editable-dog>PH
+                 <editable-dog>11:51 AM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>I have this also open, for someone that knows what they are doing, this should be pretty easy: https://www.upwork.com/ab/applicants/1103262915401682945/applicants?sort=bestmatch
+                 <editable-dog>Log In - Upwork
+                 <editable-dog>Log in at Upwork, the world's top freelancing website. Hire expert freelancers in the U.S. or worldwide and grow your business. Get it done with a freelancer on Upwork.
+                 <editable-dog>PH
+                 <editable-dog>12:00 PM
+                 <editable-dog>Pierre Huot
+08.03.19 07:33:30<editable-dog>sorry this one: https://www.upwork.com/ab/applicants/1103262915401682945/job-details
+                 <editable-dog>Log In - Upwork
+                 <editable-dog>Log in at Upwork, the world's top freelancing website. Hire expert freelancers in the U.S. or worldwide and grow your business. Get it done with a freelancer on Upwork.
+                 <editable-dog>12:04 PM
+                 <editable-dog>how about this https://www.upwork.com/jobs/~017a24d0ca9f917098
+                 <editable-dog>12:47 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>yes, that looks like an easy and well-specified job indeed. I would like to know if you have any preference with regards to this: We can make a "native" UI for the plugin, looking and acting as the rest of the application, OR the plugin can display a small window with the relay's control web page embedded (without a full web browser, no menus and tabs etc). This second way would be more future-proof, for example if you ever buy a bigger
+                 <editable-dog>relay box, or want to control another web-controlled device. If you don't have a preference, i would suggest we try the webview method
+08.03.19 07:33:31<editable-dog>PH
+                 <editable-dog>12:52 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>hello Jindrich, option 1 is what i was thinking. but your option 2 is also interesting.
+                 <editable-dog>1:03 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>option 2 is a bit experimental for me, but may also take me less time. I could try it first, and if there is a problem, i would do option 1 at no additional cost for you. At either case, i expect to have this done in at most 8 hours of work
+                 <editable-dog>i assume you don't have a way to let me access your network, to test with an actual device?
+                 <editable-dog>Anyway that is not a problem, the documentation for this relay seems very good
+                 <editable-dog>PH
+                 <editable-dog>1:05 PM
+                 <editable-dog>Pierre Huot
+08.03.19 07:33:32<editable-dog>yes - I can let you have access to the pc with device connected. - not a problem.
+                 <editable-dog>1:05 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>nice
+                 <editable-dog>PH
+                 <editable-dog>1:06 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>when can you guys start ?
+                 <editable-dog>1:06 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>right now
+                 <editable-dog>PH
+                 <editable-dog>1:08 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>okay - my programmer for option 1 mentioned that this should work as a library compiled in msvc / QT ; with a ui plugin..
+                 <editable-dog>1:09 PM
+                 <editable-dog>Jindrich Kolman
+08.03.19 07:33:33<editable-dog>ah, what is the reason this should be a separately-compiled plugin? To be honest i assumed we can make this a part of your application's source code
+                 <editable-dog>PH
+                 <editable-dog>1:10 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>a class that can be instantiated and has all needed members to do specific tasks -
+                 <editable-dog>we want to run this across several applications and just call it.
+                 <editable-dog>1:11 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>ah, so you have several different Qt applications running on one control computer at the same time
+                 <editable-dog>PH
+                 <editable-dog>1:11 PM
+                 <editable-dog>Pierre Huot
+08.03.19 07:33:34<editable-dog>the app must be well designed as a re-usable classes where each relay can be reached from an instance of a vclass
+                 <editable-dog>sometimes yes, but we have several different applications ; and we want to incorporate this device into them
+                 <editable-dog>1:16 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>so you also plan to add maybe buttons to each individual app, where a button would directly control a particular relay?
+                 <editable-dog>PH
+                 <editable-dog>1:17 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>correct. a small UI that we can drop in with 4 buttons.
+                 <editable-dog>i think this should be 4-6 hours of work. i like that you are a 2 man team, so i want to start with this small task with you guys.
+                 <editable-dog>1:21 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>Actually the other guy does not have Qt experience, only C++, but i hope to bring him up to speed
+                 <editable-dog>PH
+                 <editable-dog>1:21 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>okay.. all of our work is in qt/msvc / vs studio ;
+                 <editable-dog>your okay with option 1?
+                 <editable-dog>i have to fly out to head home, but i will get you organized once i land.
+                 <editable-dog>1:24 PM
+08.03.19 07:33:35<editable-dog>Jindrich Kolman
+                 <editable-dog>yes im ok with option one, i will have to learn a bit more of your intended organization of things with regards to this being a plugin, but we can work it out
+                 <editable-dog>PH
+                 <editable-dog>1:24 PM
+                 <editable-dog>Pierre Huot
+                 <editable-dog>okay..
+                 <editable-dog>1:25 PM
+                 <editable-dog>Jindrich Kolman
+                 <editable-dog>ok, thanks, i'll be getting set up for development on windows (using mostly linux here) and wait for further messages
+08.03.19 07:38:06<editable-dog>Hourly Rate
+                 <editable-dog>Total amount the client will see on your proposal
+                 <editable-dog>$20.00/hr
+                 <editable-dog>You'll Receive
+08.03.19 07:38:07<editable-dog>The estimated amount you'll receive after service fees
+                 <editable-dog>$16.00/hr
+08.03.19 07:38:29<editable-dog>https://www.upwork.com/ab/proposals/1101543407491780609
+08.03.19 08:05:54*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-rhtzvnwrjhhnndku) left #atlas-project: Quit: Connection closed for inactivity
+08.03.19 11:54:12<stoopkid> the web relay one looks nice; i can't access the other pages you linked
+08.03.19 13:54:52<stoopkid> so.. considering what we discussed earlier i think it probably makes sense for us to split up the "develop own-product set of skills/services" work a bit w/ you working more on the back-end so you can continue focusing on our previous work & other work that you're more interested in and w/ me working more on front-end so that i can focus on basics & marketing & etc..
+08.03.19 13:56:24<stoopkid> tho ofc whatever gigs come up we can tackle those together or divide it up on a per-job basis, this is just for  the parallel work of developing our branding & business model
+08.03.19 14:00:43<editable-dog>yeah makes sense i guess
+08.03.19 14:00:54<editable-dog>i see, his original posting was https://www.upwork.com/jobs/~015c60eca751dd3691
+08.03.19 14:00:58<editable-dog>but..doesnt matter i guess
+08.03.19 14:03:03<stoopkid> so, earlier we brought up the q of how to fit the reasoner stuff into a business model, another q we should probably think about is can we make the simple web stuff more interesting to you or maybe somehow position it closer to more interesting work for you?
+08.03.19 14:06:55<stoopkid> maybe like, what kind of web apps currently exist that are like halfway between a simple site and the kind of application you would actually want to work on
+08.03.19 14:10:17<editable-dog>well, i dont really feel like simple web stuff is not interesting for me
+08.03.19 14:10:31<editable-dog>like, i do want to learn how to make a simple site with vue, for example
+08.03.19 14:11:18<editable-dog>but in the long run, integration with some cnl ui like you brought up would be just perfect
+08.03.19 14:15:58<stoopkid> so i guess search, accessibility & other things are immediately adjacent to that & within the standard web paradigm
+08.03.19 14:17:50<stoopkid> i am thinking though that it maybe makes less sense to try to market ourselves as a web design service that can do other things & is expanding into other things, and more as general software devs that just have "web-enablement" as a standard part of our package
+08.03.19 14:20:19<editable-dog>idk really, dont see a practical difference
+08.03.19 14:20:49<editable-dog>seems just words one way or another
+08.03.19 14:26:15<stoopkid> words matter, it's about how easily we can communicate to the client what work we can do, what work we want to do, and what quality of service they can expect, and it's also about a mental framework for the business
+08.03.19 14:27:08<editable-dog>well, i can agree that we are rather expanding into web than from web
+08.03.19 14:30:26<stoopkid> in this case the distinction is.. we might be general software devs, but only have dabbled in web, and only built snippets & components rather than fully-featured user-ready applications, so we're saying "web-enablement" is a standard part of the service, and from the other side of it, we might be simple static site designers but only have dabbled in general software dev, but here we're saying no we're general software
+                 <stoopkid> developers (or business solutions designers in the case of less app-y and more business-y situations like a simple site) and can deploy those applications (or business solutions) to web
+08.03.19 14:32:13<stoopkid> basically we want to tend towards having an increasingly refined & succinct description of what is the generalization encompassing the range of service we provide
+08.03.19 14:32:55<stoopkid> increasingly accurate*, refined & succinct..
+08.03.19 14:36:19<editable-dog>i feel we need to state our strong sides, and for me thats C and python
+08.03.19 14:45:28<stoopkid> for me it would be math, pure & applied; comp sci & formal lang theory.. database/data-analysis/ETL stuff.. SQL mainly but i've dabbled enough in other things that i don't think the choice database would be the main source of difficulties for me on any job.. less experienced on any particular general purpose lang.. too much jumping around.. obv there's agda/Coq/etc.. but idk how to market that yet.. but also never
+                 <stoopkid> encountered insurmountable difficulties working w/ various different general purposes langs ex. C/C++/python/perl/javascript/PHP/... so i feel like i really just need to pick one and solidify a basic skill-service like i'm doing on the web side.. probably something like C/C++/python/Qt..
+08.03.19 14:48:17<stoopkid> i've worked w/ web-stacks & frameworks a lot tinkering w/ my/our own stuff so i'm relatively comfortable there minus what i've been discussing wrt that recently regarding stuff more on the graphic design / SEO / etc.. side and solidifying a basic (but complete) skill-service to start with
+08.03.19 14:50:17<stoopkid> but i've only worked w/ it in that context & haven't kept good track of my work so very little to show at the moment for portfolio stuff and no paid work to show
+08.03.19 14:52:35<stoopkid> i've got a publication in data analysis so that definitely makes that probably near the top for my strong sides from a portfolio pov
+08.03.19 14:56:59<editable-dog>i think we'll be able to make the agda stuff presentable
+08.03.19 14:58:39<editable-dog>and for a big part, if theres any reasonable way to get you involved, then you can just be there to make us work 2x faster by just staring at the code with me
+08.03.19 14:59:02<editable-dog>like..this guy already basically said he gave us preference because he likes that we are a team
+08.03.19 14:59:52<editable-dog>now he had a question on something windows networking specific, so i made a quick call to pavel and got back to him with a viable plan
+08.03.19 15:02:15<editable-dog>but i can also already tell you that i dont want to be doing this kind of work for long
+08.03.19 15:02:37<editable-dog>learning web dev would be much more exciting
+08.03.19 15:04:48<stoopkid> what do you like about web dev / not like about the networking (other than windows)
+08.03.19 15:06:42<editable-dog>networking would be next stage, now we are discussing the relay ui
+08.03.19 15:07:03<editable-dog>in next stage he wants to monitor tcp traffic for when a device stops responding
+08.03.19 15:07:57<editable-dog>idk, i suspect its probably just the learning part that makes the webdev stuff fun for now
+08.03.19 15:08:28<editable-dog>but it also may be that webs have bigger audience than company-internal hw control programs
+08.03.19 15:12:34<stoopkid> is the interactivity element a factor? like ex. would you rather be designing a game or UI than like an under-the-hood data processor or something?
+08.03.19 15:14:46<editable-dog>yep
+08.03.19 15:16:22<editable-dog>i enjoy interactive applications, but you know i also enjoy doing some down-to-metal stuff
+08.03.19 15:17:32<editable-dog>but interactivity isnt enough for me, because right now the job is building just an ui for something and im not excited
+08.03.19 15:21:35<editable-dog>well, in general i like thinking about people, not systems
+08.03.19 15:21:45<editable-dog>when youre building/designing a website, its in your hands
+08.03.19 15:22:04<editable-dog>how people will interact, how you'll influence then, how clearly you communicate, what you achieve with it
+08.03.19 15:22:35<editable-dog>buttons for relay control in a wielding monitor application just dont have that
+08.03.19 15:23:25<editable-dog>so, i like to deal with the psychological and physiological side
+08.03.19 15:32:17<stoopkid> hrm, so would you say you're more interested in applications that connect people (ideally a wide audience) with complex data & user experiences than in, say, an industrial automation application?
+08.03.19 15:39:39<stoopkid> for example, a cutting-edge personal assistant app, a cutting-edge semantic-web query engine, etc..
+08.03.19 16:02:12<editable-dog>definitely
+09.03.19 01:59:43<editable-dog>yo
+09.03.19 02:06:58<editable-dog>06 MAR 2019 · 4:24 AM
+09.03.19 02:06:59<editable-dog>￼
+                 <editable-dog>Hi, your bid on my job seems quite convincing about related experience. But your price is too high for your reputation. I'm having this man here doing the job, but in case he didn't finish, I may need you. The guy only charge me $150. https://www.freelancer.com/u/donghyukchung
+                 <editable-dog>Anyways could you show me some OpenGL and GUI projects that you've done before?
+                 <editable-dog>06 MAR 2019 · 11:36 AM
+                 <editable-dog>Fair fair. Let's stay in touch, i can take time to study the CEGUI code and maybe re-evaluate the estimate. For OpenGL, i for example ported the nerverot screensaver to it: https://github.com/koo5/lemon-3/blob/master/demos/nerverot/nerverot.c . I have never done serious conventional GUI work with OpenGL, at most like this: https://github.com/koo5/lemon-3/blob/master/src/buttons.cpp , or with pyglet here
+                 <editable-dog>https://github.com/koo5/new_shit/tree/dbd49b5eb01d613c0dd3857ec06df704f0e9b384 . I have built a serious QT desktop app and worked on another in my last job.
+                 <editable-dog>￼
+                 <editable-dog>Your code seems good. You can take a look at current CEGUI's renderer modules to understand a little about what I'm trying to achieve. All GUI geometries and other resources are generated by CEGUI itself so I need to render those using my graphics library. My guy is not so responsive, 2 days has passed and I asked multiple times about progress but he only reads and doesn't reply. Maybe he's busy on another job or something. I will
+                 <editable-dog>update frequently for you since I would cancel that guy and I really need to finish my project.
+                 <editable-dog>ok, i get the general idea, i will dig into it a bit
+                 <editable-dog>08 MAR 2019 · 4:43 PM
+                 <editable-dog>￼
+09.03.19 02:07:00<editable-dog>How is it going? Seems like my guy is unable to show a progress so end of Saturday is my deadline for him. I got another bid from an OpenGL guy too, it's 200. So here is my offer to you: if in 2 days (start after Sunday because I'll inform you status of the Chinese guy first) you demonstrated a good progress on this project, for example your analysis on the problem and some possible solutions, I can pay you 200 for the completion. If
+                 <editable-dog>after 2 days without significant progress but you're still confident to complete it in a week I can pay you 150.
+                 <editable-dog>08 MAR 2019 · 10:49 PM
+                 <editable-dog>hi there. I browsed around in the CEGUI code and docs for second time now, i have to honestly tell you that i dont feel comfortable with this project, because i dont have prior experience with either CEGUI or your backend, and spending significant time to get to know them on my own is currently not in line with my other priorities. I feel i would need significant handholding to even figure out what exactly needs to get done.
+                 <editable-dog>09 MAR 2019 · 5:43 AM
+                 <editable-dog>￼
+09.03.19 02:07:03<editable-dog>Sure I will instruct you to use my lib as long as you find you can find out problems with my guidance. First you will port the geometry buffer to Saga3D's mesh buffer, render it, see how it goes, compare with other renderers (OpenGL, D3D) to see if there are glitches. The price will still be 150. I believe that this is your first project on freelancer.com so you'll have more motivation. Do you use Linux or Windows?
+09.03.19 02:08:20<editable-dog>https://www.freelancer.com/projects/cplusplus-programming/CEGUI-renderer-programming-done-you/?w=f
+09.03.19 02:27:06<editable-dog>sorry, i can't guess the scope of this work, so i'd only do it on a per-hour basis. Otherwise it is too much risk for me. I am not that desperate for freelancer stars￼
+09.03.19 02:59:05<editable-dog>I think you're afraid of it. The scope is already described. Vertex buffer, texture, render target. All GUI examples have been done, resources are provided. If one example works, everything works.
+                 <editable-dog>You'll be making the glue code between 2 libraries.
+                 <editable-dog>￼
+                 <editable-dog>If you don't need this chance, then fine I'll spend more for real OpenGL expert.
+                 <editable-dog>you are right, i am afraid. If my curiosity gets the better of me and i spend a half of today exploring the code, then i might write you again. Otherwise i wish you good luck with cool project
+                 <editable-dog>￼
+                 <editable-dog>OK, we're gonna check back on Sunday morning alright? If you could, let's read the description again and see other renderer modules of CEGUI. I know how to do this job but the fact is I don't have time. So believe me that I can help you through it. 1 week is fine for me.
+                 <editable-dog>￼
+09.03.19 02:59:07<editable-dog>I did both. Yes, lets check back.
+09.03.19 03:02:23<editable-dog>forestry and netlify look good. Though im still not sure how we'd adapt them or offer service with them. I worry these kind of services are just a bubble-funded startups and are prone to go out in a few years
+09.03.19 15:00:24*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-jvsxknztiowymlsh) left #atlas-project: Ping timeout: 252 seconds
+09.03.19 15:01:43*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-yzcbpsdtnovpnpfg, stoopkid: stoopkid)
+09.03.19 15:15:27<editable-dog> yo
+09.03.19 15:58:26<stoopkid> editable-dog: yo
+09.03.19 16:26:08<editable-dog>how goes?
+09.03.19 16:29:10<stoopkid> alright, just been reviewing CSS, graphic design & web layout stuff and getting ready to start trying to put together some basic designs w/ vue
+09.03.19 16:38:18<editable-dog>im still trying to decide if i should go ahead with the cegui job
+09.03.19 16:38:46<editable-dog>its good for something, it made me realize the Qt job isnt that bad
+09.03.19 16:54:19<stoopkid> yea idk i don't have any experience w/ cegui so i can't really estimate what that job would actually entail
+09.03.19 16:57:24<stoopkid> idk anything about any of those frameworks really: Irrlicht.. Ogre.. Saga3D..; i've at least heard of OpenGL, Direct3D & Vulkan but haven't actually used them yet
+09.03.19 18:47:55<editable-dog>i should be about one-thirdth done with what i want to get finished on the visualizer
+09.03.19 21:34:42*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-yzcbpsdtnovpnpfg) left #atlas-project: Quit: Connection closed for inactivity
+09.03.19 23:35:38*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-irrvamyhdddypsha, stoopkid: stoopkid)
+10.03.19 01:45:22*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-irrvamyhdddypsha) left #atlas-project: Quit: Connection closed for inactivity
+10.03.19 13:23:28*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi, stoopkid: stoopkid)
+10.03.19 14:07:47<editable-dog>yo
+10.03.19 14:08:13<stoopkid> hey
+10.03.19 15:14:41<editable-dog>if you ever get bored with whatever you're doing, i totally suck at jsonld framing
+10.03.19 15:15:09<editable-dog>and its one of things that i'd like to feel competent with in the long run
+10.03.19 15:15:38<editable-dog>although i also could go dig into the code, it is fairly readable
+10.03.19 15:15:47<editable-dog>but its just not high priority
+10.03.19 15:31:22<editable-dog>how's frontend design going?
+10.03.19 15:34:13<stoopkid> getting closer; haven't made much more progress since yesterday tho cause i had to spend some time on my classwork
+10.03.19 17:09:11<editable-dog>i could say i was 2 thirds done with the tracing, if i didnt just run into an issue i didnt realize earlier
+10.03.19 21:31:53<stoopkid> we could say we're 2 thirds done w/ tau if not for that heh
+10.03.19 21:33:52<stoopkid> making a bit of progress w/ the web stuff
+10.03.19 21:34:56<stoopkid> even this simple thing seems to spiral into infinite complexity but i feel like i'm at least managing to wrap my mind around the problem-space enough that i won't often be totally blind-sided by a problem
+10.03.19 21:38:17<stoopkid> took a look at json-ld framing.. i get the basic idea but i'll need to study it some more as well
+10.03.19 21:40:29<stoopkid> after i get a bit more settled in w/ the basic web-dev stuff i'll be happy to start looking into that in more detail
+10.03.19 21:43:27<stoopkid> i thought a bit more about our discussions earlier it seems like in some ways we're on different ends of some spectrums regarding what it is we want to do / why we want to do it
+10.03.19 22:17:32<stoopkid> got pulled away; i feel like that could work to our advantage though, i might've answered oppositely to each of those q's i asked you, among other things we've discussed
+10.03.19 22:21:49<stoopkid> ex. for me interactivity is not really any kind of factor; i mean it's interesting, in the same way that something non-interactive is still interesting, i guess in the same way that doing math w/ pen & paper is still interesting to me.. audience is definitely a factor, which goes hand-in-hand w/ interactivity but i guess that's only really a factor to me from a business PoV, or maybe a political PoV (which i'm
+                 <stoopkid> off-and-on about whether or not i even believe in it)
+10.03.19 22:23:40<stoopkid> and wrt UX vs. industrial automation again i'd probably be the opposite
+10.03.19 22:24:46<stoopkid> i guess i'm the opposite maybe specifically in terms of preferring systems over people, as horrible as that sounds lol
+10.03.19 22:28:46<stoopkid> like i like people, but probably the more that people can be taken out of the equation of the problem i'm working on, the better i'll be w/ that problem
+10.03.19 22:34:02<stoopkid> i think it's kind of a habit from math/science academia... human mind has tended to be the limiting factor so there's sort of a devaluation of the human intellect itself relative to the achievements that intellect has brought about
+10.03.19 22:36:42<stoopkid> so ex. in industrial automation i'd just be dealing w/ nature & logic not peoples' subjective opinions about these things
+10.03.19 22:46:02<stoopkid> idk, maybe it's not so horrible, and maybe it's not opposite.. i could potentially phrase that rather as i prefer working "on" systems, and working "with" people rather than "on" people, but i just have anxiety about trying to get it to be the former rather than the latter in a business scenario that i may potentially be depending on?
+10.03.19 22:48:13<stoopkid> idk
+10.03.19 22:51:19<stoopkid> but in more concrete terms, i get the general sense that you, understandably, don't want to & don't need to be (w/ your portfolio & level of comfortability) sacrificing doing more cool/advanced/interesting work specifically tailored to your interests in order to be getting work whereas for me the only standards really are ethical heh
+10.03.19 22:52:12<stoopkid> i guess maybe every aspect of this is so much further outside of my comfort zone than i had originally anticipated it would be that i'm still trying to wrap my mind around it
+10.03.19 22:55:06<stoopkid> but don't worry i'm not gonna quit over that or anything just trying to acknowledge it so i can fit it into a strategy for managing it
+10.03.19 23:00:20<stoopkid> so i guess for me, in more concrete terms, i'm totally cool w/ spending more time on the more mundane elements of all of this, like rather than a strategy of splitting up work between back-end / front-end, have a general strategy of splitting up work between cool vs. mundane
+10.03.19 23:02:53<stoopkid> i have too many mundane concerns to work on anything "cool" (at the moment), it's just a fact, they'll want CNL, i'll be focused on character encodings; they'll want a reasoner i'll be focused on philosophy etc...
+10.03.19 23:04:45<stoopkid> i can break through my analysis paralysis, but only on problems of extremely limited scope or extreme flexibility in acceptable results
+10.03.19 23:10:40<stoopkid> hence why i'd tried to narrow down our business model to such extreme minimalism & fluffy simplicity
+10.03.19 23:19:51<stoopkid> idk i'm really mathematician first, scientist 2nd, engineer 3rd, businessman 4th, and for business i need to be the exact opposite of that
+11.03.19 00:22:18<editable-dog>idk, one thing i'm sure of is that while being it at together is good, actually working together is even much better
+11.03.19 00:23:43<editable-dog>so i feel that at some point, we should take a pause to evaluate which one of our sub-directions has the best chance to succeed
+11.03.19 00:26:38<editable-dog>i think your focus probably makes more sense, deciding on a product/service we eventually want to get rich off, and only taking random freelance jobs as a way to get there
+11.03.19 00:33:26<stoopkid> well as far as maximizing chance of financial success i would still think that would be taking some broad interpretation of "business infrastructure" to maximize audience of the brand & focus on the right things to actually be as generalized as possible across essentially arbitrary businesses, and then refine that into what exactly we actually want that to mean
+11.03.19 00:41:38<stoopkid> i figure no matter who we're working for, everything about the project is ultimately subsidiary to theirs or their organizations' financial/business interests, and a significant portion of available work will be devoted solely to that, and that this isn't gonna change in the foreseeable future
+11.03.19 00:45:42<stoopkid> so i guess iow i don't feel we need to take any sub-direction in particular we need to rather focus on how the gestalt of our various subdirections provides some kind of fundamental *business* service, as opposed "programming service"
+11.03.19 00:51:35<stoopkid> we certainly wouldn't want to orient ourselves around, for example, some specific programming language
+11.03.19 00:51:59<stoopkid> say.. python or C++ or even the web-stack
+11.03.19 00:52:45<stoopkid> computer languages are just a symptom/side-effect of our work, no particular computer language is the fundamental aspect of it, we do human-level work
+11.03.19 01:03:22<stoopkid> and i figure we're not really in the product industry we're only really in the service industry.. we've floated the idea a bit but do you really want to sell a proprietary software product, even just as a premium features kind of thing? idk still something to think about but i figure that's a generally riskier model to focus on especially if we don't already have the product, and even after we have the product it can
+                 <stoopkid> be obsoleted
+11.03.19 01:08:34<stoopkid> to me the model is basically like, we're in business, we have all kinds of things we need to do wrt starting a business, every single one of them is related to tech, so we actually can just bootstrap a business w/ longevity out of just mastering what it takes for us to start our own business in the first place & then breaking that down into its more basic components so that we can be as strategic in our application of
+                 <stoopkid> it as possible
+11.03.19 01:10:38<stoopkid> ex. we need a website, there's a whole web-tech stack related to this, we can learn that stack, we can build a website & sell websites
+11.03.19 01:11:44<stoopkid> like we don't need to guess too much at the market cause we already know (or can pretty easily find out) more or less what literally every business is gonna need in order to even be a business in the first place
+11.03.19 01:17:17<stoopkid> but ultimately i would say this doesn't really need to have too much implications wrt what work we actually do? like this is all pretty open-ended it's basically just a matter of how we market ourselves and coherently develop a brand
+11.03.19 01:27:40<stoopkid> and we can just attach concrete things to that to make us relevant to w/e the actual current programming market is
+11.03.19 01:30:24<stoopkid> like a programming language isn't what's gonna be our downfall in any sw dev scenario
+11.03.19 01:30:35<stoopkid> it's gonna be domain-specific logic
+11.03.19 01:32:43<stoopkid> it's gonna be coming back to the same client 10 times to fix his app cause we made some obvious beginner mistakes in CRM design or graphic design or SEO or w/e..
+11.03.19 01:34:15<stoopkid> or just having to spend too long w/ clients in general due to inability to just pull up some basic boilerplate shit to set their expectations & help them properly refine their demands
+11.03.19 01:37:03<stoopkid> not knowing what to even build in the first place in some cases, ex. an AI crypto-trading app
+11.03.19 06:46:25<editable-dog>yea this diversity is definitely to our advantage
+11.03.19 07:08:27<editable-dog>>sell a proprietary software product, even just as a premium features kind of thing?
+11.03.19 07:11:19<editable-dog>yea i definitely eventually do, but we obviously cant put all eggs in that basket
+11.03.19 07:11:32<editable-dog>while money's running out
+11.03.19 07:19:32<editable-dog>but like i said before, theres still the option that i'll get a two-days-a-week job that will stop my money from running out, and then maybe i could dream bigger, but that wouldnt probably change your situation, so idk
+11.03.19 07:20:50<editable-dog>also, i like this idea of building/writing down a portfolio/services we offer etc, thinking about it and kind of making it a real thing
+11.03.19 07:21:07<editable-dog>on a real own-made website, definitely
+11.03.19 07:21:49<editable-dog>i feel its something that will definitely be to our advantage in future
+11.03.19 07:22:20<editable-dog>same for getting our feet wet in freelancing over upwork etc
+11.03.19 07:22:42<editable-dog>if only to know if we can make money that way
+11.03.19 07:26:30<editable-dog>well at any case we should probably stick more to the original idea of working together, so let me know when you're working on whatever, and ill try to jump in
+11.03.19 08:27:31<editable-dog>emacsclient is nice
+11.03.19 08:27:58<editable-dog>you M-x emacs-server, then run emacsclient -c in another terminal
+11.03.19 08:28:06<editable-dog>it works as expected
+11.03.19 08:28:54<editable-dog>err M-x start-server
+11.03.19 09:22:44<stoopkid> yea worst comes to worst i'd just get a 20-hr/week or less job to supplement whatever we're making from this so i'm not too worried i really don't need a huge amount of $; wrt proprietary sw product model i'm not necessarily opposed to it but also not really generally motivated towards it; i'd probably try to pursue a donation-based/crowd-funding model before resorting to proprietary.. something i was already thinking
+                 <stoopkid> about looking into again soon
+11.03.19 09:25:28<stoopkid> longer-longer-term i'm even less worried cause it looks like US might very well be headed in the direction of universal basic income
+11.03.19 09:32:29<stoopkid> right now i'm just working through some real basic web concepts & bouncing around quite a bit just sort of getting oriented and coming up with a general outline of how to get from scratch to a professional-quality website
+11.03.19 09:36:07<stoopkid> right now it's mainly just down to the process of coming up w/ graphical layouts & knowing generally what to expect when trying to translate those layouts into HTML/CSS
+11.03.19 09:44:11<stoopkid> i figure in general if we're gonna be UI/UX designers there won't be any substitute for being graphic designers on at least some basic level
+11.03.19 09:48:28<editable-dog>well afaik donation-based doesnt work, but crowdfunding would definitely be worth a try. At any case, the system i envision will not work unless it will essentially be free, and also will not fullfil its purpose if there will be a possibility to build a traditional paid-support business around it. .. so.. im only thinking paid mobile app in the store, with proprietary mobile os integrations, maybe proprietary addons.. and a fully free
+                 <editable-dog>desktop version
+11.03.19 09:49:09<editable-dog>or an ad-supported mobile version?
+11.03.19 09:49:32<editable-dog>at any case the money has to come from somewhere
+11.03.19 09:51:13<editable-dog>well im not scared of graphic design...and i know my gimp well...but im not sure if im much of an artist
+11.03.19 09:51:26<editable-dog>more like an usability freak
+11.03.19 09:52:02<editable-dog>but graphic work is something i might take on
+11.03.19 09:52:26<editable-dog>another area that i'll have some inclination to that might sound unexpected is SEO
+11.03.19 09:53:55<editable-dog>back when i did a website or two, it came down to just following a set of common sense rules
+11.03.19 09:54:32<stoopkid> that is somewhat unexpected but i'm also interested in that.. mainly just from a web-business necessity PoV though; is there anything about SEO in particular that makes you inclined to it?
+11.03.19 09:55:21<editable-dog>probably that it largely just means not doing anything stupid on your website
+11.03.19 09:55:46<editable-dog>im not inclined to the shady practices like paid backlinks etc, obviously
+11.03.19 09:57:55<stoopkid> yea i figure generically it just means knowing what web-crawlers are out there and how to make your site readable to the ones you care about
+11.03.19 09:58:35<editable-dog>yea
+11.03.19 09:59:11<editable-dog>and spicing your pages with some keywords, if that's still the practice
+11.03.19 09:59:35<editable-dog>google might have started frowning upon that since
+11.03.19 10:00:05<stoopkid> i figure that can transition relatively easily into web-crawling/scraping stuff too, so, i think it fits pretty well
+11.03.19 10:00:55<editable-dog>maybe
+11.03.19 11:17:11<editable-dog>i turned down the CEGUI guy, he wouldn't budge with the pricing or terms
+11.03.19 11:17:56<editable-dog>now waiting for the QT guy to write, if he doesnt, we're back to square one in this
+11.03.19 11:54:51*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-dkkanqoxsojmygps, (unauthenticated): kook)
+11.03.19 13:14:12<stoopkid> starting to look like the rudiments of a website: https://github.com/sto0pkid/WebLayouts
+11.03.19 13:17:08<stoopkid> my conclusions from this: font is extremely critical
+11.03.19 13:21:31<stoopkid> still lots of little issues to clean up but i'll probably be ready to start vue-ifying this soon
+11.03.19 13:23:01<stoopkid> i'm getting a lot more comfortable that all these design issues will be a manageable level of complexity for me
+11.03.19 13:27:45<stoopkid> you can see some of the issues ex. if you shrink the page horizontally the menu & logo will get all screwed up
+11.03.19 13:34:52<sirccloud> https://raw.githubusercontent.com/software-for-immortality/past_projects/master/kbdbg2graphviz
+11.03.19 13:35:39<sirccloud> Think you could make a page with this text real quick and push it to github pages?
+11.03.19 13:50:54<stoopkid> taking a midterm in about 5 mins but after that i can work on it for a couple hours
+11.03.19 13:51:51<sirccloud> I see
+11.03.19 13:52:15<sirccloud> Ill handle it when i get home then
+11.03.19 14:57:15<editable-dog>i realized its enough to rename it to .md and it'll display correctly
+11.03.19 15:51:26<editable-dog>graphicatechno
+11.03.19 15:51:29<editable-dog>We provide outlets of- -logo -visiting cards -weeding planner -pamphlets -
+11.03.19 15:51:48<editable-dog>I need Circuit design
+11.03.19 15:51:50<editable-dog>Hello, I need someone food in circuit designing.
+11.03.19 15:53:15<editable-dog>Python NLP project (please stick to indicated budget)
+11.03.19 15:53:22<editable-dog>$9 - $22
+11.03.19 16:03:08<editable-dog>LanBoot Developer
+11.03.19 16:03:10<editable-dog>We want to create a LANBoot/NetBoot application cum launcher
+11.03.19 16:08:03<editable-dog>https://www.freelancer.com/projects/graphic-design/zarbdarteam/?w=f
+11.03.19 16:24:33*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-dkkanqoxsojmygps) left #atlas-project: Quit: Connection closed for inactivity
+11.03.19 18:42:34<editable-dog>https://www.freelancer.com/projects/engineering/Project-bioethanol-corn-plant-18903421/?w=f
+11.03.19 18:42:36<editable-dog>what the shit
+11.03.19 19:12:42<editable-dog>https://www.freelancer.com/projects/engineering/Free-energy-engine/?w=f
+11.03.19 19:37:37<editable-dog> I'm looking for full stack developer, which includes front end, back end, UX/UI and all the allied modules. Full stack could be in reactjs, angularjs or node
+11.03.19 19:37:43<editable-dog>https://www.freelancer.com/projects/javascript/new-product-new-revolution-new/?w=f
+11.03.19 19:38:06<editable-dog>Then you might wonder, how I became very well versed with these requirements.
+11.03.19 19:47:41<editable-dog>Design something interesting
+11.03.19 19:47:42<editable-dog>Design an imaginated very high definition...
+11.03.19 19:50:58<editable-dog>64.
+11.03.19 19:51:13<editable-dog>i reached the end of freelancer lol
+11.03.19 19:51:51<editable-dog>very nutritious today
+11.03.19 19:59:21<stoopkid> free energy machine huh? well, we certainly can't say they lack ambition lol
+11.03.19 20:03:22<stoopkid> math education platform is ofc pretty interesting to me; if i had either a bit more tech experience (the kind i'm trying to catch up on now), my math degree, or if we were a bit more settled into a freelancing groove and were a bit more financially comfortable, that might be something i'd seriously try pursuing
+11.03.19 20:05:35<stoopkid> sidenote: CSS flexbox is definitely helpful, all of a sudden my layouts are managing to maintain some semblance of coherence
+11.03.19 20:08:30<editable-dog>semblance of coherence sounds good
+11.03.19 20:10:30<editable-dog>freelancer.com is like....we'll hide the other freelancers' bid cover letters...open this url in a browser where you're not logged in to see them
+11.03.19 20:10:39<editable-dog>otherwise they are sikrit
+11.03.19 20:14:03<editable-dog>did you say you had flight license, or was it somebody else?
+11.03.19 20:14:23<editable-dog>https://www.freelancer.com/projects/python/need-software-developer-who-can
+11.03.19 20:14:59<stoopkid> i used to fly but never ended up getting my license
+11.03.19 20:16:12<editable-dog>ok, got it almost right
+11.03.19 20:18:34<stoopkid> would be an interesting gig
+11.03.19 20:19:08<stoopkid> also, as far as AI problems go, this one is maybe on the easier side: https://www.freelancer.com/projects/project-18925415/?w=f
+11.03.19 20:26:30<editable-dog>job not found
+11.03.19 20:27:00<stoopkid> aaand disappeared when i refreshed.. ok nvm heh
+11.03.19 20:27:29<stoopkid> in any case it was for reading pictures of license plates
+11.03.19 20:30:04<editable-dog>sounds like an opencv job
+11.03.19 20:36:30<stoopkid> i haven't checked that out yet but looks cool, i'd be open to trying that out once i get back more to the hacking/engineering rather than design stuff
+11.03.19 20:46:49<editable-dog>i think i have enough freelancer for a couple of days again
+12.03.19 02:06:21*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi) left #atlas-project: Quit: Connection closed for inactivity
 #atlas-project> 

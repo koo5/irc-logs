@@ -31895,4 +31895,58 @@ editable-dog (IRC) joined the room.
                  *** End of /NAMES list.
 26.02.19 04:30:41*** Nick change: You are now known as editable-dog
 26.02.19 07:27:32*** Connecting...
+#AutoNomic> 26.02.19 10:11:15*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #AutoNomic: AutoNomic project | Please ask anything | Wiki: 167.88.171.233/AutoNomic | Log: 167.88.171.233/logs/AutoNomic.log | Dev channel: #autonomic-dev | ncatlab.org/nlab/show/computational+trinitarianism | rbjones.com/rbjpub/logic/cl/tlc001.htm | www.cse.chalmers.se/research/group/logic/book/book.pdf
+                 *** Topic set by stoopkid on Fri Jan 26 17:10:47 2018, 1 year 1 month 5 days 17 hours 28 seconds ago
+                 *** Names: editable-dog stoopkid Deadhand reedhhw[m] koo5[m] cantora Tamara_ @ChanServ HMCb
+                 *** End of /NAMES list.
+28.02.19 22:49:57*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj) left #AutoNomic: Quit: Connection closed for inactivity
+01.03.19 06:54:02*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ztjtnuldzkjcraya, stoopkid: stoopkid)
+01.03.19 17:44:45*** Join: Tamara__ (sid238709@gateway/web/irccloud.com/x-fgmcuxknujfstuzm, (unauthenticated): Tamara)
+01.03.19 17:52:41*** Nick regain: Tamara__ (sid238709@gateway/web/irccloud.com/x-fgmcuxknujfstuzm) is now known as Tamara_
+01.03.19 23:24:06*** Join: sifar (~sifar@unaffiliated/sifar, sifar: sifar)
+01.03.19 23:28:51*** Quit: sifar (~sifar@unaffiliated/sifar) left #AutoNomic: Client Quit
+04.03.19 08:56:00*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-dfagxmuifvsqgvsc, (unauthenticated): kook)
+04.03.19 15:07:25*** Quit: HMCb (~root@37.153.110.58) left #AutoNomic: Ping timeout: 246 seconds
+04.03.19 15:09:12*** Join: HMCb (~root@37.153.110.58, (unauthenticated): root)
+04.03.19 18:45:23*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-dfagxmuifvsqgvsc) left #AutoNomic: Quit: Connection closed for inactivity
+05.03.19 04:52:17*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-nsjymtjiyblrvugq, (unauthenticated): kook)
+05.03.19 07:21:58*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-nsjymtjiyblrvugq) left #AutoNomic: Quit: Connection closed for inactivity
+05.03.19 13:02:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ztjtnuldzkjcraya) left #AutoNomic: Quit: Connection closed for inactivity
+05.03.19 13:52:27*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgztkksocykulbfz, stoopkid: stoopkid)
+06.03.19 11:15:12*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-cekphtxhgojjrolk, (unauthenticated): kook)
+06.03.19 15:24:43*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-cekphtxhgojjrolk) left #AutoNomic: Quit: Connection closed for inactivity
+06.03.19 23:02:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgztkksocykulbfz) left #AutoNomic: Quit: Connection closed for inactivity
+06.03.19 23:31:18*** Quit: HMCb (~root@37.153.110.58) left #AutoNomic: Ping timeout: 245 seconds
+06.03.19 23:37:18*** Join: HMCb (~root@37.153.110.58, (unauthenticated): root)
+07.03.19 07:55:40*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-fvtqismofbnskjna, stoopkid: stoopkid)
+07.03.19 09:42:15*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-bpfihpoizkhfgjkm, (unauthenticated): kook)
+07.03.19 14:01:44*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-bpfihpoizkhfgjkm) left #AutoNomic: Quit: Connection closed for inactivity
+07.03.19 21:44:42*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-fvtqismofbnskjna) left #AutoNomic: Quit: Connection closed for inactivity
+07.03.19 22:03:46*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-jvsxknztiowymlsh, stoopkid: stoopkid)
+08.03.19 00:14:59*** Connecting...
+08.03.19 00:15:34*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #AutoNomic: AutoNomic project | Please ask anything | Wiki: 167.88.171.233/AutoNomic | Log: 167.88.171.233/logs/AutoNomic.log | Dev channel: #autonomic-dev | ncatlab.org/nlab/show/computational+trinitarianism | rbjones.com/rbjpub/logic/cl/tlc001.htm | www.cse.chalmers.se/research/group/logic/book/book.pdf
+08.03.19 00:15:35*** Topic set by stoopkid on Fri Jan 26 17:10:47 2018, 1 year 1 month 15 days 7 hours 4 minutes 48 seconds ago
+                 *** Names: ditable-doge stoopkid HMCb @ChanServ cantora koo5[m] reedhhw[m] Deadhand Tamara_
+                 *** End of /NAMES list.
+08.03.19 00:16:13*** Nick change: You are now known as editable-dog
+08.03.19 02:36:13*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-rhtzvnwrjhhnndku, (unauthenticated): kook)
+08.03.19 08:05:54*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-rhtzvnwrjhhnndku) left #AutoNomic: Quit: Connection closed for inactivity
+08.03.19 20:20:10<HMCb> freenode having some issues again?
+09.03.19 15:00:25*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-jvsxknztiowymlsh) left #AutoNomic: Ping timeout: 252 seconds
+09.03.19 15:02:08*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-yzcbpsdtnovpnpfg, stoopkid: stoopkid)
+09.03.19 18:49:02*** Join: nsg_akram[m] (nsgakramma@gateway/shell/matrix.org/x-xzxaaukzbhbgglar, (unauthenticated): @nsg_akram:matrix.org)
+09.03.19 18:50:43*** Part: nsg_akram[m] (nsgakramma@gateway/shell/matrix.org/x-xzxaaukzbhbgglar) left #AutoNomic: "User left"
+09.03.19 21:34:42*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-yzcbpsdtnovpnpfg) left #AutoNomic: Quit: Connection closed for inactivity
+09.03.19 23:36:03*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-irrvamyhdddypsha, stoopkid: stoopkid)
+10.03.19 01:08:54*** Join: sifar (~sifar@unaffiliated/sifar, sifar: sifar)
+10.03.19 01:45:22*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-irrvamyhdddypsha) left #AutoNomic: Quit: Connection closed for inactivity
+10.03.19 05:35:06*** Quit: sifar (~sifar@unaffiliated/sifar) left #AutoNomic: Ping timeout: 252 seconds
+10.03.19 05:47:38*** Join: sifar (~sifar@unaffiliated/sifar, sifar: sifar)
+10.03.19 06:02:03*** Quit: sifar (~sifar@unaffiliated/sifar) left #AutoNomic: Quit: Bye
+10.03.19 13:23:53*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi, stoopkid: stoopkid)
+11.03.19 11:54:51*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-dkkanqoxsojmygps, (unauthenticated): kook)
+11.03.19 16:24:33*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-dkkanqoxsojmygps) left #AutoNomic: Quit: Connection closed for inactivity
+12.03.19 02:06:21*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi) left #AutoNomic: Quit: Connection closed for inactivity
 #AutoNomic> 

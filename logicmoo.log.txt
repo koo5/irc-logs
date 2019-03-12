@@ -22543,4 +22543,1433 @@ o10.01.19 00:18:34<stoopkid> everyone is usually wrong most of the time
 26.02.19 04:30:41*** Nick change: You are now known as editable-dog
 26.02.19 05:13:50*** Quit: jbalint (~jbalint@unaffiliated/jbalint) left #logicmoo: Ping timeout: 255 seconds
 26.02.19 07:27:32*** Connecting...
+#logicmoo> 26.02.19 10:11:09*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #logicmoo: http://www.logicmoo.org | https://docs.google.com/document/d/1XCDnWMjNh4y2Um_1B-HE4x5Q34oxHRxBl-Oy9eNUzTI/edit#  https://drive.google.com/drive/folders/0B0QA19UX0ehlV1ZEaXEzc3hjTWM   http://www.csee.umbc.edu/~finin/prolog/pfc/man/pfc.pdf
+                 *** Topic set by dmiles on Mon May 28 20:31:51 2018, 9 months 3 days 14 hours 39 minutes 18 seconds ago
+                 *** Names: editable-dog aindilis T_K Copenhagen_Bram jbalint logicmoo stoopkid egp_ PrologMUD yesbot CoderForLife @ChanServ michalisko
+                 *** End of /NAMES list.
+26.02.19 12:12:30*** Nick change: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) is now known as dmiles
+26.02.19 13:05:43*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+27.02.19 12:42:13*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+27.02.19 12:49:56*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+27.02.19 14:10:18*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Quit: So long, and thanks for all the fish! 2.3 Weechat is best Weechat
+27.02.19 14:26:23*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+27.02.19 21:38:22*** Quit: egp_ (~radiognom@128-71-140-87.broadband.corbina.ru) left #logicmoo: Ping timeout: 245 seconds
+28.02.19 01:13:24*** Join: swamps (~radiognom@128-71-140-115.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+28.02.19 08:45:20*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+28.02.19 08:47:02*** Join: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, (unauthenticated): Andrew Dougherty)
+28.02.19 09:21:11*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+28.02.19 15:36:17*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+28.02.19 18:02:23*** Quit: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+28.02.19 18:02:54*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+28.02.19 19:08:54*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Quit: rebooting
+28.02.19 19:14:20<aindilis> ping
+28.02.19 19:38:44*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+28.02.19 20:09:14<aindilis> dmiles: ping
+28.02.19 21:01:15<aindilis> have you successfully integrated Murray's Event Calculus into SWIPL?
+28.02.19 21:01:20<aindilis> *planner
+28.02.19 21:37:41*** Join: n15 (~q754f5b@227.red-88-0-84.dynamicip.rima-tde.net, (unauthenticated): r75 e754)
+28.02.19 21:38:04<aindilis> or RTEC (RTEC causes problems with FLP)
+28.02.19 21:43:38*** Quit: n15 (~q754f5b@227.red-88-0-84.dynamicip.rima-tde.net) left #logicmoo: 
+28.02.19 22:49:57*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ntpreuxyeevzmodj) left #logicmoo: Quit: Connection closed for inactivity
+01.03.19 06:53:15*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-gvjotcyfrqrytmjc, stoopkid: stoopkid)
+01.03.19 06:53:16*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gvjotcyfrqrytmjc) left #logicmoo: Excess Flood
+01.03.19 06:53:45*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-ztjtnuldzkjcraya, stoopkid: stoopkid)
+01.03.19 07:09:35*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+01.03.19 09:34:40<aindilis> dmiles: ping
+01.03.19 12:34:23*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+01.03.19 14:50:31*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+01.03.19 14:53:42*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Client Quit
+01.03.19 15:29:56*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+01.03.19 20:05:31*** Join: killown (~killown@unaffiliated/geek, geek: Geek)
+01.03.19 20:05:53*** Part: killown (~killown@unaffiliated/geek) left #logicmoo: "Leaving"
+01.03.19 20:47:30*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+01.03.19 20:48:30<aindilis> ping
+01.03.19 21:16:27*** Quit: CoderForLife (~Miranda@unaffiliated/coderforlife) left #logicmoo: Ping timeout: 240 seconds
+02.03.19 02:45:18*** Join: ua (~ua@unaffiliated/uniqanomaly, uniqanomaly: uniqanomaly)
+02.03.19 05:45:04*** Join: CoderForLife (~Miranda@unaffiliated/coderforlife, CoderForLife: setimail@cellutions.com)
+02.03.19 11:00:22*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+02.03.19 11:45:51<dmiles> aindilis: yes the Murr planner worked
+02.03.19 11:46:03<dmiles> erm Murry EC
+02.03.19 11:46:23<dmiles> https://github.com/TeamSPoon/prologmud_I7/tree/master/prolog/ec_planner
+02.03.19 11:47:27<dmiles> this one:  https://github.com/TeamSPoon/prologmud_I7/blob/master/prolog/ec_planner/ec_planner_dmiles.pl#L32
+02.03.19 11:57:50*** Quit: ua (~ua@unaffiliated/uniqanomaly) left #logicmoo: Ping timeout: 244 seconds
+02.03.19 12:13:21<aindilis> dmiles: I am getting ready to replace the atTime.pl system which does temporal semantics (but doesn't support negation) with EC.
+02.03.19 12:13:46<aindilis> e.g. atTime([2019-03-02,12:13:31],hasProperty(andrewDougherty,alive)).
+02.03.19 12:15:37<aindilis> I am interested in the abductive abilities - for instance, knowing that an event happened sometime before it was reported, but not sure how long ago
+02.03.19 12:16:11<aindilis> I am assuming it degrades (unspecifically) gracefully
+02.03.19 12:16:20<aindilis> *underspecifically
+02.03.19 12:59:08*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Ping timeout: 258 seconds
+02.03.19 13:09:06*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+02.03.19 14:04:05*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+02.03.19 14:45:34<aindilis> dmiles: I got Owntracks to work again 
+02.03.19 14:45:44<aindilis> so now I can continue with location aware services for FLP
+02.03.19 14:45:55<aindilis> e.g. when you get home, scan in receipts
+02.03.19 14:46:05<aindilis> when you go to the movies, silence phone
+02.03.19 14:46:11<aindilis> when you leave the house, turn down the heat
+02.03.19 16:32:56<aindilis> heh a regression caused saturday alarms to be skipped and I thought it was cause I fixed OwnTracks
+02.03.19 22:43:04<aindilis> http://www.cs.utexas.edu/users/ml/geo.html
+02.03.19 22:43:11<aindilis> http://www.cs.utexas.edu/users/ml/wasp/
+02.03.19 23:16:48<aindilis> well I revived location logic
+02.03.19 23:17:34<aindilis> https://frdcsa.org/~andrewdo/projects/frdcsa-guis/screenshot_001.png
+02.03.19 23:17:47<aindilis> added an Owntracks agent in place of Google Latitude
+02.03.19 23:18:08<aindilis> looks like I did a lot of the calculations already
+02.03.19 23:45:17<aindilis> I suppose location logic would well suit Inform-style prolog fact data, but I'm going to try to move to another area of the project.
+03.03.19 04:12:59*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+03.03.19 12:33:59*** Quit: swamps (~radiognom@128-71-140-115.broadband.corbina.ru) left #logicmoo: Remote host closed the connection
+03.03.19 12:37:07*** Join: swamps (~radiognom@128-71-140-115.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+03.03.19 14:38:26<aindilis> dmiles: ping - how are things coming - any luck with 3t integration?
+03.03.19 14:44:22<dmiles> still fixing stuff in the prolog+lisp VM merge
+03.03.19 14:45:39<dmiles> that for sure is very next *after* i add Murry-EC prolog to CYC's query spindle
+03.03.19 14:46:31<dmiles> i sort of feel if someone can make 3T work in ABCL .. that is all we need
+03.03.19 14:46:41<dmiles> well at first 
+03.03.19 14:47:19<dmiles> that is how i am goign to do it
+03.03.19 14:48:01<dmiles> actualyl the best way would be: 1) make  3T work in SBCL,  2) 3T work in CLISP   3) 3T work in ABCL
+03.03.19 14:48:53<dmiles> SBCL since that shows whether or not this sound be hard
+03.03.19 14:49:26<dmiles> SBCL since that shows whether or not this should be hard to port and can get author support
+03.03.19 14:49:39<dmiles> CLISP since that will get rid of the SBCL-isms
+03.03.19 14:50:09<dmiles> at that oint it probely evben works on ABCL :P
+03.03.19 14:50:45<aindilis> ah
+03.03.19 14:50:46<aindilis> interesting
+03.03.19 14:50:57<dmiles> minus the JLinker stuff
+03.03.19 14:51:03<aindilis> well I will talk to Christpher, it's about time to send a message
+03.03.19 14:51:35<aindilis> I heard you were merging like 6 different prolog in lisps?
+03.03.19 14:51:38<aindilis> er java
+03.03.19 14:52:02<dmiles> yeah 4 down.. two to go!
+03.03.19 14:52:17<aindilis> what is the need for doing that out of curiousity?
+03.03.19 14:52:33<aindilis> congrats!!!
+03.03.19 14:53:10<aindilis> I take it they have a shared data representation so facts will only need to be entered once
+03.03.19 14:53:21<dmiles> two: KernelProlog/JinniProlog for creating CYC query closures
+03.03.19 14:53:40<dmiles> one: CafeProlog the foundation for speed
+03.03.19 14:53:51<aindilis> you are an alchemist!
+03.03.19 14:54:08<dmiles> one: tuProlog for closest to SWI/ISO compat
+03.03.19 14:54:49<dmiles> one: jProlog was to extend CafeProlog to be lazy
+03.03.19 14:55:07<aindilis> I'm amazed that you can conglom these things
+03.03.19 14:55:24<dmiles> last one: PrlogPlusCG since it has all the secrets I would end up adding
+03.03.19 14:55:47<aindilis> pretty cool stuff
+03.03.19 14:56:02<aindilis> on my end I finally have time and money to work on I
+03.03.19 14:56:03<dmiles> well i am dubius of memory betwene SWI-Prolog and CYC
+                 <aindilis> *AI
+03.03.19 14:56:16<aindilis> but I lack MOTIVATION
+03.03.19 14:56:38<aindilis> which I had in droves when I started out, but I had no MONEY
+03.03.19 14:56:48<dmiles> keeping all of CYC's memory in SWI-Prolog slows CYC down too much
+03.03.19 14:56:52<aindilis> then when I got jobs I had MONEY + MOTIVATION + no time
+03.03.19 14:57:06<aindilis> damn
+03.03.19 14:57:11<aindilis> I see
+03.03.19 14:57:13<dmiles> yeah :(
+03.03.19 14:57:29<aindilis> so I just have to derive MOTIVATION somehow
+03.03.19 14:57:59<aindilis> maybe when I get my CPAP I will have more energy and thus have more motivation
+03.03.19 14:58:01<dmiles> cafine not good enough?
+03.03.19 14:58:11<aindilis> my rockstar here attests to that
+03.03.19 14:58:15<dmiles> :(
+03.03.19 14:58:32<aindilis> motivation has to come from some inner drive
+03.03.19 14:59:02<aindilis> and I put my heart in soul into this and have experienced so many failures that I am having a hard time wishing to stick my neck out
+03.03.19 14:59:09<aindilis> but since I have at least 1 year to work on stuff
+03.03.19 14:59:14<aindilis> maybe it will come back to me slowly
+03.03.19 14:59:22<aindilis> as I work on individual projects and get further along
+03.03.19 14:59:32<dmiles> my drug free motive is to "have AGI"
+03.03.19 14:59:41<aindilis> well I want it too
+03.03.19 14:59:52<aindilis> but my brain is broken
+03.03.19 14:59:59<aindilis> I don't see the solution like I used to
+03.03.19 15:00:12<aindilis> there are 80 subprojects of the FLP
+03.03.19 15:00:16<aindilis> maybe that's the key
+03.03.19 15:00:19<aindilis> stop working on FLP
+03.03.19 15:00:22<aindilis> work on pure AI
+03.03.19 15:00:26<dmiles> i've relaly only seen the solution the last 5 years
+03.03.19 15:00:34<aindilis> well I know the solution by rote
+03.03.19 15:00:37<dmiles> and that part hasnt changed
+03.03.19 15:00:50<dmiles> (which is amazing it hasnt changed)
+03.03.19 15:00:51<aindilis> maybe we work together like we said we would and we have done some
+03.03.19 15:00:58<aindilis> like I work on DAYDREAMER etc
+03.03.19 15:01:07<aindilis> maybe you are the key to my motivation (no pressure)
+03.03.19 15:01:13<aindilis> I do have you
+03.03.19 15:01:19<dmiles> i do think the Full Port of daydreamer is important
+03.03.19 15:01:27<aindilis> right
+03.03.19 15:01:42<aindilis> yeah
+03.03.19 15:01:45<aindilis> we work together
+03.03.19 15:01:57<aindilis> I need to become ablaze with motivation
+03.03.19 15:02:08<aindilis> but physically don't have the strength
+03.03.19 15:02:11<aindilis> CPAP machine within 2 weeks
+03.03.19 15:02:16<dmiles> i wish someone was doing what i was doing so i coudl work on the AI part :P
+03.03.19 15:02:17<aindilis> should turn things around
+03.03.19 15:02:21<aindilis> hehe
+03.03.19 15:02:27<aindilis> I would but I don't know enough
+03.03.19 15:02:30<aindilis> :((((((
+03.03.19 15:02:38<aindilis> and hell if I can get anyone who does to do it
+03.03.19 15:02:42<aindilis> besides motivate you
+03.03.19 15:03:05<aindilis> maybe we discuss the AI part sometime
+03.03.19 15:03:33<aindilis> we have the opportunity here I think
+03.03.19 15:03:41<aindilis> I have TIME + MONEY and so do you I think
+03.03.19 15:03:55<dmiles> well in your thinking the egg cracking problem is the only issue for AGI right?
+03.03.19 15:04:04<aindilis> egg cracking problem?
+03.03.19 15:04:21<aindilis> oh you mean crack enough eggs
+03.03.19 15:04:27<aindilis> to make egg salad
+03.03.19 15:04:32<dmiles> it is no mater how high or low level they KR is.. it is wrong level for the task
+03.03.19 15:04:51<aindilis> well this is my solution to AI
+03.03.19 15:04:52<aindilis> one sec
+03.03.19 15:05:10<aindilis> https://frdcsa.org/frdcsa/internal/kbfs/project.jpg
+03.03.19 15:05:11<dmiles> egg cracking problem = always forgettign too many factors that go into the details of cracking an egg
+03.03.19 15:05:35<aindilis> AI has an irreducibly complex topology
+03.03.19 15:05:48<aindilis> and special components are needed throughout
+03.03.19 15:05:59<aindilis> one such component is the location logic system
+03.03.19 15:06:02<dmiles> isa(fido,dog) genls(dog,mammal) is not crakcing what a dog is 
+03.03.19 15:06:05<aindilis> which I already wrote most of
+03.03.19 15:06:08<aindilis> ah
+03.03.19 15:06:09<aindilis> I see
+03.03.19 15:06:27<aindilis> I think you are working from looking for the solution to AI
+03.03.19 15:06:29<dmiles> some peopel divert and call it the "grounding problem"
+03.03.19 15:06:30<aindilis> directly
+03.03.19 15:06:40<aindilis> whereas I only know some constraints
+03.03.19 15:06:51<aindilis> one thing I would like to do is enumerate more necessary conditions
+03.03.19 15:07:04<dmiles> well the "grounding problem" "egg cracking problem" are idffernt
+03.03.19 15:07:16<aindilis> grounding = symbol grounding?
+03.03.19 15:07:19<dmiles> DAYTDREAMER solves the "grounding problem" 
+03.03.19 15:07:40<dmiles> yes, symbol grounding into real life stuff
+03.03.19 15:07:43<aindilis> kk
+03.03.19 15:08:34<dmiles> eggcracking is the problem that after you grounded those symbols they are stuill vague and proably not usefull
+03.03.19 15:09:19<dmiles> so one condition for grounding is called "embodiment"
+03.03.19 15:10:09<dmiles> if/when you apply a 3T planner to an embodied agent you are at the eggcracking problem
+03.03.19 15:10:18<aindilis> my approach to AI is basically CS: you have a problem formulation, you derive upper and lower bounds, you prove the algorithm solves the problem, etc
+03.03.19 15:11:16<aindilis> I see
+03.03.19 15:11:35<aindilis> well the thinking I have traditionally held here is this: 
+03.03.19 15:11:42<dmiles> making algorithms see the world how you need to see them is like "embodiment"
+03.03.19 15:12:12<dmiles> making algorithms see the world how you need those algrythems to see them can feel like an "embodiment" problem
+03.03.19 15:12:14<aindilis> there is an isomorphism between the real world and the symbolic world, you solve the symbolic problem, and effectively wrap the homomorphism and you have the solution to the real world problem?  it might be an amateurish understanding
+03.03.19 15:12:29<dmiles> that is pretty correct there yes
+03.03.19 15:12:46<dmiles> isomorphism between the real world and the symbolic world
+03.03.19 15:13:20<dmiles> hrmm oops
+03.03.19 15:14:06<dmiles> naw that right.. hjsut part of that isomporphism that we recognise that it will never be two-way
+03.03.19 15:15:18<aindilis> so sorry if I am not working with you enough here to understand what you are getting at?  you said DAYDREAMER solves the grounding problem
+03.03.19 15:15:30<aindilis> what is then your solution to AI?
+03.03.19 15:15:41<aindilis> the thing you've known for 5 years
+03.03.19 15:15:51<dmiles> is solvign the eggcracking proiblem
+03.03.19 15:15:56<aindilis> k rereading
+03.03.19 15:16:08<aindilis> elaboration tolerance?
+03.03.19 15:16:17<dmiles> it is where that i create this world *also* tyhat eggs are easiliy creaked
+03.03.19 15:16:43<dmiles> elaboration tolerance is more for the memoory and program stroage 
+03.03.19 15:17:02<aindilis> oh wait, I remember you saying something about this in the prelude to the pioneer contest
+03.03.19 15:17:07<dmiles> elaboration tolerance is for the coding of there world
+03.03.19 15:17:24<dmiles> elaboration tolerance is for the coding of three worlds
+03.03.19 15:17:25<aindilis> you said something about the representation modeling whatever the user threw at it
+03.03.19 15:17:43<dmiles> right we have to have at least a working simulator of logic
+03.03.19 15:17:56<dmiles> that allows representation modeling
+03.03.19 15:18:04<aindilis> wait metamodelling?
+03.03.19 15:18:06<dmiles> arbitrary representation modeling
+03.03.19 15:18:12<aindilis> RLL?
+03.03.19 15:18:16<dmiles> yes RLL
+03.03.19 15:18:27<aindilis> what is wrong with *RLL?
+03.03.19 15:18:32<dmiles> not so worrked aobut that language .. that can be CycL
+03.03.19 15:18:51<aindilis> so we need some kind of universal representation
+03.03.19 15:18:57<aindilis> like a UTM
+03.03.19 15:19:21<dmiles> well we need a univasal simulaytor
+03.03.19 15:19:31<aindilis> simulator in the traditional sense?
+03.03.19 15:19:32<dmiles> well we need a universal simulator
+03.03.19 15:19:43<aindilis> cool making a new project called universal-simulator
+03.03.19 15:19:51<dmiles> yes that allows you or i to exist while we are dreaming
+03.03.19 15:20:17<dmiles> that conforms to all the mathematical rules we immagine in that dream
+03.03.19 15:20:39<dmiles> it is sometnjing that humans are born with
+03.03.19 15:20:42<aindilis> ah funny b3nzy was talking about this
+03.03.19 15:20:49<aindilis> b3nszy
+03.03.19 15:21:03<dmiles> its our "insteant replay" device
+03.03.19 15:21:10<dmiles> "instant replay" device
+03.03.19 15:21:18<aindilis> so mathematical truth is undecidable
+03.03.19 15:21:22<aindilis> what is our play?
+03.03.19 15:21:39<dmiles> elaboration tollerance is for that "instant replay" device
+03.03.19 15:21:59<dmiles> to be able to add/remove operations in it
+03.03.19 15:22:03<aindilis> k
+03.03.19 15:22:23<aindilis> so basically our space is the space of prolog programs?
+03.03.19 15:22:36<dmiles> that space yes
+03.03.19 15:22:47<dmiles> there are at least 3 spaces
+03.03.19 15:22:57<aindilis> symbol referent idea?
+03.03.19 15:23:39<aindilis> oh I missed this sentence since M came in the room: yes that allows you or i to exist while we are dreaming
+03.03.19 15:23:47<aindilis> so you are talking about access consciousness of the self?
+                 <dmiles> sensory world,  model world of memory, and eggcracking world
+03.03.19 15:24:34<aindilis> representing all the affordances of the self
+03.03.19 15:24:35<dmiles> when we dream we suppsedly in the model world of memory
+03.03.19 15:25:01<dmiles>  the affordances get stored on the logical objects in model world of memory
+03.03.19 15:25:12<dmiles> that is that we see them there
+03.03.19 15:25:15<aindilis> right
+03.03.19 15:25:24<dmiles> well we dont see them there but they are stored there :P
+03.03.19 15:25:34<dmiles> we think we see them there thouigh
+03.03.19 15:25:49<dmiles> but we only see the eggcracking world
+03.03.19 15:26:09<dmiles> the eggcracking world is the simplest possible mental puicure we need
+                 <aindilis> eggcracking is about upsampling the representation
+03.03.19 15:26:11<aindilis> ?
+03.03.19 15:26:14<dmiles> yes
+03.03.19 15:26:43<dmiles> but making that upsample more elaborate than it should be
+03.03.19 15:26:51<dmiles> than it possible could be
+                 <aindilis> I see so first we have altitude, but then we take into account the nonspherical nature of hthe earth
+03.03.19 15:27:03<aindilis> etc etc
+03.03.19 15:27:51<dmiles> yeah.. and that turtles approachach has made sense to me for years .. but the part that didnt was "well why is it not enough?"
+03.03.19 15:28:17<dmiles> it was that we needed to be secretly part of a differnt world as well 
+03.03.19 15:28:33<dmiles> a world that everything makes sense
+03.03.19 15:28:49<dmiles> well what i mean it is what you described.. 
+03.03.19 15:29:02<dmiles> but there is this whole representaitonsl design that runs parralell
+03.03.19 15:29:44<aindilis> how is this built?
+03.03.19 15:30:21<dmiles> it is built the saem way we build computer poetry
+03.03.19 15:30:31<dmiles> (this parralell side things)
+03.03.19 15:30:37<dmiles> (these parralell side things)
+03.03.19 15:31:03<dmiles> at every abstraction that gets us to where we thought we were about to crack eggs
+03.03.19 15:31:31<dmiles> well starting out we are talking about hill climbing
+03.03.19 15:31:41<dmiles> hill climbing AI
+03.03.19 15:31:58<dmiles> the hill is conquered by planning
+03.03.19 15:32:19<dmiles> but planning would never work on the hill
+03.03.19 15:32:21<aindilis> so we use like SAT solving to resolve the representation?
+03.03.19 15:32:36<dmiles> as the world is way too complex for planing
+03.03.19 15:33:17<aindilis> we model the constraints as axioms and find models which are the new representations?
+                 <dmiles> SAT-like solving is used to decide if the immaginary dog is gren or blue
+03.03.19 15:33:36<dmiles> SAT like solving told us it was time to immaigne the Dog
+03.03.19 15:33:55<dmiles> (well call it prolog )
+03.03.19 15:34:13<dmiles> we also have to plan to immagine 
+03.03.19 15:34:31<dmiles> but that is jsut part of the same thing
+03.03.19 15:34:47<aindilis> somehow platonic forms seems like a limit condition ehre
+03.03.19 15:35:38<dmiles> to dexbide the system it can be seen as certain tehcical components.. i shouild list.. then perhaps list how those components are used.. since the useages and what they are deisgned for is totally differnt from other ideas i've seen
+03.03.19 15:35:44*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+03.03.19 15:36:07<aindilis> now you are referencing your "vectors" for Dog (prototypical Dog) (any Dog) etc
+03.03.19 15:36:21<aindilis> now -> 'we also have to plan to imagine'
+03.03.19 15:36:27<dmiles> vecortrs are used only by SAT
+03.03.19 15:36:38<aindilis> k
+03.03.19 15:36:56<dmiles> vecotrs are my hakc to vioate Skoelms theorems
+03.03.19 15:37:16<dmiles> vecotors are my hack to vioate Skolem countablity theorems
+03.03.19 15:37:36<dmiles> PrologPlusCG did this
+03.03.19 15:38:00<dmiles> in order to not be suseptable to such theorems
+03.03.19 15:38:10<dmiles> we invented a new type of FOL
+03.03.19 15:38:21<dmiles> one that every term is a HOL terms
+03.03.19 15:38:35<dmiles> we = CYC, PrologPlusCG, myself
+03.03.19 15:38:39<aindilis> yeah
+03.03.19 15:38:50<aindilis> I still don't understand this part
+03.03.19 15:39:04<aindilis> every term, so like inductiively defined terms include HOL terms
+03.03.19 15:39:09<dmiles> well that component is lowelvel on the level i the important stuff
+03.03.19 15:39:11<aindilis> how can a term be HOL?
+03.03.19 15:39:13<aindilis> kk
+                 <aindilis>  nm
+03.03.19 15:39:41<dmiles> it is that the term contains a Cache  of its context
+03.03.19 15:39:54<aindilis> the entire Mt?
+03.03.19 15:39:59<dmiles> this allows for infinate nuiimber of classes
+03.03.19 15:40:10<dmiles> yes it remembers the Mt and Fido both
+03.03.19 15:40:22<dmiles> the dog class remembers the Mt and Fido both
+03.03.19 15:40:42<dmiles> and we have a specialized isntance of Fido's dog class
+03.03.19 15:41:06<aindilis> you know I got to thinking about this earlier as well
+03.03.19 15:41:11<dmiles> that is slightly differnt than all other isntances dog class 
+03.03.19 15:41:23<aindilis> how is this different than just a view of an Mt?
+03.03.19 15:42:01<aindilis> you could have (#$specializedInstanceMtFn #$Fido) ?
+03.03.19 15:42:03<dmiles> ist(johnInfo,isa(fido,dog))
+03.03.19 15:42:30<dmiles> that "dog" ther eis  not the same term as any other dog term in the KB
+03.03.19 15:42:55<dmiles> it represdents  the dog contextialze inj johnInfo and its about fido
+03.03.19 15:42:56<aindilis> wait that is a complete enumaration of johnInfo?
+03.03.19 15:43:10<dmiles> just that one term so far
+03.03.19 15:43:14<dmiles> erm one assertion
+03.03.19 15:43:46<dmiles> immagine replacing ist(johnInfo,isa(fido,dog))  with  ..
+03.03.19 15:44:38<aindilis> can you write a paper on this topic and introduce terminology?
+03.03.19 15:44:44<dmiles> ist(johnInfo^ist(johnInfo,isa(fido,dog)) ,isa^ist(johnInfo,isa(fido,dog)) (fido^ist(johnInfo,isa(fido,dog)) ,dog^ist(johnInfo,isa(fido,dog)) )) 
+03.03.19 15:45:01<aindilis> ^ is waht?
+03.03.19 15:45:14<dmiles> sub-annotated
+03.03.19 15:45:53<aindilis> I see
+03.03.19 15:46:05<aindilis> each term is annotated with the full context
+                 <dmiles> every cosntnat used in every statment is a unique term
+03.03.19 15:46:09<dmiles> yes
+03.03.19 15:46:26<dmiles> these terms are first order terms
+03.03.19 15:46:32<aindilis> hehe
+03.03.19 15:46:34<dmiles> well HOL
+03.03.19 15:46:50<dmiles> HOL becose every term contains the entire KB
+03.03.19 15:47:25<dmiles> cant do that in SWI-Prlolog but can in ProllogPlusCG
+03.03.19 15:47:52<dmiles> is that every term is the history of its existence into being a term
+03.03.19 15:48:30<dmiles> though we only transfer the details of the queries history inside the term
+03.03.19 15:48:54<dmiles> so each term has in it all the access points the query hit
+03.03.19 15:49:23<dmiles> so we get a upper and lower bound along every relaytion that it was part of in that quwery
+03.03.19 15:50:11<aindilis> wait so these HOL terms are constructed wrt a query?
+03.03.19 15:50:15<dmiles> this allows the system to not think for isntance that fido the dog is the same dog as buffy the dog
+03.03.19 15:50:19<dmiles> yes
+03.03.19 15:50:44<dmiles> one why to look at it is immaigne replacing over cyc constant with a thereExists
+03.03.19 15:50:58<aindilis> k
+03.03.19 15:51:00<dmiles> one why to look at it is immaigne replacing every cyc constant with a thereExists var
+03.03.19 15:51:15<dmiles> so that any term can be equal to any term
+03.03.19 15:51:44<aindilis> okay so is there a way to tie this all together?
+03.03.19 15:51:45<dmiles> what is stored in these vars is everything we'd need to know what terms they cant unify wirth
+03.03.19 15:51:55<aindilis> ah
+03.03.19 15:52:08<aindilis> by a consistency test?
+03.03.19 15:52:39<dmiles> that info  "everything we'd need to know disequality" causes the consistency
+03.03.19 15:53:04<aindilis> term1^SUBANNOTATION1 term2^SUBANNOTATION2 con(SUBANNOTATION1,SUBANNOTATION2) => can_unify(term1,term2)
+03.03.19 15:53:08<aindilis> do vars have these annotations too?
+03.03.19 15:53:34<dmiles> oh in the imamginine there is nothing but vars
+03.03.19 15:53:39<aindilis> k
+03.03.19 15:53:58<dmiles> well the anotation of ist(johnInfo^ist(johnInfo,isa(fido,dog)) ,isa^ist(johnInfo,isa(fido,dog)) (fido^ist(johnInfo,isa(fido,dog)) ,dog^ist(johnInfo,isa(fido,dog)) ))    created 5 vars
+03.03.19 15:54:11<dmiles> VAR1 = johnInfo^ist(johnInfo,isa(fido,dog)) 
+03.03.19 15:54:47<dmiles> ?- put_attr(VAR1,cant_violate, johnInfo^ist(johnInfo,isa(fido,dog)) ).
+03.03.19 15:55:23<aindilis> so my formula for can_unify(term1,term2) is correct?
+03.03.19 15:55:46<dmiles> i think this woudl be dcororect:  can_unify(SUBANNOTATION1,SUBANNOTATION2)
+03.03.19 15:55:56<aindilis> kk
+03.03.19 15:56:09<dmiles> meaing the histoical priciples do not volate 
+03.03.19 15:56:20<aindilis> so how does having subannotations cause a term to be HOL?
+03.03.19 15:56:31<dmiles> so it is not jsut enough for a term to unifiy.. its annotations have to be compartable
+03.03.19 15:57:14<dmiles> it is that these annotations are a series of logical sentences about the variable
+03.03.19 15:57:24<aindilis> k
+03.03.19 15:57:32<dmiles> those sentences are not classes or colelctions
+03.03.19 15:57:37<dmiles> they are full on logics
+03.03.19 15:57:51<aindilis> this is interesting because in my own thinking I worked out the need to annotate terms with the complete context
+03.03.19 15:58:13<aindilis> I forget though what I was thinking about
+03.03.19 15:58:35<aindilis> it may have been part of IAEC
+03.03.19 15:58:37<dmiles> put_attr(Dog,annot,dog^ist(johnInfo,isa(fido,dog)))
+03.03.19 15:58:57<dmiles> that Dog var is based ona  certian logic
+03.03.19 15:59:03<aindilis> but you cannot do that in SWIPL?
+03.03.19 15:59:11<dmiles> a Var later on in the program is based likely on a diffenrt logicv
+03.03.19 15:59:12<aindilis> due to the lack of numbered annotations or something?
+03.03.19 15:59:20<aindilis> that Jan wouldn't allow your modifications to be entered into?
+03.03.19 15:59:29<dmiles> correct
+03.03.19 16:00:00<aindilis> okay
+03.03.19 16:00:16<dmiles> PrologPlusCG added them
+03.03.19 16:00:33<aindilis> so back to how we have to plan to imagine
+03.03.19 16:00:34<dmiles> Cyc sort of uses them
+03.03.19 16:00:57<dmiles> (InYearFn 1960 Dog)
+03.03.19 16:01:00<aindilis> how does this relate to having the ideal upsampling?
+03.03.19 16:01:12<aindilis> ah right
+03.03.19 16:01:33<aindilis> so those Mt implicit assumptions are annotations effectively?
+03.03.19 16:01:40<aindilis> like temporal Mts
+                 <dmiles> yes
+03.03.19 16:02:12<aindilis> can we add them to LarKC_CL?  Is that what you are doing with your 6 PrologJavas?
+03.03.19 16:02:27<dmiles> (InYearFn 1960 Dog) is secretly a anontated var .. bound to Dog and requires all proofs to be compartable with 1960
+03.03.19 16:02:48<dmiles> we see (InYearFn 1960 Dog)
+03.03.19 16:02:59<dmiles> "..."
+03.03.19 16:03:06<dmiles> yet that is a Prolog Varaible
+03.03.19 16:03:10<dmiles> not a Cons
+03.03.19 16:03:13<aindilis> k
+03.03.19 16:03:40<dmiles> a simple constant like:   Dog
+03.03.19 16:03:52<aindilis> so I see what you are doing here, you are gradually replacing all of CycL with Prolog equivalents
+03.03.19 16:03:54<dmiles> is infiante nuimber of uncoundable terms all at once
+03.03.19 16:04:20<dmiles> all terms are infinate number of uncountable subterms all at once
+03.03.19 16:04:26<aindilis> because it can potentially be annotated with N^2 assertions
+03.03.19 16:04:40<aindilis> ?
+03.03.19 16:04:51<dmiles> N^N^N^N
+03.03.19 16:05:02<aindilis> omega^2
+03.03.19 16:05:05<aindilis> ah
+03.03.19 16:05:06<dmiles> heeh
+03.03.19 16:05:22<dmiles> oh dog.. is  Dog (Asertions)^ProofDepth
+03.03.19 16:05:36<dmiles> oh dog.. is  Dog (Assertions)^(Assertions-1)
+03.03.19 16:05:43<dmiles> many dogs
+03.03.19 16:06:07<dmiles> rather than having to assert that many dogs like one would need to do in prolog
+03.03.19 16:06:16<aindilis> so you are modeling CycL within PrologPlusCG
+03.03.19 16:06:40<dmiles> we have a special metaterm that is only some of those infinate dogs at once
+03.03.19 16:07:00<dmiles> welll ProlgoPlusCG are slightly a competeitve product
+03.03.19 16:07:04<aindilis> Dog (Assertions)^(Assertions-1) is ^ subannotation or to the power of?
+03.03.19 16:07:07<dmiles> welll ProlgoPlusCG vs CYC are slightly a competeitve product
+03.03.19 16:07:42<dmiles> well the number = "how many contexts could we see dog from the KB ?"
+03.03.19 16:08:14<aindilis> ic
+03.03.19 16:08:17<dmiles> if we remove one asertion from the KB.. how will that effect that dog?
+03.03.19 16:08:27<dmiles> if we add a new assertion etc
+03.03.19 16:08:58<dmiles> every term whinesses in some way the entire KB
+03.03.19 16:09:07<aindilis> interesting
+03.03.19 16:09:08<dmiles> every term witnesses in some way the entire KB
+03.03.19 16:09:24<dmiles> but i dont want to do the enteir KB:P
+03.03.19 16:09:29<dmiles> jus thte query
+03.03.19 16:09:35<aindilis> so can you wrap up the discussion here, because I would like to tie it into the solution to the egg cracking problem so I can understand
+03.03.19 16:09:46<dmiles> oh unrelate to egg cracking
+                 <aindilis> ic
+03.03.19 16:09:50<aindilis> oh
+03.03.19 16:09:54<aindilis> but related to vectgors
+03.03.19 16:10:18<aindilis> I thought this was how you would achieve the ideal upsampled representation
+03.03.19 16:10:21<dmiles> yes and vectgors was requirement for the "isntant replay" device
+03.03.19 16:11:09<aindilis> you said we use SAT solving to generate the plan to imagine
+03.03.19 16:11:10<dmiles> in a way it does do that .. it allows vacuous terms to stay contextual
+03.03.19 16:11:29<dmiles> since very term passing thru the system is vacouous
+03.03.19 16:12:04<dmiles> "SAT solving to generate the plan to imagine" is because the code that makes planning happen unconcuously is Prolog
+03.03.19 16:12:11<aindilis> this is very interesting stuff it will be a while before I have a working understanding though
+03.03.19 16:12:13<dmiles> still unconcious at that level
+03.03.19 16:12:39<aindilis> the plan to imagine is literally a plan to create one of these vectors?
+03.03.19 16:12:46<dmiles> the egg crackinmg problem i solve by creating a parreliel incompatable pretsen ation model
+03.03.19 16:12:47<aindilis> instantiated vectors
+03.03.19 16:13:03<aindilis> oh is this your evidence for vs against?
+03.03.19 16:13:08<aindilis> proofs of both sides?
+03.03.19 16:13:22<dmiles> yes the system has to make a proof at both sides
+03.03.19 16:13:40<aindilis> k, we were talking about evidential reasoning earlier
+03.03.19 16:13:45<dmiles> in both the unrealted world and the immagineary world
+03.03.19 16:13:53<aindilis> interesting, well I'm glad that I have a rough map of the terrain here
+03.03.19 16:13:59<dmiles> rthe unrealted world is a world of peotry
+03.03.19 16:14:09<aindilis> poetry, I didn't understand that
+03.03.19 16:14:16<dmiles> poetry written abotu the immaginary worlkd
+03.03.19 16:14:34<aindilis> ah you mean an elegant representation
+03.03.19 16:14:54<dmiles> peotry is the things the system remembers thinking about thinking
+03.03.19 16:15:15<dmiles> elegant representation that can segway to every other elegant representation
+03.03.19 16:15:28<dmiles> its like this constant voice
+03.03.19 16:15:30<aindilis> is there such a thing?
+03.03.19 16:15:40<aindilis> just out of curisoity?
+03.03.19 16:15:43<dmiles> yes .. it is the voice that is you
+03.03.19 16:15:48<aindilis> ah kk
+03.03.19 16:16:04<dmiles> for isntnace if you dont think about thinking of somethjing.. you wont remember ever thiunking it
+03.03.19 16:16:10<aindilis> alright, so how can I help?
+03.03.19 16:16:17<aindilis> I see
+03.03.19 16:16:20<aindilis> autoepistemic
+03.03.19 16:16:28<dmiles> so the eggcracking problem is dealt with in that space
+03.03.19 16:16:43<aindilis> interesting, I understand it but cannot apply it
+03.03.19 16:16:50<dmiles> it has to remember the sotry of itself cracking the egg
+03.03.19 16:16:57<dmiles> (not the phsyics)
+03.03.19 16:17:12<aindilis> eggcracking, e.g. upsampling, is performed using metacognition <- is safe to deduce?
+03.03.19 16:17:23<dmiles> this eggworld is jsut like every other world 
+03.03.19 16:17:26<aindilis> k
+03.03.19 16:18:02<dmiles> the tick is the upsampling doesnt leak in here
+03.03.19 16:18:06<dmiles> though it should!
+03.03.19 16:18:13<aindilis> interesting I think I get it about the story
+03.03.19 16:18:18<dmiles> the meisable and failure of every other AI cientist is they thought uit shou;dl!
+03.03.19 16:18:37<aindilis> upsampling doesn't leak into eggworld?
+03.03.19 16:19:28<dmiles> the mistake and failure of every AI scientist (was i though) for years leaking into eggworld was a good idea
+03.03.19 16:19:30<aindilis> it has to reason out the represetnation and store it to memeory world
+03.03.19 16:19:51<aindilis> using the existing simulation logic
+03.03.19 16:20:08<aindilis> so, nomic
+03.03.19 16:20:30<aindilis> I thikn I should read the paradox of self amendment
+03.03.19 16:21:09<dmiles>  the immaginary-non-eggworld is where everyone is so used to learning and doing our KR work
+03.03.19 16:21:59<dmiles> and i thoght that every genaeralizaion was genralized into that KR
+03.03.19 16:22:05<dmiles> and every leanring experince
+03.03.19 16:22:26<dmiles> that is even how NNs work
+03.03.19 16:22:30<aindilis> but instead it should be stored in the memory of metacognition
+03.03.19 16:22:33<aindilis> ?
+03.03.19 16:22:43<aindilis> memory of metacognition = eggworld?
+03.03.19 16:22:49<dmiles> yes only in the  memory of metacognition! 
+03.03.19 16:22:54<dmiles> yes that is the eggworld!
+03.03.19 16:22:56<aindilis> kk
+03.03.19 16:22:57<aindilis> :)
+03.03.19 16:23:04<dmiles>  memory of metacognition is all that is used
+03.03.19 16:23:08<dmiles> its cazy to think that
+03.03.19 16:23:13<dmiles> since that could never work
+03.03.19 16:23:17<dmiles> right?
+03.03.19 16:23:29<aindilis> hrm
+03.03.19 16:23:41<aindilis> what have other scientists called it?
+03.03.19 16:23:43<dmiles> well it works only if you got this thingy that spinrgs forth ahead *pretending* it has info
+03.03.19 16:23:56<aindilis> murray's?
+03.03.19 16:24:19<dmiles> so far i have seen 2-3 pychologist that maybe said this
+03.03.19 16:24:45<dmiles> i like to assume Schnanks knows it.. he explains this phenomoah all the time
+03.03.19 16:25:01<dmiles> he didnt give a mechanism.. but i saw it
+03.03.19 16:25:13<aindilis> what is the mechanism that springs forth pretending, is it murray's abductive EC planner?
+03.03.19 16:25:23<aindilis> ah interesting
+03.03.19 16:25:39<aindilis> https://frdcsa.org/frdcsa/minor/suppositional-reasoner/index.html
+03.03.19 16:25:56<dmiles> the thing that spigns for is a unistanciated prolgo variable that claims to be the thing in front
+03.03.19 16:26:11<aindilis> ah and it gradually gets unified
+03.03.19 16:26:15<dmiles> yes
+03.03.19 16:26:27<dmiles> though it has eggworld on it
+03.03.19 16:26:30<aindilis> I am sort of understanding this
+03.03.19 16:26:33<dmiles> (on the var)
+03.03.19 16:26:37<aindilis> (that is a good thing)
+03.03.19 16:26:59<aindilis> the thereExists vars are whittled away at through metacognition
+03.03.19 16:27:05<dmiles> so that var has to not vioalte eggworld suppostions as well as non-eggworld supposistions
+03.03.19 16:27:21<aindilis> how are they differentiated?
+03.03.19 16:27:35<dmiles> oh yeah many times the metacogniton does have to whittle
+03.03.19 16:27:47<dmiles>  and accept 
+03.03.19 16:27:49<aindilis> wait it has eggworld on the var, so the subannotations are eggworld
+                 <aindilis> ?
+03.03.19 16:28:09<aindilis> N^N^N^N?
+03.03.19 16:28:24<aindilis> sorry for my clarifying questions
+03.03.19 16:28:27<dmiles> vars get eggworld on them
+03.03.19 16:28:38<dmiles> but then afterward only get non-equalrd
+03.03.19 16:29:03<aindilis> on them?
+03.03.19 16:29:04<dmiles> when a var comes back it is 4 eggworld assertiosn to 10k non-eggworld
+03.03.19 16:29:14<aindilis> ah I see
+03.03.19 16:29:28<aindilis> non-equaled?
+03.03.19 16:29:35<dmiles> the eggword is just so it dont violate the aggenda
+                 <aindilis> so back to my question, how may I help you best?
+03.03.19 16:29:41<aindilis> ahhh
+03.03.19 16:29:56<aindilis> Agenda is agenda from CYC or DAYDREAMER? 
+03.03.19 16:30:02<aindilis> or other
+03.03.19 16:30:08<dmiles> working toward DAYCREAMER code become all assert/retract
+03.03.19 16:30:17<dmiles> or..
+03.03.19 16:31:06<dmiles> Agenda is so we can connect the bindings with the oriinal query
+03.03.19 16:31:28<aindilis> so CYC agenda
+03.03.19 16:31:32<aindilis> query planner?
+03.03.19 16:31:50<dmiles> yeah i'd say CYC agenda is what starts eggthought
+03.03.19 16:32:12<aindilis> are you using davis putnam?
+03.03.19 16:32:24<aindilis> or boyer moore
+03.03.19 16:32:28<dmiles> yeah DPLL is the context of the query
+03.03.19 16:32:44<dmiles> i mena these are DPLL (davis putnam) vars 
+03.03.19 16:32:53<aindilis> kk
+03.03.19 16:33:16<dmiles> another idea.. is to get KM to assert/retract in CYC
+03.03.19 16:33:24<aindilis> nice
+03.03.19 16:33:36<aindilis> I think you have KM already integrated right?
+03.03.19 16:33:50<dmiles> or to have Daydreamer us KB instead of GATE
+03.03.19 16:33:53<aindilis> why don't we entice some UTexas students into working with us?
+03.03.19 16:33:57<dmiles> or to have Daydreamer use KM instead of GATE
+03.03.19 16:34:09<aindilis> or profs
+03.03.19 16:34:50<dmiles> sorta what is going on with teh Prolog Kenrels.. i see need to go on betwene KM,GATE,SNARK,...
+03.03.19 16:35:06<dmiles> yeah i think so
+03.03.19 16:35:07<aindilis> I signed up for this now and I see you are the last two posts! https://groups.google.com/forum/#!forum/km-qa
+03.03.19 16:35:16<dmiles> hehe
+03.03.19 16:36:32<dmiles> something would be amzing to is if someone coudl try tpo get POwerLOOM Protege plegin working
+03.03.19 16:36:44<aindilis> alright well I'm storing this convo in: universal-simulator
+03.03.19 16:36:47<dmiles> and then point that to CYC instead
+03.03.19 16:37:01<aindilis> and extracting these todo items with KM, GATE, DAYDREAMER etc
+03.03.19 16:37:11<dmiles> https://www.isi.edu/isd/LOOM/PowerLoom/download.html#Protege
+03.03.19 16:37:26<dmiles> it is jsut bitrotted maybe
+03.03.19 16:37:31<aindilis> you mean just get it to run?
+03.03.19 16:37:35<dmiles> yes
+03.03.19 16:37:42<aindilis> and point to CYC you mean store in CycL?
+03.03.19 16:38:00<dmiles> well the plugin is a live KB editor
+03.03.19 16:38:16<dmiles> is an IDE to powerloom
+03.03.19 16:38:21<aindilis> yeah
+03.03.19 16:38:24<aindilis> okay
+03.03.19 16:38:31<dmiles> so be for CYC
+03.03.19 16:38:45<aindilis> is there a most recent committed version of LarKC_CL and is it stable?
+03.03.19 16:39:02<aindilis> ah IDE for Powerloom to access CYC
+03.03.19 16:39:04<dmiles> yes .. i been holding back this huge code change
+03.03.19 16:39:16<aindilis> okay so I'll update now
+03.03.19 16:39:21<dmiles> ah IDE for Powerloom to access CYC instead become  ah IDE for CYC
+03.03.19 16:39:53<aindilis> k
+03.03.19 16:40:05<aindilis> is there a groupware you want to use?
+03.03.19 16:40:08<aindilis> we could scrum
+03.03.19 16:40:09<dmiles> another takes is to get SWANK mode of ABCL working in emacs
+03.03.19 16:40:16<dmiles> task*
+03.03.19 16:40:25<aindilis> kk
+03.03.19 16:40:41<aindilis> cool
+03.03.19 16:41:01<dmiles> groupware?
+03.03.19 16:41:09<aindilis> yeah something to coordinate our tasks
+03.03.19 16:41:16<aindilis> maybe we host a shared Cyc instance?
+03.03.19 16:41:23<aindilis> and represent everything there
+03.03.19 16:41:26<aindilis> that's probably most apropos
+03.03.19 16:41:57<dmiles> Travis 
+03.03.19 16:42:02<dmiles> or whichever
+03.03.19 16:42:07<dmiles> or Cyc
+03.03.19 16:42:16<aindilis> CI
+03.03.19 16:42:18<aindilis> ?
+03.03.19 16:42:28<aindilis> https://travis-ci.org/
+03.03.19 16:42:45<aindilis> well Jenkins or Hudson I've gotten preliminary FLP integraiton
+03.03.19 16:43:04<aindilis> I haven't heard back from one guy so I hvae to write an adapter to get autotest to output TAP
+03.03.19 16:43:07<aindilis> but then it should work
+03.03.19 16:43:33<aindilis> I think CYC should be our groupware
+03.03.19 16:43:51<aindilis> I could write a web based wrapper for it
+03.03.19 16:44:00<aindilis> which had common queries
+03.03.19 16:44:28<aindilis> alright, well thanks for all these ideas
+03.03.19 16:44:40<aindilis> I am tired but optimistic
+03.03.19 16:44:45<aindilis> more MOTIVATED
+03.03.19 16:45:05<dmiles> yeah that world work
+03.03.19 16:45:10<dmiles>  web based wrapper for it
+03.03.19 16:45:17<dmiles> into CYC 
+03.03.19 16:45:27<aindilis> hey if you sign a HIPPA agreement we could just use CYC
+03.03.19 16:45:31<aindilis> *er FLP
+03.03.19 16:45:37<aindilis> *HIPAA
+03.03.19 16:45:48<dmiles> ok
+03.03.19 16:45:56<aindilis> cool I need to talk to Whitten again
+03.03.19 16:46:09<dmiles> ok,, i keep gettign dragged away
+03.03.19 16:46:13<aindilis> from what?
+03.03.19 16:46:16<aindilis> from programming?
+03.03.19 16:46:18<dmiles> from computer
+03.03.19 16:46:21<aindilis> have I dragged you away?
+03.03.19 16:46:24<dmiles> njo[pe
+03.03.19 16:46:26<aindilis> or you mean at your hose
+03.03.19 16:46:27<aindilis> *house
+03.03.19 16:46:28<dmiles> jsut here at the house
+                 <aindilis> kk
+03.03.19 16:46:38<dmiles> i need to take care of a couple things
+03.03.19 16:46:42<dmiles> but will be on most of the day
+03.03.19 16:46:45<aindilis> okay I will ask Whitten to get me a HIPAA form
+03.03.19 16:46:47<aindilis> okay
+03.03.19 16:46:50<aindilis> and I will email you
+03.03.19 16:46:54<dmiles> great
+03.03.19 16:46:58<aindilis> and then you can finally play around with FLP
+03.03.19 16:47:06<dmiles> yeah
+03.03.19 16:47:09<aindilis> :)
+03.03.19 16:47:15<dmiles> looking forward to that
+03.03.19 16:47:17<aindilis> not much to see yet but coming along
+03.03.19 16:47:22<aindilis> thank you, me too :)
+03.03.19 16:47:35<aindilis> I'll have to disable the planner since it is broken
+03.03.19 16:47:41<aindilis> so you don't crash it
+03.03.19 16:48:03<aindilis> okay TTYS!  thanks for the discussion
+03.03.19 16:48:07<aindilis> *saving
+03.03.19 17:22:38<aindilis> http://www.algo.be/cl/KMgen/snapshots.htm
+03.03.19 17:22:54<aindilis> http://www.algo.be/cl/KMgen/download.htm
+03.03.19 17:26:20<aindilis> should I email the KM people about integrating KM / CYC?
+03.03.19 17:38:29<dmiles> perhaps
+03.03.19 18:02:15<aindilis> kk
+03.03.19 18:11:09<dmiles> `fcdvggggggggggggggg
+03.03.19 21:04:27*** Quit: swamps (~radiognom@128-71-140-115.broadband.corbina.ru) left #logicmoo: Ping timeout: 240 seconds
+04.03.19 03:48:23*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+04.03.19 07:00:11<aindilis> I've been looking for this for a while: http://www.ofai.at/research/agents/projects/actaffact.html
+04.03.19 09:38:38<aindilis> This looks interesting (related to universal-simulator) https://pdfs.semanticscholar.org/64e8/b6a77c19717c75b7e77446d339089665bedf.pdf
+04.03.19 10:13:14<aindilis> just got sneps running
+04.03.19 12:58:22*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+04.03.19 13:48:59<aindilis> https://www.cs.hmc.edu/~pmawhorter/research/dis/artificial_intelligence_as_a_tool_for_understanding_narrative_choices-Mawhorter-2016.pdf
+04.03.19 13:49:23<aindilis> https://github.com/solsword/dunyazad
+04.03.19 15:59:55*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+04.03.19 18:23:54<dmiles> aindilis: yeah,  https://pdfs.semanticscholar.org/64e8/b6a77c19717c75b7e77446d339089665bedf.pdf
+04.03.19 18:25:20<dmiles> the #5  minus usage of "probabilty" is very key aspect to my eggworld
+04.03.19 18:25:36<dmiles> "5. Metalanguage implementation of learning is capable of ignoring the infrequent
+                 <dmiles> occurrences and/or meanings of some object-level concepts (probabilistic filtering)."
+04.03.19 18:26:30<dmiles> well #5 there is simlaur but i use what Lenat invented to get rid of probabilities
+04.03.19 18:28:20<dmiles> what is good about that paper is it does point out that there is a metalanguage
+04.03.19 18:28:26<aindilis> hrm, well first it is good to move away from probabilities
+04.03.19 18:28:33<aindilis> I didn't read the paper, but I knew the author
+04.03.19 18:28:44<aindilis> I thought maybe you'd find it handy
+04.03.19 18:28:47<aindilis> I will read it now
+04.03.19 18:28:55<aindilis> not right now though
+04.03.19 18:29:24<dmiles> "We revise the applicability of an axiomatic method, traditional in respect to the property
+                 <dmiles> of soundness, to comprehension problems requiring the construction of the explanation
+                 <dmiles> metapredicate. "
+04.03.19 18:30:02<dmiles> the "construction of the explanation metapredicate. " is about creating eggworld story 
+04.03.19 18:30:14<aindilis> ah
+04.03.19 18:30:31<aindilis> what is a metapredicate?  a second order predicate according to that guy in ##prolog?
+04.03.19 18:30:34<dmiles> that it is inventing a proofing system that is based on what it things it should hear
+04.03.19 18:31:01<dmiles> in these cases it is 3rd oerder logic
+04.03.19 18:31:31<dmiles> 2nd order is about classwifications of objects in language
+04.03.19 18:31:44<dmiles> 3rd order is about classifying proof strategy
+04.03.19 18:32:37<aindilis> kk, did you see that AAAViewer?
+04.03.19 18:32:52<dmiles> that is "there exists A,B,C in which you can deduce C from A and B"
+04.03.19 18:32:53<aindilis> I told anniepoo about it but I didn't know where to find it
+04.03.19 18:33:09<aindilis> ah interesting
+04.03.19 18:33:16<aindilis> modus ponens?
+04.03.19 18:33:39<dmiles> modus ponens and other infernce rules are given in teh metapredicate language
+04.03.19 18:33:43<aindilis> kk
+04.03.19 18:33:48<dmiles> as well as any other rules the systemn invents
+04.03.19 18:33:56<dmiles> rules about rules that is
+04.03.19 18:34:11<aindilis> now it's been so long that I've studied axiomatic set theory, but how does it handle axiom schemas
+04.03.19 18:34:12<dmiles> oh yeah AAAViewer i remember seeign that a while ago
+04.03.19 18:34:24<dmiles> set theory cant
+04.03.19 18:34:35<dmiles> set theory is defined from this language
+04.03.19 18:34:52<aindilis> https://en.wikipedia.org/wiki/Axiom_schema
+04.03.19 18:35:04<dmiles> but even better thant that this language invents set theory if it makes sense
+04.03.19 18:35:33<aindilis> https://en.wikipedia.org/wiki/Axiom_schema_of_replacement
+04.03.19 18:35:44<dmiles> yep An axiom schema is a formula in the metalanguage of an axiomatic system, in which one or more schematic variables appear. These variables, which are metalinguistic constructs, stand for any term or subformula of the system, which may or may not be required to satisfy certain conditions. Often, such conditions require that certain variables be free, or that certain variables not appear in 
+                 <dmiles> the subformula or term[citation needed].
+04.03.19 18:36:08<aindilis> replacement is an axiom of ZF(C)
+04.03.19 18:36:16<aindilis> and is also an Axiom schema
+04.03.19 18:36:44<aindilis> oh you are saying you can't model axiom schemas in the object language with set theory the meta?
+04.03.19 18:36:46<dmiles> but, weirdly ZFC placed constraints about places it cant redefine
+04.03.19 18:37:16<aindilis> see I'm hazy now on axiom schemas
+04.03.19 18:37:22<aindilis> are they computable?
+04.03.19 18:37:37<dmiles> axioms schemas are a grand grand good thing
+04.03.19 18:37:52<dmiles> placing constraints about places it cant redefine seems retarded
+04.03.19 18:37:53<aindilis> so basically, can we define a program that enumerates the axioms and theorems of the system?
+04.03.19 18:38:21<dmiles> can we define a program that enumerates the axioms and theorems of the system? not in the way peopel wish we could
+04.03.19 18:38:35<dmiles> not in the way they wish we did
+04.03.19 18:39:01<dmiles> they are defined in way that is not constrained to being at the object level
+04.03.19 18:39:25<dmiles> here i am even talkign aobut CycL
+04.03.19 18:39:50<dmiles> CycL can define things that will never be computable in ZFC
+04.03.19 18:40:00<dmiles> or ever be difinable
+04.03.19 18:40:12<aindilis> cause it uses 9th order logic?
+04.03.19 18:40:30<dmiles> most since it can use undefinatble terms without puking
+04.03.19 18:40:51<aindilis> okay yeah I will just not understand the theory
+04.03.19 18:41:01<aindilis> we'll have to give me more practical things to work on
+04.03.19 18:41:07<aindilis> *pragmatic
+04.03.19 18:41:21<dmiles> think about how much you love your cat
+04.03.19 18:41:26<dmiles> assert that into the KB
+04.03.19 18:41:27<aindilis> (not that much)
+04.03.19 18:41:30<aindilis> lol
+04.03.19 18:41:38<dmiles> well Meredeth
+04.03.19 18:41:42<aindilis> yes, okay
+04.03.19 18:41:57<dmiles> now that is is there is it even computable?
+04.03.19 18:42:17<dmiles> can you compute the results of the implied meanings?
+04.03.19 18:42:35<aindilis> I once wrote a love letter in which I talked about having to study axiomatic set theory for ever in order to prove the existence of ordinals large enough to prove the strength of love
+04.03.19 18:42:39<dmiles> you cant but you can still work with them
+04.03.19 18:42:57<dmiles> ZFC requires that everything finally touch FOL
+04.03.19 18:43:19<dmiles> well i mena most axiom scemes wish they eventualyl havd a first order view
+04.03.19 18:43:28<aindilis> I see this is what you were talking about about things being a bit hazy
+04.03.19 18:43:47<dmiles> "wish they eventualyl havd a first order view" is what cripples things
+04.03.19 18:44:06<dmiles> i specificalyl wish for the opposite
+04.03.19 18:44:14<dmiles> that i work with terms that cannot
+04.03.19 18:44:20<aindilis> oh you're talking about the skolem paradox?
+04.03.19 18:44:34<dmiles> slightly yes
+04.03.19 18:44:57<dmiles> sayign that skolem paradox needs to be built into everyhting.. since not doing that is a mistaker
+04.03.19 18:45:10<aindilis> okay I'll have to study it to understand it
+04.03.19 18:45:13<dmiles> for exmaple 1+1 
+04.03.19 18:45:17<dmiles> 1 of what?
+04.03.19 18:45:29<dmiles> ok just the concept of 1
+04.03.19 18:45:36<dmiles> is 1 even computable?
+04.03.19 18:45:46<aindilis> isn't one {{}} ?
+04.03.19 18:46:02<aindilis> according to Cantor?
+04.03.19 18:46:39<dmiles> well 1 is a someting
+04.03.19 18:46:46<aindilis> a set?
+04.03.19 18:46:48<dmiles> a something in some set
+04.03.19 18:47:04<aindilis> ah okay
+04.03.19 18:47:12<dmiles> but what gave us the languqage to recognise this
+04.03.19 18:47:17<dmiles> i dont mean the brains to 
+04.03.19 18:47:18<aindilis> yeah usually the universe or domain of discourse is built from sets
+04.03.19 18:47:20<dmiles> i mean the language
+04.03.19 18:47:30<dmiles> the languag ethat creates set theory
+04.03.19 18:47:45<dmiles> i mena i needed a language to create set theory in
+04.03.19 18:47:49<dmiles> and its not set theory
+04.03.19 18:47:59<dmiles> it might translate to set theory 
+04.03.19 18:48:10<aindilis> hrm, good point
+04.03.19 18:48:11<dmiles> but not all of it can
+04.03.19 18:48:13<aindilis> I forget how they do it
+04.03.19 18:48:26<aindilis> I haven't actually read whitehead + russell all the way through
+04.03.19 18:48:28<dmiles> the fact that not all if it can creates some issue 
+04.03.19 18:48:39<dmiles> but only to set theorists.. not to CycL
+04.03.19 18:49:09<aindilis> what are the intended semantics of CycL?
+04.03.19 18:49:12<dmiles> set theorists sadly think that it must plauge CycL
+04.03.19 18:49:24<dmiles> but they have no proof
+04.03.19 18:49:29<dmiles> only a set theory prooof
+04.03.19 18:50:17<aindilis> I was thinking about making a VM for Dunyazad
+04.03.19 18:50:19<dmiles> the intended semantics of CycL is whatever can be conscrcuted to the extent proof of comprehension
+04.03.19 18:50:37<aindilis> consecrated?
+04.03.19 18:50:38<dmiles> often we can proof that there are no comporehensikn axioms
+04.03.19 18:50:53<dmiles> often we can prove that there are no comprehension axioms
+04.03.19 18:51:04<dmiles> we can prove in CycL we cant compute infinity
+04.03.19 18:51:15<dmiles> yet that cant be proved in mathematical logic
+04.03.19 18:51:38<dmiles> as mathamtical logic is a victem of itself
+04.03.19 18:51:51<dmiles> it cant prove what it cant prove
+04.03.19 18:52:01<dmiles> CycL can prove what it cant prove
+04.03.19 18:52:13<dmiles> and in doing soo be ever so vauge
+04.03.19 18:52:20<aindilis> well autoepistemic logic could be embedded in HOL, right?
+04.03.19 18:52:26<dmiles> and that vaugness is accepable
+04.03.19 18:52:52<dmiles> vaugness means we have an exact  > and <
+04.03.19 18:53:05<aindilis> I'm sorry I just don't grasp these things, too much bit rot
+04.03.19 18:53:09<dmiles> exmaple of vaugness:  N > 1
+                 <aindilis> in my math backgorund
+04.03.19 18:53:14<aindilis> ah yeah
+04.03.19 18:53:18<aindilis> I remember you discussing that example
+04.03.19 18:53:22<dmiles> can you compute N?
+04.03.19 18:53:40<aindilis> N \= 0 ?
+04.03.19 18:54:03<dmiles> lets do  1 < N
+04.03.19 18:54:17<dmiles> should you make the mistakes of computing N?
+04.03.19 18:54:31<dmiles> should you make the mistake of caring if N was computrable?
+04.03.19 18:54:55<dmiles> probably not a good thing to care able
+04.03.19 18:55:00<dmiles> probably not a good thing to care about 
+04.03.19 18:55:20<dmiles> set theory gives up at this stage
+04.03.19 18:55:28<aindilis> ah I see
+04.03.19 18:55:47<dmiles> CycL doent give up there
+04.03.19 18:56:03<dmiles> what ar ehte axipoms of a theory? 
+04.03.19 18:56:10<dmiles> what N are they?
+04.03.19 18:56:25<dmiles> uncomputable
+04.03.19 18:56:41<dmiles> CycL doesnt give up there
+04.03.19 18:57:03<dmiles> i mean what is the count of the number of axioms in any theory?
+04.03.19 18:57:18<aindilis> ok
+04.03.19 18:57:25<dmiles> should we make the mistake of caring if the number of axioms in any theory was computable?
+04.03.19 18:57:43<dmiles> CycL doesnt 
+04.03.19 18:58:11<dmiles> intead it decribes what axioms can and cant exist
+04.03.19 18:58:38<dmiles>  like CANT < axioms < CAN
+04.03.19 18:58:46<aindilis> does CycL have a model theory?
+04.03.19 18:59:25<dmiles> it can invent model theories
+04.03.19 18:59:44<dmiles> teh place such inventions occur might be a model
+04.03.19 19:00:12<dmiles> since that place is the place in which all things are done from
+04.03.19 19:00:34<dmiles> it jsut dont have a first order-ifiable or 2nd order-ifyable model
+04.03.19 19:00:43<aindilis> this reminds me of my assumption-junction project
+04.03.19 19:00:59<aindilis> is having no assumptions an assumption?
+04.03.19 19:01:06<dmiles> yes
+04.03.19 19:01:15<aindilis> k
+04.03.19 19:01:43<dmiles> noticve the language of  AAAViewer
+04.03.19 19:01:55<dmiles> the TakeObjectFrom
+04.03.19 19:02:02<dmiles> it is a great EC
+04.03.19 19:02:27<dmiles> (switched topics back to your first questions.. aobuyt my thoughts on  AAAViewer)
+04.03.19 19:02:34<dmiles> i love it
+04.03.19 19:02:45<aindilis> I thought it was similar to DAYDREAMER
+04.03.19 19:02:49<aindilis> did you run it?
+04.03.19 19:02:53<dmiles> yes exactly
+04.03.19 19:03:03<dmiles> same EC as DAYDREAMER
+04.03.19 19:03:23<dmiles> well of any logical MUD/MOO
+04.03.19 19:03:32<dmiles> i havent ran it for at least 10 years
+04.03.19 19:03:53<aindilis> there is a jar you just java -jar AAAViewer.jar
+04.03.19 19:04:58<dmiles> daughter's councilor is pulling me away
+04.03.19 19:05:03<aindilis> http://www.ofai.at/~stefan.rank/StefanRank-ActAffActViewer.zip
+04.03.19 19:05:08<aindilis> okay srry, ttys!
+04.03.19 19:05:25<aindilis> I was thinking we could modify the theory
+04.03.19 19:05:46<aindilis> add more and/or subtract some of the representation
+04.03.19 19:14:24<dmiles> back for 2 minutes.. oh yeah all the AAAViewer agents need is an infinately enrichable enviromnet
+04.03.19 19:14:27<aindilis> kk
+04.03.19 19:14:52<dmiles> "infinately enrichable environment" ?!?
+04.03.19 19:15:01* dmiles words
+04.03.19 19:15:08<dmiles> yes
+04.03.19 19:15:40<dmiles> just an infinately enrichable environment tollerant of elaborations
+04.03.19 19:16:29<dmiles> not hard.. jsut no one ever tried
+04.03.19 19:16:37<dmiles> well some do try
+04.03.19 19:17:02<dmiles> gone again
+04.03.19 19:17:13<aindilis> o/
+04.03.19 19:20:55<dmiles> i thought Secondlife was good enough since other humans would have fit into that enviroment enriching it enough the agents could model the humans.. secondlife was still not _semantically_ rich enough
+04.03.19 19:21:05<dmiles> that became my mission is giving them such an environment
+04.03.19 19:21:27<dmiles> one that is infinate
+04.03.19 19:22:17<dmiles> and then a second enviroment for "instant replay"
+04.03.19 19:24:07<aindilis> I have to apologize I spent the whole night awake so I'm dozing off uncontrollably, but this is most interesting
+04.03.19 22:58:09<aindilis> I tried for several hours to get dunyazad to run, couldn't
+04.03.19 22:58:16<aindilis> but good news, MEPK is updated: https://github.com/sysulic/MEPK
+05.03.19 00:05:14<dmiles> aindilis: you have clingo installed right?
+05.03.19 00:06:11<dmiles> erm i mean with potassco
+05.03.19 00:07:00<dmiles> dunyazad looks like a neat idea at least
+05.03.19 02:17:21*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+05.03.19 02:47:13*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+05.03.19 03:14:03<dmiles>  i am considering reversing the forwarding.. that is having everyone that joins #logicmoo end up forwarding to #opencyc
+05.03.19 03:14:58<dmiles> i dont mind it the way it is though... it is jsut more people out of a whim are going to join #opencyc
+05.03.19 12:03:40<aindilis> dmiles: https://github.com/solsword/dunyazad/issues/2
+05.03.19 12:06:21*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+05.03.19 12:21:49<dmiles> logicmoo workplan?  http://www.daxtron.com/pdf/lesa.pdf
+05.03.19 12:24:24<aindilis> couldn't hurt
+05.03.19 12:24:30<aindilis> btw, I'm reading the eggcracking paper
+05.03.19 12:25:40<aindilis> I'm still concerned about nested metaplanning
+05.03.19 12:26:02<aindilis> haven't seen how I'm going to do that
+05.03.19 12:26:11<aindilis> but I forget why it's "necessary"
+05.03.19 12:26:32<aindilis> I could probably pull off metaplanning in FLUX
+05.03.19 12:26:50<aindilis> but I don't think the nested will work
+05.03.19 12:44:35<dmiles> aindilis: see idni
+05.03.19 12:48:47<aindilis> hey
+05.03.19 12:49:33<aindilis> what file are you looking for?
+05.03.19 13:02:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-ztjtnuldzkjcraya) left #logicmoo: Quit: Connection closed for inactivity
+05.03.19 13:34:52*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+05.03.19 13:52:10*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-rgztkksocykulbfz, stoopkid: stoopkid)
+05.03.19 14:24:50<aindilis> dmiles: ping
+05.03.19 14:55:10*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+05.03.19 19:04:33*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+05.03.19 20:05:49<aindilis> dmiles: I made some more progress on location-logic: https://frdcsa.org/~andrewdo/projects/frdcsa-guis/screenshot_001.png
+06.03.19 00:33:12<aindilis> I think I'm gonna just install Home Assistant
+06.03.19 00:33:41<aindilis> Hasbian
+06.03.19 00:33:50<aindilis> *Hassbian
+06.03.19 02:55:06<aindilis> https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf
+06.03.19 04:25:27*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 245 seconds
+06.03.19 04:26:16*** Quit: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 250 seconds
+06.03.19 04:26:43*** Quit: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 246 seconds
+06.03.19 04:28:12*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+06.03.19 04:28:20*** Join: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): see http://prologmoo.com/)
+06.03.19 04:31:49*** Join: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): anonymous)
+06.03.19 07:33:42*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+06.03.19 08:37:22*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+06.03.19 11:31:19*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+06.03.19 15:01:32*** Join: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+06.03.19 15:02:27*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Ping timeout: 250 seconds
+06.03.19 15:32:59*** Quit: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Remote host closed the connection
+06.03.19 15:37:22*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+06.03.19 16:14:11*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+06.03.19 23:02:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-rgztkksocykulbfz) left #logicmoo: Quit: Connection closed for inactivity
+07.03.19 07:55:23*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-fvtqismofbnskjna, stoopkid: stoopkid)
+07.03.19 08:35:13*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+07.03.19 16:16:12*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+07.03.19 21:44:42*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-fvtqismofbnskjna) left #logicmoo: Quit: Connection closed for inactivity
+07.03.19 22:03:29*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-jvsxknztiowymlsh, stoopkid: stoopkid)
+07.03.19 22:23:23*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+07.03.19 22:25:32*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+08.03.19 00:14:59*** Connecting...
+08.03.19 00:15:28*** Join: ditable-doge (~editable-@104.168.57.22, editable-dog: editable-log)
+08.03.19 00:15:29*** Topic for #logicmoo: http://www.logicmoo.org | https://docs.google.com/document/d/1XCDnWMjNh4y2Um_1B-HE4x5Q34oxHRxBl-Oy9eNUzTI/edit#  https://drive.google.com/drive/folders/0B0QA19UX0ehlV1ZEaXEzc3hjTWM   http://www.csee.umbc.edu/~finin/prolog/pfc/man/pfc.pdf
+                 *** Topic set by dmiles on Mon May 28 20:31:51 2018, 9 months 13 days 4 hours 43 minutes 38 seconds ago
+                 *** Names: ditable-doge aindilis stoopkid Copenhagen_Bram yesbot PrologMUD dmiles michalisko @ChanServ jbalint CoderForLife swamps
+                 *** End of /NAMES list.
+08.03.19 00:15:49*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Excess Flood
+08.03.19 00:16:15*** Nick change: You are now known as editable-dog
+08.03.19 00:16:17*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+08.03.19 00:27:26*** Quit: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 250 seconds
+08.03.19 00:28:47*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 240 seconds
+08.03.19 00:29:27*** Quit: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 252 seconds
+08.03.19 00:35:51*** Join: PrologMUD (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): see http://prologmoo.com/)
+08.03.19 00:36:51*** Join: yesbot (~yesbot@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): anonymous)
+08.03.19 00:46:03*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): ...)
+08.03.19 00:47:33*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Excess Flood
+08.03.19 00:47:51*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+08.03.19 01:18:02*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 255 seconds
+08.03.19 01:19:04*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+08.03.19 02:57:50*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+08.03.19 12:50:40*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+08.03.19 13:48:23<dmiles> heh someone told me i coudl get very rich if i made this proposal https://docs.google.com/document/d/1mGHPobHUZ_d88e87FWwPF-tZ233Xq4Oe7DWLF8fRVbU/edit#
+08.03.19 13:49:16<dmiles> I just having to write it down since I assumed EVERYONE thought of this already.. but when i use that  assumptio that everyone has.. they look at me blankly having no idea what it was
+08.03.19 13:50:03<dmiles> i even included stoopkid's reactions :P
+08.03.19 13:50:16<dmiles> "Douglas, whatever you are talking about here is AI.. not program verification!"
+08.03.19 19:29:54<aindilis> what exactly does the protocol do?
+08.03.19 19:30:21<aindilis> it's a protocol for managing workflows and ensuring correctness of user interface design and interactions?
+08.03.19 19:30:30<aindilis> dmiles: 
+08.03.19 19:30:58<aindilis> In FRDCSA this is known as the Diamond project: https://frdcsa.org/frdcsa/internal/diamond/index.html
+08.03.19 19:31:31<aindilis> https://github.com/aindilis/diamond
+08.03.19 19:35:07<aindilis> similar to these things: https://www.cs.cmu.edu/afs/cs/project/amulet/www/papers/videoabs.html
+08.03.19 19:35:14<aindilis> http://www.cs.cmu.edu/~sage/PDF/Visage.pdf
+08.03.19 19:48:40<dmiles> it is really jsut writting applications in CycL instead of Prolog
+08.03.19 19:49:12<aindilis> "heh someone told me i coudl get very rich if i made this proposal" <- howso?
+08.03.19 19:49:16<dmiles> UIs can be a part yes
+08.03.19 19:49:45<aindilis> maybe we should have a class on writing apps in CycL?
+08.03.19 19:49:49<dmiles> just that is what most people thought software verification would one day make happen
+08.03.19 19:50:05<aindilis> ah
+08.03.19 19:50:12<aindilis> well you need a descriptive enough system right?
+08.03.19 19:50:32<dmiles> yeah.. writting an app in CycL is kind of confusing unless a person is pretending it is also Prolog
+                 <aindilis> how are things progressing btw?
+08.03.19 19:51:15<dmiles> good just so many days i have to spend away from computer
+08.03.19 19:51:38<dmiles> writting an app in CycL is kind of confusing as in people dont nesc think ofdoing that when they are using CycL
+08.03.19 19:52:03<aindilis> well I'd like to write one, probably best would be to do it from LarKC_CL in CL?
+08.03.19 19:52:32<dmiles> yes but not for another week probably before i get time to finish the current code
+08.03.19 19:52:49<aindilis> so you set up an API with CYC?
+08.03.19 19:52:51<dmiles> current code is making CycL host prolog
+08.03.19 19:53:02<aindilis> wow!!
+08.03.19 19:53:15<aindilis> how many of the 6 do you have working?
+08.03.19 19:53:21<aindilis> or has scope changed?
+08.03.19 19:53:33<dmiles> i havent been able to work since i mentioned that the other day
+08.03.19 19:53:37<aindilis> ah kk
+08.03.19 19:53:42<aindilis> me too, been busy
+08.03.19 19:53:46<aindilis> but getting a chance to work soon
+08.03.19 19:53:54<dmiles> was at hospitol 16 hours yesterday.. day before that i cant remember but wasnt home
+08.03.19 19:54:07<aindilis> I hope whoever it is is doing okay
+08.03.19 19:54:31<dmiles> tonight i have to take daughter to Magic The Gathering Tournment
+08.03.19 19:54:37<dmiles> etc
+08.03.19 19:54:39<aindilis> do you have time today to program? I can leave you alone
+08.03.19 19:54:48<dmiles> wont until tommorow
+08.03.19 19:54:51<aindilis> kk
+08.03.19 19:55:06<aindilis> I've been taking a break from AI
+08.03.19 19:55:09<dmiles> she has 10 more minuites before she has to be ready to leave 
+08.03.19 19:55:12<aindilis> kk
+08.03.19 19:55:14<aindilis> ttys!
+08.03.19 19:55:23<dmiles> (so taking that time waiting here on IRC)
+08.03.19 19:55:28<aindilis> ah okay
+08.03.19 19:55:41<aindilis> yeah I've taken a break from AI.  hoping my CPAP helps with stamina
+08.03.19 19:55:48<aindilis> want to come back charging at it
+08.03.19 19:55:56<dmiles> CPAP is totally what i need to do to 
+08.03.19 19:56:18<aindilis> I felt really good after my titration test
+08.03.19 19:56:22<aindilis> where they test the masks
+08.03.19 19:56:39<aindilis> haven't felt that unobstructed breathing wise since I was a kid
+08.03.19 19:56:56<dmiles> nice
+08.03.19 19:56:58<aindilis> just get a referral to a sleep doctor
+08.03.19 19:57:07<aindilis> complain about it and they will want to do a sleep test
+08.03.19 19:57:09<aindilis> test is a pin
+08.03.19 19:57:10<aindilis> *pain
+08.03.19 19:57:17<aindilis> they hook up a ton of sensors
+08.03.19 19:57:24<aindilis> but CPAP should be worth it
+08.03.19 19:57:32<dmiles> i plan  to have mine on a timer that starts 5 minutes after i am assleep
+08.03.19 19:57:38<aindilis> woke up a few times like "get this thing off my face!!!"  it's a little claustrophoic
+08.03.19 19:57:49<aindilis> sweet!
+08.03.19 19:57:59<aindilis> but I hear you get used to it
+                 <dmiles> you can set yours on a delay?
+08.03.19 19:58:03<aindilis> sure
+08.03.19 19:58:09<dmiles> ok good
+08.03.19 19:58:19<aindilis> also first night you're supposed to only use it some of the time till you get used to it
+08.03.19 19:58:35<aindilis> but re the timer not sure you would want to cause the mask I have is harder to breath when the machine is off
+08.03.19 19:58:43<aindilis> but maybe if you set it to a low setting, that could work
+                 <dmiles> dont want you hating it before you are used to it
+08.03.19 19:58:45<aindilis> I think they have timers
+08.03.19 19:58:53<aindilis> I dn't think I will I love it already
+08.03.19 19:59:03<aindilis> if it helps me work on AI, then I love it
+08.03.19 19:59:26<aindilis> besides M got her promotion so I have all the time in the world to work on AI, no excuses now
+08.03.19 19:59:44<aindilis> want to make a difference
+08.03.19 20:00:03<aindilis> also going to take a break from the harder parts of FRDCSA, and work on two things
+08.03.19 20:00:16<aindilis> one is mundane reminders for things like winterization and stuff
+08.03.19 20:00:22<aindilis> two is whatever you want me to work on
+08.03.19 20:00:37<aindilis> again I'm going to subordinate FRDCSA to PrologMUD as needed to help us along
+08.03.19 20:00:50<aindilis> since we both need people to help us
+08.03.19 20:01:00<aindilis> so until we can find more people it makes sense to team up
+08.03.19 20:01:15<aindilis> plus FRDCSA is not getting far enough along
+08.03.19 20:01:22<aindilis> *oh yeah will also work on release FRDCSA
+08.03.19 20:01:30<aindilis> +VM + FLP
+08.03.19 20:01:46<aindilis> but in 10 years I didn't get that much done on my own
+08.03.19 20:02:00<aindilis> okay enjoy, ttys!
+08.03.19 20:02:40<dmiles> ttys
+09.03.19 15:00:25*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-jvsxknztiowymlsh) left #logicmoo: Ping timeout: 252 seconds
+09.03.19 15:01:51*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-yzcbpsdtnovpnpfg, stoopkid: stoopkid)
+09.03.19 16:26:11*** Join: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+09.03.19 16:28:49*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 246 seconds
+09.03.19 19:14:14<aindilis> logicmoo: ping
+09.03.19 19:33:07<aindilis> logicmoo: I'm getting an error with /regex.pl where it says @arg1 in locked_replace, any idea why?
+09.03.19 19:33:40<aindilis> ERROR: /var/lib/myfrdcsa/codebases/minor/free-life-planner/lib/util/regex.pl:20:14: Syntax error: Operator expected
+09.03.19 19:34:14<aindilis> send(Regex, for_all, S, message(@arg1, replace, @arg2, Replace)),
+09.03.19 19:36:48<aindilis> just have to wrap @arg1 like @(arg1)
+09.03.19 19:36:49<aindilis> kk
+09.03.19 19:36:50<aindilis> ty
+09.03.19 21:34:43*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-yzcbpsdtnovpnpfg) left #logicmoo: Quit: Connection closed for inactivity
+09.03.19 22:18:43<aindilis> logicmoo: ping
+09.03.19 22:22:31<aindilis> any pointers on how to put things into SWIPL modules?  also any progress on metaplanning?
+09.03.19 22:22:43<aindilis> I'm debating writing some planning researchers about nested metaplanning
+09.03.19 23:35:46*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-irrvamyhdddypsha, stoopkid: stoopkid)
+10.03.19 01:45:22*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-irrvamyhdddypsha) left #logicmoo: Quit: Connection closed for inactivity
+10.03.19 04:06:11*** Join: Guest37305 (~fenchelfe@188.130.155.164, (unauthenticated): fenchelfen)
+10.03.19 04:06:43<Guest37305> Ohai
+10.03.19 04:07:04<Guest37305> Prolog is cool but intimidates me a lot
+10.03.19 04:07:34<Guest37305> I am working on a predicate that generates a list of available steps when walking through a grid 5x5
+10.03.19 04:08:18<Guest37305> I am trying to do this with DCG and fail!!
+10.03.19 04:08:51<Guest37305> Here's my code https://pastebin.com/XUBNUCcZ
+10.03.19 04:09:16<Guest37305> It generates only 4 separate pairs and that's not even a list
+10.03.19 04:09:20<Guest37305> :(
+10.03.19 06:23:27*** Quit: Guest37305 (~fenchelfe@188.130.155.164) left #logicmoo: Ping timeout: 240 seconds
+10.03.19 07:43:31*** Join: Guest37305 (~fenchelfe@188.130.155.164, (unauthenticated): fenchelfen)
+10.03.19 12:00:24*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+10.03.19 12:58:03*** Quit: Guest37305 (~fenchelfe@188.130.155.164) left #logicmoo: Ping timeout: 246 seconds
+10.03.19 13:05:25*** Join: Guest37305 (~fenchelfe@188.130.155.164, (unauthenticated): fenchelfen)
+10.03.19 13:23:36*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi, stoopkid: stoopkid)
+10.03.19 16:03:26*** Quit: Guest37305 (~fenchelfe@188.130.155.164) left #logicmoo: Ping timeout: 244 seconds
+10.03.19 16:24:24*** Join: Guest37305 (~fenchelfe@188.130.155.164, (unauthenticated): fenchelfen)
+10.03.19 17:27:53*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+10.03.19 17:36:30*** Nick change: logicmoo (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) is now known as dmiles
+10.03.19 19:39:58*** Quit: Guest37305 (~fenchelfe@188.130.155.164) left #logicmoo: Ping timeout: 246 seconds
+10.03.19 22:37:45<aindilis> dmiles: so I have KM loading in LarKC_CL, now I'm trying to learn KM so that I can begin to do it.  I don't see any Mt support so I'll just through everything into KnowledgeMachineMt, but have the option for assertions to live in Mts.  It may make sense to try to model Mts within KM somehow.
+10.03.19 22:38:45<aindilis> maybe as objects/classes like (a Microtheory) etc (MyMt is a *Microtheory) or what not
+10.03.19 22:39:28<aindilis> this looks pretty useful, it would have helped to speed up some of my Mt work, so maybe I'll create .km files in my MyKBs dir.
+10.03.19 22:47:41<dmiles> yeah, that makes seanse ot start off as all one Mt
+10.03.19 22:48:31<dmiles> and doing Mts per .km file
+10.03.19 22:48:37<aindilis> kk
+10.03.19 22:48:56<aindilis> I think this may be the beginning of some Eurisko remake, since it's a frame language
+10.03.19 22:49:01<dmiles> well youy dont havbe to do it that way.. you can have as many files per Mt as you want :)
+10.03.19 22:49:15<dmiles> yes for sure
+10.03.19 22:49:23<dmiles>  beginning of some Eurisko remake :)
+10.03.19 22:49:34<aindilis> :)
+10.03.19 22:51:03<dmiles> kind of what you are doing with KM there is what i am slowly doing getting Prolog toplevel into CYC as well
+10.03.19 22:51:14<aindilis> wow
+10.03.19 22:51:27<aindilis> (I think my .do files may benefit from KM too)
+10.03.19 22:51:54<dmiles> well KM is pretrty much conceptually a hybrid of what you get with Prlolog+CYC
+10.03.19 22:52:18<dmiles> KM is conceptually a hybrid of what you get with Prolog+CYC
+10.03.19 22:53:37<dmiles> like this part..
+10.03.19 22:53:56<dmiles> KM>  (the parts of (the lives-in of *Joe))
+                 <dmiles> 1 -> (the parts of (the lives-in of *Joe))
+                 <dmiles> 2  -> (the lives-in of *Joe)
+                 <dmiles> 2   (1) Local value(s): _House3
+                 <dmiles> 2   (2) From inheritance: (a House)
+10.03.19 22:53:57<dmiles> 2   (1-2) Combine 1-2 together
+10.03.19 22:53:58<dmiles> 3   -> ((_House3) && ((a House)))
+                 <dmiles> 3   <- (_House3)              "((_House3) && ((a House)))"
+                 <dmiles> 2  <- (_House3)               "(the lives-in of *Joe)"
+10.03.19 22:53:59<dmiles> 2  -> (the parts of _House3)
+10.03.19 22:54:00<dmiles> 2   (1) Local value(s): (:set _Door4 _Roof5)
+                 <dmiles> 3   -> (:set _Door4 _Roof5)
+10.03.19 22:54:46<dmiles> from http://www.cs.utexas.edu/users/mfkb/km/km-overview.script
+10.03.19 22:55:26<dmiles> in http://www.cs.utexas.edu/users/mfkb/km/test-suite.km 
+10.03.19 22:55:38<dmiles> when it does 
+                 <dmiles> (reset-kb)
+10.03.19 22:55:49<dmiles> we might just have it reset a single Mt
+10.03.19 22:55:58<aindilis> :)
+10.03.19 22:56:19<dmiles> but you can make it take an argument and things
+10.03.19 22:56:54<dmiles> like (set-current-kb #$MyMt) etc
+10.03.19 22:58:18<dmiles> the parts i am unsure abotu .. kind of the same issue with DAYDREAMER is stuff like..
+10.03.19 22:58:19<dmiles> (*UK has
+                 <dmiles>         (country-name ("the United Kingdom")))
+10.03.19 22:59:16<dmiles> i dont know yet quite if that is suppsoed to become  (#$country-name #$UK "the United Kingdom")
+10.03.19 22:59:58<dmiles> in the work you are doing now is sort of investigating the design of the CycL arround such things
+10.03.19 23:00:31<aindilis> yeah
+                 <aindilis> (#$KnowledgeMachineMt has (instance-of (#$Microtheory)))
+10.03.19 23:01:19<dmiles> if i was given that task which i expect to join you on w/in a week is deciding if we will keep the sentences as it wishes and then have like Back and Forth rules or not
+10.03.19 23:01:43<aindilis> Cyc used to be a frame-based system
+10.03.19 23:01:53<aindilis> how to exploit that here?
+10.03.19 23:02:08<aindilis> (#$and (#$blah ?X) ...)
+10.03.19 23:02:09<aindilis> ?
+10.03.19 23:02:41<dmiles> i think keeping them in their KM frame based way *and* having CycL rules to translate beteen the two will be valuable for doing things in DAYDREAMER
+10.03.19 23:02:58<aindilis> does DAYDREAMER use KM at all yet?
+10.03.19 23:03:11<dmiles> nope but is closer to KMs representation 
+10.03.19 23:03:16<aindilis> k
+10.03.19 23:03:18<dmiles> nope but is very to KMs representation 
+10.03.19 23:03:26<aindilis> yeah
+10.03.19 23:03:29<dmiles> very close*
+10.03.19 23:03:56<dmiles> what you'll be discovering is how these will go into CycL
+10.03.19 23:04:11<aindilis> alright well I have a doctors appointment in the morning, I'm going to read more about KM tonight, and play around with, make a few toy systems and such
+10.03.19 23:04:22<aindilis> just fyi
+10.03.19 23:04:28<dmiles> if i was doign this instead of turning them into what CycL likes.. i would defiantely try tpo presenve KM represenations but still used in an Mt
+10.03.19 23:04:40<aindilis> but since M has given me the greenlight I will have a ton of time to work on this stuff
+10.03.19 23:05:19<aindilis> okay so how would the back and forth rules work?
+10.03.19 23:05:43<aindilis> plus M spends most of her time writing her novel which leaves me with "nothing to do"
+                 <dmiles> since i feel like some of Sowa work on Conceptual Graphs to will work good when we accept that we are using KM/CG/DAYDREAMER represeations
+10.03.19 23:06:16<aindilis> are you adding Prolog+CG?
+10.03.19 23:06:21<aindilis> to LarKC_CL?
+10.03.19 23:06:24<dmiles> Translation rules will be a set of binary predicates that shown the two forms
+10.03.19 23:06:35<dmiles> yes 
+10.03.19 23:06:37<aindilis> ah
+10.03.19 23:06:49<aindilis> where do the rules live?
+10.03.19 23:06:53<aindilis> Prolog?
+10.03.19 23:07:06<dmiles> but i am putting of PrologCG until i got these meerge onto LarKC_CL sinc ei am missing working on LaRKC_CL
+10.03.19 23:07:19<dmiles> but i am putting off PrologCG until i got these 5 merge onto LarKC_CL sinc ei am missing working on LaRKC_CL
+10.03.19 23:07:25<aindilis> kk
+10.03.19 23:07:37<dmiles> the rules will like ina  TranslationMt
+10.03.19 23:07:44<aindilis> kk
+10.03.19 23:08:07<aindilis> are you making this up as you go or have you already thought it through?
+10.03.19 23:08:50<dmiles> they look like 
+10.03.19 23:09:14<dmiles> (#$km-to-cycl ?KM ?CYC)
+10.03.19 23:09:30<dmiles> (?PRED (TheList ?ARGS)))
+10.03.19 23:09:34<aindilis> where ?KM is a transliteration like (#$a #$Cat)
+10.03.19 23:09:59<dmiles> correct
+10.03.19 23:10:20<aindilis> and I suppose some Common Lisp for doing the translation?
+10.03.19 23:10:33<dmiles> so we have  #$km-to-cycl-sentence-level  and #$km-to-cycl-term-level
+10.03.19 23:10:59<dmiles> (#$km-to-cycl-term-level (#$a ?x) (#$TheFn ?x))
+10.03.19 23:11:20<aindilis> ah
+10.03.19 23:11:39<dmiles> #$km-to-cycl-sentence-level  dealing with KM:has
+10.03.19 23:12:11<dmiles> i'd like to set up CycL forward to translalate them back and forth
+10.03.19 23:12:18<aindilis> kk
+10.03.19 23:12:51<dmiles> so we have somethjing like #$KnowledgeMachineMt  and #$KnowledgeMachineMt-As-CycL
+10.03.19 23:13:15<aindilis> using #$ist?
+10.03.19 23:13:32<dmiles> yes the tranaltion rules will #$ist-Asserted 
+10.03.19 23:14:15<dmiles> well depending on how bad #$KnowledgeMachineMt is it might be #$KnowledgeMachine-As-DataMt
+10.03.19 23:14:20<dmiles> for exmaple..
+10.03.19 23:14:48<dmiles> i am starting with my code with  #$PrologCodeDataMt
+10.03.19 23:15:11<dmiles> then i might have #$PrologAsKnowelegeMt
+10.03.19 23:15:33<dmiles> where  #$PrologCodeDataMt is giberish to CYC
+10.03.19 23:16:05<dmiles> #$PrologAsKnowelegeMt would be things that describe what #$PrologCodeDataMt does
+10.03.19 23:16:43<dmiles> but i have veroius level of non-gibberish
+10.03.19 23:17:20<dmiles> predicate_propery/2's 
+10.03.19 23:17:51<dmiles> which tell me things about if the predciate is compiled or not
+10.03.19 23:18:07<aindilis> you'd use ResultIsa?
+10.03.19 23:18:16<dmiles> i cant predict yet what will be salient for use
+10.03.19 23:18:32<dmiles> right i be translating stuff to resultIsa
+10.03.19 23:18:44<aindilis> I'm running out of steam but I'm curious about what predicate_property/2 is doing here
+10.03.19 23:19:00<dmiles> right i be translating stuff to #$resultIsa if i have a predicate that is  pred(In,In,Out)
+10.03.19 23:19:22<aindilis> do people actually use + - in Prolog code?
+10.03.19 23:19:29<aindilis> + - ?
+10.03.19 23:19:40<aindilis> I thought you could but then I tried and it didn't
+10.03.19 23:19:43<dmiles> predicate_property.2 tells us special things about predicate memory like clause counts
+10.03.19 23:19:47<aindilis> yeah
+10.03.19 23:20:05<aindilis> but I'm wondering how it relates to #$PrologCodeDataMt
+10.03.19 23:20:18<aindilis> oh I see, to introspect the contents of that KB
+10.03.19 23:20:19<aindilis> *Mt
+10.03.19 23:20:23<dmiles> predicate_property/2 will show up only in #$PrologCodeDataMt
+10.03.19 23:20:41<dmiles> vs #$argIsa #$PrologAsKnowelegeMt
+10.03.19 23:20:48<dmiles> vs #$argIsa  will show up #$PrologAsKnowelegeMt
+10.03.19 23:20:50<aindilis> k
+10.03.19 23:21:06<dmiles> as i leanr how much belongs in either
+10.03.19 23:21:07<aindilis> oh I see
+10.03.19 23:21:26<dmiles> by having everything prolog needs in  #$PrologCodeDataMt i dont have to freak out
+                 <aindilis> so you can automatically infer using predicate_property/2 the contents of #$PrologAsKnowelegeMt
+10.03.19 23:21:57<dmiles> yes anyhting that i figure out beloings properrty in  #$PrologAsKnowelegeMt
+10.03.19 23:22:09<dmiles> i can write a forwarding rule for
+10.03.19 23:22:26<aindilis> do you have Kappa or Eval or something to access Prolog?
+10.03.19 23:22:35<dmiles> yes
+10.03.19 23:22:37<aindilis> k
+10.03.19 23:22:43<aindilis> nicenicenice
+10.03.19 23:23:03<dmiles> it is pretty m,uch the same things a person might do if they did this in SQL
+10.03.19 23:23:11<dmiles> have a table that is what the application needs
+10.03.19 23:23:15<aindilis> so what about SKSI?
+10.03.19 23:23:18<dmiles> then a table that is what the user needs
+10.03.19 23:23:40<dmiles> then writting stroed procs between the two
+10.03.19 23:23:57<dmiles> i mean the same type of work i used rto do whaen i did this in SQL
+10.03.19 23:23:59<aindilis> wow this is looking good
+10.03.19 23:24:18<dmiles> SKSI is jsut slightly too verbose
+10.03.19 23:24:38<aindilis> I can see us achieving the desired fallout behavior for program synth this way
+10.03.19 23:24:39<dmiles> SKSI allows data to stay unsemantic
+10.03.19 23:25:30<dmiles> (since SKSI is about allowing me to never think about #$PrologCodeData 
+10.03.19 23:25:51<dmiles> and we are looking to do program synth 
+10.03.19 23:26:11<aindilis> you had said there was an example
+10.03.19 23:26:14<aindilis> of program synth
+10.03.19 23:26:22<aindilis> I would like to play around with it
+10.03.19 23:26:45<dmiles> https://github.com/TeamSPoon/prologmud/blob/master/prolog/prologmud/mud_builtin.pfc.pl#L626
+10.03.19 23:27:09<dmiles> sory: https://github.com/TeamSPoon/prologmud/blob/master/prolog/prologmud/mud_builtin.pfc.pl#L629-L636
+10.03.19 23:27:17<dmiles> ttPredAndValueType(Str)/
+                 <dmiles>   (i_name('mud',Str,Pred),
+                 <dmiles>   i_name('vt',Str,VT)) ==> 
+                 <dmiles>     (rtRolePredicate(Pred),
+10.03.19 23:27:18<dmiles>      ttValueType(VT),
+                 <dmiles>       mudKeyword(VT,Str),mudKeyword(Pred,Str),
+                 <dmiles>       argIsa(Pred,2,VT),
+                 <dmiles>       argIsa(Pred,1,tTemporalThing)).
+10.03.19 23:27:47<dmiles> well all myu Progrtam Synth stuff in in Logicmoo.. not CycL right now
+10.03.19 23:27:55<aindilis> yeah
+10.03.19 23:28:07<dmiles> so how ttPredAndValueType(Str) works is it has to be deduced
+10.03.19 23:28:19<dmiles> that is the sync code post deducted
+10.03.19 23:28:30<aindilis> what is /
+10.03.19 23:28:33<dmiles> i mean that actualyl synthesizes the code
+10.03.19 23:28:38<aindilis> yeah
+10.03.19 23:28:57<dmiles> the  Assertion/Cosntraints==>SideEffects
+10.03.19 23:29:05<aindilis> ah yeah
+10.03.19 23:29:19<aindilis> alright pretty cool, btw, is there a particular Prolog or Lisp book I should read
+10.03.19 23:29:20<aindilis> ?
+10.03.19 23:29:37<aindilis> I want to hone my skills so I can contribute better
+10.03.19 23:29:48<aindilis> to PrologMUD
+10.03.19 23:29:53<aindilis> LarKC_CL etc
+10.03.19 23:29:58<dmiles> i dont know i mostly i suppose made this stuff up .. but i feel like everything i read of the years is trying to give peopel teh ciomplusion
+10.03.19 23:30:20<dmiles> oh this part of the Playbook though is in the PFC manual
+10.03.19 23:30:46<aindilis> give people the compulsion?
+10.03.19 23:30:49<dmiles> as  Assertion/Cosntraints=>SideEffects
+10.03.19 23:30:56<aindilis> yeah
+10.03.19 23:31:01<dmiles> well make them realize they were supposed to be writitng the code i am 
+10.03.19 23:31:03<aindilis> srry I remembered it as soon as you said it
+10.03.19 23:31:30<dmiles> the compulsion to wonder why they dont
+10.03.19 23:31:31<aindilis> well you've got me pretty much sold, so I'll have to divide my time between this and FLP and FRDCSA, but I have lots of time now!
+10.03.19 23:32:02<dmiles> the Assertion part is what i wanting to be in CycL next more
+10.03.19 23:32:17<aindilis> kk
+10.03.19 23:32:18<dmiles> like (wants ProgramA UseUsernames)
+10.03.19 23:32:36<dmiles> UseUsernames ==> ttPredAndValueType("username")
+10.03.19 23:33:04<dmiles> (implies UseUsernames  (ttPredAndValueType "username"))
+10.03.19 23:33:58<dmiles> which right now in Logicmoo makes the program aware of a new RolePredicate and ValueType
+10.03.19 23:35:07<dmiles> (wants DMiles greetPeople) might imply gets their names this uses UseUsernames 
+10.03.19 23:36:17<dmiles> in Logicmoo the PFC forward chain currently is how it writes is PrologMUD;s source code
+10.03.19 23:36:35<aindilis> all of it?
+10.03.19 23:36:41<dmiles> 80% of it
+10.03.19 23:37:25<aindilis> wow! nice :) - please remind me what tt stands for (argQuotedIsa, but what it means, Term Type?)
+10.03.19 23:37:28<dmiles> especially this fil;e:  https://github.com/TeamSPoon/prologmud/blob/master/prolog/prologmud/mobs/affordance/simbots.pfc.pl
+10.03.19 23:37:59<dmiles> type type
+10.03.19 23:38:06<aindilis> ah right
+10.03.19 23:39:26<dmiles> https://github.com/TeamSPoon/logicmoo_base/blob/master/prolog/logicmoo/typesystem/mpred_type_isa.pl#L369-L396
+10.03.19 23:39:35<dmiles> typ_prfx(vt,ttValueType).
+                 <dmiles> typ_prfx(tt,ttTypeType).
+                 <dmiles> typ_prfx(t,tSet).
+                 <dmiles> typ_prfx(pred,tPred).
+                 <dmiles> typ_prfx(format,tPred).
+10.03.19 23:39:36<dmiles> typ_prfx(is,ftSyntaxOperator).
+10.03.19 23:39:37<dmiles> typ_prfx(dcg,ftSyntaxOperator).
+                 <dmiles> typ_prfx(dcg,ftTextType).
+10.03.19 23:39:42<dmiles> typ_prfx(txt,ftTextType).
+                 <dmiles> typ_prfx(sk,ftSkolemFunction).
+                 <dmiles> %typ_prfx(is,tPred).
+                 <dmiles> %typ_prfx(a,tFunction).
+                 <dmiles> %typ_prfx(t,tCol).
+                 <dmiles> typ_prfx(fn,tFunction).
+                 <dmiles> typ_prfx(mud,rtMudPred).
+10.03.19 23:40:47<dmiles> Quoted Types = typ_prfx(ft,ttExpressionType).
+10.03.19 23:41:18<dmiles> isa(ftString,ttExpressionType).
+10.03.19 23:41:25<dmiles> isa(ftNumber,ttExpressionType).
+10.03.19 23:42:01<dmiles> isa(ttExpressionType,tSet).
+10.03.19 23:43:05<aindilis> well will you be on tomorrow?  I should be on after 4 pm EST
+10.03.19 23:43:39<dmiles> i should be on at that time
+10.03.19 23:43:49<aindilis> great, I will look for you then
+10.03.19 23:44:03<aindilis> really excited about this
+10.03.19 23:44:36<dmiles> good i am happy
+10.03.19 23:44:40<aindilis> :)
+10.03.19 23:47:50<dmiles> the prefix thing has helped for distinghising the word txtRed vs the RGB value vRed
+10.03.19 23:48:19<dmiles> or the colelction of red things tRed
+10.03.19 23:48:22<aindilis> yeah, it's nice
+10.03.19 23:48:41<aindilis> especially since it auto figures out what's needed when it's missing
+10.03.19 23:48:52<dmiles> ttRed = 2nd order collection denoting collections about red things
+10.03.19 23:49:26<aindilis> I decided to hold off using it in FLP since I didn't understand it fully, but I'm sure it's backwards compatible
+10.03.19 23:49:44<aindilis> btw at some point I need to understand the SWIPL module system and move most things into modules to keep user empty
+10.03.19 23:50:08<dmiles> yeah that can be a real pain trying to keep user emply
+10.03.19 23:50:16<dmiles> but we are supposed to
+10.03.19 23:50:19<aindilis> kk
+10.03.19 23:50:35<aindilis> so do you have a different root that you export most things to?
+10.03.19 23:50:48<dmiles> hehe yes system:*
+10.03.19 23:50:50<aindilis> or rather export to other modules which export to root
+10.03.19 23:50:51<aindilis> kk
+10.03.19 23:50:59<aindilis> I'll move everything there first :)
+10.03.19 23:51:23<aindilis> is there a good reference on SWIPL modules?
+10.03.19 23:51:34<dmiles> moving stuff to 'system' also thiough forces me to be more carfull i cant jsut have names like option/2
+10.03.19 23:51:42<aindilis> hehe
+10.03.19 23:51:51<aindilis> oh wait system has other stuff in it?
+10.03.19 23:52:00<aindilis> do you have collisions much?
+10.03.19 23:52:02<dmiles> system is accessable everywhere
+10.03.19 23:52:13<dmiles> right system will collide as it slips under everyhitng
+10.03.19 23:52:15<aindilis> hehe interesitng
+10.03.19 23:52:32<dmiles> liek arity/2 is own by some RDF module
+10.03.19 23:52:34<aindilis> well then I'll not use system mainly, only as a root
+10.03.19 23:52:44<dmiles> ?- yes.
+10.03.19 23:52:47<aindilis> of the base preds like generatePageFor
+10.03.19 23:52:49<dmiles> ?- true.
+                 <PrologMUD> dmiles: %  det(Yes,1)
+10.03.19 23:53:15<dmiles> ?- predicate_propery(arity(_,_),PP).
+10.03.19 23:53:20<aindilis> well I suppose I have to think about compatibility with LogicMOO/PrologMUD for the merger
+10.03.19 23:53:35<dmiles> ?- predicate_propetry(arity(_,_),PP).
+10.03.19 23:53:36<aindilis> btw, PlanLogic is a common name
+10.03.19 23:53:43<dmiles> ?- predicate_property(arity(_,_),PP).
+                 <PrologMUD> dmiles: % PP=interpreted
+                 <PrologMUD> dmiles: % PP=visible
+10.03.19 23:53:44<PrologMUD> dmiles: % PP=dynamic
+                 <PrologMUD> dmiles: % PP=imported_from(rdf_rewrite)
+                 <PrologMUD> dmiles: % PP=number_of_clauses(8)
+                 <PrologMUD> dmiles: % PP=number_of_rules(0)
+                 <PrologMUD> dmiles: % PP=last_modified_generation(166926)
+10.03.19 23:53:45<PrologMUD> dmiles: % PP=defined
+                 <PrologMUD> dmiles: %  det(Yes,8)
+10.03.19 23:53:50<aindilis> ah
+10.03.19 23:53:53<dmiles> "imported_from(rdf_rewrite)"
+10.03.19 23:54:17<dmiles> ?- listing(arity/2).
+10.03.19 23:54:18<PrologMUD> dmiles: :- dynamic rdf_rewrite:arity/2.
+                 <PrologMUD> dmiles: rdf_rewrite:arity(read_pos_nums, 1).
+                 <PrologMUD> dmiles: rdf_rewrite:arity(read_pos_nums_aux, 2).
+                 <PrologMUD> dmiles: rdf_rewrite:arity(pairs, 2).
+                 <PrologMUD> dmiles: rdf_rewrite:arity(triples, 3).
+10.03.19 23:54:19<PrologMUD> dmiles: rdf_rewrite:arity(make_ele, 1).
+                 <PrologMUD> dmiles: rdf_rewrite:arity(clause_inlined, 2).
+10.03.19 23:54:20<PrologMUD> dmiles: rdf_rewrite:arity(mi1, 1).
+                 <PrologMUD> dmiles: rdf_rewrite:arity(random_clause, 2).
+10.03.19 23:54:21<PrologMUD> dmiles: %  det(Yes,1)
+10.03.19 23:54:55<dmiles> heh but i am the only one putting data there
+10.03.19 23:55:26<aindilis> so if I had a main FLP module that exported a few preds, that would be fine for inclusion to PrologMUD?
+10.03.19 23:55:36<dmiles> yes
+10.03.19 23:55:45<aindilis> btw, how are your systems integrations coming?
+10.03.19 23:55:57<aindilis> I was looking around your imported third-party Prolog code
+10.03.19 23:56:11<aindilis> I was wondering if you wanted to keep more precise metadata regarding third party interops
+                 <dmiles> well probably be done wendsay i hope.. jsut goign to delay the PrologPLusCG
+10.03.19 23:56:14<aindilis> kinda like FRDCSA
+10.03.19 23:56:27<aindilis> well I mean systems integration of things like Chat80, Marty's MIFE, etc
+10.03.19 23:56:45<aindilis> I want to gather as many Prolog + Lisp tools for possible inclusion to PrologMUD
+                 <dmiles> because i need to prove to myself that the PrologCagfe system wont be too slow in CYC
+10.03.19 23:56:52<aindilis> kk
+10.03.19 23:57:13<dmiles> before risking the 3-5 week progject opf prolog+CG :O
+10.03.19 23:57:32<aindilis> btw, haven't heard back from Chris Elsaessar
+10.03.19 23:57:54<aindilis> for AP/3T integration
+10.03.19 23:58:36<dmiles> to get it working in SBCL .. the way i'd do it is making pjb and a few lisp peopel that love to promote and defend SBCL want to get 3T working
+10.03.19 23:58:45<aindilis> hehe
+10.03.19 23:59:20<dmiles> or in #abcl gripe 3T is not working there
+10.03.19 23:59:26<aindilis> heh
+10.03.19 23:59:28<dmiles> hehe
+10.03.19 23:59:52<dmiles> even thought technically its the 3T job to make things less ACL
+11.03.19 00:00:03<dmiles> even though technically its the 3T job to make things less ACL
+11.03.19 00:00:12<aindilis> I guess I will write Peter Bonasso about it then
+11.03.19 00:00:18<aindilis> I'll CC you and Chris and David Whitten
+11.03.19 00:00:34<aindilis> because we'll want integration with his codebase
+11.03.19 00:00:44<dmiles> yeah Chris kinda indicated it was Peter Bonasso repsonsibility to
+11.03.19 00:00:54<aindilis> who knows maybe he'll give us access to some of the kewler stuff
+11.03.19 00:01:09<aindilis> you know those submodules that don't check out
+11.03.19 00:01:36<dmiles> dont you clone the toplevle then glue it togehr?
+11.03.19 00:01:51<aindilis> well I think they're password protected
+11.03.19 00:01:54<dmiles> ah
+11.03.19 00:02:24<aindilis> one thing that has always been a thrill for me has been acquiring code like that
+11.03.19 00:02:38<dmiles> hehe
+11.03.19 00:02:44<aindilis> that and buying fast computer hardware
+11.03.19 00:03:10<aindilis> and look it helped since I was able to restore to you some of your data
+11.03.19 00:03:16<dmiles> i get that thrill installing Eclipse/Emacs plugins sometimes
+11.03.19 00:03:19<aindilis> the Teknowledge
+11.03.19 00:03:45<aindilis> yeah me too
+11.03.19 00:03:58<aindilis> alright, well happy hacking!
+11.03.19 00:04:10<dmiles> there was aobut 4-5 years that Teknowledge forgot to .htaccess stuff
+11.03.19 00:04:17<aindilis> hehe
+11.03.19 00:04:27<dmiles> when they reisntalled appache
+11.03.19 00:04:31<aindilis> was I at the beginning or end of that?
+11.03.19 00:04:39<aindilis> (preferably end)
+11.03.19 00:04:44<dmiles> i think durring that is when you got what you got
+11.03.19 00:04:49<aindilis> yeah
+11.03.19 00:05:03<aindilis> Teknowledge was one of my best finds
+11.03.19 00:06:14<dmiles> i renmeber durring congressional hearing on wiretapping usa citizens where someone was testifying that all the data was wipped out.. that Teknowlege had opened no .htpasswed all the eveident congress was loloking for
+11.03.19 00:06:46<aindilis> lol
+11.03.19 00:06:50<dmiles> all the eveidence congress was looking for in the demostic spying program
+11.03.19 00:07:55<dmiles> you probly even have that evidence on your disks
+11.03.19 00:08:26* aindilis laughs nervously
+11.03.19 00:09:02<aindilis> I used to want to infiltrate the Military-Industrial Complex, but got more than I bargained for and have since chilled out
+11.03.19 00:09:51<aindilis> plus most people are so damned apathetic you know?
+11.03.19 00:10:59<dmiles> well when you think aobut what normal peopel do with their free time
+11.03.19 00:11:03<aindilis> hehe
+11.03.19 00:11:24<aindilis> unfortunately I've been normal too long
+11.03.19 00:11:40<aindilis> so I look forward to working with you on this, and we can make a difference
+11.03.19 00:12:34<aindilis> we need to finish AI for the planet's sake
+11.03.19 00:12:38<dmiles> yeah.. talk to you in aobut 20 some hours
+11.03.19 00:12:43<dmiles> yeah
+11.03.19 00:12:45<aindilis> ttys!  happy hacking!
+11.03.19 00:12:50<aindilis> gnite!
+11.03.19 00:13:01<dmiles> i keep thinkking about my typical job rejection speech
+11.03.19 00:13:23<aindilis> which is?
+11.03.19 00:13:33<dmiles> "So you want to give me money so we cant have AI for 3 extra years?"
+11.03.19 00:13:39<aindilis> hehe
+11.03.19 00:13:44<aindilis> lmao
+11.03.19 00:14:25<aindilis> bbiab
+11.03.19 00:15:37<dmiles> i wonder how much i can change to that!
+11.03.19 00:15:49<dmiles> i wonder how much i can *charge* forthat!
+11.03.19 00:16:29<dmiles> that is my going rate (and paid by everyone)
+11.03.19 00:21:41<dmiles> oh funny stuff:  https://www.upwork.com/o/profiles/users/_~016900617687b1cc00/
+11.03.19 00:22:05<dmiles> that he is only changing 50$ hr
+11.03.19 00:22:28<dmiles> he was "Director of Programming" of Cycorp
+11.03.19 00:22:42<aindilis> Reed?
+11.03.19 00:22:58<dmiles> StephenDeVoy
+11.03.19 00:23:02<aindilis> ah
+11.03.19 00:23:16<dmiles> Reed was bellow him
+11.03.19 00:23:32<aindilis> you know what this means?
+11.03.19 00:23:35<aindilis> we can afford him!
+11.03.19 00:23:53<dmiles> hehe yeah
+11.03.19 00:23:59<aindilis> maybe we should reach out to him
+11.03.19 00:24:10<dmiles> he was the one that was trying to leak me the sourcecode of CYC in 2002
+11.03.19 00:24:15<aindilis> if he programs for us, he'll have a chance to win a $100 gift certificate
+11.03.19 00:24:17<dmiles> yeah
+11.03.19 00:24:25<dmiles> hehe
+11.03.19 00:24:52<aindilis> I will reach out to him
+11.03.19 00:25:03<dmiles> yes.. please do!
+11.03.19 00:25:05<aindilis> kk
+11.03.19 00:26:21<dmiles> his name appeakere din Wikileaks https://www.wikileaks.org/wiki/Draft:Some_article_name
+11.03.19 00:27:11<dmiles> " Here's a statement on the article from someone who worked at Cycorp at the time Cyc came up with mailing anthrax:
+                 <dmiles> http://stephendevoy.blogspot.com/2008/08/xxxxxx-anthrax-prediction.html"
+11.03.19 00:31:34<dmiles> oh and https://wikileaks.org/podesta-emails//fileid/24046/6950 
+11.03.19 00:31:56<dmiles> just a Cycorp empoloyee loking for work 
+11.03.19 00:32:29<dmiles> she used to work with both Steves
+11.03.19 00:32:31<dmiles> Cycorp, Inc. (2000-2003) Austin, TX
+                 <dmiles> Deputy Director, Knowledge Representation and Inference Department
+                 <dmiles> · Codified large architecture-level knowledge representation strategies. Adjudicated between competing data architecture designs.
+11.03.19 00:32:32<dmiles> · Administered departmental management tasks, including budgeting, interviewing, and personnel issues.
+                 <dmiles> Senior Ontologist
+11.03.19 00:32:33<dmiles> · Built explicit formal representations of objects, concepts, and other entities and the relationships between them in the Cyc Knowledge Base (KB), the foundational product of this common sense-based artificial intelligence company.
+11.03.19 00:32:34<dmiles> · Examined, analyzed and translated data within a logic-based model to provide computer with a background of common sense information as it shifted through billions of facts to create inferences.
+11.03.19 00:40:26<dmiles> i am not the kind of person that searching wikileaks but i was googling to see what Septhen was up to and found that
+11.03.19 00:40:41<aindilis> ah yeah no worries, interesting read
+11.03.19 04:01:35*** Join: Guest37305 (~fenchelfe@188.130.155.164, (unauthenticated): fenchelfen)
+11.03.19 06:32:24*** Quit: Guest37305 (~fenchelfe@188.130.155.164) left #logicmoo: Quit: WeeChat 1.9.1
+11.03.19 16:08:10<aindilis> hey I'm going to bbiab
+11.03.19 21:05:27*** Quit: CoderForLife (~Miranda@unaffiliated/coderforlife) left #logicmoo: Ping timeout: 245 seconds
+11.03.19 21:21:29*** Join: CoderForLife (~Miranda@unaffiliated/coderforlife, CoderForLife: setimail@cellutions.com)
+11.03.19 21:59:55*** Quit: CoderForLife (~Miranda@unaffiliated/coderforlife) left #logicmoo: Ping timeout: 252 seconds
+11.03.19 22:17:36*** Join: CoderForLife (~Miranda@unaffiliated/coderforlife, CoderForLife: setimail@cellutions.com)
+12.03.19 01:14:51<aindilis> dmiles: okay so I'm caught up #ai (I didn't read all of Asher and your conversation though, I gave up at some point)
+12.03.19 01:15:18<aindilis> sorry I wasn't feeling good at 4:00 PM EST and then ran a bunch of errands and stuff, hopefully tomorrow will look better
+12.03.19 01:31:55<aindilis> Shaken has a lot of KM files
+12.03.19 01:32:10<aindilis> it may be prudent to eventually get Shaken running, I think it's easy on Windows but harder on Linux
+12.03.19 01:32:29<aindilis> I should start rolling some packages again
+12.03.19 01:33:17<aindilis> of course, I won't deviate though from the course, which is to supplant the storage mechanism for KM.  KM is kinda complex and I'll have to read the manual to do it, but it's a worthy read
+12.03.19 01:34:44<aindilis> would be worthwhile trying to load Shaken's KM files in KM and then translate to the domains per our discussion the other night
+12.03.19 01:34:54<aindilis> *CYC domains
+12.03.19 01:41:54<aindilis> http://www.cs.utexas.edu/users/mfkb/km/aarati.pdf
+12.03.19 01:46:35<aindilis> http://www.cs.utexas.edu/users/mfkb/km/situations-implementation.pdf
+12.03.19 02:02:22<aindilis> downloaded all relevant papers and webpages mentioning both "Knowledge Machine" and CYC
+12.03.19 02:05:33<aindilis> Should I contact UTexas asking for advice on how to integrate CYC / KM?
+12.03.19 02:06:21*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi) left #logicmoo: Quit: Connection closed for inactivity
+12.03.19 03:32:07*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 250 seconds
+12.03.19 03:34:48*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+12.03.19 03:52:12*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 246 seconds
+12.03.19 04:07:12*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+12.03.19 04:38:30*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
 #logicmoo> 
