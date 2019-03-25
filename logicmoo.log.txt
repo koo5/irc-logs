@@ -23972,4 +23972,660 @@ o10.01.19 00:18:34<stoopkid> everyone is usually wrong most of the time
 12.03.19 03:52:12*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 246 seconds
 12.03.19 04:07:12*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
 12.03.19 04:38:30*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+12.03.19 08:24:57*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+12.03.19 09:03:05*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-wmeoabiwwlicwqfo, stoopkid: stoopkid)
+12.03.19 10:06:58*** Join: jbalint_ (~jbalint@71-90-85-113.dhcp.ftbg.wi.charter.com, (unauthenticated): Jess Balint)
+12.03.19 12:36:36*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+12.03.19 12:59:25*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+12.03.19 14:10:35*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+12.03.19 14:14:08*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+12.03.19 19:39:14*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+12.03.19 19:47:29*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+12.03.19 19:52:15*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+12.03.19 19:56:07*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+12.03.19 21:09:15<aindilis> dmiles: does OpenCYC version of LarKC_CL work at all?  I'm thinking about promoting it as a procedural generation friendly game resource on #gamedev
+12.03.19 21:44:40<dmiles> back from animal hospitol
+12.03.19 21:44:52<dmiles> was there abotu 16 hours
+12.03.19 21:45:05<dmiles> i just need to take small nap
+12.03.19 21:45:25<dmiles> my cat is going in/out of heart issues
+12.03.19 21:45:44<dmiles> but home now until tommorow afternoon
+12.03.19 21:46:00<dmiles> when we go to see cardiologist again
+12.03.19 21:49:45<aindilis> sorry to hear about your kittie
+12.03.19 21:50:21<aindilis> and that you had to spend a lot of time at the vet, no worries on anything AI related, rest well
+12.03.19 22:03:37<dmiles> off to petsmart before they close though
+12.03.19 22:03:48<dmiles> need to get stuff for his care
+12.03.19 22:03:59<dmiles> ttys
+12.03.19 22:04:33<aindilis> ttys!
+12.03.19 22:16:27*** Quit: CoderForLife (~Miranda@unaffiliated/coderforlife) left #logicmoo: Ping timeout: 246 seconds
+13.03.19 00:29:00*** Join: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+13.03.19 00:29:48*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Ping timeout: 246 seconds
+13.03.19 03:24:23<aindilis> Was rereading Facebook posts and it said the reason for Prolog-Agent was so FLP could initiate arbitrary actions.  Duh!  Completely forgot why I was developing it.
+13.03.19 05:53:33<aindilis> dmiles: ping
+13.03.19 05:55:44<aindilis> I was wondering if you thought it was worthwhile to try to get the Panoply VM w/ FRDCSA + FLP + PrologMUD ready for release for an upcoming conference in order to attract developers to the project and complete the release of FRDCSA/FLP.
+13.03.19 05:57:05<aindilis> If I work really hard I might be able to get it ready in time.
+13.03.19 05:57:43<aindilis> Worst case scenario is I have to back out of my talk, but I will have had a lot of motivation to make practical progress because of it anyhow
+13.03.19 05:58:15<aindilis> but it would draw me away from KM / DAYDREAMER / and possibly LarKC_CL
+13.03.19 05:58:47<aindilis> but if successful you can finally get a copy of FLP, I am though the reason this was a priority
+13.03.19 05:58:57<aindilis> *am forgetting though
+13.03.19 06:05:20*** Join: CoderForLife (~Miranda@unaffiliated/coderforlife, CoderForLife: setimail@cellutions.com)
+13.03.19 09:04:21*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+13.03.19 11:09:57*** Nick regain: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) is now known as Copenhagen_Bram
+13.03.19 11:22:18*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+13.03.19 15:02:57*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+13.03.19 15:05:20*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+13.03.19 17:26:12<aindilis> dmiles: ping
+13.03.19 21:12:56*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+13.03.19 21:15:04*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+13.03.19 22:28:02<aindilis> http://moin.delph-in.net/ErgProcessing
+13.03.19 23:52:38<aindilis> haven't read it all: http://web.archive.org/web/20131226001212/http://wiki.larkc.eu/MetaReasoning
+14.03.19 00:01:31<aindilis> dmiles: ping
+14.03.19 00:01:37<aindilis> I think I am going to skip the conference
+14.03.19 00:01:46<aindilis> right now I'm focusing on metaplanning
+14.03.19 00:01:53<aindilis> Prolog-Agent stuff
+14.03.19 00:02:10<aindilis> thinking about implementing a backtrackable factored planning thing in Perl or Prolog
+14.03.19 01:31:22<aindilis> dmiles: ping
+14.03.19 01:31:51<aindilis> finally getting some work done on FLP today, fixing some of the terminal NLG stuff
+14.03.19 01:32:01<aindilis> should probably appeal to CYC here
+14.03.19 01:32:18<aindilis> does PrologMUD have native NLG?
+14.03.19 03:26:03<aindilis> Natural Language Inference could be used to translate from Eng to CYC: https://arxiv.org/pdf/1806.09828.pdf
+14.03.19 03:43:18<aindilis> Have you been extending candc much?
+14.03.19 04:13:28*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+14.03.19 13:15:00*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+#logicmoo> 14.03.19 14:39:31*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #logicmoo: http://www.logicmoo.org | https://docs.google.com/document/d/1XCDnWMjNh4y2Um_1B-HE4x5Q34oxHRxBl-Oy9eNUzTI/edit#  https://drive.google.com/drive/folders/0B0QA19UX0ehlV1ZEaXEzc3hjTWM   http://www.csee.umbc.edu/~finin/prolog/pfc/man/pfc.pdf
+                 *** Topic set by dmiles on Mon May 28 20:31:51 2018, 9 months 19 days 18 hours 7 minutes 41 seconds ago
+                 *** Names: editable-dog aindilis Copenhagen_Bram CoderForLife jbalint_ stoopkid dmiles yesbot PrologMUD swamps michalisko @ChanServ
+                 *** End of /NAMES list.
+14.03.19 15:46:18<aindilis> dmiles: ping
+14.03.19 16:15:55<aindilis> bbiab
+14.03.19 19:15:09<dmiles> i'll be on later.. Sailor (the Cat) died
+14.03.19 20:06:41<aindilis> so sorry to hear Doug
+14.03.19 23:30:40*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+14.03.19 23:32:48*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+15.03.19 08:14:35*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+15.03.19 08:14:53*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+15.03.19 11:43:32*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+15.03.19 22:41:37*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+16.03.19 05:49:24*** Quit: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net) left #logicmoo: Ping timeout: 246 seconds
+16.03.19 05:56:18*** Join: dmiles (dmiles@c-73-190-111-74.hsd1.wa.comcast.net, dmiles: ...)
+16.03.19 13:57:04*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+16.03.19 17:27:06*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+16.03.19 20:30:11<aindilis> dmiles: ping
+16.03.19 20:30:17<aindilis> do you want to work on anything?
+16.03.19 20:30:25<aindilis> coding wise?
+16.03.19 20:44:54<dmiles> will be shortlyu.. this is the first time back to the computer in a few days
+16.03.19 20:45:06<aindilis> kk
+16.03.19 21:09:15<aindilis> well I'm getting my fill of discussion on #ai, I was wondering if you wanted to start hacking soon?
+16.03.19 21:09:41<aindilis> I feel like we just need to get these things into CYC
+16.03.19 21:10:03<aindilis> I forget now why I was into E2C again.  I think I need to work on Prolog-Agent and somehow it led to that
+16.03.19 23:17:27<dmiles> about to start working now
+16.03.19 23:18:29<dmiles> i am setting up the unit tests of TuProlog to run for SxxMAchine
+17.03.19 04:41:34<aindilis> dmiles: any luck?
+17.03.19 05:14:27*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+17.03.19 07:25:07*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+17.03.19 10:21:30*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+17.03.19 17:07:33*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+17.03.19 18:20:13<dmiles> aindilis: didnt get far :(
+17.03.19 18:20:25<dmiles> btwe .. yeah this work is to enable E2C
+17.03.19 18:21:14<dmiles> i mean LARKC_CL parts
+17.03.19 18:21:19<dmiles> oops
+17.03.19 18:21:26<dmiles> i mean LARKC_CL's Prolog parts
+17.03.19 18:22:50<dmiles> part of why E2C wasnt on my daily agenda these last two years was that without a powerfull inference engine E2C is just creates impressive output
+17.03.19 18:24:08<dmiles> without a powerfull inference engine, E2C just makes impressive but unusable logical assertions
+17.03.19 18:25:54<dmiles> there would be no Q&A !
+17.03.19 18:35:20<dmiles> impressive E2C - https://docs.google.com/document/d/1rdI_f-2YnX0e2RD6rGAY57YAqzLj2xHsk36m5HT6SoM/edit#
+17.03.19 19:13:18<aindilis> yeah I forget why I gravitated back to E2C, but when I do, I should work on getting that kind or better output
+17.03.19 19:21:49<aindilis> oh rereading our chat logs maybe I was getting sick of the NLG that my system does
+17.03.19 19:21:52<aindilis> *FLP
+17.03.19 19:26:16<aindilis> looking at KBMT from CMU as an idea
+17.03.19 19:26:26<aindilis> we don't really have enough data to do a statistical learning
+17.03.19 19:42:21<dmiles> statistical learning of word types?
+17.03.19 19:42:27<aindilis> EBMT
+17.03.19 19:42:30<aindilis> SMT
+17.03.19 19:42:37<aindilis> DL based MT
+17.03.19 19:42:57<dmiles> oh i hadnt heard that statistical learning could ever be used for that
+17.03.19 19:43:43<dmiles> a couple links of where that had been tried successfully?
+17.03.19 19:43:45<aindilis> here is an older one: http://www.statmt.org/moses/?n=moses.overview
+17.03.19 19:44:11<aindilis> http://www.statmt.org/
+17.03.19 19:44:41<aindilis> https://machinelearningmastery.com/introduction-neural-machine-translation/
+17.03.19 19:45:13<dmiles> oh just for translation i see.. i was thinking it had to do with Satisfiability modulo theories :)
+17.03.19 19:45:27<aindilis> hehe
+17.03.19 19:46:07<dmiles> DL based MT = Description Logic based Microtheories (hehe)
+17.03.19 19:46:29<aindilis> I was afraid this day would come
+17.03.19 19:46:41<aindilis> when all acronyms would overload to the point where nothing would get done
+17.03.19 19:46:47<dmiles> haha
+17.03.19 19:47:57<dmiles> the day i am afraid will never come is when statistical learning cant do anything but "help" with Machine translation
+17.03.19 19:48:47<dmiles> the day i am afraid will never come is when statistical learning can do more than "help" rule based machine translation
+17.03.19 19:49:14* dmiles now opens https://machinelearningmastery.com/introduction-neural-machine-translation/ maybe to be proved wrong
+17.03.19 19:49:51<dmiles> Classical machine translation methods often involve rules for converting text in the source language to the target language. The rules are often developed by linguists and may operate at the lexical, syntactic, or semantic level. This focus on rules gives the name to this area of study: Rule-based Machine Translation, or RBMT.
+17.03.19 19:50:15<dmiles> I am assuming MLMT is a helper layer over RBMT
+17.03.19 19:51:10<dmiles> oops
+17.03.19 19:51:16<dmiles> I am assuming SMT is a helper layer over RBMT
+17.03.19 19:53:26<dmiles> ahah EBMT is the study of non-helper based SMT
+17.03.19 19:54:46<dmiles> what is retarded is when helper-based SMT does well .. people assume EBMT is possible
+17.03.19 19:55:48<dmiles> well full EBMT (since really EBMT is often lie)
+17.03.19 19:56:19<dmiles> really EBMT is often lie = that it is a helpoer of hardcoded RBMT
+                 <aindilis> srry I have to bbiab
+17.03.19 19:56:25<aindilis> but I will read the backlog
+17.03.19 19:56:37<dmiles> oh right on that was all i was going to say :P
+17.03.19 19:57:10<dmiles> oh i will rant slightly tiny bit more
+17.03.19 19:57:12<dmiles> https://en.wikipedia.org/wiki/Example-based_machine_translation  
+17.03.19 19:57:47<dmiles> has this ever been successfull at  language larger than caveman speak?
+17.03.19 19:58:01<dmiles> i think it maxes out about 2 words
+17.03.19 19:59:34<dmiles> i see
+17.03.19 19:59:35<dmiles> Example-based machine translation (EBMT) is a method of machine translation often characterized by its use of a bilingual corpus with parallel texts as its main knowledge base at run-time. It is essentially a translation by analogy and can be viewed as an implementation of a case-based reasoning approach to machine learning.
+17.03.19 19:59:44<dmiles> you know what they are saying there?
+17.03.19 20:00:27<dmiles> that they tried to take 1000s of pages of text ... then asked humans to translate them all
+17.03.19 20:00:53<dmiles> that they tried to take 1000s of pages of text that randomlaly talked about everything under the sun
+17.03.19 20:01:04<dmiles> then asked humans to translate them all
+17.03.19 20:01:14<dmiles> so the text can be used "side-by-side"
+17.03.19 20:01:32<dmiles> then they do a rule based match of the side by side
+17.03.19 20:01:54<dmiles> then used machine learning to cover how stupid an idea that was
+17.03.19 20:02:20<dmiles> (to cover the mistakes of the side-by-side idioms)
+17.03.19 20:03:29<dmiles> if the same word is translated side-by-side in 20 places.. at least it will honed in on the better of the 20 places
+17.03.19 20:03:51<dmiles> next.. they still nneed humans to vote on the translators stupidity
+17.03.19 20:04:07<dmiles> since we cant reuse that original corpus
+17.03.19 20:04:29<dmiles> since it will flasly do too well
+17.03.19 20:07:49<dmiles> that was the cons now the pros:
+17.03.19 20:08:04<dmiles> we have 500+ years of side by side texts
+17.03.19 20:08:24<dmiles> (since the 1500s)
+17.03.19 20:08:52<dmiles> so we only need about 1% to verify
+17.03.19 20:09:09<dmiles> (i mean 1% of those to translate)
+17.03.19 20:09:35<dmiles> then we can use the rest to verify (and further train)
+17.03.19 20:10:51<dmiles> proof of concept has actualyl almost worked (often as good .. and in tiny cases better) than RBMT
+17.03.19 20:13:46<dmiles> </rant>
+17.03.19 20:26:51<aindilis> sorry I'm feeling under the weather, I'll bbaib
+17.03.19 23:35:23<aindilis> dmiles: ping
+18.03.19 00:49:26*** Join: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+18.03.19 00:50:07*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Ping timeout: 240 seconds
+18.03.19 00:52:35*** Nick change: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) is now known as Copenhage_Bram
+18.03.19 04:17:32*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+18.03.19 04:17:49*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+18.03.19 11:18:54*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+18.03.19 13:37:14*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+18.03.19 13:54:32*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+18.03.19 15:06:08*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+18.03.19 20:39:45*** Quit: Copenhage_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Quit: So long, and thanks for all the fish! 2.4 Weechat is best Weechat
+19.03.19 15:21:39*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+19.03.19 17:43:19*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Remote host closed the connection
+19.03.19 17:45:43*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+19.03.19 20:28:42*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+19.03.19 23:03:02*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+19.03.19 23:10:16<aindilis> dmiles: ping
+20.03.19 01:01:51*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Read error: Connection reset by peer
+20.03.19 01:10:38*** Join: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+20.03.19 03:44:16<aindilis> dmiles: ping
+20.03.19 04:02:28*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-wmeoabiwwlicwqfo) left #logicmoo: Quit: Connection closed for inactivity
+20.03.19 06:17:07*** Join: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+20.03.19 06:18:59*** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Ping timeout: 258 seconds
+20.03.19 07:45:03*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 245 seconds
+20.03.19 07:45:40*** Join: stoopkid_ (uid137696@gateway/web/irccloud.com/x-frpegvkjkbwdhzlc, stoopkid: stoopkid)
+20.03.19 08:17:45*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+20.03.19 10:03:30*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+20.03.19 11:49:45*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+20.03.19 12:48:09*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+20.03.19 14:06:47*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+20.03.19 14:08:50*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+20.03.19 14:09:59*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+20.03.19 14:15:21*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Quit: Leaving
+20.03.19 16:33:00*** Nick change: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) is now known as Copenhagen_Bram
+21.03.19 00:38:09<aindilis> dmiles: ping
+21.03.19 01:36:20*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+21.03.19 02:52:31<aindilis> I'm rewriting FLP from the ground up, through a lot of cut and paste and use of modules
+21.03.19 02:52:55<aindilis> I'm focusing on the parts that never got implemented for FLP, like tests, event calculus, forward chaining, microtheorie
+21.03.19 02:52:57<aindilis> *s
+21.03.19 02:53:20<aindilis> writing those first
+21.03.19 02:53:27<aindilis> and then import the rest of the project inside
+21.03.19 02:53:51<aindilis> I plan to start different rewrites until I get the module system working well
+21.03.19 02:54:04<aindilis> I'm currently on the 3rd rewrite
+21.03.19 02:54:30<aindilis> luckily I can just reuse a lot of the structures I've already written, and wrap them into modules
+21.03.19 02:54:36<aindilis> like for instance MySQL persistence
+21.03.19 03:00:14<aindilis> dmiles: how is lazy loading coming along?
+21.03.19 11:28:39*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+21.03.19 15:27:33*** Quit: jbalint_ (~jbalint@71-90-85-113.dhcp.ftbg.wi.charter.com) left #logicmoo: Ping timeout: 245 seconds
+21.03.19 15:31:04*** Join: jbalint (~jbalint@71-90-85-113.dhcp.ftbg.wi.charter.com, (unauthenticated): Jess Balint)
+21.03.19 15:31:07*** Quit: jbalint (~jbalint@71-90-85-113.dhcp.ftbg.wi.charter.com) left #logicmoo: Changing host
+                 *** Join: jbalint (~jbalint@unaffiliated/jbalint, jbalint: Jess Balint)
+21.03.19 17:08:22*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+21.03.19 21:19:38<aindilis> If I make FLP2, I could reintegrate parts of it into FLP1
+21.03.19 21:27:36*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 246 seconds
+21.03.19 21:29:41*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+21.03.19 21:39:24*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+21.03.19 21:39:46*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+21.03.19 21:44:28<aindilis> If I make FLP2, I could reintegrate parts of it into FLP1
+21.03.19 21:44:31<aindilis> dmiles: any luck with lazy loading?
+21.03.19 21:44:43<aindilis> I think I'm going to write a version of FLP2 that uses LarKC_CL primarily, and then try to get test-matching compatibility with a hand coded drop in replacement using RTEC, PFC, and a few other things.
+21.03.19 21:52:55<aindilis> I finally have the energy to code again
+21.03.19 23:03:53<aindilis> dmiles: ping
+21.03.19 23:25:37*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Read error: Connection reset by peer
+21.03.19 23:26:37*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+22.03.19 00:32:08*** Join: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555, Elon_Satoshi: elonsatoshi)
+22.03.19 00:32:59*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-hzjtbmzegobztnpo, (unauthenticated): stoopkid)
+22.03.19 00:33:45*** Quit: stoopkid_ (uid137696@gateway/web/irccloud.com/x-frpegvkjkbwdhzlc) left #logicmoo: Ping timeout: 268 seconds
+                 *** Quit: Copenhagen_Bram (~elonsatos@unaffiliated/elon-satoshi/x-2794555) left #logicmoo: Ping timeout: 268 seconds
+22.03.19 00:47:19<dmiles> aindilis: pong
+22.03.19 00:47:34<dmiles> i havent been able to work for a couple days.. still might be a couple moire before i have time
+22.03.19 00:48:31<dmiles> i sometimes forget how much extra work special needs children take
+22.03.19 00:48:46<dmiles> (even beeing a stay at home dad)
+22.03.19 00:49:41<dmiles> tommorow though it is fuin taking here to the Magic the gathering tournaments 
+22.03.19 00:49:48<dmiles> taking her
+22.03.19 00:50:23<dmiles> > dmiles: any luck with lazy loading?
+22.03.19 00:50:34<dmiles> nopoe still havent had a chance to start working on it
+22.03.19 00:51:12<dmiles> oh wait i did start a little i had gotten at least a baseline so i can test for regressions
+22.03.19 00:51:39<dmiles> lazy loading will be abotu a weeks work to get done
+22.03.19 00:52:54<dmiles> because i trelaies on my merging of SxxMachine to LARKC_CL
+22.03.19 00:53:08<dmiles> it relies.. which i still ahvent been able to start
+22.03.19 00:53:24<aindilis> ah okay, srry didn't mean to rush you.  hey I'm finally get some coding done.
+22.03.19 00:53:28*** Nick regain: Elon_Satoshi (~elonsatos@unaffiliated/elon-satoshi/x-2794555) is now known as Copenhagen_Bram
+22.03.19 00:53:56<aindilis> the issue with M's job promotion has been resolved so I can concentrate better
+22.03.19 00:54:08<dmiles> crazy how fast time goes by
+22.03.19 00:54:22<aindilis> so I put on an old motion detection video of me programming for 3 days straight to motivate me
+22.03.19 00:54:29<aindilis> put it looping
+22.03.19 00:54:31*** Quit: swamps (~radiognom@128-71-49-250.broadband.corbina.ru) left #logicmoo: Remote host closed the connection
+22.03.19 00:54:46<dmiles> every day this week amd last week kiddo melted down at school and i had to go get her
+                 <aindilis> and I started working on Location Logic which is just some dumb perl stuff
+22.03.19 00:54:56<aindilis> hrm autism?
+22.03.19 00:55:09<dmiles> today she didnt since she knows if she doays she dont get to do movies
+22.03.19 00:55:12<dmiles> yes
+22.03.19 00:55:17<aindilis> coolbeans
+22.03.19 00:55:40<dmiles> so i told her no more melrdowns at school all week if she wants to keep priovildges
+22.03.19 00:55:43<aindilis> yeah I wear a noise blocking earmuffs with bluetooth speakers in them to get rid of external stimuli
+22.03.19 00:55:47<aindilis> nice!
+22.03.19 00:56:02<aindilis> and I turn the lights off so I just see the monitors
+22.03.19 00:56:14<aindilis> play upbeat music, listen to IRC
+22.03.19 00:56:18<dmiles> hehe.. neat
+22.03.19 00:56:31<aindilis> yeah I might actually get something done now
+22.03.19 00:56:39<aindilis> I still have our convos
+22.03.19 00:56:43<dmiles> or be able to fall asleep easier
+                 <aindilis> there was a question I had
+22.03.19 00:56:47<aindilis> hehe
+22.03.19 00:56:52<aindilis> no I drink energy drinks
+22.03.19 00:57:01<aindilis> but yeah I used to fall asleep a lot at this chair
+22.03.19 00:57:09<aindilis> going to stop doing that
+22.03.19 00:57:17<aindilis> except you know, breaks on all night programming sessions ;)
+22.03.19 00:57:42<aindilis> https://slickdeals.net/f/12145354-3m-worktunes-connect-hearing-protector-w-bluetooth-technology-35-55-free-store-pickup?src=frontpage
+22.03.19 00:58:05<aindilis> well you've really motivated me to get programming now
+22.03.19 00:59:01<aindilis> that's what I want to achieve, both of us programming for like 90% of our waking time
+22.03.19 00:59:08<aindilis> what would you say is a realistic goal for you?
+22.03.19 00:59:16<aindilis> 90% is obviously too high
+22.03.19 00:59:47<dmiles> soemtimes i get 90% .. but havent in two months.. its been like 50% time
+22.03.19 00:59:58<aindilis> wow still that's good, I'm like at 3%
+22.03.19 01:00:20<aindilis> I'll fix my Memax system to record programming productivity again
+22.03.19 01:00:24<dmiles> my average week is about 15 day 7 days a week
+                 <aindilis> and integrate with sensor-network
+22.03.19 01:00:40<aindilis> cool
+22.03.19 01:00:47<aindilis> I'm going to join you
+22.03.19 01:00:50<dmiles> but the last 7 days i onely gotten 8 hours total
+22.03.19 01:00:56<aindilis> :(
+22.03.19 01:01:03<aindilis> well let me know what I can do to help
+22.03.19 01:01:13<dmiles> depends on how much hospice and autism care happen each week
+22.03.19 01:01:24<aindilis> k
+22.03.19 01:01:57<aindilis> once I get this fire properly burning I will turn to KM etc
+22.03.19 01:02:09<aindilis> the programming video really helped
+22.03.19 01:03:21<aindilis> I think I'll work on a video game now, I'm sick of futzing with Location Logic
+22.03.19 01:03:45<aindilis> it kept reporting my speed as like 100 times what M's was
+22.03.19 01:03:54<aindilis> or even a thousand
+22.03.19 01:04:12<aindilis> so once I get that taken care of, I can properly add life rules for location logic
+22.03.19 01:04:16<aindilis> let me see if they're shared
+22.03.19 01:05:25<aindilis> here is the old non-prolog version, I'll upload the current prolog one: https://frdcsa.org/~andrewdo/projects/cognitive-prosthesis/files/ll-rules.kbs
+22.03.19 01:06:58<aindilis> https://frdcsa.org/~andrewdo/dmiles/ll-rules.pl
+22.03.19 01:07:18<aindilis> I'm going to try to crowdsource these LL rules
+22.03.19 01:08:02<dmiles> rules look pretty good
+22.03.19 01:08:10<aindilis> yeah
+22.03.19 01:12:00<dmiles> I like thaqt you really grasp how reification functions work
+22.03.19 01:12:07<dmiles> like in..
+                 <dmiles> performAction(addToPendingTasks(confirmWithUser(Agent,sensorActivity(perimeterFn(homeFn(Agent)))))) :-
+22.03.19 01:12:08<dmiles> 	asleepP(Agent),
+                 <dmiles> 	sensorActivity(perimeterFn(homeFn(Agent))). 
+22.03.19 01:12:28<aindilis> cool
+22.03.19 01:12:40<dmiles> it is so hard to even get peopel to belive such functions can be part of logic!
+22.03.19 01:12:49<aindilis> weird
+22.03.19 01:12:58<aindilis> must be my math experience
+22.03.19 01:13:24<aindilis> the problem I have is actually evaluating that since I don't have equational reasoning working yet
+22.03.19 01:13:33<aindilis> but I intend to try using LarKC_CL as the backend
+22.03.19 01:13:48<dmiles> well the other years i was ina channel trying to introduce someone to things like mother(X,motherFn(X)).
+22.03.19 01:14:25<dmiles> they had never heard of logical functions like motherFn
+22.03.19 01:14:39<aindilis> weird
+22.03.19 01:14:45<dmiles> (since the only place the exist i suppose is in CYC?)
+22.03.19 01:14:54<dmiles> And SUMO
+22.03.19 01:15:17<dmiles> i just assumed every logician understood them
+22.03.19 01:15:51<dmiles> they are required to understand English
+22.03.19 01:16:13<aindilis> well one question, how do you get it to use that,e.g. (a '(#$equal (#$motherFn #$AndrewDougherty) #$EleanorDougherty)), (a '(#$equal (#$houseFn #$EleanorDougherty) #$Townhowm1125)), (q '(#$equal ?X (#$houseFn (#$motherFn #$AndrewDougherty))))
+22.03.19 01:16:14<dmiles> to understand English without logic funcitons would e too hard
+22.03.19 01:17:17<dmiles> get what in particular?
+22.03.19 01:17:35<aindilis> have it know what (#$XFn ?Y) denotes
+22.03.19 01:17:45<dmiles> LARKC_CL has them fully implemented
+22.03.19 01:17:49<dmiles> oh
+                 <aindilis> cool
+22.03.19 01:18:09<dmiles>  (#$resultiSa #$XFn ...) 
+22.03.19 01:18:10<aindilis> I remember trying and failing to use this properly
+22.03.19 01:18:14<aindilis> kk
+22.03.19 01:18:26<aindilis> let me try in a sec when my CYC mods finish loading
+22.03.19 01:18:42<dmiles> there is also interArgResultIsa as well
+22.03.19 01:19:11<aindilis> so how do you do this (q '(#$equals (#$motherFn #$Andrew) #$Eleanor)) ?
+22.03.19 01:19:28<dmiles> you should be able to assert that
+22.03.19 01:19:48<dmiles> of course you have to fix the spelliong there
+22.03.19 01:19:50<aindilis> didn't you say you were working on ways to define multiple defs of equals
+22.03.19 01:19:55<aindilis> #$equal ?
+22.03.19 01:20:32<dmiles> http://logicmoo.org:3602/cgi-bin/cg?cb-c-total&c71406
+22.03.19 01:21:25<dmiles> see http://logicmoo.org:3602/cgi-bin/cg?cb-cf&nart70560
+22.03.19 01:21:46<aindilis> k
+22.03.19 01:22:01<dmiles> (equals HillaryClinton 
+22.03.19 01:22:02<dmiles>     (MotherFn ChelseaClinton))
+22.03.19 01:22:26<dmiles> so it should be fine to assert that
+22.03.19 01:22:58<dmiles> (resultIsaArgIsaType MotherFn 1 BiologicalTaxon)
+22.03.19 01:23:32<dmiles> will figure out that Eleanor is same Biological Taxon as Andrew
+22.03.19 01:24:40<aindilis> k seems to work
+22.03.19 01:25:21<dmiles> I suppose it next is how you define HouseFn
+22.03.19 01:27:06<dmiles> IndividualDenotingFunction  [Mon]ReifiableFunction  [Mon]UnaryFunction 
+22.03.19 01:28:01<dmiles> also it being a PartialFunction
+22.03.19 01:28:08<dmiles> Since not everyone has a House
+22.03.19 01:28:51<dmiles> vs MotherFn which is a TotalFunciton
+22.03.19 01:28:59<aindilis> I just d (f "HouseFn") (isa HouseFn UnaryFunction)
+22.03.19 01:29:06<aindilis> and (reusltIsa HOuseFn BUilding)
+22.03.19 01:29:24<dmiles> and (arity HouseFn 1 )
+22.03.19 01:29:26<aindilis> and then queries (euqlas (housefn (motherfn andrewdougherty)) ?X) but it failed 
+                 <aindilis> kk
+22.03.19 01:29:51<aindilis> yeah not getting it
+22.03.19 01:30:00<aindilis> so I think I need a forward rule somewhere
+22.03.19 01:30:16<dmiles> (q  (isa (motherfn andrewdougherty) ?W)
+22.03.19 01:30:23<dmiles> (q  (isa (housefn (motherfn andrewdougherty)) ?W)
+22.03.19 01:30:50<dmiles> also i'd expect need to work first
+22.03.19 01:31:01<aindilis> they don't
+22.03.19 01:31:08<dmiles> but yeah i dunno way Arity is not getign propagated
+22.03.19 01:31:10<aindilis> anyway that's just something to figure out, no need to solve right now
+22.03.19 01:31:48<dmiles> the untainted version i assume has this same bug
+22.03.19 01:31:57<aindilis> hrm
+22.03.19 01:32:06<dmiles> untained rcyc 7166
+22.03.19 01:32:10<aindilis> yeah
+22.03.19 01:34:45<aindilis> Did you see Pete's and Chris' replies?
+22.03.19 01:35:22<aindilis> mentioning 7166 reminded me to reply to David Whitten, he's been calling me to discuss stuff.  I was wondering if you wanted to try to screenshare the three of us
+22.03.19 01:36:38<aindilis> I suppose I could try to set up the latest version of that screen conferencing system Blue something
+22.03.19 01:36:48<aindilis> BlueButton
+22.03.19 01:39:02<aindilis> btw, what do you angle do you think I should take with the to email stephen devoy?
+22.03.19 01:39:08<aindilis> *BigBlueButton
+22.03.19 01:40:26<aindilis> bbiab
+22.03.19 01:48:35<dmiles> saw a Chris reply from Chris on Trudasy sounds like they have a ABCL compatible version?
+22.03.19 01:48:51<aindilis> hrm yeah I guess, I didn't realize
+22.03.19 01:49:00<dmiles> > btw, what do you angle do you think I should take with the to email stephen devoy?
+22.03.19 01:49:37<dmiles> We are working on a fork of CYC and know that you where one of the best people out there to know the system intimately according to DMiles
+22.03.19 01:49:50<aindilis> kk
+22.03.19 01:50:01<aindilis> should our changes to AP be integrated back into their repo?
+22.03.19 01:50:11<aindilis> to get it to run completely with ABCL?
+22.03.19 01:50:25<dmiles> I havent made changes yet to 3T 
+22.03.19 01:50:32<dmiles> AP = 3T ?
+22.03.19 01:50:34<aindilis> our proposed
+22.03.19 01:50:39<aindilis> yeah (Chris prefers calling it AP)
+22.03.19 01:50:46<aindilis> "Adversarial Planner"
+22.03.19 01:51:00<dmiles> ah good
+22.03.19 01:51:13<dmiles> get it to run completely with ABCL first yeah
+22.03.19 01:51:17<aindilis> k
+22.03.19 01:51:23<aindilis> do you want me to try to do that now?
+22.03.19 01:51:30<dmiles> sure!
+22.03.19 01:51:33<aindilis> I'm just concerned I don't know enough CL
+22.03.19 01:51:41<aindilis> suppose I can google
+22.03.19 01:51:50<aindilis> should I read some CL text first?
+22.03.19 01:51:58<dmiles> next what we will do with it is make the PDDL loader part sore all of its stuff in MT
+22.03.19 01:52:10<aindilis> k did you see what they said re that?
+22.03.19 01:52:12<dmiles> stuff in an MT
+22.03.19 01:52:18<aindilis> they had an OWL exporter that converted to their PDDL
+22.03.19 01:52:19<dmiles> oh yeah right i did
+22.03.19 01:52:26<dmiles> yeah
+22.03.19 01:52:43<aindilis> so should we still make it use the MT backend?
+22.03.19 01:52:49<aindilis> or create a PDDL exporter
+22.03.19 01:52:55<dmiles> that will be neat to see how they felt was a good representaion change
+22.03.19 01:52:56<aindilis> they seemed to have a reason to do it that way
+22.03.19 01:53:02<aindilis> kk
+22.03.19 01:53:27<dmiles> > ake the PDDL loader part sore all of its stuff in MT
+22.03.19 01:53:28<aindilis> I think we need to model their PDDL stuff in CycL with (APTermFn "go-to-store")
+22.03.19 01:53:40<dmiles> then for runtime make it unemerate that PDDL into its runtime space
+22.03.19 01:53:53<aindilis> kk
+22.03.19 01:54:08<dmiles> this way we can give it gobs more as we feel 
+22.03.19 01:54:14<aindilis> yeah
+22.03.19 01:54:43<aindilis> we'll be wanting to use this for DAYDREAMER
+22.03.19 01:54:47<dmiles>  (APTermFn "go-to-store") is fine yeah
+22.03.19 01:54:56<dmiles> yes exaclkty
+22.03.19 01:55:15<aindilis> so can DAYDREAMER be reduced to PDDL?  What using my nested mapping, or is nonnested?
+22.03.19 01:55:43<dmiles> even though AP seems like more/bigger code than DAYDREAMER it is goign to be easier to do AP 
+22.03.19 01:55:51<aindilis> yeah
+22.03.19 01:56:06<aindilis> oh that's true, I can use DAYDREAMER as a corpus for ABCLization
+22.03.19 01:56:23<dmiles> AP is yes about 30% of what DAYDREAMER needs from us
+22.03.19 01:56:35<aindilis> k
+22.03.19 01:57:03<aindilis> I'm worried it might get hellish with all the Function terms from AP/KM/DAYDREAMER
+22.03.19 01:57:14*** Join: swamps (~radiognom@128-71-49-250.broadband.corbina.ru, (unauthenticated): radiognome invisible)
+22.03.19 01:57:21* aindilis puts on Avatar
+22.03.19 01:57:52<dmiles> I think we probly end up with a single Function term as it makes sense
+22.03.19 01:58:16<dmiles> (FromAPorDDorKmFn "..."_
+22.03.19 01:58:34<aindilis> ah
+22.03.19 01:58:56<aindilis> any other systems to integrate?
+22.03.19 01:58:59<dmiles> i think Cyc already has a Functional term for these
+22.03.19 01:59:24<dmiles> I dont see any besides those
+22.03.19 02:00:00<dmiles> other than PrologMUD / Marty/ ....
+22.03.19 02:01:50<aindilis> ah right
+22.03.19 02:01:56<aindilis> how does one do acronyms in cyc?
+22.03.19 02:02:08<dmiles> though every keeps creating more
+22.03.19 02:02:09<dmiles> [Mon](JavaClassFn "com.cyc.tool.behavior.node.CycorpRefrigeratorMassEMailSending")
+                 <dmiles> [Mon](JavaClassFn "com.cyc.tool.behavior.node.AcceptingTasksFromHumanCyclists")
+                 <dmiles> [Mon](JavaClassFn "com.cyc.tool.behavior.node.SystemAdministration")
+22.03.19 02:02:15<aindilis> (#$denotes #$KM-TheWord #$KnowledgeMachine-TheWord)
+22.03.19 02:02:20<dmiles> oops thought be one line
+22.03.19 02:02:33<aindilis> he nice
+22.03.19 02:02:36<aindilis> *heh
+22.03.19 02:02:43<dmiles>  (#$denotes #$KM-TheWord #$KnowledgeMachine-TheProlog)
+22.03.19 02:02:45<dmiles> oops
+22.03.19 02:02:48<dmiles>  (#$denotes #$KM-TheWord #$KnowledgeMachine-TheProgram)
+22.03.19 02:03:03<dmiles> is how i'd write that 
+22.03.19 02:03:25<aindilis> k cool
+22.03.19 02:04:03<dmiles> heh (isa KMFDM IndustrialMusicPerformer)
+22.03.19 02:04:24<dmiles> (stands for Kill Mother Fucking Depeche Mode
+22.03.19 02:04:31<aindilis> lol
+22.03.19 02:05:59<dmiles> you had me lookng to see if CYCorp already started to work on KnowledgeMachine
+22.03.19 02:06:05<dmiles> PowerLOOM did
+22.03.19 02:06:09<aindilis> yeah
+22.03.19 02:07:03<aindilis> damn I cannot remember where I put our to.do list
+22.03.19 02:11:20<dmiles> it hard to saw which is harder to poort into CYC the KM or the AP
+22.03.19 02:12:12<dmiles> the KM is a big harder .. for the leanring curce i'd say  AP then KM then DAYDREAMER
+22.03.19 02:12:41<dmiles> i mean the port to having them use MTs instead of provate datastructures
+22.03.19 02:13:22<dmiles> i wouldnt attempt (myself) now in hinedsight to do DAYDREAMER before KM
+22.03.19 02:13:33<aindilis> okay I seem to have put them in their respective projects
+22.03.19 02:13:52<aindilis> k
+22.03.19 02:15:02<dmiles> oh oops i remember one thig else
+22.03.19 02:15:06<dmiles> DECREASONER
+22.03.19 02:15:32<dmiles> though i was going to use my prolog clone of it
+                 <aindilis> kk
+22.03.19 02:15:54<dmiles> and then if i am nmot happy.. translate the C++ code to Java and just link it
+22.03.19 02:16:13<aindilis> k
+22.03.19 02:16:52<dmiles> someone started a decreasoner4j 
+22.03.19 02:16:54<dmiles> hrrm
+22.03.19 02:17:13<dmiles> https://github.com/lzzzy/decreasoner4j/blob/master/src/test/java/org/decreasoner4j/Problem.java
+22.03.19 02:17:43<aindilis> bbiab
+22.03.19 02:18:32<dmiles> me too.. but i am tried i might jsut only be able to watch TV and rant tonight.. too late to take my Adderoll i feel
+22.03.19 02:18:47<dmiles> too late for me to get productive
+22.03.19 02:19:18<aindilis> k np, I'm winding down too, but I'm going to try again in a sec since it's been forever since I did any real work
+22.03.19 02:30:51*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+22.03.19 02:32:34*** Join: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, (unauthenticated): Andrew Dougherty)
+22.03.19 02:32:51*** Quit: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Ping timeout: 268 seconds
+22.03.19 02:52:53*** Quit: aindilis` (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net) left #logicmoo: Remote host closed the connection
+22.03.19 02:53:14*** Join: aindilis (~aindilis@172-12-3-117.lightspeed.sgnwmi.sbcglobal.net, aindilis: Andrew Dougherty)
+22.03.19 08:10:13*** Join: PrologMUD_ (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net, (unauthenticated): see http://prologmoo.com/)
+22.03.19 08:15:05*** Nick regain: PrologMUD_ (~PrologMUD@c-73-190-111-74.hsd1.wa.comcast.net) is now known as PrologMUD
+22.03.19 08:15:41*** Netmerge: *.net *.split, split 49 years 11 months 7 days 12 hours 15 minutes 41 seconds ago (Use /WL to see who's still missing)
+22.03.19 08:40:04*** Quit: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: Quit: Leaving.
+22.03.19 10:23:08<aindilis> http://www.xlike.org/texttologic-multilingual-semi-automatic-information-extraction/
+22.03.19 10:33:18<aindilis> http://fever.ai/resources.html
+22.03.19 10:40:03*** Join: T_K (~TK@82.131.72.42.cable.starman.ee, (unauthenticated): purple)
+22.03.19 11:02:11<aindilis> finally found that system I have been looking for for a day or two
+22.03.19 11:02:23<aindilis> https://knowledgestore2.fbk.eu/pikes-demo/
+22.03.19 11:02:30<aindilis> http://pikes.fbk.eu/
+22.03.19 11:04:09<aindilis> I literally had to manually go through the 918 git repositories I've collected
+22.03.19 11:21:14*** Part: T_K (~TK@82.131.72.42.cable.starman.ee) left #logicmoo: [No reason given]
+22.03.19 13:12:20<aindilis> dmiles: I'm having an error when trying to use cycAssert([isa,AndrewDougherty,'Person'],[larkcMtFn,'"Org::CYC::BaseKB"'],A).
+22.03.19 13:12:21<aindilis> org.jpl7.JPLException: hasFunctor() is undefined for Variable
+22.03.19 13:12:22<aindilis>         at org.jpl7.Variable.hasFunctor(Variable.java:186)
+                 <aindilis>         at org.logicmoo.system.BeanShellCntrl.term_to_object(BeanShellCntrl.java:2134)
+22.03.19 13:12:24<aindilis>         at org.logicmoo.system.BeanShellCntrl.term_to_lobject(BeanShellCntrl.java:2122)   
+22.03.19 13:12:28<aindilis>         at org.logicmoo.system.BeanShellCntrl.compound_to_object(BeanShellCntrl.java:2402)
+22.03.19 13:28:32<aindilis> I just wrote something to make these for now: larkc-Org-CYC-BaseKB-Mt
+22.03.19 18:40:46<aindilis> how does one load a file from cyc from Prolog without using CYC-REPL?
+22.03.19 18:40:55<aindilis> dmiles: ping
+22.03.19 19:15:56<aindilis> what function retrieves the contents of the assertion for display, e.g.: 'CYC:ASSERTION'('8470214')
+22.03.19 19:16:37<aindilis> dmiles: I am writing a LarKC_CL API for Formalog.
+22.03.19 22:06:11*** Quit: stoopkid__ (uid137696@gateway/web/irccloud.com/x-hzjtbmzegobztnpo) left #logicmoo: Quit: Connection closed for inactivity
+23.03.19 00:01:39<aindilis> dmiles: ping - I am thinking about writing the RTEC author for assistance on how to convert RTEC-SWI to a real time system with an event listening loop or whatnot.
+23.03.19 07:31:23<dmiles> ?- true.
+                 <PrologMUD> dmiles: %  det(Yes,1)
+23.03.19 07:31:41<aindilis> dmiles: okay so I'm convinced you could easily get AP to run on ABCL.  I've been able to get it to compile, although I'm sure I've done things wrong, and I've only needed to make a few changes, although it's stack overflowing
+23.03.19 07:33:24<dmiles> ?- cl_eval(['cyc:assertion-ist-formula','CYC:ASSERTION'('847024')],F).
+                 <PrologMUD> dmiles: % F=[ist,'WorldPoliticalGeographyDataVocabularyMt',[isa,'CYC:NART'(36323),'City']]
+                 <PrologMUD> dmiles: %  det(Yes,1)
+23.03.19 07:33:35<dmiles> ?- cl_eval(['cyc:assertion-ist-formula','CYC:ASSERTION'('8470241')],F).
+23.03.19 07:33:36<PrologMUD> dmiles: % F=[ist,[],[]]
+                 <PrologMUD> dmiles: %  det(Yes,1)
+23.03.19 07:33:46<dmiles> ?- cl_eval(['cyc:assertion-ist-formula','CYC:ASSERTION'('8470220')],F).
+23.03.19 07:33:47<PrologMUD> dmiles: % F=[ist,[],[]]
+                 <PrologMUD> dmiles: %  det(Yes,1)
+23.03.19 07:33:53<dmiles> ?- cl_eval(['cyc:assertion-ist-formula','CYC:ASSERTION'('7470220')],F).
+23.03.19 07:33:54<PrologMUD> dmiles: % F=[ist,'InteractionMt-VersionOfElleForLinearEquation0008-2-3000-01-01t0106NIL-20',[eventHasFinishCommentaryInInteractionMt,'InteractionMt-VersionOfElleForLinearEquation0008-2-3000-01-01t0106NIL-20','CYC:NART'(190306),['TheList','"Getting simpler..."']]]
+                 <PrologMUD> dmiles: %  det(Yes,1)
+23.03.19 07:35:23<dmiles> give me instuctions .. or log of hjow you got it going
+23.03.19 07:35:34<dmiles> i cna try to replicate here
+23.03.19 07:36:50<aindilis> srry for the delay
+23.03.19 07:36:52<dmiles> i'd do screenshare but so tired out right now
+23.03.19 07:37:03<aindilis> I was just getting all-term-assertions working with the tip
+23.03.19 07:37:07<aindilis> yeah no I have to go to bed now
+23.03.19 07:37:12<aindilis> but I'll tell you what I did
+23.03.19 07:37:26<aindilis> here I'll pastebin
+23.03.19 07:37:37<dmiles> perfect
+23.03.19 07:38:09<aindilis> actually give me a few minutes because I just had introduced a regression
+23.03.19 07:46:12<aindilis> https://pastebin.com/aT6Hb5HC
+23.03.19 07:46:26<aindilis> okay it's a really dumb solution in some areas, I'm sure it totally breaks things
+23.03.19 07:46:38<aindilis> the main thing though is that the CLOS is called mop instead of clos or ccl
+23.03.19 07:46:47<aindilis> CLOS package
+23.03.19 07:47:10<aindilis> this is for the given SVN revision of the 3t repo
+23.03.19 07:47:18<aindilis> in the trunk/planner dir
+23.03.19 07:49:17<aindilis> sorry, but for  Index: system/initializations.lisp all I did was comment out the stuff at the bottom, but emacs space/tab stuff made it look like there's a lot of stuff
+23.03.19 07:49:28<aindilis> okay I have to go to bed now
+23.03.19 07:49:40<aindilis> but this makes it compile at least
+23.03.19 07:50:18<dmiles> great thank you.. i will investigate very soon
+23.03.19 07:50:30<aindilis> (require 'asdf)
+                 <aindilis> (pushnew :ACL *features*)
+                 <aindilis> (setf asdf:*central-registry* '(*default-pathname-defaults* #P"/var/lib/myfrdcsa/sandbox/3t-20190108/3t-20190108/trunk/planner/"))
+                 <dmiles> i have to be gone all day tommow 
+                 <aindilis> (asdf:operate 'asdf:load-op 'ap)
+23.03.19 07:51:10<aindilis> also you need to do this to what I just flooded here as script.lisp: java -jar /var/lib/myfrdcsa/sandbox/abcl-bin-1.5.0/abcl-bin-1.5.0/abcl.jar --load script.lisp
+23.03.19 07:51:24<aindilis> k coolbenas
+23.03.19 07:51:32<aindilis> *coolbeans, thanks for the heads up
+23.03.19 07:51:54<dmiles> the stack overflow is probably just omsting i might have alredy fixed in larkc
+23.03.19 07:52:03<aindilis> oh no wait
+23.03.19 07:52:10<aindilis> this is not on top of larkc
+23.03.19 07:52:12<aindilis> this is just abcl
+23.03.19 07:52:15<dmiles> yep
+23.03.19 07:52:17<aindilis> k
+23.03.19 07:52:23<aindilis> oh okay
+23.03.19 07:52:38<dmiles> larkc_cl i had to fix varius ABCL bugs
+23.03.19 07:52:42<aindilis> yeah
+23.03.19 07:52:44<aindilis> :)
+23.03.19 07:52:47<dmiles> but i probably added soem i dont know about to
+23.03.19 07:53:14<aindilis> well I butchered to get it to compile, and I was hoping you could do some sanity checks so I don't break anything
+23.03.19 07:53:21<aindilis> *butchered some stuff
+23.03.19 07:53:30<aindilis> yeah
+23.03.19 07:54:12<aindilis> but it seemed sort of straightforward, which is odd because I recall you saying you were 5 hours into integrating and it would take 30?
+23.03.19 07:54:27<aindilis> I know I'm wrong, I just don't know where
+23.03.19 07:55:03<dmiles> waht seemed like all the work was the asdf deps like the JSON and tings
+23.03.19 07:55:15<aindilis> oh hrm
+23.03.19 07:55:19<aindilis> I have an abcl-bin
+23.03.19 07:55:22<aindilis> 1.5.0
+23.03.19 07:55:24<aindilis> I think
+23.03.19 07:55:38<dmiles> so all the deps compiled?
+23.03.19 07:55:46<aindilis> ah I see
+23.03.19 07:56:01<aindilis> yeah it was precompiled, but your fixing bugs so you have to build it - okay
+23.03.19 07:56:31<aindilis> larkc actually works pretty well, but i was having problems getting it to assert and query into the LarKC--Org-CYC-BaseKB--Mt microtheory
+23.03.19 07:57:33<dmiles> frok prolog?
+                 <aindilis> also was having trouble automatically starting up.  why is it that larkc loads last from from_swipl.pl if I consult from_swipl.pl from a different prolog source file and then add FLP afterwards?
+23.03.19 07:57:38<aindilis> yeah
+23.03.19 07:57:52<aindilis> also I couldn't figure out how to not have to use cyc_repl(_).
+23.03.19 07:57:54<dmiles> can you past the code exmaple you tried that didnt work?
+23.03.19 07:57:57<aindilis> in order to load my MyKBs
+23.03.19 07:58:01<aindilis> sure
+23.03.19 07:58:03<aindilis> one sec
+23.03.19 07:58:35<dmiles> oh ?- cl_eval('(CYC-REPL)',O).  would be a sure fire way to get to teh REPL
+23.03.19 07:59:38<aindilis> https://pastebin.com/ujz2ykbM
+23.03.19 08:00:04<aindilis> well I'm trying to do like cyc_eval(['LOAD','"<FILENAME>"'],X).
+23.03.19 08:00:13<aindilis> but it doesn't work the same as from the repl
+23.03.19 08:00:21<aindilis> I tried call_main or whatever
+23.03.19 08:00:33<dmiles> ther easre two version of LOAD .. CL:LOAD and CYC:LOAD
+23.03.19 08:00:42<aindilis> nice
+                 <aindilis> ty
+23.03.19 08:00:45<aindilis> going to try now
+23.03.19 08:01:07<dmiles> cycAssert([isa,AndrewDougherty,'Person'],[quote,[larkcMtFn,'"Org::CYC::BaseKB"']],_).
+23.03.19 08:01:25<dmiles> oops
+23.03.19 08:01:33<dmiles> cycAssert([isa,'AndrewDougherty','Person'],[quote,[larkcMtFn,'"Org::CYC::BaseKB"']],_).
+23.03.19 08:01:55<aindilis> kk, ty
+23.03.19 08:02:00<aindilis> srry I missed that
+23.03.19 08:02:02*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-mkuwzsvwwegfywqi, (unauthenticated): stoopkid)
+23.03.19 08:02:15<aindilis> I've been meaning to write proper wrappers
+23.03.19 08:02:41<dmiles> jus tso lisp doint try to Eval it
+23.03.19 08:02:48<aindilis> I have some of your code for converting from [isa,'AndrewDougherty','Person'] to isa('AndrewDougherty','Person').
+23.03.19 08:03:37<dmiles> *nod* :)
+23.03.19 08:03:52<dmiles> i'd use:   NAssert = ['cyc-unassert',[quote,Assertion],[quote,Mt]],
+23.03.19 08:04:03<aindilis> yeah
+23.03.19 08:04:18<dmiles> since quioting should almost always be safe there even when it seems redundant
+23.03.19 08:04:33<aindilis> but I have to get it seemless so it's like talking directly to cyc, and I'm going to generate the predicates automatically by asserting ':-'/2
+23.03.19 08:04:50<dmiles> good
+23.03.19 08:04:51<aindilis> unless there is another way
+23.03.19 08:04:52<aindilis> kk
+23.03.19 08:06:02<dmiles> i like the  :- way so i notice when i forget to assert to a KB i rather have an error
+23.03.19 08:06:55<aindilis> k
+23.03.19 08:07:27<aindilis> alright, I think CYC:LOAD will probably work but I may have to rename some of my functions since they're being defined in CYC
+23.03.19 08:07:31<aindilis> *CYC:
+23.03.19 08:07:41<aindilis> okay done for now, thanks for all your help!
+23.03.19 08:07:55<aindilis> I got my CPAP machine yesterday and have to use it tonight
+23.03.19 08:08:01<dmiles> fun!
+23.03.19 08:08:26<dmiles> you have a pulseoximeter finger sensor?
+23.03.19 08:08:30<aindilis> yeah
+23.03.19 08:08:35<aindilis> not with the CPAP though
+23.03.19 08:08:38<aindilis> but I should try it
+23.03.19 08:08:41<aindilis> good idea
+23.03.19 08:08:54<dmiles> *nod* yeah not relate.. but fun to wake up and peek at
+23.03.19 08:09:10<dmiles> or jsut durring the day
+23.03.19 08:09:11<aindilis> so hopefully I'll have more energy! and be able to get even more serious.  I'm doing pretty well with coding except that I had to stay up all night to attend the CPAP meeting, which always makes me unproductive.  but now that M's job is greenlit I will be coding up a storm
+23.03.19 08:09:28<dmiles> :)
+23.03.19 08:09:40<aindilis> I looked a lot at some NLP tasks today
+23.03.19 08:09:54<aindilis> damn I'm forgetting exactly what
+                 <aindilis> nm
+23.03.19 08:10:08<aindilis> k, nn!
+23.03.19 08:10:18<dmiles> nn
+23.03.19 08:10:43<dmiles> CYC:LOAD == SL:LOAD btw
+23.03.19 08:10:55<aindilis> k
+23.03.19 08:10:56<aindilis> ty
+23.03.19 08:11:41<dmiles> it is supposed to switch lots of tiny bets of code between the CL:LOAD and SL:LOAD .. but surely i missed a peince
+23.03.19 08:11:59<aindilis> k
+23.03.19 08:12:11<dmiles> lots of tiny bits of code*
+23.03.19 08:12:54<dmiles> oh yeah CL:EVAL and SL:EVAL  are quite differnt
+23.03.19 08:13:48<dmiles> but it'll work out .. i think i got the two loads to do the correct ones
+23.03.19 08:14:09<aindilis> when was it uploaded?  I'm still using 0124
+23.03.19 08:14:16<aindilis> 20190124
+23.03.19 08:15:38<dmiles> yeah all the tiem i been developiong SxxMAchine
+23.03.19 08:16:06<dmiles> fixing all the ISO-Prolog before i merge the codebases
+23.03.19 08:16:13<dmiles> into LARKC_CL
+23.03.19 08:17:20<aindilis> cool!!!
+23.03.19 08:17:26<dmiles> iow, i dont think i made any changes since  20190124
+23.03.19 08:17:32<aindilis> ha
+23.03.19 08:17:33<aindilis> *ah
+23.03.19 08:18:30<dmiles> its going to be such a helpish merge.. but one that will take less than a day
+23.03.19 08:18:34<dmiles> hellish
+23.03.19 08:18:41<aindilis> :/
+23.03.19 08:19:05<dmiles> once merged too hard to fix the SxxMachine bugs
+23.03.19 08:19:51<dmiles> since i basicallyu delete all the SxxMachine classes one at a time replacing them with LARKC_CL classes
+23.03.19 08:20:13<aindilis> ah
+23.03.19 08:20:21<dmiles> but i did this merge 13 year ago and it worked awesome
+23.03.19 08:20:44<dmiles> jsut sucks when a new version of CYC comes out .. i have to start from scratch wach time
+23.03.19 08:21:34<dmiles> but i dont think a new version of CYC will happen any time soon from Cycorp
+23.03.19 08:22:19<dmiles> (i mean of the JavaRTL .. no more java coders working there)
+23.03.19 08:22:36<dmiles> ok nn!
+23.03.19 08:22:42<aindilis> nn!
+23.03.19 19:01:31*** Quit: stoopkid__ (uid137696@gateway/web/irccloud.com/x-mkuwzsvwwegfywqi) left #logicmoo: Quit: Connection closed for inactivity
+23.03.19 20:15:29*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-gqgtlszjlmjzxvsd, (unauthenticated): stoopkid)
+23.03.19 22:19:11<aindilis> dmiles: does LarKC_CL have C bindings?
+23.03.19 23:12:39<dmiles> nmot sure if we need to ad JNA.jar to path 
 #logicmoo> 

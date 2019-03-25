@@ -31949,4 +31949,88 @@ editable-dog (IRC) joined the room.
 11.03.19 11:54:51*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-dkkanqoxsojmygps, (unauthenticated): kook)
 11.03.19 16:24:33*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-dkkanqoxsojmygps) left #AutoNomic: Quit: Connection closed for inactivity
 12.03.19 02:06:21*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi) left #AutoNomic: Quit: Connection closed for inactivity
+12.03.19 09:03:22*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-wmeoabiwwlicwqfo, stoopkid: stoopkid)
+13.03.19 18:14:35*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-rbhmtehklxzwcjez, (unauthenticated): kook)
+13.03.19 21:14:13*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-rbhmtehklxzwcjez) left #AutoNomic: Quit: Connection closed for inactivity
+14.03.19 10:15:54*** Join: Jerry (2f11ddb4@gateway/web/freenode/ip.47.17.221.180, (unauthenticated): ool-2f11ddb4.dyn.optonline.net/47.17.221.180)
+14.03.19 10:17:18<Jerry> Any updates from you guys? People are starting to forget you guys are working on the same thing as ohad. Please make a post on bitcointalk.
+14.03.19 10:18:41<Jerry> Speaking of ohad, recently got the parser starting to work. Any thoughts? You guys should team up again.
+14.03.19 10:19:10<Jerry> Anyways, wishing you guys luck. You have not been forgotten.
+14.03.19 10:19:31*** Quit: Jerry (2f11ddb4@gateway/web/freenode/ip.47.17.221.180) left #AutoNomic: Client Quit
+#AutoNomic> 14.03.19 14:39:37*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Topic for #AutoNomic: AutoNomic project | Please ask anything | Wiki: 167.88.171.233/AutoNomic | Log: 167.88.171.233/logs/AutoNomic.log | Dev channel: #autonomic-dev | ncatlab.org/nlab/show/computational+trinitarianism | rbjones.com/rbjpub/logic/cl/tlc001.htm | www.cse.chalmers.se/research/group/logic/book/book.pdf
+                 *** Topic set by stoopkid on Fri Jan 26 17:10:47 2018, 1 year 1 month 21 days 20 hours 28 minutes 51 seconds ago
+                 *** Names: editable-dog stoopkid HMCb Tamara_ Deadhand @ChanServ cantora koo5[m] reedhhw[m]
+                 *** End of /NAMES list.
+14.03.19 17:39:26*** Join: sp_ (9d2d5d1c@gateway/web/freenode/ip.157.45.93.28, subhendupanda: 157.45.93.28 - http://webchat.freenode.net)
+14.03.19 17:43:46*** Part: sp_ (9d2d5d1c@gateway/web/freenode/ip.157.45.93.28) left #AutoNomic: [No reason given]
+15.03.19 00:08:32*** Quit: Deadhand (~deadhand@kntaon1614w-grc-11-76-66-96-100.dsl.bell.ca) left #AutoNomic: Ping timeout: 258 seconds
+15.03.19 00:10:05*** Join: Deadhand (~deadhand@kntaon1614w-grc-11-76-66-96-100.dsl.bell.ca, (unauthenticated): deadhand)
+15.03.19 02:38:05*** Join: genuinelyfx[m] (genuinelyf@gateway/shell/matrix.org/x-cgvatdplpbitvpza, (unauthenticated): @genuinelyfx:matrix.org)
+16.03.19 11:32:04*** Quit: genuinelyfx[m] (genuinelyf@gateway/shell/matrix.org/x-cgvatdplpbitvpza) left #AutoNomic: Remote host closed the connection
+16.03.19 11:32:41*** Quit: koo5[m] (koo5matrix@gateway/shell/matrix.org/x-cizvickqfeapuchf) left #AutoNomic: Remote host closed the connection
+16.03.19 11:32:43*** Quit: reedhhw[m] (reedhhwmat@gateway/shell/matrix.org/x-ycxkwwoqmckeccqh) left #AutoNomic: Write error: Connection reset by peer
+16.03.19 11:45:55*** Join: koo5[m] (koo5matrix@gateway/shell/matrix.org/x-ioedwgkpskcyltla, (unauthenticated): @koo5:matrix.org)
+16.03.19 12:15:04*** Join: reedhhw[m] (reedhhwmat@gateway/shell/matrix.org/x-segxwbnuzfwzicbj, (unauthenticated): @reedhhw:matrix.org)
+                 *** Join: genuinelyfx[m] (genuinelyf@gateway/shell/matrix.org/x-wzdbsjxkjzzwihfn, (unauthenticated): @genuinelyfx:matrix.org)
+17.03.19 07:53:44*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-rqezpwomfhmevrlq, (unauthenticated): kook)
+17.03.19 10:23:18*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-rqezpwomfhmevrlq) left #AutoNomic: Quit: Connection closed for inactivity
+18.03.19 15:29:15*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-xcbykbbvlgozqscl, (unauthenticated): kook)
+18.03.19 17:38:50*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-xcbykbbvlgozqscl) left #AutoNomic: Quit: Connection closed for inactivity
+18.03.19 20:27:35*** Quit: genuinelyfx[m] (genuinelyf@gateway/shell/matrix.org/x-wzdbsjxkjzzwihfn) left #AutoNomic: Remote host closed the connection
+18.03.19 20:28:00*** Quit: reedhhw[m] (reedhhwmat@gateway/shell/matrix.org/x-segxwbnuzfwzicbj) left #AutoNomic: Read error: Connection reset by peer
+18.03.19 20:28:03*** Quit: koo5[m] (koo5matrix@gateway/shell/matrix.org/x-ioedwgkpskcyltla) left #AutoNomic: Remote host closed the connection
+18.03.19 20:37:56*** Join: koo5[m] (koo5matrix@gateway/shell/matrix.org/x-mksektcrmezdltqe, (unauthenticated): @koo5:matrix.org)
+18.03.19 21:06:57*** Join: reedhhw[m] (reedhhwmat@gateway/shell/matrix.org/x-zlmgfpeiwfwupowg, (unauthenticated): @reedhhw:matrix.org)
+18.03.19 21:06:58*** Join: genuinelyfx[m] (genuinelyf@gateway/shell/matrix.org/x-nuuozebmbxraceup, (unauthenticated): @genuinelyfx:matrix.org)
+20.03.19 01:06:58<HMCb> hi Jerry
+20.03.19 01:07:14<HMCb> (... and you other lurkers)
+20.03.19 01:07:21<HMCb> we are not dead
+20.03.19 01:07:25<HMCb> :-)
+20.03.19 01:08:15<HMCb> i did play with the benchmark comparison
+20.03.19 01:08:28<HMCb> it is ofc not a meaningful comparison
+20.03.19 01:09:04<HMCb> (and ofc is still not "expressing transitive closure", lol)
+20.03.19 01:09:37<HMCb> his parser stuff is still buggy
+20.03.19 01:09:58<HMCb> as is his reasoner, last i checked it still trivially infloops
+20.03.19 01:10:09<HMCb> i'll check it again, though
+20.03.19 01:10:25<HMCb> as for us teaming up again... it doesn't seem likely
+20.03.19 01:11:22<HMCb> our project is ofc still open to anyone and everyone
+20.03.19 01:15:36<HMCb> but I doubt he will ever see the light wrt mltt/homotopy... and I doubt anyone who has seen this would want to play in his confined framework(s)
+20.03.19 01:18:08<HMCb> anyway, though we may seem quiet lately there are still things going on
+20.03.19 01:19:51<HMCb> and our reasoner still even mostly works ;-)
+20.03.19 01:37:36<stoopkid> it's still in the back of our minds
+20.03.19 02:17:47<HMCb> and the front... and some sides...
+20.03.19 04:02:27*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-wmeoabiwwlicwqfo) left #AutoNomic: Quit: Connection closed for inactivity
+20.03.19 05:41:07*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-amyjzrbahyljlkgn, (unauthenticated): kook)
+20.03.19 07:45:56*** Join: stoopkid_ (uid137696@gateway/web/irccloud.com/x-frpegvkjkbwdhzlc, stoopkid: stoopkid)
+20.03.19 07:50:46*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-amyjzrbahyljlkgn) left #AutoNomic: Quit: Connection closed for inactivity
+21.03.19 08:00:20<HMCb> tezos is now statting its' first self-modification...
+21.03.19 15:32:30<HMCb> *starting
+22.03.19 00:33:15*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-hzjtbmzegobztnpo, (unauthenticated): stoopkid)
+22.03.19 00:33:45*** Quit: stoopkid_ (uid137696@gateway/web/irccloud.com/x-frpegvkjkbwdhzlc) left #AutoNomic: Ping timeout: 268 seconds
+                 *** Quit: Tamara_ (sid238709@gateway/web/irccloud.com/x-fgmcuxknujfstuzm) left #AutoNomic: Ping timeout: 268 seconds
+22.03.19 00:33:53*** Join: Tamara_ (sid238709@gateway/web/irccloud.com/x-oyxvjhwrhdllnfjo, (unauthenticated): Tamara)
+22.03.19 10:55:06*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-zlzxzxqlzcbkseka, (unauthenticated): kook)
+22.03.19 13:14:47*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-zlzxzxqlzcbkseka) left #AutoNomic: Quit: Connection closed for inactivity
+22.03.19 14:03:58*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-pgpuqrobfmmlimok, (unauthenticated): kook)
+22.03.19 16:54:46*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-pgpuqrobfmmlimok) left #AutoNomic: Quit: Connection closed for inactivity
+22.03.19 22:06:11*** Quit: stoopkid__ (uid137696@gateway/web/irccloud.com/x-hzjtbmzegobztnpo) left #AutoNomic: Quit: Connection closed for inactivity
+23.03.19 08:02:17*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-mkuwzsvwwegfywqi, (unauthenticated): stoopkid)
+23.03.19 12:21:38*** Join: nili (6ca204ba@gateway/web/freenode/ip.108.162.4.186, (unauthenticated): ool-6ca204ba.static.optonline.net/108.162.4.186)
+23.03.19 12:21:56<nili> 20.03.19 01:07:21<HMCb> we are not dead
+23.03.19 12:22:27<nili> Nili; how would you define dead?
+23.03.19 12:26:00<nili> In what capacity is the tau alive if each of the original parts are doing something related yet not directly connected.
+23.03.19 12:26:30<nili> Who is We?
+23.03.19 12:30:11<nili> Is "we" an "is" or is it "are"?
+23.03.19 12:33:26<nili> and since "you" is always "are" ...."I am" can be "we are"
+23.03.19 12:35:33<nili> and be true also if you are the only one that is still alive.
+23.03.19 12:40:04<nili> which in a murder case would create a real problem. even if you killed all the other parts of what was addressed as "you",  you can still prove that "you" are alive as it was always "we" as "is"
+23.03.19 12:42:53<nili> The only way to get your project to fail is by killing HMC.
+23.03.19 12:46:46<nili> and being the smart ass that you are, you knew to keep your being as a pseudonym so that killing it will  not mean killing yourself as a self human being.
+23.03.19 12:53:28<nili> in short HMC, we all need you to move on to the next level of this project as we all did and are still a part of it, waiting for you to making the transformation.
+23.03.19 12:53:58<nili> a transformation to whichever medium and form you choose to take.
+23.03.19 12:57:38<nili> :)
+23.03.19 13:02:27*** Quit: nili (6ca204ba@gateway/web/freenode/ip.108.162.4.186) left #AutoNomic: Ping timeout: 256 seconds
+23.03.19 19:01:30*** Quit: stoopkid__ (uid137696@gateway/web/irccloud.com/x-mkuwzsvwwegfywqi) left #AutoNomic: Quit: Connection closed for inactivity
+23.03.19 20:15:44*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-gqgtlszjlmjzxvsd, (unauthenticated): stoopkid)
 #AutoNomic> 

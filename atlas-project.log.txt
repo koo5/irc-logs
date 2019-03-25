@@ -2171,4 +2171,1506 @@
 11.03.19 20:36:30<stoopkid> i haven't checked that out yet but looks cool, i'd be open to trying that out once i get back more to the hacking/engineering rather than design stuff
 11.03.19 20:46:49<editable-dog>i think i have enough freelancer for a couple of days again
 12.03.19 02:06:21*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-gfklnydqsbjkdgdi) left #atlas-project: Quit: Connection closed for inactivity
+12.03.19 09:02:57*** Join: stoopkid (uid137696@gateway/web/irccloud.com/x-wmeoabiwwlicwqfo, stoopkid: stoopkid)
+12.03.19 09:56:47<editable-dog>morning
+12.03.19 10:13:37<stoopkid> yo
+12.03.19 10:34:42<editable-dog>how did test go
+12.03.19 10:35:40<editable-dog>if you want to jump in to some beginner vue work, i think i need a computed property set up
+12.03.19 10:36:20<editable-dog>not sure exactly how they're done
+12.03.19 10:39:05<stoopkid> test was fine, and sure
+12.03.19 10:39:43<editable-dog>i dont by any means mean this is another mundane job that you should do, just that you might as well learn this bit of vue before me
+12.03.19 10:41:12<editable-dog>https://github.com/koo5/univar/blob/master/pyco_visualization/html/index.html
+12.03.19 10:41:32<editable-dog>should we skype?
+12.03.19 10:43:57<stoopkid> in a bit sure, making breakfast at the moment
+12.03.19 10:44:05<editable-dog>sure
+12.03.19 10:58:58<editable-dog>nvm, it doesnt make sense for you to jump in in the middle of all this domain-specific complexity i think
+12.03.19 11:30:36<stoopkid> alright well i guess i'll keep working on expanding the web layouts stuff in the meantime then but if you have something that you think makes sense for me to jump into i'll be happy to check it out, and in a couple days or so i might be more ready to start jumping back into the proof trace stuff in general
+12.03.19 11:33:06<editable-dog>well if you do feel like jumping a bit into the deep end, ...
+12.03.19 11:44:22<stoopkid> maybe instead of jumping directly into the deep end we might see if we can start w/ placing the visualization interface into some more complete web layout?
+12.03.19 11:51:45<stoopkid> alternatively i could just start w/ that while you continue working on your current tasks w/ it and then we could meet somewhere in the middle to combine the work, and then i could adjust the layout from there based on your input
+12.03.19 11:58:24<editable-dog>more complete in what way?
+12.03.19 12:05:49<editable-dog>http://loworbit.now.im/univar/runs/tests_clean_existentials_addition2_0/html/
+12.03.19 12:07:46<stoopkid> mainly graphically, though ofc there's usability stuff that could potentially go along w/ that like a menu/commands bar for controlling the widget
+12.03.19 12:10:41<editable-dog>yeah theres a shitton of stuff that could be done, so, if you play with a it a bit that would be great
+12.03.19 12:12:00<editable-dog>theres one outstanding but, and that is that some locals arent updated in the view when you're stepping forward
+12.03.19 12:12:20<editable-dog>if you go to step 8 and then back to 7, one binding will suddenly appear
+12.03.19 12:12:47<editable-dog>i have to figure out how to tell vue to watch these nested objects
+12.03.19 12:13:01<editable-dog>and variable names are missing hehe
+12.03.19 12:14:13<editable-dog>and i still have to make the reasoner emit locals for builtins, currently when a builtin has locals, the chain of variables in the visualization break
+12.03.19 12:14:15<editable-dog>s
+12.03.19 12:14:59<editable-dog>"navigation status" doesnt update, due to how vue works
+12.03.19 12:15:47<editable-dog>those should be all the outright gotchas
+12.03.19 12:16:04<editable-dog>im quite proud of it hehe
+12.03.19 12:18:11<stoopkid> so.. first thing would be, what is our goal for this interface? i'm assuming it would be a widget that can be plugged into any site that's hooked up to the inferencer on the back-end, and that debugging a proof-trace is actually gonna be very specialized task that few people are gonna be doing (instead they'll be doing things like running queries, filtering outputs, managing the kb, etc.. for the most part) ?
+12.03.19 12:20:13<editable-dog>even people running queries on websites is kinda further than i thought of it, i only intended this as a debugger for the reasoner/queries
+12.03.19 12:26:03<stoopkid> i figure if we're going this far wrt building a web-enabled graphical debugger we might want to think about expanding that out into a full browser dashboard analogous to the kind of things available for managing other databases
+12.03.19 12:27:27<editable-dog>well, we definitely could
+12.03.19 12:28:19<editable-dog>at the very least, we could start with the basic usability improvements
+12.03.19 12:28:35<editable-dog>like, putting the rule list onto its own page/tab
+12.03.19 12:28:53<editable-dog>navigation from coro_state to its rule
+12.03.19 12:29:06<editable-dog>actually rendering the rules in a reasonable way
+12.03.19 12:29:22<editable-dog>navigation across var bindings
+12.03.19 12:29:46<editable-dog>option to hide uninteresting rules
+12.03.19 12:30:06<editable-dog>adding a tab with literal reasoner output
+12.03.19 12:34:58<editable-dog>but..ill probably just need to finish the variables and builtins stuff to actually be able to debug something with it
+12.03.19 12:35:50<editable-dog>but..if you want to start with one layout/design thing, then putting the rule listing into its own tab would be seriously helpful
+12.03.19 12:36:37<editable-dog>and..whatever you think would make things more presentable
+12.03.19 12:48:24<stoopkid> i seem to be having some issues running the visualizations can you check whether the readme is up-to-date w/ your current process?
+12.03.19 12:49:26<editable-dog>hehe doubtful
+12.03.19 12:49:34<editable-dog>go into kbdbg2graphviz2
+12.03.19 12:49:40<editable-dog>run npm i
+12.03.19 12:51:16<stoopkid> go into kbdbg2graphviz2 as in "run pyin/kbdbg2graphviz2.py" ?
+12.03.19 12:51:35<editable-dog>cd
+12.03.19 12:51:56<editable-dog>its a directory in root
+12.03.19 12:52:09<editable-dog>wait
+12.03.19 12:52:12<stoopkid> i don't seem to have that; you mean kbdbg2jsonld2 ?
+12.03.19 12:52:26<editable-dog>right
+12.03.19 12:52:27<editable-dog>sorry
+12.03.19 12:57:20<stoopkid> alright and then it's just this command: ./pyin/tau2.py ./pyco_runner.sh examples/socrates  2>&1 | tee  `date "+%F-%H-%M-%S"` | grep ":test:" ?
+12.03.19 12:57:41<editable-dog>that should work
+12.03.19 12:57:52<editable-dog>my full command line these days is
+12.03.19 12:58:13<editable-dog>reset; env PYTHONUNBUFFERED=1 ./pyin/tau2.py --only-id 0   "./pyco_runner.sh --nolog 0 --novalgrind 1 --nodebug 0  --notrace false --trace_proof 1 --oneword false  --trace_unification 1  " tests/clean/existentials/addition2
+12.03.19 13:01:33<stoopkid> hm, still seems to be some issues; the result of this should be that it dumps the pyco stuff and visualization into a directory under runs/ ?
+12.03.19 13:03:23<editable-dog>yes
+12.03.19 13:10:13<editable-dog>whats the output?
+12.03.19 13:10:31<editable-dog>maybe i should make a docker image
+12.03.19 13:13:44<stoopkid> https://pastebin.com/ZBvMjeZa
+12.03.19 13:14:00<stoopkid> looks like the issue is maybe that it's just not loading the trace file, not sure why though
+12.03.19 13:14:18<editable-dog>i mean whats the output of the command line
+12.03.19 13:14:31<editable-dog>ah
+12.03.19 13:14:46<editable-dog>go into runs/.../
+12.03.19 13:15:22<editable-dog>python3 -m http.server
+12.03.19 13:17:02<stoopkid> same output at localhost:8000 now
+12.03.19 13:19:35<editable-dog>like...
+12.03.19 13:19:37<editable-dog>cd runs/tests_n3_dev_testcases_tests_simple_socrates_tau_0/
+                 <editable-dog>koom@koom-KVM ~/u/r/tests_n3_dev_testcases_tests_simple_socrates_tau_0> 
+12.03.19 13:19:38<editable-dog>python3 -m http.server
+12.03.19 13:24:47<stoopkid> yea it shows a directory listing and when i navigate to the html directory it shows the same output
+12.03.19 13:25:23<editable-dog>ls runs/tests_n3_dev_testcases_tests_simple_socrates_tau_0/
+                 <editable-dog>html@
+                 <editable-dog>kbdbgtests_n3_dev_testcases_tests_simple_socrates_tau_0.n3
+                 <editable-dog>kbdbgtests_n3_dev_testcases_tests_simple_socrates_tau_0.n3_rules
+                 <editable-dog>kb_for_external_raw.n3
+                 <editable-dog>Makefile
+                 <editable-dog>pyco*
+12.03.19 13:25:24<editable-dog>pyco_out.cpp
+                 <editable-dog>query_for_external_euler.n3
+                 <editable-dog>query_for_external_raw.n3
+                 <editable-dog>rules.jsonld
+12.03.19 13:25:50<editable-dog>trace0.js
+12.03.19 13:26:13<stoopkid> ok i seem to be missing rules.jsonld
+12.03.19 13:27:52<editable-dog>then the node stuff didnt work right
+12.03.19 13:28:23<editable-dog>you should be able to go to kbdbg2jsonld2 and ...
+12.03.19 13:28:41<stoopkid> looking back over the inferencer output looks like it had a couple errors: https://pastebin.com/yGqcAHxm
+12.03.19 13:30:39<editable-dog>n3 missing again, thats weird
+12.03.19 13:31:10<editable-dog>cat package-lock.json | grep n3
+12.03.19 13:31:51<editable-dog>ah youre probably gonna have to pull once more
+12.03.19 13:33:15<stoopkid> alright pulled and now that grep shows ""n3": {
+                 <stoopkid>       "resolved": "https://registry.npmjs.org/n3/-/n3-1.0.4.tgz", ..."
+12.03.19 13:33:31<editable-dog>ok maybe it will work now
+12.03.19 13:46:28<stoopkid> well it's not having the missing n3 error anymore but still not generating rules.jsonld
+12.03.19 13:47:22<editable-dog>can you paste the command line and output again?
+12.03.19 13:50:44<stoopkid> https://pastebin.com/KV8JcbTF
+12.03.19 13:51:26<editable-dog>i guess npm i requests
+12.03.19 13:51:41<editable-dog>ideally in the kbdbg2jsonld2 dir
+12.03.19 13:55:26<stoopkid> looks like `requests` is a python module
+12.03.19 13:55:39<editable-dog>ohh
+12.03.19 13:59:35<editable-dog>something like pip -r requirements.txt should fix that
+12.03.19 14:02:12<editable-dog>pip install -r requirements.txt
+12.03.19 14:19:20<stoopkid> well, it finds the requests module now but still seems to be getting some kind "Connection refused" errors: https://pastebin.com/48RfcZVa
+12.03.19 14:22:51<editable-dog>can you try tweaking pyin/pyco.py line 998?
+12.03.19 14:23:13<editable-dog>maybe we're not giving the node server  enough time to start
+12.03.19 14:29:46<stoopkid> yep that's what it was, changing from 2 to 10 fixed it
+12.03.19 14:32:21<stoopkid> later we can probably change that to have it keep trying to query the node server every second or so until it comes up and then every 10-30 seconds or so query the user to see if they want to keep waiting
+12.03.19 14:33:15<editable-dog>thats a good idea, i wanted to wait on some sort of confirmation output from the server, but just retrying is better idea
+12.03.19 14:33:39<editable-dog>screw users tho, we can always just ctrl-c
+12.03.19 14:33:50<stoopkid> lol
+12.03.19 14:33:52<stoopkid> or that
+12.03.19 14:36:44<stoopkid> alright i'm gonna take a break from this for a bit and mull over some ideas while i work on some web layouts stuff; and later before i really dive in i'm gonna try to see if i run into any issues building from scratch on a fresh environment
+12.03.19 14:39:54<editable-dog>would be nice but maybe if you can just commit all the changes / update the README, and i could try building on a fresh machine sometime
+12.03.19 14:39:59<editable-dog>either the new vps, or docker
+12.03.19 15:14:32<stoopkid> ok i sent a pull request
+12.03.19 15:16:34<editable-dog>nice, we have a pull request!
+12.03.19 16:33:47<editable-dog>variable names are in place
+12.03.19 17:41:48<editable-dog>im getting bored of it
+12.03.19 17:41:54<editable-dog>what are you up to?
+12.03.19 17:43:55<stoopkid> i was looking at web header design articles/videos for a bit but now i'm doing russian homework
+12.03.19 17:44:23<editable-dog>nice
+12.03.19 17:44:41<editable-dog>i wish i was forced to learn some russian
+12.03.19 17:45:48<stoopkid> we could maybe make that happen lol: https://www.freelancer.com/projects/php/project-18932057/?w=f
+12.03.19 17:48:02<editable-dog>Surrender to tomorrow until 00:00.
+12.03.19 18:55:55<editable-dog>so, i think displaying Things will lend itself well to vue components
+12.03.19 18:56:10<editable-dog>one component type for each of constant, variable and bnode
+12.03.19 18:56:19<editable-dog>and list
+12.03.19 18:57:30<editable-dog>not sure if i want some global or local toggle for displaying things get_valued or not-get_valued
+12.03.19 18:58:02<editable-dog>probably would start with just get_valued
+13.03.19 12:35:51<stoopkid> gonna start working on a new layout today to test out bootstrap
+13.03.19 12:45:41<stoopkid> looks like bootstrap probably makes it pretty easy to put together a simple static but responsive page
+13.03.19 14:28:19<stoopkid> so i guess a question is gonna be... how do we actually want to manage the content for the site, independently of any web / design concerns
+13.03.19 14:32:53<stoopkid> im getting a bit more comfortable but still several steps away from having a "complete" process
+13.03.19 16:26:06<stoopkid> looks like i'll be learning a bit of scss/sass as well
+13.03.19 16:35:15<stoopkid> nice: http://jsbin.com/telejidowa/edit?html,css,output
+13.03.19 16:36:30<stoopkid> responsively collapses into a hamburger menu for smaller viewports & controls the menu interactivity w/ pure CSS
+13.03.19 18:14:35*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-rbhmtehklxzwcjez, (unauthenticated): kook)
+13.03.19 18:15:15<sirccloud> Ill check it out later
+13.03.19 18:15:38<sirccloud> I was thinking md files would be appropriate
+13.03.19 18:16:11<sirccloud> Hopefully ill be getting some content from pavel too btw
+13.03.19 21:14:13*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-rbhmtehklxzwcjez) left #atlas-project: Quit: Connection closed for inactivity
+14.03.19 06:56:54<editable-dog>nice
+14.03.19 06:57:10<editable-dog>you're definitely gonna be our design chef
+14.03.19 06:57:31<editable-dog>i cant read this stuff
+14.03.19 11:05:07<stoopkid> you mean the less stylings? i can't read that yet but i can (mostly) read the CSS it generates
+14.03.19 11:07:27<stoopkid> https://materializecss.com/templates/parallax-template/preview.html
+14.03.19 11:13:04<stoopkid> i wonder if that parallax effect can work w/ pure CSS
+14.03.19 11:17:13<stoopkid> https://keithclark.co.uk/articles/pure-css-parallax-websites/
+14.03.19 11:35:36<stoopkid> didn't know CSS supported all this 3D
+14.03.19 11:38:52<stoopkid> i'm thinking it'll probably be good to try to stick to pure CSS as much as possible.. i mean we might not have any serious security concerns putting some simple js on some simple static sites but if we can minimize the potential attack surface that'll still be good, plus whenever CSS supports a feature it should be generally simpler to implement, and then it'll still work on browsers w/ js disabled and probably be
+                 <stoopkid> easier to integrate w/ accessibility stuff
+14.03.19 11:41:06<stoopkid> plus i figure this is just part of what "mastering CSS" entails, cause any serious UI design on web is probably gonna require us getting down into the CSS rather than relying on templates
+14.03.19 11:48:22<stoopkid> and i figure we should explicitly be taking a strategy of progressive enhancement.. for a number of reasons,  we explicitly set an expectation of starting small & building up which would be advantageous in our business model, we can hone in on specific smaller things that can actually fit into what these freelancing jobs are paying, and start figuring out what are the increments of functionality we can provide
+14.03.19 11:51:09<stoopkid> i think "progressive enhancement" is the buzzword that describes what i had been trying to describe about the business model i was sort of envisioning, except i was applying it much more generally, i.e. to the client's entire business (or our own business) rather than just their website, with a simple website just being one immediate enhancement for a business
+14.03.19 11:51:35<stoopkid> for any** business really
+14.03.19 11:57:27<stoopkid> so what i'd sort of wanted to do was elaborate on that concept in the same way that we would elaborate on specific software requirement to turn it into a documented implementation/strategy/pattern, that documentation then serving as a sort of outline for how we can present ourselves to clients, i.e. "what is it that we do for you"
+14.03.19 12:00:21<stoopkid> so basically like the way we think about building up some entirely arbitrary software from scratch, we should be perhaps thinking more about how to build some entirely arbitrary business from scratch
+14.03.19 12:01:19<stoopkid> (this is sort of to elaborate on the "something something business processes" in your "about us" thing heh)
+14.03.19 12:03:10<stoopkid> so we're not thinking about just the job per se, we're thinking about their entire business, so ex. "online tutoring site" for $500..
+14.03.19 12:03:33<stoopkid> ok so they *said* they want an online tutoring site for $500 but what does that actually mean in "client-ese" ?
+14.03.19 12:10:45<stoopkid> could mean like a million things and the client doesn't know what they want and doesn't have a well-thought out business model just a vague idea that they can turn this $500 into more $ if they have some random freelance person prototype their vague idea
+14.03.19 12:12:14<stoopkid> so less than thinking "how do implement the thing the client requested", we should be thinking "how do we help the client turn their $500 into more $", ultimately that is the function we're indirectly being paid for on any job
+14.03.19 12:14:20<stoopkid> more $ or more "profit" by whatever we can perceive the client's subjective definition of profit to be.. which 99% of the time is gonna be $ ofc, not the kind of.. technological utopianism we would generally prefer
+14.03.19 12:23:25<stoopkid> to me this kind of simplifies the whole picture of what we would be building towards, we're basically looking for what are the tech patterns that generalize across arbitrary businesses, ex. *every* business has a website & social media, *every* business employs some form of e-commerce, *every* business shares common schemas of things they need to track in a database, etc.. ex. it's the difference between saying "i know
+                 <stoopkid> SQL" vs. "i know CRM/ERP" or "i know full-stack web programming" vs. "i know web design & e-commerce"
+14.03.19 12:25:43<stoopkid> so w/ "from english to binary and back, for you" in reality that needs to be more like "from business-ese to binary **and back**, for your business"
+14.03.19 12:31:51<stoopkid> so that's more or less what i mean by the business requirements / business processes stuff: how do client businesses generally conceptualize this stuff, and what things do they all objectively need
+14.03.19 12:33:16<stoopkid> and ultimately.. we already basically know the answers to this, it's not "hard" we just don't generally think about it so we haven't refined a specific practice around it yet
+14.03.19 12:37:13<stoopkid> we've seen businesses and what they do and how they do it it's a bunch of very specific functions/requirements that they all share *prior* to their specialization into what it is they even specifically do as a business, that really aren't ever gonna change because they're entirely human-level things, only the tech-stack implementing these processes is what changes
+14.03.19 12:40:59<stoopkid> not that we should be too worried about picking up a new tech-stack but i'd think we kind of want our marketing of ourselves to transcend that and be a human-level thing that can ride on top of the change, but with the same depth of elaboration that we put into the actual software work
+14.03.19 12:42:59<stoopkid> ex. we should be thinking as if this is our role : https://en.wikipedia.org/wiki/Chief_technology_officer#Overview
+14.03.19 12:44:43<stoopkid> not that we would necessarily have such an involved role but basically we should just be ready for that, i.e. we should be over-prepared for the depth of involvement we might have
+14.03.19 12:52:05<stoopkid> especially since that kind of role is what's gonna be the most highly valued, like as we can see on upwork/freelancer, specific "implement this little component/function or fix this bug" is viewed as basically glorified construction work, notably in terms of pay
+14.03.19 13:05:12<stoopkid> https://en.wikipedia.org/wiki/Corporate_title#Senior_management
+14.03.19 13:05:46<stoopkid> so we already have a whole template for what we'd be going for here in terms of the technical implementation of these peoples' job descriptions
+14.03.19 13:12:32<stoopkid> now we're quite there yet ofc but that's basically what i mean about applying the "progressive business enhancement" to our own business
+14.03.19 13:15:40<stoopkid> so, on a more specific note we should probably quantify a target amount we're aiming for so we can get a better picture of the amount of work we'll need to be taking on?
+14.03.19 13:16:13<stoopkid> i'm thinking this needs to be somewhere like at least $4k / month, between the two of us
+14.03.19 13:17:41<stoopkid> so that's 16 $250 jobs, 8 $500 jobs, 4 $1000 dollar jobs..
+14.03.19 13:18:26<stoopkid> so if we're thinking of taking $250 jobs, we should be thinking, what's a job we actually can do for $250 and fit 16 of them into a month on average
+14.03.19 13:18:39<stoopkid> etc..
+14.03.19 13:24:13<stoopkid> we might not make that at first for a while but that'll be ok as long as we can narrow down a specific set of things we know we'll be able to do enough of for a realistic amount of $
+14.03.19 13:27:06<stoopkid> but relative to what people are paying for the kinds of work that there's a lot of, this is a quite busy schedule at first..
+14.03.19 13:29:20<stoopkid> and we should maybe take a short month on that, i.e. assume $4k per 28 days / 4 weeks or $1k a week
+14.03.19 13:29:30<stoopkid> actually should maybe be more like $5k considering taxes..
+14.03.19 13:31:15<stoopkid> so really a $250 job is something we should be able to do in a day, with only a tiny amount of further support (if any) that wouldn't generally interfere with our work on other days
+14.03.19 13:37:15<stoopkid> so on average $250 / weekday.. maybe that's split up so what does a weekday really mean to us.. 8 hours a piece hopefully of solid work on some project, not including any of our work managing our own business stuff (i.e. portfolio/marketing, accounting if needed, dealing with taxes etc.. etc..)
+14.03.19 13:43:10<stoopkid> so realistically we should maybe be aiming for something like $25 / man-hour spent actually working on a specific project and at least 5 hours from each of us a weekday, not including looking for more jobs, developing our business etc..
+#atlas-project> 14.03.19 14:39:49*** Join: editable-dog (~editable-@104.168.57.22, editable-dog: editable-log)
+                 *** Names: editable-dog stoopkid @ChanServ
+                 *** End of /NAMES list.
+14.03.19 14:41:11<editable-dog>the parallax stuff looks fun, i wonder if anyone has made a game with it yet
+14.03.19 14:45:52<stoopkid> you could definitely get pretty close: https://codepen.io/danbhala/pen/GJGQad
+14.03.19 14:49:42<stoopkid> you could definitely make something even in pure CSS heh: https://codepen.io/elad2412/pen/hBaqo
+14.03.19 14:54:56<stoopkid> https://codepen.io/Anon20198/pen/KQmKEE
+14.03.19 14:59:05<stoopkid> https://minocernota.com/articles/pure_css_game/
+14.03.19 15:00:25<stoopkid> https://codepen.io/kowlor/pen/ZYYQoy
+14.03.19 15:04:49<editable-dog>not quite what i imagined but crazy still
+14.03.19 15:07:05<stoopkid> something like a sonic or icy tower thing with a parallax background?
+14.03.19 15:11:05<stoopkid> also how do you feel about using a standard parallax front-page for our site? the parallax front-pages aren't necessarily my favorite thing but they get the job done
+14.03.19 15:13:04<editable-dog>so..your math sounds about right, although i think i can probably go quite a bit lower
+14.03.19 15:19:11<editable-dog>idk, i find all the animated css stuff laggy and sloppy
+14.03.19 15:20:44<stoopkid> what would your number be? i guess mine is ~$2000 / month after taxes & upwork/freelancer fees, i could probably go a bit lower to like $1500 / mo but that wouldn't leave much room for error
+14.03.19 15:24:51<editable-dog>in terms of wallet cash, about a minimum,in order to not go all the way to my social case days,about $700
+14.03.19 15:25:35<editable-dog>i'd say that be ok as long as the work would be enjoyable and fulfilling
+14.03.19 15:26:07<editable-dog>now, i havent really sat down to do the taxes and insurances math yet
+14.03.19 15:28:24<editable-dog>but i think at least as long as i have some of that covered by my disability pension, it should be enough if the amount landing in my bank account would be i guess between 1000 and 1200
+14.03.19 15:28:29<editable-dog>probably 1000
+14.03.19 15:30:20<editable-dog>but..thats like...probably not saving anything, even with the disability pension still coming in
+14.03.19 15:32:03<editable-dog>wrt parallax, id say i quite enjoy the basic background images kind, like this http://pixelcog.github.io/parallax.js/
+14.03.19 15:32:20<editable-dog>image, not images
+14.03.19 15:34:25<stoopkid> right so if we're not saving anything we don't really have any room for error like a month where we only make $500 or w/e.. so our number probably needs to be like $2000 each after taxes
+14.03.19 15:36:37<editable-dog>possibly, i dont really know how many errors we intend to make
+14.03.19 15:37:39<editable-dog>if it averages to the number i gave, im fine
+14.03.19 15:40:03<stoopkid> i figure we should err on the side of caution, i.e. if we aim high we can hope it's high but can probably expect it to average out to our actual number, and be pleasantly surprised if we actually hit our higher goal
+14.03.19 15:45:31<editable-dog>well, so far ive applied to these jobs:
+                 <editable-dog>scraping DBpedia with some specific fields.
+14.03.19 15:45:39<editable-dog>Hourly Rate
+                 <editable-dog>Total amount the client will see on your proposal
+                 <editable-dog>$15.00/hr
+                 <editable-dog>You'll Receive
+                 <editable-dog>The estimated amount you'll receive after service fees
+14.03.19 15:45:40<editable-dog>$12.00/hr
+14.03.19 15:46:16<editable-dog>Hey Sorry Jindrich, we have closed this requirement for now. Thanks for the proposal
+14.03.19 15:46:36<editable-dog>QT GUI / HMI programming support.
+14.03.19 15:46:51<editable-dog>The estimated amount you'll receive after service fees
+14.03.19 15:46:54<editable-dog>$16.00/hr
+14.03.19 15:47:36<editable-dog>spent maybe a hour discussing requirements with them, didnt hear from them since friday
+14.03.19 15:48:45<editable-dog>then some crap reverse engineering i turned down
+14.03.19 15:48:48<editable-dog>eventually
+14.03.19 15:49:32<editable-dog>lets see freelancer..
+14.03.19 15:50:14<editable-dog>spent quite a bit of time back and forth with this CEGUI guy, eventually turned down his $150 proposal
+14.03.19 15:50:43<editable-dog>had 3 shorter interactions that didnt lead anywhere
+14.03.19 15:52:05<editable-dog>workana..applied to maybe 3 jobs, didnt go anywhere
+14.03.19 15:53:02<editable-dog>but...i think the rates you propose might be realistic, if things take off
+14.03.19 15:54:01<editable-dog>err, well, ive applied to many more jobs, i was just going through chat logs here
+14.03.19 15:54:23<editable-dog>so, applications where some followup chat happened
+14.03.19 15:56:33<stoopkid> i mean, realistically it's dirt cheap relative to the kind of work we would be aiming to do, it's just that it happens to still be enough that we can live on
+14.03.19 16:00:04<editable-dog>well your numbers would be reasonable for an estabilished pro i guess
+14.03.19 16:01:19<stoopkid> well, exactly, i'm setting the number relative to the least we would want to be expecting after we're fully financially supporting ourselves as established pros in the services we're offering
+14.03.19 16:01:58<editable-dog>also, so far, ive been very cautious wrt estimates of time spent on jobs, but that was also because it would mostly have been one-man jobs
+14.03.19 16:02:08<editable-dog>yeah
+14.03.19 16:05:39<stoopkid> yea a lot of jobs you've been looking at i would probably be getting up to speed on a lot of it on the job.. i'm getting pretty close to having the basic web design stuff ready to go and then i'll probably start applying a lot more, haven't been too comfortable applying to anything that i'm not pretty sure i already know more or less what to do
+14.03.19 16:06:26<editable-dog>yeah thats reasonable
+14.03.19 16:16:29<stoopkid> so wrt using a simple image parallax on the site would you wanna browse on here a bit for some free stock photos you might want to use? i can maybe have megan take some of our own photos for us at some point
+14.03.19 16:18:25<editable-dog>idk, do we want random photos on the background?
+14.03.19 16:21:11<stoopkid> not necessarily; some non-random photos/graphics might be nice though if we're showcasing general UI development.. depends what kind of site design we're going for
+14.03.19 16:22:14<editable-dog>i think ill leave this up to you now, if you dont mind
+14.03.19 16:22:34<editable-dog>kinda busy with a call and pondering another proposal here now
+14.03.19 16:23:18<stoopkid> no problem
+14.03.19 17:16:31<editable-dog>ok, applied to one underpaid job
+14.03.19 17:43:00<editable-dog>haha
+14.03.19 17:43:02<editable-dog>https://www.freelancer.com/projects/mysql/need-antivirus-system-like-bit/?w=f
+15.03.19 01:28:51<stoopkid> almost got pure css bootstrap responsive navbar w/ parallax layout.. not quite though, still having trouble taking full control over the layout & styling.. might need to find a more complete template but it's hard to find more complete templates that are already pure css, and then that's potentially just more complexity to be trying to take control over..
+15.03.19 01:44:01<stoopkid> there's some more complete packages that use js, but probably don't want to be using js frameworks too much at first for simple layout animation if possible, although js graphics frameworks are probably the next thing i want to dive into after basic css sites
+15.03.19 01:44:31<stoopkid> unless we land a qt job or something first
+15.03.19 01:49:16<stoopkid> well.. maybe.. it would be one logical next step (after learning vue & gridsome etc.. anyway..)
+15.03.19 02:06:56<stoopkid> https://github.com/sto0pkid/WebLayouts/tree/master/Template2
+15.03.19 02:10:42<stoopkid> one thing i was thinking might be cool but i'm not gonna devote much time to it yet is to work out the geometry to have those circles eclipse perfectly at top of the page after you scroll past the top banner/masthead section and then stick there to turn into a circular logo section of a sticky header
+15.03.19 02:13:55<stoopkid> several issues i'm having so far: getting the navigation menu to show up when it shifts to small display mode; it worked in isolation but i'm not sure what caused a problem when trying to integrate it w/ the parallax background
+15.03.19 02:15:23<stoopkid> getting general control over the parallax / perspectives stuff is an issue in and of itself
+15.03.19 02:19:28<stoopkid> and also having trouble getting control over the general layout of the navbar; i've got about 24 navbar layout permutations (basically just 1 general navbar layout parameterized by various formulaic rearrangements, reflections, inclusions/exclusions of components, etc..) but trying to get it down to where i can just easily pick & choose one and have it just plop in
+15.03.19 04:45:32<editable-dog>i dont see any circles
+15.03.19 04:45:42<editable-dog>i see the blog post .. nice
+15.03.19 04:46:23<stoopkid> what browser?
+15.03.19 04:46:29<editable-dog>chrome
+15.03.19 04:52:54<stoopkid> ok should be fixed now
+15.03.19 04:53:38<editable-dog>ah nice
+15.03.19 04:55:31<editable-dog>one issue i see, when i zoom in really hard, the footer starts overlapping the header
+15.03.19 05:00:29<editable-dog>when i zoom out to 80% and im scrolled all the way up, a white horizontal line appears roughle between This and is
+15.03.19 05:00:39<editable-dog>roughly
+15.03.19 05:06:44<stoopkid> good catch, i guess i need to start looking for proper zoom-level responsiveness in particular
+15.03.19 05:07:02<stoopkid> can't replicate the white horizontal line on my chrome though
+15.03.19 05:11:45<stoopkid> i guess w/ zooming there's a question of whether it should be an absolute zoom, like just magnifying some portion of the default display, or a readability zoom that might change the layout as it increases the size of elements
+15.03.19 05:12:42<stoopkid> i guess the latter is what the browser's zoom feature is meant for
+15.03.19 05:15:39<editable-dog>so where did you get the code for a navbar that can collapse and expand without js?
+15.03.19 05:16:26<editable-dog>yeah zooming always seems to do the latter
+15.03.19 05:19:11<stoopkid> http://jsbin.com/telejidowa/edit?html,css,output
+15.03.19 05:20:22<stoopkid> this one looks potentially better though: https://jsfiddle.net/viralpatel/2w1owayn/?utm_source=website&utm_medium=embed&utm_campaign=2w1owayn
+15.03.19 05:34:49<editable-dog>well, i'd say, while i totally feel the same wrt js vs pure, if the bootstrap standard template does it with js, then its a "worldwide" standard, and theres probably no reason to avoid it
+15.03.19 05:36:27<editable-dog>so i'd put this feature aside as a nicety
+15.03.19 05:50:17<editable-dog>whats the https://jsfiddle.net/viralpatel/2w1
+15.03.19 05:50:24<editable-dog>err
+15.03.19 05:50:26<editable-dog>whats the
+15.03.19 05:50:38<editable-dog>data-toggle="collapse"
+15.03.19 05:50:59<editable-dog>in the second one, since it seems it does and should work without it
+15.03.19 05:59:30<stoopkid> idk they might just be leaving that in there in case you want to usurp the layout/styling w/ js in some standard way later
+15.03.19 06:00:07<editable-dog>ic
+15.03.19 06:00:45<stoopkid> it definitely doesn't serve any purpose here that i can see
+15.03.19 06:02:14<stoopkid> anyway i got the navbar mostly fixed but w/ a glitch that when you go from large to small display, the menu starts out already expanded, although you can still close & open it after
+15.03.19 06:12:57<stoopkid> ok i see what's going on, they both have basically the same behavior in that if you expand in/out while the menu is open, it'll always come back up when you shrink the display until you click the toggle button again, but firefox starts out with it toggled and chrome starts out with it untoggled
+15.03.19 07:54:22<editable-dog>webmediaexperts
+15.03.19 07:54:23<editable-dog>Hello, It's my honor to work on your project, I'll be happy to create "Client Project Description", as per your description.
+15.03.19 08:04:15<stoopkid> tough competition
+15.03.19 08:20:27<stoopkid> alright i combined the css navbar w/ the non-parallax layout that the blog post was on and it's better
+15.03.19 08:20:59<editable-dog>nice
+15.03.19 08:43:20<editable-dog>im continuing my js journey..
+15.03.19 09:00:31<stoopkid> i'll probably start mine pretty soon
+15.03.19 09:01:31<stoopkid> so far Template4 is the best put together, starting to come close to being able to be a real site
+15.03.19 09:03:42<stoopkid> i just smashed the different pages down into sections of one longer main page, which is nice cause it automatically eliminates the majority of the problem of duplicated HTML
+15.03.19 09:05:50<editable-dog>so, https://jsfiddle.net/viralpatel/2w1
+15.03.19 09:05:54<editable-dog>damn
+15.03.19 09:06:00<editable-dog>"single page application"
+15.03.19 09:06:20<editable-dog>damn clipboard never works across vms
+15.03.19 09:07:21<stoopkid> yes but maybe less "application" and more "page"
+15.03.19 09:07:42<stoopkid> (in this case anyway i mean, hehe)
+15.03.19 09:08:20<editable-dog>yea lol thats just what they call it
+15.03.19 09:12:01<stoopkid> hm i was thinking the term maybe had further implications like actually dynamically rendering content or talking to cloud APIs like an actual application but idk; my mental model for this template is basically just a static online brochure
+15.03.19 09:12:44<editable-dog>maybe
+15.03.19 09:51:05<stoopkid> well, i guess Template3 & Template4 are both at the same level of completeness but the single-page definitely has the obv advantage for maintainability
+15.03.19 10:15:36<stoopkid> any comments/critiques/proposals (other than the zoom thing) for http://loworbit.now.im/web/WebLayouts/Template3/ or  http://loworbit.now.im/web/WebLayouts/Template4/ before i continue trying to design the rest of our site based on this
+15.03.19 10:15:48<editable-dog>zoom thing?
+15.03.19 10:16:22<stoopkid> layout & text getting screwy cause of browser zoom
+15.03.19 10:16:23<editable-dog>SPARQL
+15.03.19 10:19:15<editable-dog>well, i have only one complaint
+15.03.19 10:19:38<editable-dog>i hate the bootstrap header bar, how it obscures the page
+15.03.19 10:19:51<editable-dog>but...its the standard lol
+15.03.19 10:20:08<editable-dog>but just maybe..
+15.03.19 10:20:33<editable-dog>maybe we want to send the message that thats the kind of things we care about
+15.03.19 10:20:52<editable-dog>but it would probably mean doing the whole thing in something else i suppose?
+15.03.19 10:22:32<stoopkid> hrm.. probably not
+15.03.19 10:23:48<editable-dog>also, can i try to setup a github-pages repo and you could start pushing it there? I suppose i can maybe start tweaking the content already
+15.03.19 10:28:31<stoopkid> non-fixed navbar: loworbit.now.im/web/WebLayouts/Template5
+15.03.19 10:28:41<stoopkid> and sure
+15.03.19 10:28:59<editable-dog>well, loworbit works too i guess
+15.03.19 10:29:44<editable-dog>ah, non-fixed works too i guess, or do you see any issues with it?
+15.03.19 10:30:34<stoopkid> only that the menu toggle isn't visible
+15.03.19 10:30:47<stoopkid> (when you scroll down, i mean)
+15.03.19 10:31:13<stoopkid> that can probably be fixed but that would probably be a bit more involved
+15.03.19 10:32:45<editable-dog>that would kinda bring the issue back, of obscuring the text
+15.03.19 10:34:27<stoopkid> not if it could just slide past the text on the left / right though
+15.03.19 10:36:56<editable-dog>what do you mean slide past?
+15.03.19 10:39:30<stoopkid> if there's enough room in the left/right margins of the main content for the nav toggle to fit so that it doesn't  overlap any content it just sits in the upper left/right corner of the screen in the margin of the content
+15.03.19 10:41:20<editable-dog>ah
+15.03.19 10:41:53<editable-dog>well, that might be a good compromise
+15.03.19 10:42:40<editable-dog>although nothing beats, at least in the accessibility aspect that im sensitive about, the version where the navigation just slides out of view
+15.03.19 10:42:44<editable-dog>so idk
+15.03.19 10:44:43<editable-dog>i think id prefer if we keep our own site maximally accessible, and showcase the more mainstream things first on our portfolio page(s)
+15.03.19 10:46:36<stoopkid> can you elaborate some on the kind of accessibility you're looking for?
+15.03.19 10:49:04<editable-dog>one, the navigation bar can take a significant portion of the screen space when things are zoomed in, like i tend to zoom things sometimes, and i imagine hard-of-sight people might
+15.03.19 10:50:18<editable-dog>two, the standard way to scroll a page down, ie spacebar or pagedown key, scroll by the whole height of the page, including the top bar. Thats really my biggest issue
+15.03.19 10:51:07<editable-dog>so if you just press pagedown, one or more lines that were previously under the screen edge get covered by the bar
+15.03.19 10:53:28<editable-dog>sure, these arent significant issues, maybe not issues at all
+15.03.19 10:53:57<editable-dog>more of ergonomics/annoyance rather than accessibility
+15.03.19 10:54:16<stoopkid> so you're saying that if you page down, something that was below the bottom might end up above the top and so the user misses it?
+15.03.19 10:54:42<editable-dog>it ends up hidden by the nav bar
+15.03.19 10:54:48<editable-dog>go try it
+15.03.19 10:55:26<editable-dog>hey, it actually works correctly here
+15.03.19 10:56:01<editable-dog>awesome
+15.03.19 10:56:51<stoopkid> heh, well cool, yea it doesn't seem to end up hidden for me either
+15.03.19 10:58:07<editable-dog>im so used to this happening everywhere that i didnt even really check
+15.03.19 10:59:07<editable-dog>so, firefox even does the correct thing and if you have just a half of a line visible at the bottom and scroll, it brings the whole line to view 
+15.03.19 10:59:24<editable-dog>chrome merely scrolls by the content area width
+15.03.19 11:00:09<stoopkid> i don't usually scroll that way i swipe the touch-pad so i haven't ever really seen it or looked for it, do you have an example site where it happens? i wonder what's done differently to make it work correctly
+15.03.19 11:00:44<editable-dog>lets see, maybe its a browser thing and i wont be able to find any examples now..
+15.03.19 11:03:02<editable-dog>so, different issue i believe, but on https://twitter.com/Twitter if you zoom in enough to bring out the horizontal scroll bar, then its height isnt accounted for
+15.03.19 11:03:55<editable-dog>https://www.intel.com/content/www/us/en/homepage.html
+15.03.19 11:06:10<editable-dog>again only at higher zoom, although horiizontal scroolbar doesnt need to appear, and the content doesnt seem to run by by the entire height of the nav bar
+15.03.19 11:06:23<editable-dog>overrun
+15.03.19 11:06:54<editable-dog>https://www.linkedin.com/company/intel-corporation
+15.03.19 11:06:56<editable-dog>bad
+15.03.19 11:07:27<editable-dog>nvm i think that's the h scrollbar again
+15.03.19 11:14:15<editable-dog>nope, cant find it anywhere now
+15.03.19 11:14:23<editable-dog>kinda nice: http://www.jorgerigabert.com/
+15.03.19 11:14:47<editable-dog>just doesnt work
+15.03.19 11:15:35<stoopkid> you mean as a model for our site? cause it looks like it's functioning reasonably well
+15.03.19 11:15:57<editable-dog>nothing happens when i click the side buttons
+15.03.19 11:16:19<stoopkid> ah they work for me, i wonder what's broken for you
+15.03.19 11:16:20<editable-dog>not that i'd ever think to click them, normally
+15.03.19 11:17:04<stoopkid> did you try firefox? seems to be a chrome thing
+15.03.19 11:17:06<editable-dog>ah i have noscript in this browser
+15.03.19 11:17:15<editable-dog>yeah works in firefox
+15.03.19 11:18:43<editable-dog>mm yeah chrome thing
+15.03.19 11:20:13<stoopkid> so you prefer the side nav over the banner nav?
+15.03.19 11:20:27<editable-dog>not really
+15.03.19 11:20:38<editable-dog>i prefer a get-out-of-my-way nav 
+15.03.19 11:20:44<editable-dog>but idk
+15.03.19 11:20:52<stoopkid> heh, gotcha
+15.03.19 11:22:08<stoopkid> well, i will say at least that on our simple site a fixed header nav is definitely overkill, like we don't have a million options you need to quickly navigate from anywhere
+15.03.19 11:22:20<stoopkid> basically just scrolling from one side of a brochure to the other
+15.03.19 11:29:16<editable-dog>so, i did a quick scan of local job board for part-time programming positions, and there are quite a few now, nice
+15.03.19 11:29:43<editable-dog>not that i'd be giving our plan up already
+15.03.19 11:30:16<editable-dog>just figured i'd look if there isnt something super awesome available
+15.03.19 11:30:58<stoopkid> options are always good
+15.03.19 11:31:05<editable-dog>im not sure, but i dont think there were as many part time positions before
+15.03.19 11:31:37<editable-dog>definitely gives me little more peace of mind
+15.03.19 11:33:47<stoopkid> wrt local part-time/full-time programming positions there's never been much of a shortage around here, relative to some basic effort on my part to actually put myself in position for them
+15.03.19 11:36:05<stoopkid> so i guess i haven't been all that worried wrt having that as a fallback option
+15.03.19 11:38:55<stoopkid> especially if we already have some basics to show like a well-designed portfolio site hooked up to as comprehensive of a tech/business stack as we can come up with to showcase while we're looking for (hopefully getting) some jobs.. i figure that'll be plenty to show some prospective employers around here
+15.03.19 11:39:25<editable-dog>theres deff no shortage of fulltime positions here, but with part time, the number of available choices goes way down 
+15.03.19 13:31:40<stoopkid> https://software-for-immortality.github.io
+15.03.19 13:39:03<editable-dog>nice
+15.03.19 13:39:35<editable-dog>now, though, what about the blog-like section? it should get its own page i guess
+15.03.19 13:42:31<stoopkid> the blog is gonna be a little more involved that's the only reason i took it out for now, i.e. it didn't make as much sense for this simple one-page site template, and yea i figure it could get its own separate page
+15.03.19 13:45:21<editable-dog>well, with vue this could be like a subpage but within the SPA
+15.03.19 13:45:23<stoopkid> although it could; we could reasonably have a one-page blog, i guess it's not even a drastically different model than this one-page site template i already put up there, just many more sections with proper formatting
+15.03.19 13:46:17<editable-dog>yeah im all for one-page-blog, just on a different page than this one:)
+15.03.19 13:48:43<editable-dog>probably we should then really consider keeping the content in md files tho
+15.03.19 14:59:29<stoopkid> so probably the gridsome-starter-markdown-blog ?
+15.03.19 15:19:57<editable-dog>i guess
+16.03.19 17:25:23<editable-dog>ugh, i just spent so much time debugging such a stupid thing
+16.03.19 17:26:37<editable-dog>i think i already spent so long yesterday debugging a first thing, sort of an oversight in my design or maybe just forgot to finish some changes, not sure
+16.03.19 17:27:19<editable-dog>so today morning i fixed it, and then i spend so much time again bringing the other code up to date with the change
+16.03.19 17:28:31<editable-dog>like...at some point, i drop all my attention down into the code, and then when i finish something and something still doesnt work, instead of backing up to ponder the design, im hopelessly lost in the code
+16.03.19 17:28:53<editable-dog>and have to debug my way to figuring out where i overlooked something in the design
+16.03.19 17:30:17<editable-dog>and i stay stuck in this tunnel vision and have to painfully debug what i might otherwise realize simply by looking at the control flow
+16.03.19 17:30:34<editable-dog>we really should work together more closely
+16.03.19 17:31:56<editable-dog>days like these i feel so dumb
+16.03.19 23:47:34<stoopkid> yea
+16.03.19 23:48:07<stoopkid> that's kinda how i feel right now after starting to actually get the picture wrt how gridsome works
+16.03.19 23:51:34<stoopkid> and yea probably wouldn't have been stuck on so many basics if i had been going over it w/ you, but then otoh didn't wanna waste your time on real basic stuff that i'd know if i'd just gone through a tutorial
+17.03.19 03:37:00<stoopkid> alright i'm getting a pretty good handle on gridsome & vue now
+17.03.19 03:39:36<stoopkid> i guess more gridsome than vue really
+17.03.19 03:41:09<stoopkid> w/ vue i basically understand the parts that you do in gridsome, but i haven't experimented much with using vue outside of gridsome or how to properly make a from-scratch vue application
+17.03.19 03:41:52<stoopkid> but at least the 3-part .vue file syntax and all the v-if, v-for, v-html stuff..
+17.03.19 03:51:04<stoopkid> pretty straightforward now that i'm getting the hang of it, i guess it was slightly overwhelming at first being confronted simultaneously with Vue, GraphQL and Gridsome's particulars when i was still just trying to refresh my memory on JS/Node.js/HTML/CSS
+17.03.19 03:51:48<stoopkid> and getting acquainted w/ modern web expectations
+17.03.19 04:35:45<editable-dog>yeah, thats how i felt the first time, why i went back to just vue
+17.03.19 04:35:55<editable-dog>alright, doing anything now?
+17.03.19 05:00:47<stoopkid> just finished up a gridsome tutorial on how to make a markdown blog, but i probably should be in bed lol
+17.03.19 05:01:51<stoopkid> https://www.youtube.com/watch?v=uF3K3IpRfhE
+17.03.19 05:02:07<stoopkid> made less than 2 weeks ago heh
+17.03.19 05:04:04<stoopkid> my overall impression after going through this tutorial: gridsome/graphql/vue are pretty cool, i kinda hope this takes off
+17.03.19 05:17:18<stoopkid> later maybe we can go through building a blog-site together and then hopefully have as a result of that a basic prototype for our portfolio site and then i can just work on styling it?
+17.03.19 05:21:17<stoopkid> hm, one thing i notice about gridsome is that it dynamically renders everything
+17.03.19 05:21:37<stoopkid> ah hrm
+17.03.19 05:31:11<stoopkid> ah lol, it's because the stylesheet file is "/assets/..." which when viewing locally my computer interprets as an absolute file-path..
+17.03.19 05:35:48<editable-dog>can you set it up on azure tomorrow?
+17.03.19 05:37:11<editable-dog>the new vps
+17.03.19 05:37:22<stoopkid> sure
+17.03.19 06:53:01<editable-dog>got turned down on another job because i dont have django experience
+17.03.19 06:58:16<editable-dog>idk how you feel on node vs python once we get to some backending
+17.03.19 06:59:04<editable-dog>node has obvious advantages, but getting django under my belt would probably be fairly quick
+17.03.19 07:53:44*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-rqezpwomfhmevrlq, (unauthenticated): kook)
+17.03.19 07:54:07<sirccloud> https://www.freelancer.com/projects/website-design/Skateboard-across-the-ocean.html
+17.03.19 07:54:21<sirccloud> This better work out
+17.03.19 09:29:59<editable-dog>i wonder if you want to try answering this one https://www.upwork.com/jobs/GeoJSON-Map-Isochrone-outlines-using-Leaflet-Google-maps-and-TrimeTravel-API_~0116f2a8792bd5bd85
+17.03.19 10:23:18*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-rqezpwomfhmevrlq) left #atlas-project: Quit: Connection closed for inactivity
+17.03.19 20:06:53<stoopkid> hm maybe
+17.03.19 20:10:38<stoopkid> wrt nodejs vs python on backend i figured i was gonna start w/ nodejs but i figured eventually i was gonna master python for backend too
+17.03.19 20:12:01<stoopkid> mainly just cause everything i'm already working w/ uses node so i figured i should get a handle on that while it's immediately relevant to what i'm doing
+17.03.19 20:20:50<stoopkid> im maybe a bit iffy about the hourly work over upwork/freelancer but idk, the mapping job definitely looks interesting and is probably relatively approachable but idk if i'm quite where i want to be w/ that
+17.03.19 20:26:06<stoopkid> it's ultimately probably about the same amount of complexity as just getting solid on this standard modern web stuff, which i'm gonna say is realistically probably a couple weeks of just getting up to speed to be producing professional quality results efficiently
+17.03.19 20:27:36<stoopkid> we could probably do that job but we can already know right now that we would be very inefficient and many of those hours would be spent w/ us just getting a handle on the frameworks, the data and the map design
+17.03.19 20:29:14<editable-dog>i guess thats right, depends on wether its something we want to learn anyway or not
+17.03.19 20:31:57<stoopkid> it's something i'm interested in learning but this is maybe a more in depth job than i would want to jump into for my first experiments with it; if we had a simpler web gig and somebody just wanted it to show something simple like their store location on google maps that would be more of something to start w/ unless we did our own experimentation on the side, but that wouldn't be any particular priority for me
+17.03.19 20:32:34<editable-dog>fair fair
+17.03.19 20:37:43<stoopkid> something like this if we were more ready for app dev: https://www.freelancer.com/projects/php/Fresh-WEBSITE-plus-Apps-for/?w=f
+17.03.19 20:41:48<stoopkid> https://www.freelancer.com/projects/graphic-design/Finish-website-18971302/?w=f
+17.03.19 20:53:58<stoopkid> so the way i'm figuring it.. over the course 1-2 years we could have the majority of the major web languages & frameworks under our belts and then just be at the point of fine-tuning, so i'm not really picky about what we learn other than that ideally for me would find a way to integrate all the things we do into basically just being one thing, like we have relative proficiency in many different systems but each of
+17.03.19 20:53:59<stoopkid> those skills is kind of silo-ed into its own space not like integrated into a complete package
+17.03.19 21:06:13<stoopkid> i figure anything that we're gonna try to focus down on like "this should be 'the' thing" should be a human-level thing not a particular framework/lang, ex. "typography & graphic design", as opposed to "HTML / CSS" etc.. with the expectation that the frameworks/langs are gonna change, probably every couple of years or so
+17.03.19 21:12:19<stoopkid> not as like a strict rule or anything i just figure that's where our general mindset & marketing should be
+17.03.19 21:15:56<editable-dog>probably
+17.03.19 21:27:29<editable-dog>im gonna go to bed "early" today
+17.03.19 21:29:31<editable-dog>im starting to feel tired of this idea of working for somebody else
+17.03.19 21:31:53<stoopkid> as opposed to say owning software IP or crowdfunding your own ideas
+17.03.19 21:32:11<editable-dog>yeah
+17.03.19 21:33:51<stoopkid> seems like that's the only alternative to working for somebody else though?
+17.03.19 21:35:23<editable-dog>idk, in theory i could take a year of time to build an app
+17.03.19 21:35:58<editable-dog>but idk, your plan is probably the wise middle road
+17.03.19 21:39:12<stoopkid> yea it's just a lot of eggs to put in a fairly risky basket that could potentially leave us back at square 1 if it flops for whatever reason, and also doesn't have much opportunity to start getting paid sooner than that
+17.03.19 21:43:31<stoopkid> also we could design some kind of application around the kind of work that's actually readily available and build it up over time, that would be a much less risky basket
+17.03.19 21:44:08<editable-dog>yeah
+17.03.19 21:46:06<stoopkid> like at the very least if you wanted to build ex. an android app we should probably get ourselves equipped to be able to market ourselves as android app devs & designers before we actually set forth to really invest in building our own android app
+17.03.19 21:52:51<stoopkid> so i mean it's something we could totally fit in to our schedule & business model but we can do it in a risk-minimizing way (which i kinda figure might actually improve the results with the actual app)
+17.03.19 21:58:27<stoopkid> but otoh i'm generally uncomfortable w/ the proprietary sw model anyway.. what i would potentially be more comfortable w/ though is if we had proprietary sw but crowd-funding to open-source it
+17.03.19 22:00:44<stoopkid> like i just want to be paid for performing the dev service so that i can support myself for more dev services, not get paid just for property ownership
+17.03.19 22:06:04<stoopkid> the way i'm looking at it, after basic web dev we're in a position to go pretty much any direction in just a couple logical steps
+17.03.19 22:11:01<stoopkid> so if you have a specific app idea in mind that you wanna aim for i'd at least be open to developing in that direction, incrementally
+18.03.19 03:39:40<editable-dog>if you mean you dont want to get rich, its ok, i can keep all the money
+18.03.19 03:39:44<editable-dog>j/k
+18.03.19 03:40:19<editable-dog>well first i have to have the cnl system ready..
+18.03.19 03:41:42<editable-dog>seriously though, what i described earlier, the open source core + proprieatary addons + "proprietary" packaging and distribution etc, seems to be a standard way
+18.03.19 03:42:24<editable-dog>along with "proprietary" support service, to sustain any business around open source software
+18.03.19 03:44:15<editable-dog>id be open to try other models like crowdfunding, tho
+18.03.19 04:58:02<editable-dog>Hi.. thanks for responding..
+18.03.19 04:58:04<editable-dog>I have the UI layout and the functionality for the visiting card type of canvas. It is buggy.. as described in the project description
+                 <editable-dog>Uses Django...
+                 <editable-dog>L
+                 <editable-dog>Currently the app is not hosted..
+18.03.19 04:58:05<editable-dog>so, you only need the fix/datastructure redesign? Can we see the code?
+                 <editable-dog>hi there
+                 <editable-dog>16 MAR 2019 · 7:33 AM
+18.03.19 04:58:06<editable-dog>Yes. Mainly it is a data structure redesign. I will get it hosted and share the link with you.
+                 <editable-dog>L
+                 <editable-dog>koo5 - have you worked with frameworks?
+18.03.19 04:58:07<editable-dog>Honestly i have more experience in systems programming and desktop apps, but now me and my teammate have decided to start doing web seriously. He has more frontend experience, and i am learning one frontend framework . So it may take us a bit of time to understand django code. But i know enough of the principles.
+                 <editable-dog>18 MAR 2019 · 7:30 AM
+                 <editable-dog>sounds good.. if you are up to it, will award it to you.. pl take a look at canva.com visiting card design template for somewhat a reference.
+                 <editable-dog>We use Django framework..
+                 <editable-dog>L
+                 <editable-dog>I think you must be able to code since you are working on semantic web. But you have no reviews.. let me know if you are up to it. I am just getting the hosting ready
+                 <editable-dog>L
+                 <editable-dog>ok, i played with canva.com, nice app
+                 <editable-dog>yes, we can indeed code, and i think we are up to it:)
+18.03.19 04:58:14<editable-dog>in the unlikely case that we find we are not up to it, we can let you know quickly and you can hire someone else
+18.03.19 13:33:41<stoopkid> cool
+18.03.19 13:33:50<stoopkid> can you link the original job listing?
+18.03.19 14:13:26<stoopkid> "if you mean you dont want to get rich" depends on the definition of "rich"
+18.03.19 14:18:32<stoopkid> like for most people "rich" means owning some property that continues to earn you profit so that you can escape the world of the plebs and have them do your bidding
+18.03.19 14:18:51<stoopkid> doesn't interest me at all
+18.03.19 14:19:48<stoopkid> like i don't measure my personal richness in terms of my ability to coerce others into my service
+18.03.19 14:22:38<stoopkid> for me "rich" would mean just having enough success in a service-oriented business model so that i could have some legitimacy in arguing against capitalism & intellectual property rights and in favor of universal basic income..
+18.03.19 14:31:26<stoopkid> i mean, i'm not opposed to doing it, but it's definitely not my long-term goal for how i'd want to financially support myself
+18.03.19 14:47:34<stoopkid> anyway, i've been looking into accessibility for screen-readers and keyboard navigation.. in some ways i kind of like this version of web-navigation even better, like it's a very algorithmic approach to UI interaction.. reminds me of doing text-manipulation by keyboard shortcuts in vim
+18.03.19 14:48:49<stoopkid> who would've thought web-accessibility for the blind would be so 1337
+18.03.19 14:55:02<stoopkid> i was starting to think that my pure HTML/CSS stuff was a bit pedantic but apparently that's not even minimalist enough.. apparently progressive enhancement is supposed to start at pure HTML5 and CSS is just an enhancement for seeing users, i.e. none of the basic functionality for the site should even be dependent on CSS
+18.03.19 14:57:23<stoopkid> i've been playing around w/ js disabled but i didn't even realize til last night that browsers have options to turn off CSS
+18.03.19 15:29:15*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-xcbykbbvlgozqscl, (unauthenticated): kook)
+18.03.19 15:29:58<sirccloud> https://www.freelancer.com/projects/website-design/SVG-Application-18955684.html
+18.03.19 15:35:31<stoopkid> cool yea if we have 2 months to finish it it looks like probably a piece of cake
+18.03.19 16:27:12<stoopkid> i guess wrt doing our own app & doing it on a proprietary model, i'm open to it but i'd probably have you take the lead on it, like i don't have any particular app that would be like my "dream app" to work on, i just want to code whatever.. could be for somebody else, could be for our own app, doesn't really matter much to me as long as we have a profit model around it and are doing high-quality reusable work
+18.03.19 16:32:42<stoopkid> i guess i should say "professional" quality.. our work is generally "high" quality but i'd say it's generally not "professional" quality.. not sure if you'd agree w/ that characterization
+18.03.19 16:41:20<stoopkid> like idk, it seems like you have way more specific ideas in mind for what you want to be working on whereas i'm coming from kind of the opposite position of trying to figure out what i can work on that doesn't really require me to have any specific idea in mind, i.e. specifically seeking out the lowest common denominator stuff that's pretty much universally in constant demand
+18.03.19 16:44:55<stoopkid> so i mean my specific ideas at this stage are just simple things like "i want my websites to be perfectly navigable by keyboard or screen-reader", "i want my websites to be zoom-responsive", "i want locally-hosted WYSIWYG CMS for static site generation", etc..
+18.03.19 17:38:08<editable-dog>actually thats really hard to judge, wrt professionality of our work
+18.03.19 17:38:50*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-xcbykbbvlgozqscl) left #atlas-project: Quit: Connection closed for inactivity
+18.03.19 17:58:21<stoopkid> i guess the criteria i'm going by for any given work is that all the standard bells/whistles are included and the some set of best practices are followed (ex. if we're designing a web page, is it responsive? is it accessible? does it have effective layout?), that including these things does not seriously impact our performance (ex. we might know how to write "high-quality" code for the core component of the application
+                 <stoopkid> but how hard will it be for us to fit that component into a fully-featured application?), and that we don't need the client to hold our hand through the process of including these things (i.e. in web design they should get a responsive accessible design by default without having to explicitly write this into their specifications), etc..
+18.03.19 18:09:27<stoopkid> like idk, when i say "professional quality" i'm not implying some "higher" high quality, it's an independent dimension
+18.03.19 18:18:57<stoopkid> so ex.. do we do "professional quality" web design? no way
+18.03.19 18:20:07<stoopkid> we might do some "high" quality HTML/CSS/JS components, potentially higher quality than most "professionals" are capable of, but are we "ready to go" on all the "standard" things that every "professional" would include? no way
+18.03.19 18:24:48<stoopkid> so i mean think of all the web-devs out there who have 1/10th of the programming capabilities that either of us have in our little toes, but they can still run circles around us when it comes to pushing out a fully-featured site with all the standard bells & whistles and don't need the client to explicitly walk them through those standard requirements
+18.03.19 18:28:05<editable-dog>ok, well, when i think professional quality, i think clarity of code, security, having big picture in mind, etc
+18.03.19 18:28:37<editable-dog>iow, we can still push out a professional quality website, we're just gonna have to acquire a lot of domain knowledge along the way, so it will take us a lot longer
+18.03.19 18:30:23<editable-dog>and wrt that, id like to start using "professional quality" in the sense of code clarity, in our projects
+18.03.19 18:31:27<stoopkid> i guess "readiness for a given domain" more closely describes what i'm trying to get at than "professional quality"
+18.03.19 18:33:34<editable-dog>what were we talking about anyway?
+18.03.19 18:35:22<stoopkid> you wanting to do our own app and me elaborating on how i might want to approach that if we decided to pursue it
+18.03.19 18:37:44<editable-dog>ah
+18.03.19 18:37:56<editable-dog>yea i do have this vision wrt to cnl ui
+18.03.19 18:38:53<stoopkid> so wrt that, for example "well first i have to have the cnl system ready.." is almost exactly opposite of how i'd want to approach it
+18.03.19 18:39:59<stoopkid> that would be more like what i would do last
+18.03.19 18:50:04<stoopkid> like, how many domains is the cnl stuff gonna be building on? if we were to build this cnl then hypothetically we should be able to get the point of having relative expertise in each domain involved, and then we can be pretty confident that this expertise is gonna be more universally applicable than the end-result app that makes use of it
+18.03.19 18:56:48<editable-dog>what i meant was that we'd first have to have the parser/engine working, and demonstrated working for example fast enough, before we could responsibly put our eggs into that basket, since beyond that it would be all easy predictable work
+18.03.19 18:57:12<editable-dog>until then, its research and we cant be sure where it will go
+18.03.19 18:58:12<editable-dog>this also applies to covering bases
+18.03.19 18:58:36<editable-dog>we've already covered a lot of bases, but we cant be sure where it will force us to look next
+18.03.19 19:01:26<stoopkid> hm, idk, let's say for example you wanted to build it as an android app; if we were trying to prototype the CNL before just being generally ready in the domain of android apps, that would be an extremely major red flag for me
+18.03.19 19:05:46<editable-dog>well, thats why i said "first id need to have the cnl ready", because we need to have a distinction between whats our(my) personal and what we are doing as a business
+18.03.19 19:07:22<editable-dog>we shouldnt treat it as a business plan before that
+18.03.19 19:10:13<editable-dog>otoh, i am likely to always be putting some energy into it
+18.03.19 19:10:55<editable-dog>but not as a priority, because that would be unsustainable
+18.03.19 19:13:22<stoopkid> gotcha, ok i think we're on the same page then. if you have specific things that we can start incorporating into the business plan that would get us successively closer to being ready for tackling that project, i'm totally open to prioritizing those things.. ultimately i think which direction we go matters less than just picking some directions, sticking to them, and not getting too ahead of ourselves
+18.03.19 19:28:20<editable-dog>ill definitely be looking out for opportunities
+18.03.19 19:30:18<editable-dog>hmm, we should get our (sleep) schedules more synchronized, but i dont want screw up mine
+18.03.19 19:31:25<editable-dog>i showed up late tonight, but do you think in general you'd be able to start showing up earlier?
+18.03.19 19:31:55<editable-dog>so we can actually get down to some hacking too
+18.03.19 19:32:30<editable-dog>because right now im ready to call it a day
+18.03.19 19:33:23<editable-dog>guess im getting old
+18.03.19 19:35:48<stoopkid> yea i've been planning on getting my sleep schedule to where i'm waking up at 5 (my time) but i've been having trouble cause my sleep schedule is already so screwed up and worse most of my productivity comes at night time
+18.03.19 19:36:34<editable-dog>5pm?
+18.03.19 19:36:56<stoopkid> am heh
+18.03.19 19:37:25<editable-dog>why so drastically early
+18.03.19 19:37:48<editable-dog>i mean, besides all the obvious good reasons
+18.03.19 19:38:37<editable-dog>yeah same with night time productivity
+18.03.19 19:38:52<stoopkid> so that you don't have to be up til midnight for us to be able to work a full day together heh
+18.03.19 19:39:41<editable-dog>is it 19 over there now?
+18.03.19 19:40:02<stoopkid> yea
+18.03.19 19:40:32<editable-dog>so 5 hours shift in winter
+18.03.19 19:42:22<editable-dog>well i cant bring myself to any work before the noon, so if you show up at 7pm, taht would be like the earliest reasonable optimal time
+18.03.19 19:43:22<editable-dog>but if you show up even a few hours later, that should still work very well
+18.03.19 19:45:21<editable-dog>well, or if you'd prefer to keep your schedule shifted into the night, i could try getting up early
+18.03.19 19:46:18<editable-dog>iow i can try getting up at 5 hehe
+18.03.19 19:47:24<stoopkid> nah megan would hate me if we did that lol, 7 works
+18.03.19 19:48:22<editable-dog>you mean if i then kept you up until your morning or beyond? yeah i can imagine
+18.03.19 19:52:32<stoopkid> yea she would really prefer if i was on approximately the 9-5 working schedule and it sounds like that work well for you too, and i don't really have any particular preference so..
+18.03.19 19:53:02<stoopkid> my current schedule is less a matter of preference and more a matter of lack of self-discipline heh.. not good
+18.03.19 19:56:01<stoopkid> so i'll aim for being ready to go at ~9 tomorrow and then i'll try to work that down to ~7
+18.03.19 19:57:31<stoopkid> i need like 2 hours in the morning for my brain to actually turn on tho so that still amounts to waking up at 5 lol
+18.03.19 20:00:28<editable-dog>well it would do me good to have to get up real early have afternoon/evening free like normal people too, my current usual schedule also isnt optimal for me, but the downside for you would obviously be much bigger than the upside for me, i guess
+18.03.19 20:00:46<editable-dog>anyway
+18.03.19 20:00:56<editable-dog>just 5 hours and such a problem, lol
+18.03.19 20:05:27<stoopkid> going even earlier wouldn't be a downside for me really so if you'd prefer to start earlier i can aim for that
+18.03.19 20:13:25<editable-dog>if you'd be ready at 6, then we could put in 6 hours before the distractors start pouring in here
+18.03.19 20:14:32<editable-dog>that would be your noon, then you could go have lunch with megan if she didnt work all the way downtown
+18.03.19 20:15:42<editable-dog>then things get quiet here around 22 my time, and thats exactly when you should go socialize
+18.03.19 20:17:07<editable-dog>and then when you get back to the computer i should go sleep
+18.03.19 20:18:14<editable-dog>so...i guess we'll aim for the six hours in the morning
+18.03.19 20:19:35<editable-dog>idk
+18.03.19 20:19:50<editable-dog>i can think in the morning just fine, problem is, i dont want to
+18.03.19 20:20:43<editable-dog>so if i get driven into doign something together, it would work i think
+18.03.19 20:21:35<stoopkid> heh, well, it sounds fine to me.. we can aim for that and then adjust to start later if we decide we want to
+18.03.19 20:28:00<editable-dog>ok
+18.03.19 20:28:19<editable-dog>take your time to adjust lol, dont worry if it doesnt work out tomorrow
+18.03.19 20:29:10<editable-dog>i think im gonna be babysitting and going to doctors anyway...
+18.03.19 20:30:17<stoopkid> alright sounds like a plan; i guess i'm gonna head off and socialize for a bit so i don't get myself absorbed in something and end up staying up til 6 heh
+18.03.19 20:30:30<editable-dog>lol ok
+18.03.19 20:31:13<editable-dog>alright see you tomorrow then
+18.03.19 20:33:40<editable-dog>say hi to megan, i didnt send my congratulations earlier, so...
+18.03.19 20:34:22<editable-dog>give her my congratulations i guess, or something
+19.03.19 04:54:53<stoopkid> alright, i'm ready-ish
+19.03.19 04:55:13<stoopkid> not sure if my brain's all the way on yet but we'll see
+19.03.19 04:56:34<editable-dog>yo
+19.03.19 04:56:55<editable-dog>ok, so we wanna play with gridsome?
+19.03.19 04:57:27<stoopkid> sure, new vps?
+19.03.19 04:57:34<editable-dog>yeah
+19.03.19 04:57:44<editable-dog>its not even 5 over there, i feel ya
+19.03.19 04:59:06<editable-dog>hmm can you paste the ssh line for me?
+19.03.19 04:59:42<stoopkid> "ssh sfi@51.140.155.227"
+19.03.19 05:00:04<editable-dog>thx
+19.03.19 05:00:14<editable-dog>ok let me do those updates and reboot it
+19.03.19 05:01:12<editable-dog>did you get gridsome there...or we did?
+19.03.19 05:03:10<stoopkid> yea i think we got it set up when we were gonna replicate joe's gardening service
+19.03.19 05:03:20<editable-dog>im in tmux
+                 <stoopkid> but i haven't touched it since then
+19.03.19 05:04:14<editable-dog>so we wanna set up our own blog now?
+19.03.19 05:06:09<stoopkid> sure, i figure we'd just use one of their two markdown starter blogs as a template and see what we might want to make out of it
+19.03.19 05:09:28<editable-dog>yeah ok
+19.03.19 05:26:57<editable-dog>ok firewall opened
+19.03.19 05:29:29<editable-dog>http://51.140.155.227/
+19.03.19 05:31:21<editable-dog>i guess we're gonna use github pages to host our thing?
+19.03.19 05:31:38<editable-dog>should probably try out netlify first just to see what we can offer clients
+19.03.19 05:33:44<editable-dog>i wonder how hard does this thing want to live in the webserver root
+19.03.19 05:34:28<stoopkid> yea i was wondering that as well
+19.03.19 05:34:41<stoopkid> not sure if there's some config setting you can change for that
+19.03.19 05:41:28<editable-dog>buuut, i guess after all we want the blog integrated into the rest of the site
+19.03.19 05:41:43<editable-dog>like, it should be one item in the navbar
+19.03.19 05:42:48<editable-dog>buut, it shouldnt pollute the top level directory with individual blog post dirs
+19.03.19 05:43:47<stoopkid> hrm..
+19.03.19 05:44:42<stoopkid> maybe we can just make a subdirectory of the gridsome directory mirroring whatever document root we want to deploy it under
+19.03.19 05:45:34<editable-dog>i dont follow
+19.03.19 05:47:54<stoopkid> well it does everything relative to the webserver root so pages/Index.vue translates to "mysite.com/index.html" so if we want the site to deploy under "mysite.com/gridsome/" maybe we can just throw everything under a pages/gridsome directory and hopefully gridsome would route it properly
+19.03.19 05:49:08<stoopkid> side-note: netlify looks pretty trivial
+19.03.19 05:49:44<editable-dog>ok, that alllmost worked
+19.03.19 05:53:01<editable-dog>there's https://gridsome.org/docs/config/#pathprefix but thats for the whole gridsome site
+19.03.19 05:57:09<stoopkid> isn't that what we were looking for?
+19.03.19 06:00:02<editable-dog>i suppose we want to have the whole site be a SPA, with the blog main page being just one of the site's pages
+19.03.19 06:02:22<editable-dog>it should get built into like /AboutUs, /Blog/index.html, /Blog/...
+19.03.19 06:04:58<editable-dog>this src/index.html file seems to go through some templating engine, but not the vue component templeate style one
+19.03.19 06:08:16<stoopkid> what did you set to have it build index.html into the blog directory
+19.03.19 06:10:03<editable-dog>mmm
+19.03.19 06:15:48<stoopkid> ok cool that all seems to make sense
+19.03.19 06:18:21<editable-dog>yeah?
+19.03.19 06:22:37<editable-dog>cant say it makes sense to me but it seems to do what we want now
+19.03.19 06:28:13<editable-dog>grabbing another coffee
+19.03.19 06:29:21<stoopkid> well i'm not sure exactly how it makes use of src/index.html, doesn't seem to be in their basic documentation for the src directory structure, but it seems to be using it as a global template for all of the pages, but other than that it's all working as expected
+19.03.19 06:30:56<stoopkid> i wonder if gridsome can build and develop at the same time
+19.03.19 06:32:19<stoopkid> ah i see you tried that in the other window
+19.03.19 06:41:15<stoopkid> ok nvm: https://gridsome.org/docs/overriding-index
+19.03.19 06:41:46<stoopkid> so it's all seems to be making sense
+19.03.19 06:45:10<editable-dog>ok yeah that makes sense, you simply need some pure html page to include the vue stuff in
+19.03.19 06:47:40<editable-dog>ok gridsome develop needed a restart after changing the config file
+19.03.19 06:48:21<editable-dog>so, now we integrate your awesome navigation or does gridsome provide something to that effect?
+19.03.19 06:49:26<editable-dog>london time hehe
+19.03.19 06:49:30<editable-dog>hows the latency for you?
+19.03.19 06:49:54<stoopkid> working pretty well for me, how bout you?
+19.03.19 06:49:56<editable-dog>its seamless for me
+19.03.19 06:50:08<stoopkid> yea same
+19.03.19 06:50:12<editable-dog>cool
+19.03.19 06:51:38<stoopkid> i think the only things gridsome provides to that kind of effect is whatever's in their starter kits, so we would  use this in conjunction with some actual layout/styling system like bootstrap or w/e
+19.03.19 06:52:16<editable-dog>ok cool
+19.03.19 06:57:27<stoopkid> wanna start with this one and we can just modify it to have a link to the blog we probably don't need to really display anything about the blog on the main page except a link to it
+19.03.19 06:57:58<stoopkid> err, this one: http://loworbit.now.im/web/WebLayouts/Template5/
+19.03.19 06:59:28<editable-dog>yeah 
+19.03.19 07:03:49<editable-dog>we might want to extract the navigation stuff into a vue component
+19.03.19 07:04:02<editable-dog>idk
+19.03.19 07:05:23<stoopkid> do you wanna keep the night mode thing
+19.03.19 07:05:47<editable-dog>idk, its kinda cool
+19.03.19 07:06:05<editable-dog>i wannt move the code into its own file tho
+19.03.19 07:06:08<stoopkid> and yea i figured we might also do that with the individual sections so we can just plop them into other pages later
+19.03.19 07:17:02<editable-dog>does the order of the css links matter?
+19.03.19 07:17:26<editable-dog>dunno how to deal with the bootstrap link, prolly leave it there
+19.03.19 07:18:22<stoopkid> we should probably try it like here first and see what happens: https://gridsome.org/docs/head
+19.03.19 07:32:40<editable-dog>hmm, i think im fine with the hardcoded link for now
+19.03.19 07:47:34<editable-dog>Refused to apply style from 'http://localhost:8080/style.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+19.03.19 07:47:39<editable-dog>i dont get where this is coming from
+19.03.19 07:52:00<stoopkid> sorry got pulled away
+19.03.19 07:52:24<editable-dog>ah that's just gridsome develop needing to be restarted again
+19.03.19 07:59:52<editable-dog>wasnt it better when they were there with the other stylesheets?
+19.03.19 08:00:25<editable-dog>alternatively, it would be even better if they were a part of the vue component i suppose
+19.03.19 08:00:33<editable-dog>whats your goal with this?
+19.03.19 08:01:16<stoopkid> it was except for that it made their stylings appear before the bootstrap styling, so bootstrap was overriding the things i was already trying to override in bootstrap
+19.03.19 08:01:30<editable-dog>aha
+19.03.19 08:02:18<stoopkid> so the navbar works now more or less, now we just gotta fill in the content and link it all together
+19.03.19 08:02:46<editable-dog>yeah nice!
+19.03.19 08:04:05<stoopkid> hrm it's only working on the main page
+19.03.19 08:04:18<stoopkid> the other pages aren't getting the stylings for some reason
+19.03.19 08:04:26<editable-dog>so, im pondering an alternative-ish organization of the site.. something like We You Done Todo
+19.03.19 08:05:20<editable-dog>We You Done Todo Undercategorized
+19.03.19 08:05:47<editable-dog>We You Todo Done Undercategorized
+19.03.19 08:07:12<stoopkid> alright fixed it for the other pages
+19.03.19 08:07:18<editable-dog>nice
+19.03.19 08:07:36<editable-dog>i wonder if i can make gridsome restart everytime it should
+19.03.19 08:08:21<stoopkid> so i.e. any time you write to gridsome.config.js or gridsome.server.js ?
+19.03.19 08:09:43<stoopkid> can you elaborate on the alternative-ish organization
+19.03.19 08:10:26<editable-dog>i think it also doesnt watch src/ files, at the very least
+19.03.19 08:11:00<stoopkid> it should be live-updating everything in src/ i think
+19.03.19 08:12:05<editable-dog>well i was thinking about how we need to merge "past projects" and "references", but i guess we already have "portfolio", so..dunno
+19.03.19 08:12:51<editable-dog>but then, we probably mostly want to fill the blog with past projects
+19.03.19 08:13:27<editable-dog>like, in your customer-speak, what is "Blog" to a customer
+19.03.19 08:15:15<editable-dog>maybe if i decide to go on a rant about something, then it could fit under "Blog", but again "Rants" may be a better site section
+19.03.19 08:16:35<editable-dog>i do think we want to put up fairly technical content as well as the business stuff
+19.03.19 08:17:10<editable-dog>so we can interact with other devs etc this way
+19.03.19 08:17:40<editable-dog>for example i wrote up the kbdbg2sparql or something post
+19.03.19 08:18:41<stoopkid> sure
+19.03.19 08:19:14<editable-dog>im gonna have at least one similarly technical post from pavel, about how you can replace an encrypted sd card in some phone...very geeky stuff, but actually original research/content, that could theoretically drive in visitors
+19.03.19 08:20:32<editable-dog>so im thinking that links to these articles should be on the same page with links to past projects
+19.03.19 08:20:44<editable-dog>idk
+19.03.19 08:21:21<editable-dog>well i guess lets give it a try, we can always change it back easily
+19.03.19 08:26:20<editable-dog>i guess it means we want to have no blog index page, and we're gonna link to individual blog posts from other pages
+19.03.19 08:26:27<editable-dog>i can play with it later
+19.03.19 08:56:35<stoopkid> i think it would maybe make sense to leave Portfolio and Blog separate and have the business-y stuff in the portfolio and the personal-ish/technical-ish stuff in the blog
+19.03.19 08:58:19<stoopkid> we can have blog-posts about past projects but we should still have the one dressed up portfolio/resume/cv/past-projects/references page
+19.03.19 09:00:29<editable-dog>i guess if we collect enough dressed-up content for it, then yeah
+19.03.19 09:02:00<editable-dog>but if we find we dont have all that much to write about, then going a little unconventional might help
+19.03.19 09:02:02<editable-dog>will see
+19.03.19 09:02:53<stoopkid> well at the moment we might take out Portfolio entirely and just focus on having a well put-together Services section/page that we can maybe start show-casing some things without it having to have been a paid project for somebody else all dressed up and portfolio-worthy
+19.03.19 09:04:40<stoopkid> so main/banner page, About, Services, Blog, and Contact? with the Contact probably just being the footer of every page, and the banner page, About & Services possibly all being smashed into one long page
+19.03.19 09:05:28<editable-dog>sure, lets go with it
+19.03.19 09:05:51<stoopkid> you'd think Contact would generally just go in the About section but for some reason most sites seem to separate them
+19.03.19 09:06:02<stoopkid> i guess maybe most sites have a longer mission statement than we do lol..
+19.03.19 09:09:38<stoopkid> hrm..
+19.03.19 09:11:10<stoopkid> one issue w/ having the Contact be the footer is you would think to just have the contact button link to "#contact" and it will just jump to the footer, which works great except for if you've already pressed contact then the browser is pointed to "mysite.com/page#contact" and it won't go to the link again
+19.03.19 09:11:17<stoopkid> at least in firefox, lemme check chrome
+19.03.19 09:12:36<stoopkid> not sure if there a configuration of the <a> tag or something that would force it to jump to the section every time even if the browser thinks you're already at the section
+19.03.19 09:13:28<stoopkid> js could probably make the problem go away but hopefully that would be overkill for this issue?
+19.03.19 09:18:31<stoopkid> ok so.. are we actually going with the name software for immortality or should we come up w/ something else?
+19.03.19 09:19:39<editable-dog>iiiidk
+19.03.19 09:19:55<stoopkid> idk it's just maybe... extremely specific?
+19.03.19 09:20:19<stoopkid> and also maybe extremely extreme?
+19.03.19 09:20:43<editable-dog>yea lol
+19.03.19 09:21:40<editable-dog>i still think its a good idea wrt potential external funding, but we may want to situate it as just a project of ours 
+19.03.19 09:22:41<stoopkid> i would think so especially since i would think that currently it's kind of false advertising lol
+19.03.19 09:24:20<editable-dog>wouldnt say its false, or advertising, we're just working on extremely limited budget
+19.03.19 09:24:26<stoopkid> lol
+19.03.19 09:24:49<stoopkid> i guess that's technically fair
+19.03.19 09:24:56<editable-dog>but at the moment somebody rich enough realizes that sw development could prolong his life, ive got them covered
+19.03.19 09:25:15<stoopkid> that's good to know
+19.03.19 09:25:31<stoopkid> https://www.namemesh.com/domain-name-search/immortal?show=1
+19.03.19 09:25:47<stoopkid> i kind of like the immortal monkey for w/e reason
+19.03.19 09:25:52<stoopkid> not sure if that fits either heh
+19.03.19 09:26:33<editable-dog>yea i think thats a nice name
+19.03.19 09:27:40<stoopkid> certainly would make it easy to figure out what the logo would be heh
+19.03.19 09:29:52<stoopkid> maybe infinite monkey or something: https://en.wikipedia.org/wiki/Infinite_monkey_theorem
+19.03.19 09:33:03<editable-dog>btw, only kind of offtopic, since we tend to discuss potential long term business plans/ideas, something i havent mentioned before, me and pavel are fairly curious about digital data keeping/organization, and sometimes i think i'd like to build a service for non-technical people to keep and organize their data in the cloud kind of..i dont have a clear idea...but..anyway.
+19.03.19 09:34:02<stoopkid> i'd be interested in that
+19.03.19 09:34:19<editable-dog>idk, infinite monkey would maybe be a bit too obvious hint at our incapacity
+19.03.19 09:36:49<stoopkid> hehe.. so.. idk i could probably work w/ immortal monkey what do you think? maybe should ask pavel too
+19.03.19 09:37:24<stoopkid> megan immediately said no lol
+19.03.19 09:39:57<editable-dog>i dont think pavel would care
+19.03.19 09:40:04<editable-dog>its also a kind of pu-erh..i like that
+19.03.19 09:41:21<stoopkid> pu-erh?
+19.03.19 09:41:36<editable-dog>its a kind of tea
+19.03.19 09:42:21<editable-dog>idk..does megan have a better idea?
+19.03.19 09:44:09<editable-dog>https://cz.pinterest.com/pin/84512930483263965/
+19.03.19 09:44:23<stoopkid> idk cause my phone died but i guess let's roll w/ it for now if you want
+19.03.19 09:44:46<editable-dog>lol
+19.03.19 09:44:51<editable-dog>ok
+19.03.19 09:44:59<editable-dog>yeah
+19.03.19 09:46:30<editable-dog>i got a bit distracted by the restart script idea, but it wasnt getting anywhere near done..so..screw it
+19.03.19 09:48:13<editable-dog>let me see the contacts link issue
+19.03.19 10:03:19<editable-dog>https://www.w3schools.com/code/tryit.asp?filename=G29GCLV2VWCA
+19.03.19 10:03:29<editable-dog>it works here
+19.03.19 10:05:33<editable-dog> Unknown argument "width" on field "coverImage"
+19.03.19 10:09:57<editable-dog>the anchor name stays in the url bar but it still does the jump
+19.03.19 10:12:10<editable-dog>ah, i think your css messes with the menu item...like ..you cant click any menu item twice
+19.03.19 10:14:57<stoopkid> weird
+19.03.19 10:15:14<editable-dog>the css class changes or something?
+19.03.19 10:24:16<stoopkid> idk possibly something deeper in bootstrap
+19.03.19 10:26:35<stoopkid> well, anyway, i guess we basically have a site now
+19.03.19 10:27:22<editable-dog>ok
+19.03.19 10:27:36<editable-dog>i keep being distracted here, sorry
+19.03.19 10:27:49<editable-dog>will have to go over everything
+19.03.19 10:28:35<editable-dog>i guess we lost the light/dark styling
+19.03.19 10:28:43<editable-dog>i see an unstyled checkbox at the top
+19.03.19 10:30:49<stoopkid> that's the toggle for the menu so i guess some styles aren't rendering properly
+19.03.19 10:30:52<stoopkid> i'm not seeing it though
+19.03.19 10:33:23<stoopkid> you're getting a full-width black navbar where the links show different colors with a bright underline?
+19.03.19 10:34:45<stoopkid> if so then i'm not sure why you'd get the unstyled checkbox, but also try hovering your mouse over the underline and see if it flashes rapidly
+19.03.19 10:35:30<stoopkid> firefox doesn't, chrome does
+19.03.19 10:35:33<stoopkid> for me at least
+19.03.19 10:37:03<stoopkid> we should probably make a bugs & to-do list
+19.03.19 10:37:32<editable-dog>meh, it was just gridsome develop needing a restart again
+19.03.19 10:37:39<editable-dog>maybe i should take time to finish that script 
+19.03.19 10:37:58<editable-dog>anyway, i see one issue, center your mouse between two navigation links
+19.03.19 10:40:23<stoopkid> in chrome it flashes rapidly back & forth, in firefox it's a little more sane
+19.03.19 10:41:13<editable-dog>i guess the text should just not move at all, underline is flashy enough
+19.03.19 10:41:55<editable-dog>the rapid flashing is the bounce
+19.03.19 10:43:20<editable-dog>also, idk if we want to have like a separate logo and About in the navbar, if they both point to the same thing
+19.03.19 10:44:40<stoopkid> maybe not, we should probably expand the content a bit so that it actually makes sense to have it tho
+19.03.19 10:55:43<stoopkid> alright that's fixed
+19.03.19 10:55:55<stoopkid> (the flashing)
+19.03.19 10:57:07<editable-dog>nice
+19.03.19 10:57:25<editable-dog>i cant figure out what the link issue is
+19.03.19 10:57:38<stoopkid> yea im still stumped on that one
+19.03.19 11:01:53<editable-dog>well when you click a link, a file like http://localhost:8080/assets/js/component--home.js is loaded
+19.03.19 11:02:15<stoopkid> hrm..
+19.03.19 11:02:53<stoopkid> is that just on the develop server or on the dist ?
+19.03.19 11:03:29<editable-dog>im sure ive seen this functionality somewhere, turning the active page's nav button into a non-link...
+19.03.19 11:03:37<editable-dog>dunno
+19.03.19 11:04:40<editable-dog>yea not on the dist
+19.03.19 11:07:32<stoopkid> the horizontal overflow issue is probably just a matter of me using bad html with the string of <code> sections
+19.03.19 11:09:30<stoopkid> so i guess i'll just leave that until we're actually trying to refine the services section
+19.03.19 11:23:38<editable-dog>so, the nav link clicks are handled through vue router..
+19.03.19 11:25:47<stoopkid> i see..
+19.03.19 11:35:02<stoopkid> did you fix it? cause it seems fixed now
+19.03.19 11:35:47<stoopkid> at least on firefox
+19.03.19 11:41:06<stoopkid> ah nvm it's because i disabled javascript
+19.03.19 11:44:53<stoopkid> so i guess what i'd wonder is if you can override or configure the vue router to handle it properly
+19.03.19 11:46:11<stoopkid> actually i think the vue routing is only happening during develop?
+19.03.19 11:50:17<stoopkid> well, i guess something js is definitely screwing w/ it even in dist
+19.03.19 11:51:00<stoopkid> so i wonder how it's producing this js
+19.03.19 11:51:08<editable-dog>i think we should submit to it instead, with something like <router-link to="home">Home</router-link>
+19.03.19 11:51:57<editable-dog>but i think i wanna read the gridsome source to try to really understand how this whole thing works
+19.03.19 11:52:29<stoopkid> i started reading it some but only got a little way into it
+19.03.19 11:54:39<stoopkid> have you learned webpack
+19.03.19 11:55:31<editable-dog>so, this doesnt change anything
+19.03.19 11:55:33<editable-dog>nope
+19.03.19 12:11:06<editable-dog>nope, i dont see any difference
+19.03.19 12:11:53<stoopkid> are you looking at develop or dist
+19.03.19 12:11:59<editable-dog>develop
+19.03.19 12:12:28<stoopkid> in dist it works; everything in develop is handled dynamically
+19.03.19 12:13:10<stoopkid> although i guess maybe that dynamics should account for this change? idk
+19.03.19 12:14:44<editable-dog>what was the g-route or something tag you tried?
+19.03.19 12:14:57<stoopkid> g-link, didn't work though
+19.03.19 12:16:08<editable-dog>hmm
+19.03.19 12:16:34<stoopkid> apparently blog images aren't rendered w/ the scripts removed
+19.03.19 12:16:53<stoopkid> i'm generally a fan of obliterating the scripts and then adding them back in in a controlled fashion
+19.03.19 12:17:04<editable-dog>what scripts did you remove?
+19.03.19 12:17:35<stoopkid> just the ${scripts} section in index.html
+19.03.19 12:18:26<stoopkid> apparently that's where it puts the scripts that trigger whatever chain events screws up the nav-links
+19.03.19 12:18:32<stoopkid> chain of*
+19.03.19 12:19:07<stoopkid> well, hypothetically it could've been the light/dark thing but i'm doubting it
+19.03.19 12:19:24<editable-dog>yea doubtful
+19.03.19 12:19:59<editable-dog>so yeah, when you disable all vue js, then the link just takes you to the appropriate static page/anchor
+19.03.19 12:20:36<editable-dog>so you lose the SPA functionality, where it should just fetch whatever content and assets it needs and replace the relevant part of the dom
+19.03.19 12:20:56<editable-dog>i think
+19.03.19 12:21:08<stoopkid> so the only other place it's sticking scripts unless we put them in manually is in the head, we could obliterate the head and put in a custom head but that would probably be tough since it's sticking autogenerated styling stuff in there; not sure if we can remove the scripts independently of that
+19.03.19 12:21:25<stoopkid> i think that's right
+19.03.19 12:24:36<stoopkid> for a site of this size though i would call the SPA functionality an enhancement, not something critical to the operation of the page like a dynamically rendered form or something
+19.03.19 12:27:58<editable-dog>yeah we could call it a day and come back to it when we want to get more profficient with the frameworks
+19.03.19 12:30:06<stoopkid> well, one last tweak so that we can at least say the site is functioning properly, i want to get that image removed off your blog post heh
+19.03.19 12:30:34<stoopkid> a couple tweaks to the header but i can work on that
+19.03.19 12:31:03<stoopkid> and then i want to actually put in some contact info & put this up wherever we're gonna host it
+19.03.19 12:31:49<editable-dog>github pages i guess
+19.03.19 12:31:59<editable-dog>ok im gonna go read on vue router
+19.03.19 12:33:06<stoopkid> i guess we could potentially put it up multiple places, pages, netlify, etc.. as part of show-casing that we have lots of options for deployment
+19.03.19 12:33:17<editable-dog>yeah
+19.03.19 12:33:59<editable-dog>well, we should put some demo site in multiple places, not the real site
+19.03.19 12:34:26<stoopkid> true
+19.03.19 12:35:27<stoopkid> i really can't tell why this one needs an image and the other one doesn't
+19.03.19 12:35:35<stoopkid> hrm
+19.03.19 12:37:41<stoopkid> i think it's maybe that the graphql query is somehow expecting there to be non-zero number of cover images
+19.03.19 12:38:05<stoopkid> cause i just put the cover image on the other blog post and now yours works just fine without it
+19.03.19 12:39:49<stoopkid> i wonder if the markdown transformer doesn't generate a cover_image attribute in its graphql representation if you don't have any cover_images included
+19.03.19 12:40:34<stoopkid> what's the command to ssh tunnel to the develop server?
+19.03.19 12:41:37<editable-dog>ssh -v -L 8080:localhost:8080 sfi@51.140.155.227
+19.03.19 12:41:45<editable-dog>and once for 9000
+19.03.19 12:45:12<editable-dog>what do you mean, hat image do you want to remove?
+19.03.19 12:45:33<stoopkid> on the blog post
+19.03.19 12:45:40<editable-dog>on the gridsome one?
+19.03.19 12:46:31<stoopkid> currently gridsome seems to be expecting there to be a cover_image on at least one of the blog posts so having just your one blog post without a cover image breaks it
+19.03.19 12:54:24<editable-dog>coverImages obliterated.
+19.03.19 12:54:39<stoopkid> ok cool
+19.03.19 13:38:58<stoopkid> hrm, having trouble getting the footer to stick to the bottom for short pages (ex. blog right now)
+19.03.19 13:41:06<stoopkid> i guess i need to get better w/ css
+19.03.19 13:41:44<editable-dog>haha yeah i guess i'll leave this one entirely on you
+19.03.19 14:41:09<stoopkid> ok i got better enough to make the footer stick to the bottom at least
+19.03.19 14:45:13<stoopkid> should we make something like immortalmonkey@gmail.com
+19.03.19 14:52:43<editable-dog>well, theres an element of cutting edge minimalism in that, but i think most people wouldnt appreciate it
+19.03.19 14:54:31<editable-dog>we can handle email for our own domain on pavel's server, but theres a couple of downsides to that
+19.03.19 14:54:47<stoopkid> hrm, well, the footer sticks to the bottom but it obscures page content if the content actually goes down to the bottom.. this method seems to only work if you know the footer height a priori, which doesn't really seem possible w/ responsive design
+19.03.19 14:55:12<editable-dog>the nicest solution would be using our own domain but with google apps, or how its called. But then it wont be free
+19.03.19 15:00:05<stoopkid> i guess a question will be whether we're invested enough in the name to buy a domain for it
+19.03.19 15:02:08<editable-dog>ill try to talk to him tomorrow, maybe we'll come up with some mutually beneficial solution
+19.03.19 15:02:45<editable-dog>idk, has megan came home yet?:)
+19.03.19 15:03:13<stoopkid> not til 5 or so
+19.03.19 15:07:08<editable-dog>hmm there might be a way to get the best of both worlds for free, kinda
+19.03.19 15:08:37<editable-dog>buut registering that gmail account would be a good start towards that, so go ahead if you feel like it
+19.03.19 15:12:51<editable-dog>ok we could probably set the thing up through https://www.mailgun.com/ , at least we'd be prepared when some client wants us to spam his clients
+19.03.19 15:13:29<editable-dog>if we do websites, it kinda goes along with it
+19.03.19 15:14:54<editable-dog>well, lets ponder on the domain for a few days i guess
+19.03.19 15:22:29<editable-dog>hmm, i got up at 7, and was hacking on proof traces ..
+19.03.19 15:22:42<editable-dog>you showed up at 10 my time..
+19.03.19 15:23:42<editable-dog>i started losing breath around 17, at best
+19.03.19 15:25:13<editable-dog>been kinda trying to find something about vue routing to latch onto then
+19.03.19 15:25:30<editable-dog>then spent some very minimal time pretending family life
+19.03.19 15:25:38<editable-dog>and now it feels like the day is over
+19.03.19 15:29:04<stoopkid> well i guess let's figure out what we wanna work on tomorrow
+19.03.19 15:32:14<editable-dog>idk, i could just go on reading one of the zillion resources i had to google today, and poking at vue or webpack..
+19.03.19 15:32:28<editable-dog>well, understanding webpack might be a worthwhile task
+19.03.19 15:33:57<editable-dog>idk, got something in mind?
+19.03.19 15:35:05<editable-dog>or graphql
+19.03.19 15:35:14<stoopkid> webpack would be good but idk whether it makes to jump into that immediately
+19.03.19 15:35:24<stoopkid> i feel like at our scale we've maybe got more front-end issues than back-end
+19.03.19 15:36:29<editable-dog>well thats the thing, when trying to figure out the how's and why's of the routing thing, im now reading some webpacked js..
+19.03.19 15:37:05<stoopkid> ah
+19.03.19 15:37:08<editable-dog>so understanding where it came from and how might be helpful
+19.03.19 15:37:41<stoopkid> well we stripped the js out for now anyway though
+19.03.19 15:37:54<stoopkid> i guess i'm just weighing how involved i predict all that routing is relative to tomorrow
+19.03.19 15:39:14<editable-dog>well i think of it more like a good bait to go deeper in learning whatever, because i feel i need to learn much more before i can offer a website to anyone
+19.03.19 15:40:00<editable-dog>its kinda lame to strip out the js from vue just couse it breaks our footer link lol
+19.03.19 15:40:24<stoopkid> i would've tried to strip the js out anyway that just prompted me to try to do it sooner heh
+19.03.19 15:40:36<editable-dog>hehe gotcha
+19.03.19 15:41:09<editable-dog>yeah im fine with rolling with the no-js site for a while
+19.03.19 15:41:30<editable-dog>i will set up pushing to github pages if you want
+19.03.19 15:41:35<editable-dog>now
+19.03.19 15:42:08<stoopkid> sure
+19.03.19 15:42:19<editable-dog>and you wanna spend some time on the content i guess..that works for me too
+19.03.19 15:44:25<stoopkid> i guess i want to bring the js back in a controlled fashion and it looks to do that would definitely require getting deeper into the gridsome/vue/webpack internals, so i feel like we should maybe upgrade to js in the same process as getting deeper into those internals; we can still offer js stuff through external APIs etc.. we're only really stripping *gridsome's* js
+19.03.19 15:49:51<stoopkid> i definitely don't think we should re-enable the gridsome js until we have full-control over the vue-router and how all the rest of that js is working anyway
+19.03.19 15:52:17<stoopkid> we definitely wanna be getting down into the internals at some point and enabling the js, ideally soon, i just don't know about tomorrow soon cause it seems lower priority than the non-js front-end stuff
+19.03.19 15:53:59<editable-dog>i wonder how it estimates the reading time
+19.03.19 15:54:14<editable-dog>1 minute for my blog post?
+19.03.19 15:54:25<editable-dog>i was writing it a hour
+19.03.19 15:54:52<stoopkid> well that sounds about the right ratio
+19.03.19 15:55:08<stoopkid> they're still faster readers than me though heh
+19.03.19 15:55:50<editable-dog>ok so what non-js frontend stuff do you wanna deal with first?
+19.03.19 15:57:13<stoopkid> well, on second thought i'm wondering whether there even is anything at this point that doesn't just fall under my design side of things
+19.03.19 15:57:43<stoopkid> i guess we're at the stage where we should be figuring out what feature we would actually want to implement next and maybe that will help us prioritize
+19.03.19 15:58:39<stoopkid> cause i guess i mostly just have design clean-up left to do on what we have now, maybe toying around with some of the styles they used on the starter blog posts, they seemed decent
+19.03.19 15:59:24<stoopkid> so i can probably do that on the side and not waste our overlap time w/ random shit
+19.03.19 16:00:43<stoopkid> i guess my issue w/ getting into the internals tomorrow is we're not quite at the stage where delving into the internals is gonna get us any particular feature except for maybe fixing that random navbar thing that's already fixed, unless you can think of something else in particular
+19.03.19 16:01:39<stoopkid> if we wanted to try to integrate some more content types besides markdown, then that would maybe be something but i can't think of anything in particular at the moment
+19.03.19 16:08:17<stoopkid> documentation of what we've already done that could form the basis of some content might be good
+19.03.19 16:09:36<stoopkid> not sure if it warrants us planning a day around it but otoh maybe that would motivate us to actually do it
+19.03.19 16:15:38<stoopkid> i figure if we get to the point where we have enough content on there to warrant a separate "about us" page, that might be a good time to actually try out google maps or something if we haven't already by that point
+19.03.19 16:17:20<stoopkid> i guess maybe we should focus in on the services section and see if we can get some ideas by elaborating on the services we've written out there, i guess that was our initial strategy with this site design anyway
+19.03.19 16:24:25<stoopkid> not quite sure how to integrate this with the "portfolio" stuff but for lack of portfolio-worthy work done for other people one way we could get relevant content, site design, and features is to think about designing the site to essentially be a tutorial in each of our services
+19.03.19 16:25:48<stoopkid> to start with, stuff like "this is what you should be looking for in modern site design", "this is why our shit's the best"
+19.03.19 16:28:58<stoopkid> e-commerce would be a thing to look at but again not sure about tomorrow
+19.03.19 16:29:15<stoopkid> ex. can we set up some mechanism for somebody to pay us externally to upwork/freelancer
+19.03.19 16:29:40<stoopkid> i.e. some "pay us" button on our site that actually works
+19.03.19 16:30:01<stoopkid> there's always a bitcoin address..
+19.03.19 16:33:09<stoopkid> and ofc we could dig into your past projects and see what we can potentially pull in as content
+19.03.19 16:34:28<stoopkid> actually i guess one thing that would make sense to look into more immediately would be CMS
+19.03.19 16:36:32<stoopkid> i wonder how hard it would be to integrate a locally-hosted CMS thing into gridsome
+19.03.19 16:38:48<stoopkid> i mean, you're already running a nodejs server so if you had some kind of form input could you talk to nodejs through the develop server and have it dynamically update content?
+19.03.19 16:48:35<stoopkid> it would probably make sense if every vue component was bundled with the form that would edit it
+19.03.19 17:01:59<stoopkid> wrt the navbar i'm thinking i might just leave the background the solid color and just do the underline on hover, that'll leave the page w/ a bit more color when the user isn't pressing the buttons
+19.03.19 17:22:41<stoopkid> what do you think about putting up our freelancer pictures
+19.03.19 17:22:46<stoopkid> in the about us section
+19.03.19 18:10:12<stoopkid> alright got all of my little front-end bugs sorted out except for the footer
+19.03.19 18:28:08<stoopkid> i'd say the site actually seems to work fine at all zoom levels?
+19.03.19 18:46:28<stoopkid> found more bugs but now just back to the footer again heh
+19.03.19 18:54:39<editable-dog>pictures..ill think about it
+19.03.19 18:55:26<editable-dog>i just had a quick chat with the XPlane guy on freelancer, and then read some code and watched some videos about it
+19.03.19 18:55:59<editable-dog>he should get back to me
+19.03.19 18:56:14<stoopkid> nice
+19.03.19 18:56:26<editable-dog>i told him we should integrate the speech recognition functionality into the existing Xchecklist plugin
+19.03.19 18:56:33<editable-dog>he said he'd try to contact the author
+19.03.19 18:59:54<editable-dog>wrt tomorrow...the more i think about it, the more i think i just want to coast for a while
+19.03.19 19:00:04<editable-dog>i have a shitton of tabs open from today
+19.03.19 19:00:10<editable-dog>i want to get back to some of that
+19.03.19 19:00:30<editable-dog>not to mention the infinite shittons from before that
+19.03.19 19:01:01<editable-dog>oh i pushed it http://software-for-immortality.github.io
+19.03.19 19:02:24<editable-dog>but...i guess i like the idea of working on the content a bit
+19.03.19 19:02:55<editable-dog>to see what we can write up about what we did so far wrt the site
+19.03.19 19:03:18<editable-dog>"we broke same-page links, so we disabled javascript"
+19.03.19 19:04:45<editable-dog>"even with client-side js disabled, there are still 7 layers of js frameworks under this that we dont understand"
+19.03.19 19:06:49<stoopkid> well, i guess we could just dive in tomorrow and try to see if we can get full control of those layers in order to get full control over generated client-side js
+19.03.19 19:08:21<editable-dog>yeah i guess we can keep poking into it
+19.03.19 19:09:27<stoopkid> i guess i can come up with 3 tangible goals for that: 1) fix the js routing so we can have it available if we want, 2) make it also work with js obliterated, 3) make it output prettified js/css assets and have minimization/obfuscation be another phase that we can run independently
+19.03.19 19:10:47<stoopkid> (4) on my end, see if i can just drop bootstrap cause i'm not sure if i'm necessarily using it for anything yet
+19.03.19 19:11:28<stoopkid> i'll want to integrate something like that back in ofc but right now it seems like all i'm doing is overriding bootstrap not actually using it
+19.03.19 19:20:35<editable-dog>hehe
+19.03.19 19:20:52<editable-dog>there's also bootstrap-vue, but i have no idea what its about
+19.03.19 19:21:13<stoopkid> yea idk
+19.03.19 19:21:48<editable-dog>wrt goals, idk, im just in a curious mode wrt to the routing stuff, want to feel like i understand my tools
+19.03.19 19:22:05<stoopkid> at this point i feel like it's overkill and just a poor substitute for actually learning CSS, since all it is some CSS presets
+19.03.19 19:23:27<stoopkid> i guess (5) would be see if we can fix that little content_image bug w/o obliterating content_images entirely
+19.03.19 19:24:49<stoopkid> and.. this is perhaps a good opportunity to see about using it as a CMS
+19.03.19 19:25:40<editable-dog>we probably just need to study graphql for that
+19.03.19 19:26:01<stoopkid> so (6) would be assess whether it's capable of being used as a CMS and maybe start planning how we might want to do it if we can see that it would work
+19.03.19 19:26:24<editable-dog>using what as a cms?
+19.03.19 19:26:45<stoopkid> gridsome develop basically
+19.03.19 19:27:57<editable-dog>i think the idea is that you set up your content sources in the config files
+19.03.19 19:28:13<editable-dog>and this way wire it up to an actual cms if you want
+19.03.19 19:31:40<stoopkid> so i guess 6 would be to look into that, but the ideal i would think would be to have the develop mode & the cms mode be the same thing
+19.03.19 19:34:43<stoopkid> all it would need is the ability to respond to forms in develop mode and it could serve as a locally-hosted CMS for static-site generation.. well i guess that plus making it output just the resulting site instead of the one that includes all the CMS forms..
+19.03.19 19:35:16<editable-dog>idk, i cant really follow your train of thought here, but i keep thinking if building a site page by page by hand like this is really the way to go, i guess if in the end its just static content anyway. 
+19.03.19 19:36:43<editable-dog>so you have some kind of wysiwyg vue components composer/editor in mind
+19.03.19 19:37:10<editable-dog>sounds fairly crazy
+19.03.19 19:39:59<stoopkid> i guess integrating with one/more of the more standard CMSs is probabowly more in scope right n
+19.03.19 19:40:04<stoopkid> probably* now*
+19.03.19 19:41:31<stoopkid> ideally over time there will be less and less that we have to actually craft by hand that isn't just setting some well-defined configuration settings instead of hacking around html/css
+19.03.19 19:41:47<editable-dog>we can definitely bounce the idea around a bit
+19.03.19 19:42:01<editable-dog>right
+19.03.19 19:42:21<editable-dog>so maybe looking into available cms's is what we should do next
+19.03.19 19:43:30<stoopkid> i'd agree and i think we should probably really focus on figuring out who the target audience would actually be
+19.03.19 19:44:09<stoopkid> well, maybe
+19.03.19 19:44:22<stoopkid> i guess we're not really solely marketing ourselves around gridsome development so..
+19.03.19 19:47:04<stoopkid> we can probably safely assume that this gridsome stuff isn't gonna represent the majority of jobs we can expect to be landing when we're just scraping around for whatever we can get.., so we should probably file it away as mainly just being our thing for developing our own portfolio site & show-casing some of the fancier cutting-edge stuff we can do (i.e. SSG, SPA, graphql data integration, ..)
+19.03.19 19:48:14<editable-dog>no i think the "make me a website" jobs are quite frequent on freelancer
+19.03.19 19:48:24<editable-dog>i suppose the competition will be tough tho
+19.03.19 19:48:52<stoopkid> and it's not specifically "make me a gridsome website" yet and often it might be specifically not a gridsome site
+19.03.19 19:49:00<editable-dog>idk, ill start paying more attention to it
+19.03.19 19:49:36<stoopkid> i dont see anything in freelancer
+                 <editable-dog>i think it may often be from people who dont care about the frameworks
+19.03.19 19:50:24<stoopkid> hrm true
+19.03.19 19:50:57<editable-dog>I'm looking at building a website , a social directory website.
+                 <stoopkid> plenty of stuff for vue though so i guess it kinda goes hand-in-hand
+19.03.19 19:51:09<editable-dog>Skills required
+                 <editable-dog>Django, MongoDB, node.js, Python, React.js
+19.03.19 19:51:35<editable-dog>iow, "some stuff i've read websites are built in"
+19.03.19 19:51:51<stoopkid> lol
+19.03.19 19:52:45<stoopkid> ok fair we could at least try to actually push the option and see if they go for it
+19.03.19 19:52:54<stoopkid> and at least give the framework a chance
+19.03.19 19:53:26<editable-dog>Design and host a website
+19.03.19 19:53:31<editable-dog>$30 - $250
+19.03.19 19:53:42<editable-dog>I want to have a website designed (4-5 pages) and hosted
+19.03.19 19:53:59<editable-dog>Skills required
+19.03.19 19:54:00<editable-dog>Graphic Design, HTML, PHP, User Interface / IA, Website Design
+19.03.19 19:54:19<stoopkid> might be a good exercise in documentation / content-writing tho if we worked out a standard pitch for why we think gridsome+vue is a good option for them beyond "cause it's the one we know right now"
+19.03.19 19:54:24<editable-dog>FREELANCERS BIDDING (79) 
+19.03.19 19:54:42<editable-dog>lol, thats the most ive seen on any gig
+19.03.19 19:55:19<editable-dog>yeah sounds good
+19.03.19 19:55:38<editable-dog>we can probably paraphrase somebody advocating for vue out there
+19.03.19 19:55:45<editable-dog>everyone loves vue, at least
+19.03.19 19:55:52<stoopkid> yea that's so many lol, i'm glad we have a basic site up now at least so we can at least start differentiating ourselves
+19.03.19 19:56:51<stoopkid> although our site isn't really much beyond barely existing (but i guess at least it exists responsively?)
+19.03.19 20:02:03<editable-dog>its always nice being able to build websites for friends, if nothing else lol
+19.03.19 20:25:11<editable-dog>    // do not convert telephone numbers
+                 <editable-dog>    // into hypertext links because it
+                 <editable-dog>    // will cause hydration errors
+19.03.19 20:27:41<editable-dog>hmm, dont expect me up too early tomorrow
+19.03.19 20:28:54<stoopkid> heh alright
+19.03.19 20:40:41<stoopkid> ah nope can't take out bootstrap yet cause that's what's providing all the toggle stylings.. i'd have to figure out how to replicate that
+19.03.19 21:20:06<stoopkid> alright finally really got the footer thing solved lol
+19.03.19 21:20:40<editable-dog>yeah?
+19.03.19 21:22:06<stoopkid> yea only major thing that's left on the simple front-end stuff is to fix the x-overflow on the main page
+19.03.19 21:25:17<stoopkid> do you get chrome misaligning the links w/ the navbar when zooming out to 50% and 33% ?
+19.03.19 21:25:57<stoopkid> specifically after 67% -> 50% and 50% -> 33%, it seems to stay aligned when zooming back in
+19.03.19 21:26:05<editable-dog>yeah
+19.03.19 21:26:21<editable-dog>yeah
+19.03.19 21:28:16<editable-dog>thats the Immortal Monkey getting breaked into two lines
+19.03.19 21:29:53<editable-dog>i have a new plan for our overlap time tomorrow: sleeping
+19.03.19 21:45:10<stoopkid> hehe
+19.03.19 21:48:14<editable-dog>im making some progress with the routing thing
+19.03.19 21:49:05<stoopkid> nice
+19.03.19 21:49:26<stoopkid> fixed the misalignment thing & the x-overflow thing
+19.03.19 21:49:56<stoopkid> so that's pretty much everything on the front-end
+19.03.19 21:50:16<stoopkid> except maybe for some really extreme zoom / screen-size configurations
+19.03.19 21:53:07<stoopkid> maybe tomorrow you can walk me through the routing thing
+19.03.19 21:53:31<stoopkid> unless tonight would be better for you? haha
+19.03.19 21:53:44<editable-dog>i first need to walk to the end of it myself
+19.03.19 21:54:21<editable-dog>so far i could only point you to some features along the road, but i dont quite know what they mean
+19.03.19 21:57:38<editable-dog>soo, yeah there are some cosmetic issues at extreme ends of the zoom
+19.03.19 21:57:54<editable-dog>but i'd say really just cosmetic
+19.03.19 21:58:46<stoopkid> if we have some kind of concrete theory for how to account for those edge-cases i'm down to implement it but i don't have such a theory at the moment
+19.03.19 21:59:06<editable-dog>you cant cheat it by making the Services section seem longer, but good try
+19.03.19 21:59:24<editable-dog>j/k
+19.03.19 21:59:32<stoopkid> haha
+19.03.19 22:00:00<editable-dog>well i have two theories, first is that you should make the footer stick to the bottom of the page at all times
+19.03.19 22:01:46<editable-dog>im actually afraid that this doesnt take an extreme zoomout to appear, might as well happen on some retina displays or something maybe
+19.03.19 22:03:58<editable-dog>and the second theory is that the white area around the header should always go all the way around its contents
+19.03.19 22:04:03<editable-dog>idk lol
+19.03.19 22:07:11<editable-dog>ssh  -L 8080:localhost:8080    -L 9000:localhost:9000     sfi@51.140.155.227
+19.03.19 22:07:13<editable-dog>nice
+19.03.19 22:07:19<editable-dog>one line
+19.03.19 22:07:21<stoopkid> nice
+19.03.19 22:09:19<stoopkid> so one issue is if you have small display & zoom in real far the email is too long to fit on the screen & it doesn't word-wrap
+19.03.19 22:09:27<stoopkid> normally i would think to just word-wrap but it's an e-mail
+19.03.19 22:10:38<editable-dog>well, you can scroll horizontally to see it all, if only it wasnt black text against black background
+19.03.19 22:11:07<editable-dog>so why dont those header and footer backgrounds go all the way around their contents?
+19.03.19 22:11:31<stoopkid> not sure what you mean
+19.03.19 22:11:52<editable-dog>oh sorry i have inverted colors
+19.03.19 22:12:00<stoopkid> heh
+19.03.19 22:12:04<editable-dog>white text against white background
+19.03.19 22:13:07<stoopkid> ok i see what you mean
+19.03.19 22:15:13<editable-dog>nope
+19.03.19 22:48:14<stoopkid> well i just had it wrap the email as a fall-back but header is still going out of its bounds
+19.03.19 22:53:16<editable-dog>the header that you set to nowrap earlier to avoid the button misalignment?:)
+19.03.19 22:53:35<stoopkid> yep :)
+19.03.19 22:57:40<stoopkid> what we should really be doing at that scale is dropping the text logo and putting a small image logo
+19.03.19 23:00:43<editable-dog>not sure, would have to ask somebody half-blind what they think
+19.03.19 23:01:54<editable-dog>im fairly sure there are people who zoom in really hard so they can read 
+19.03.19 23:02:29<editable-dog>but thats all i think i know about it really
+19.03.19 23:03:30<editable-dog>but its a "market" thats appealing to me
+19.03.19 23:03:56<editable-dog>heh
+19.03.19 23:05:02<editable-dog>come on its 2019, nested block comments still arent a thing?
+19.03.19 23:06:11<stoopkid> a comment tag probably would've made sense
+19.03.19 23:06:53<editable-dog>err i was commenting on some js here
+19.03.19 23:07:04<stoopkid> ah
+19.03.19 23:07:13<editable-dog>sorry
+19.03.19 23:18:37<stoopkid> so i guess for drawing boundaries on this zoom thing we should be thinking about what's the minimum number of characters that should be able to fit on the page on any display/zoom setting?
+19.03.19 23:21:07<stoopkid> probably like 10 at least i would think?
+19.03.19 23:21:11<stoopkid> but idk
+19.03.19 23:23:03<stoopkid> we definitely want the content boxes to expand to fit their content as a guaranteed fail-gracefully but we should probably be having content stay inside the screen altogether, but then again idk
+19.03.19 23:23:27<editable-dog>i think thats kinda like asking whats the minimum level of sight that people can have
+19.03.19 23:24:06<editable-dog>idk, having to scroll horizontally doesnt seem so bad
+19.03.19 23:24:22<stoopkid> or at what point people just use a screen-reader instead of trying to read visually
+19.03.19 23:24:50<editable-dog>yeah maybe
+19.03.19 23:25:30<editable-dog>i think we shouldnt spend too much time on it 
+19.03.19 23:25:31<stoopkid> also i think i've seen that people sometimes get like a magnifying glass app so they can just hover-over what they want to magnify
+19.03.19 23:25:58<editable-dog>yeah that makes sense on a pc
+19.03.19 23:26:32<editable-dog>maybe if i ever come with some accessibility-specific business plan/opportunity, then we can pursue it further
+19.03.19 23:28:17<stoopkid> megan works for a dyslexia non-profit so i could ask her if they have any style-guides for that kind of thing
+19.03.19 23:28:51<editable-dog>ah nice
+19.03.19 23:29:33<editable-dog>i suppose there arent style guides for dyslexia, but disgraphia or something, they have like special fonts
+19.03.19 23:29:37<stoopkid> it probably makes sense for me to focus on it a little more since it's more of a front-end design thing, like having answers to some of these questions would definitely just make the job easier so i don't have to thin about it
+19.03.19 23:29:41<stoopkid> think*
+19.03.19 23:30:43<stoopkid> ex. half of my issue is just knowing how the browsers are even computing the layout for different zooms to begin with
+19.03.19 23:31:59<editable-dog>here you go https://www.hobo-web.co.uk/design-website-for-blind/
+19.03.19 23:32:32<stoopkid> so i probably want to at least master that & have a couple different options available (ex. zoom by layout vs. pixel-wise zoom) just to round out my CSS expertise and then hopefully i'll be able to plop in an actual accessibility solution whenever we figure that out
+19.03.19 23:32:40* stoopkid looking
+19.03.19 23:36:52<editable-dog>seems like more of a legal faq than meaty accesibility resource
+19.03.19 23:42:20<stoopkid> i would say that in firefox it works at all screen-sizes for all zoom-levels up to 170%, and in chrome up to 200%
+19.03.19 23:46:11<editable-dog>i think its nice
+19.03.19 23:55:01<editable-dog>so, gridsome-starter-blog/node_modules/gridsome/app/entry.client.js
+19.03.19 23:55:12<editable-dog>let Vue router handle internal URLs for anchors in innerHTML
+                 <editable-dog>document.addEventListener('click', event => {
+19.03.19 23:55:15<editable-dog>....
+19.03.19 23:55:50<editable-dog> router.push(location)
+                 <editable-dog>  event.preventDefault()
+19.03.19 23:56:06<stoopkid> nice
+19.03.19 23:56:40<editable-dog>the problem is router.push fails, because deep down, theres a check on the equality of the current and new route
+19.03.19 23:57:04<editable-dog>gridsome-starter-blog/node_modules/vue-router/dist/vue-router.esm.js
+19.03.19 23:57:39<editable-dog>if (
+                 <editable-dog>    isSameRoute(route, current) &&
+                 <editable-dog>    // in the case the route map has been dynamically appended to
+                 <editable-dog>    route.matched.length === current.matched.length
+19.03.19 23:57:40<editable-dog>  ) {
+                 <editable-dog>    this.ensureURL();
+                 <editable-dog>    return abort()
+19.03.19 23:59:21<editable-dog>idk if we can figure out if the authors considered the situation we have, if we're doing a wrong thing, or whatever
+20.03.19 00:00:19<stoopkid> i don't think we're doing a wrong thing but it might be something gridsome's doing that vue could be more flexible about
+20.03.19 00:01:10<editable-dog>otoh i think it would be trivial to add a property to our link elements, and check it in the click handler and avoid the preventDefault, but we should only avoid it if router.push fails. Maybe the right thing to do could be to propagate the abort from the equality test all the way up here? idk
+20.03.19 00:03:43<stoopkid> it seems more like we want to modify that abort to only abort the routing if it doesn't have "#.." component, or configure gridsome to configure vue to do that, if possible
+20.03.19 00:06:31<editable-dog>im doubtful there are any configuration directives in this regard
+20.03.19 00:06:56<editable-dog>but yeah thats another fairly trivial modification we could make
+20.03.19 00:07:47<stoopkid> maybe we should take it up w/ the vue devs to get their thoughts before investing too much of our own time on it though
+20.03.19 00:08:28<editable-dog>i'll probably be content with leaving everything as it is now, maybe the right way will present itself when we acquire more of the basics of vue
+
+
+how the "hijacking" is done:
+https://dennisreimann.de/articles/delegating-html-links-to-vue-router.html
+https://stackoverflow.com/questions/50329382/vue-router-with-links-in-a-template-string
+
+https://blog.webf.zone/vue-router-the-missing-manual-ce51c21430b0
+https://medium.com/@saidhayani/understand-routing-in-vue-js-with-examples-6da96979c8e3
+https://router.vuejs.org/guide/essentials/nested-routes.html
+https://dev.to/napoleon039/the-lesser-known-amazing-things-vuerouter-can-do-25di
+https://router.vuejs.org/guide/essentials/history-mode.html
+
+
+20.03.19 00:08:37<editable-dog>yeah 
+20.03.19 00:18:32<editable-dog>well, good job everyone, see you tomorrow at 5am
+20.03.19 01:29:52<stoopkid> so i'm finding that in firefox, they measure pixels as a relative thing, and in chrome they measure pixels as an absolute thing (at least as far as what shows up in developer tools)
+20.03.19 01:33:53<stoopkid> well hrm i'm not sure what all i might've done to change it from what a user would see by default or w/ their own configured font (if anything) but i seem to be able to come up with basic heuristics about what will be a reasonable screen size based on font-size
+20.03.19 01:35:13<stoopkid> like on the current font, the magic formula for firefox is that whatever actual screen-width corresponds to ~340 firefox pixels will be the minimum screen width for displaying at that zoom-size without horizontal overflow or ridiculously small columns
+20.03.19 01:36:54<stoopkid> on chrome the magic formula seems to be that for every ~25% zoom you need ~80 more chrome pixels to accommodate it, with ~350px accommodating the text at 100% zoom
+20.03.19 04:02:27*** Quit: stoopkid (uid137696@gateway/web/irccloud.com/x-wmeoabiwwlicwqfo) left #atlas-project: Quit: Connection closed for inactivity
+20.03.19 05:41:07*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-amyjzrbahyljlkgn, (unauthenticated): kook)
+20.03.19 07:45:31*** Join: stoopkid_ (uid137696@gateway/web/irccloud.com/x-frpegvkjkbwdhzlc, stoopkid: stoopkid)
+20.03.19 07:50:46*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-amyjzrbahyljlkgn) left #atlas-project: Quit: Connection closed for inactivity
+20.03.19 08:05:51<editable-dog>yo
+20.03.19 08:05:59<stoopkid_> yo
+20.03.19 08:06:12<editable-dog>another round?
+20.03.19 08:06:42<stoopkid_> did we decide on what?
+20.03.19 08:07:06<stoopkid_> i've been converting the front-end from bootstrap to flexbox
+20.03.19 08:07:22<stoopkid_> it's a lot easier lol
+20.03.19 08:13:23<editable-dog>nice
+20.03.19 08:13:28<editable-dog>we havent
+20.03.19 08:27:43<editable-dog>doing a little cms research
+20.03.19 09:14:40<editable-dog>butterCMS...not too impressed
+20.03.19 10:18:37<editable-dog>ok so these are CMS's...i think we both have in mind something more like a WYSIWYG site editor
+20.03.19 10:28:41<editable-dog>haha https://www.staticgen.com/
+20.03.19 10:30:01<editable-dog>ok, well, im gonna try out one or two wysiwyg site builders another day
+20.03.19 10:30:10<editable-dog>bored out of my head with this stuff
+20.03.19 10:30:26<editable-dog>hows it going over there?
+20.03.19 10:31:11<stoopkid_> going alright just trying to take some basic control over css
+20.03.19 10:32:57<editable-dog>im somewhat intrigued by ButterCMS business model...they charge per admin user/page count and similar metrics, which have nothing to do with their costs, which are the CDN service they use and their infrastructure and im pretty sure go up with number of users of and nature of their customers sites
+20.03.19 10:33:04<editable-dog>hehe
+20.03.19 10:35:12<editable-dog>im not sure if they found a nice way to make it possible to overcharge by hiding away their actual costs, or if they have a disaster just waiting to happen
+20.03.19 10:44:23<editable-dog>is megan still so opposed to immortal monkey?
+20.03.19 10:44:54<editable-dog>https://cz.pinterest.com/pin/84512930483263965/ i think this would be a great start of a logo
+20.03.19 11:19:44<editable-dog>i kinda hoped/imagined these cms's might do more, but its just edit page template, create page, upload picture, fetch list of pages with api
+20.03.19 11:20:31<editable-dog>i mean, i wasnt sure sure whats the cms/wysiwyg builder line
+20.03.19 11:28:07<editable-dog>hmm what is the significance of window.__theme in the dark/light switcher script?
+20.03.19 11:28:37<editable-dog>is this picked up by some css?
+20.03.19 11:29:48<editable-dog>ah found it
+20.03.19 11:31:26<editable-dog>hm another task for me today that wont require too much mental efforts is checking freelancer sites for interesting jobs again
+20.03.19 11:35:35<stoopkid_> maybe something like this one? https://www.istockphoto.com/se/vektor/cute-new-year-postcard-year-of-the-monkey-year-2016-gm495346206-77940297
+20.03.19 11:37:36<stoopkid_> we could mess with people and just have some animal that's not even a monkey
+20.03.19 11:40:23<editable-dog>lol
+20.03.19 11:41:34<editable-dog>if we ever play with the light/dark thing, it would be nice to try to integrate it with https://developer.mozilla.org/samples/cssref/altstyles/index.html
+20.03.19 11:43:02<editable-dog>what the
+20.03.19 11:43:16<editable-dog>https://chrome.google.com/webstore/detail/alt-css/deaodobjfcolfhkecnnghdclnlmfjdje
+20.03.19 11:44:03<editable-dog>this thing doesnt display any options on the previous link, but it shows a "base" and "none" dropdown on our site
+20.03.19 11:44:31<editable-dog>oh it needed a reload
+20.03.19 11:44:44<editable-dog>it works even on that example page
+20.03.19 11:44:45<editable-dog>nice
+20.03.19 12:04:03<editable-dog>i tried copying our html and css into this.. http://selfcss.org/ , unsurprisingly doesnt seem to work
+20.03.19 12:31:05<editable-dog>i guess when youre an estabilished company, bidding on freelancer might be a good way to make sure clients will just go to your site and contact you through there
+20.03.19 12:44:47<editable-dog>so, does switching from bootstrap to flexbox change things wrt to extreme zoomin?
+20.03.19 12:46:03<stoopkid_> a little bit; i got the "containers not fitting to content" issue solved, at least for now
+20.03.19 12:46:15<editable-dog>nice
+20.03.19 16:04:05<editable-dog>(re)-watching vue videos
+20.03.19 16:13:18<stoopkid_> this layout's pretty nice so far: https://github.com/sto0pkid/WebLayouts/blob/master/BasicFlexboxStickyFooter/center-rainbow-styling2.html
+20.03.19 17:12:32<stoopkid_> i think i need to work on some more link styles heh
+20.03.19 18:55:19<editable-dog>gonna go sleep early today
+20.03.19 19:01:27<editable-dog>got some errands tomorrow afternoon, but if you plan on continuing, then i figure i could just tag along in whatever youre gonna be doing, for a couple of hours
+20.03.19 19:01:45<editable-dog>if we dont decide on the next big thing to tackle
+20.03.19 19:04:42<editable-dog>and i guess i still want to spend some more time on the proof trace visualizer, i almost got bnodes displaying, and when thats done, i'd be adding a new component for displaying lists 
+20.03.19 19:05:25<editable-dog>so i figure you might want to get involved while this thing is still fairly simple
+20.03.19 19:05:41<editable-dog>for some vue-ing
+20.03.19 19:16:34<editable-dog>still got a couple of loose ends here that ill want to tie before diving into something big and new
+21.03.19 04:59:18<editable-dog>yo
+21.03.19 07:00:22<editable-dog>did you register the immortalmonkey gmail? coz its taken
+21.03.19 13:34:22<stoopkid_> wasn't me; wow sorry i got here so late today, i'd only slept 3-4 hours the past two nights so i guess last night my body was trying to catch up cause i slept for like 14 hours straight through all my alarms..
+21.03.19 13:53:29<editable-dog>hey
+21.03.19 13:54:04<editable-dog>yeah i figured youre catching up, im not too well rested myself
+21.03.19 13:55:01<editable-dog>and i had errands today anyway, only just sat down now, and still cant be sure when kids will come invading
+21.03.19 13:56:32<stoopkid_> so i guess maybe we should just have a light day today with the main goal of just making sure we don't stay up until forever hehe
+21.03.19 14:04:08<stoopkid_> so a couple conclusions after messing w/ HTML/CSS.. first is we should definitely define our own abstraction layers (in like JSON/RDF or something) such that we can describe a website in our own human-level terms, and get to the point that we can put together a site just by setting configurations in these layers
+21.03.19 14:06:08<stoopkid_> wrt flexible design, it seems the only limitation w/ making a site responsively flexible is size of necessary text & images
+21.03.19 14:08:14<stoopkid_> including on the technical side, CSS seems to allow some pretty arbitrary configurations for responsive design, like w/ flexbox i can have the site smoothly switch between like 10 different layouts in between phone sizes and desktop sizes
+21.03.19 14:08:51<editable-dog>i finally found time to sit down, was kinda preparing for doing something together, but i could also go spend some time with kids and socialize and stuff idk
+21.03.19 14:09:23<editable-dog>you definitely deserve a light day, i kinda had a light day yesterday
+21.03.19 14:10:54<stoopkid_> nah we can do something let's just try not to ruin our schedule w/ it heh
+21.03.19 14:12:07<editable-dog>wrt abstractions, in the short run, im still hoping i can find some reasonable wysiwyg website builder
+21.03.19 14:12:44<editable-dog>but on the more wild side, ive shown you the inform7 site generator, right?
+21.03.19 14:16:38<stoopkid_> looks interesting
+21.03.19 14:24:13<stoopkid_> what would be perfect imo is something like a nodejs package that gridsome will run during develop that would allow you to make editable versions of each component/layout/page
+21.03.19 14:29:41<stoopkid_> so maybe that could be our goal today, see if we can make gridsome read our own json configuration files and display a site from them, and then see if we can have it respond to a form submission by updating the page and writing to the config files
+21.03.19 14:30:05<stoopkid_> and then build a page from that which doesn't include the interactivity
+21.03.19 14:30:23<stoopkid_> (and is maybe even stripped of all js :)
+21.03.19 14:31:58<stoopkid_> that's personally how i would want to build a website ideally
+21.03.19 14:32:41<stoopkid_> really my browser should just be able to do that already w/o extensions but.. they make it difficult
+21.03.19 14:33:55<stoopkid_> makes me wonder if somebody's built a browser over nodejs yet
+21.03.19 14:40:53<stoopkid_> i guess you could do it purely in the browser by just saving a page that contains the json updates and then extracting it back out later in the build process
+21.03.19 14:44:48<editable-dog>hmm sounds like good ideas, but i'll need clarifications
+21.03.19 14:45:50<editable-dog>do you imagine just a text editor for the definitions of components/pages, or something more wysiwyg?
+21.03.19 14:47:43<stoopkid_> something more wysiwyg but the server should store the configurations as some static json or something for the build to use
+21.03.19 14:48:14<editable-dog>what kind of information do you envision in the json
+21.03.19 14:49:41<stoopkid_> site content & configurations, color / font selections for various components, etc..
+21.03.19 14:52:07<stoopkid_> like, given some layout, all the predefined ways you can customize that layout that would be exposed through some wysiwyg
+21.03.19 14:56:12<stoopkid_> basically anything that we would expose as a parameter of a given site design, as opposed to the portion of the HTML/CSS that has to be there to host these parameters
+21.03.19 14:56:56<editable-dog>i still dont know...something at the level like my site generator, like "sidebar on left/sidebar on right"?
+21.03.19 14:57:50<editable-dog>now site name is "Webik";
+                 <editable-dog>move search box to header;
+                 <editable-dog>move links to right sidebar;
+21.03.19 14:57:51<editable-dog>now number of excerpts is 10;
+21.03.19 14:57:52<editable-dog>now number of words in excerpts is 10;
+21.03.19 15:00:10<stoopkid_> sure, if that's a parameter exposed in the design, it's basically just what is the schema for the set of predefined ways to configure the site (or potentially a site in general, depending on how generalized our predefined configurations are)
+21.03.19 15:01:01<editable-dog>yeah that are the user-configurable parameters
+21.03.19 15:10:14<stoopkid_> so i'm thinking like, in vue ex. you've got everything for a component all bundled together in a .vue file, the editable version of a component should basically be bundled up w/ that, and then be composed into the layout in the same way as the original component
+21.03.19 15:11:45<stoopkid_> so each component is an object that comes w/ some parameters, and the editable version is a form that talks to the server and sets those parameters
+21.03.19 15:15:49<stoopkid_> so then when you compose some site, you're always already composing the wysiwyg editable version, and doing it in the same language(s) you're already doing everything else in
+21.03.19 15:23:44<editable-dog>if you mean just moving the editing of the component source from a native text editor to a web text editor, that dosent change much i'd say
+21.03.19 15:28:49<stoopkid_> not exactly, i mean actual wysiwyg editing, so ex. if editing background color is a parameter you want to make user-configurable you might have a standard way that a color-wheel widget (or just a simple textbox letting you put in an RGBA code) can be integrated into any site layout so that when you say you want to make color editable all the wysiwyg functionality is already integrated
+21.03.19 15:31:01<editable-dog>ok, color's an easy one
+21.03.19 15:31:45<stoopkid_> well, i don't think any parameters that would be generally user-configurable would be that challenging
+21.03.19 15:32:11<editable-dog>but im missing the big picture wrt layout, data integration, whatever other logic, features
+21.03.19 15:32:36<editable-dog>like for example the fix for same-page hrefs 
+21.03.19 15:32:49<editable-dog>thats something i'd want expressed declaratively
+21.03.19 15:33:00<editable-dog>i mean, if even just for us
+21.03.19 15:33:45<editable-dog>theres this feature whis is this fix, when it's turned on, there's some change to some code somewhere..
+21.03.19 15:34:00<editable-dog>hey i gotta run again for a hour or so
+21.03.19 15:38:15<stoopkid_> so i guess it depends on how you personally conceive of this as a parameter, i.e. if it's something that should be individually modifiable per-link or is just a global fix for making links work properly and that it shouldn't ever be disabled
+21.03.19 15:39:16<stoopkid_> but this is maybe a good example of what i mean, we don't want to express this in terms of "their" logic, we want it to be expressed in terms of our logic
+21.03.19 15:40:26<stoopkid_> so the "fix" isn't the feature, the feature is whether or not same-page hrefs will jump back to where they're supposed to if you click them twice
+21.03.19 15:41:12<stoopkid_> if this should be a user-customizable feature, the default should probably be true and apply globally to all links, i'd say
+21.03.19 15:41:30<stoopkid_> then how we manifest that configuration into reality is something we should handle elsewhere
+21.03.19 15:47:14<stoopkid_> so wrt big picture wrt layout, data integration, etc.. let's say you have a "blog-post" feature on your site
+21.03.19 15:47:53<stoopkid_> in HTML/CSS whatever that might be a thousand lines of layout template and styling options
+21.03.19 15:48:45<stoopkid_> but we probably have way fewer user-configurable parameters
+21.03.19 15:50:36<stoopkid_> whatever is that schema of user-configurable parameters, we should have an actual schema corresponding to it, like a set of json fields associated w/ human readable names
+21.03.19 15:51:39<stoopkid_> wrt that schema, it's composed of.. say.. a header, a subheading w/ date & author, and then an "article"
+21.03.19 15:52:30<stoopkid_> each of these things should be editable
+21.03.19 15:53:55<stoopkid_> like wysiwyg you click on the header and it transforms into a textbox letting you input the heading text, select font stylings etc..
+21.03.19 15:54:18<stoopkid_> and etc.. for each of the other components
+21.03.19 15:55:58<stoopkid_> wrt to the layout of "blog-post", we should be able to express it just a single time
+21.03.19 15:56:25<stoopkid_> just the equivalent of <header/> <subheading/> <article/>
+21.03.19 15:57:49<stoopkid_> and this should automatically account for the wysiwyg editing of "blog-post" unless we have something specific to the layout of blog-posts beyond whatever already comes packaged with the editing for header/subheading/article
+21.03.19 16:01:45<stoopkid_> so that's basically the idea, you have component A, which comes in A-static and A-editable forms, then you make component B which just simply includes A, and B should automatically be wysiwyg editable by giving you access to A's editable version
+21.03.19 16:06:35<stoopkid_> so then this basically corresponds to some json object:
+21.03.19 16:09:31<stoopkid_> B { name-of-A-object: A; ...other values specific to B...}
+21.03.19 16:10:58<stoopkid_> this is like a schema for B so let's say A included header/subheading/article its schema object would be:
+21.03.19 16:11:37<stoopkid_> A { header-for-A: Header; subheading-for-A: Subheading; article-for-A: Article }
+21.03.19 16:13:36<stoopkid_> so now you can have objects like my-obj-A { header-for-A: ..header value... ; subheading-for-A: ...subheading value...; article-for-A: ... article value ... }
+21.03.19 16:18:02<stoopkid_> so let's say B was Site and A was Blog-Post
+21.03.19 16:19:30<stoopkid_> when you wysiwyg edit Blog-Post you'll just be making edits to a json object my-site.my-blog-post
+21.03.19 16:20:12<stoopkid_> or rather, that will be the result of wysiwyg editing
+21.03.19 16:38:27<stoopkid_> so basically each human-level component should have all of the following (or equivalents of them) bundled together: a vue template for its static version, a vue template for its editable version, a json schema representing the user-configurable options for the component, and the js code that the server can use to expose the methods that handle responding to the wysiwyg interaction (both browser & server-side)
+21.03.19 16:44:53<stoopkid_> wrt the editable vs. static versions of content, it should basically be like they're just two different stylings of the same DOM
+21.03.19 16:45:04<stoopkid_> not precisely, but the same analogy
+21.03.19 16:46:04<stoopkid_> so any layout that includes component A should be able to work with both the static layout and the editable layout for A
+21.03.19 16:47:05<stoopkid_> so if B includes A, we don't need to make a separate editable B that includes editable A, B should just say it includes A, and then be able to work with both the static and editable versions of A without any further modification
+21.03.19 16:49:33<stoopkid_> you *can* then add an editable version of B for editing things specific to B, and the editable layout for B should also be able to just say it includes A, and accommodate both the static and editable versions without any further modification
+21.03.19 16:51:35<stoopkid_> and further it should just already be equipped to talk to the server to send its modifications, without any further configuration
+21.03.19 16:52:30<stoopkid_> so basically you should just be able to write:
+21.03.19 16:52:43<stoopkid_> <template>
+21.03.19 16:52:50<stoopkid_>  <Header>
+21.03.19 16:52:56<stoopkid_> <Subheading>
+21.03.19 16:52:58<stoopkid_> <Article>
+21.03.19 16:53:01<stoopkid_> </template>
+21.03.19 16:54:33<stoopkid_> and automatically get a site that's already wysiwyg editable by exposing whatever whatever wysiwyg editing functionality is already available in each of <Header> <Subheading> and <Article>
+21.03.19 18:23:06<editable-dog>yeah absolutely
+21.03.19 18:23:35<editable-dog>so one thing we need is to research how to access global variables from components in vue
+21.03.19 18:23:47<editable-dog>or i might have already done it and im just confused about it
+21.03.19 18:24:52<editable-dog>one way might be to create a mixin class to be added to the component class idk
+21.03.19 18:25:57<editable-dog>anyway, once a component knows if it's in design or production mode, it can display the editing widgets on demand
+21.03.19 18:26:32<editable-dog>we prolly want to add a section like the "data" one
+21.03.19 18:26:59<editable-dog>for specifying what can be edited and what type it has
+21.03.19 18:27:35<editable-dog>im thinking the easiest way to tie everything to some persistency mechanism might be the vuex thing or something like that
+21.03.19 18:28:33<editable-dog>whatever's editable in the template or style sections would just reference some variable from the store i suppose
+21.03.19 18:28:47<editable-dog>and we just need to specify that this variable should be editable
+21.03.19 18:58:32<editable-dog>https://stackoverflow.com/questions/35964116/how-do-i-extend-another-vuejs-component-in-a-single-file-component-es6-vue-loa
+21.03.19 18:58:38<editable-dog>i dont understand anything
+21.03.19 19:00:28<editable-dog>going to bed early today sounds like a plan
+21.03.19 19:00:59<editable-dog>im pretty ko physically
+21.03.19 19:02:03<editable-dog>its not trivial to combine our overlap time with normal life(TM)
+21.03.19 19:05:25<stoopkid_> should we aim for 5am my time again?
+21.03.19 19:09:03<editable-dog>hmm no clue
+21.03.19 19:09:17<editable-dog>might be more advantageous for me tomorrow to start later
+21.03.19 19:09:18<editable-dog>idk
+21.03.19 19:10:46<stoopkid_> well i guess i'll aim to be up at 5 so that we can start whenever
+21.03.19 19:28:23<editable-dog>data: ()=> {
+21.03.19 19:28:24<editable-dog>return {
+                 <editable-dog>bnodes: window.bnodes
+                 <editable-dog>}
+                 <editable-dog>}
+21.03.19 19:28:36<editable-dog>ok thats one proper way to access a global i guess
+21.03.19 19:30:44<editable-dog>hrm alright, ill go to bed now i guess
+21.03.19 19:49:03<editable-dog>you know whats curious....take a syringe, cover the hole and compress the air inside
+21.03.19 19:50:11<editable-dog>the resistance is given by the particles inside being excited and bumping against each other and the walls
+21.03.19 19:50:30<editable-dog>so in a way you'd think if you keep the pressure, they'll eventually wear out:)
+22.03.19 00:32:51*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-hzjtbmzegobztnpo, (unauthenticated): stoopkid)
+22.03.19 00:33:45*** Quit: stoopkid_ (uid137696@gateway/web/irccloud.com/x-frpegvkjkbwdhzlc) left #atlas-project: Ping timeout: 268 seconds
+22.03.19 08:53:13<stoopkid__> so here's the issue i'm currently having wrt wrestling html/css down to something sane
+22.03.19 08:54:18<stoopkid__> say you want a div to expand vertically to fit its content, i.e. it expands instead of overflows
+22.03.19 08:54:55<stoopkid__> it will actually automatically do that
+22.03.19 08:55:11<stoopkid__> now let's say the content has content
+22.03.19 08:55:38<stoopkid__> so div A contains div B which contains div C
+22.03.19 08:55:54<stoopkid__> let's say div C overflows B, this won't be accounted for by A
+22.03.19 08:56:52<stoopkid__> so A will expand to accommodate its child elements, ex. B, but it won't expand to accommodate its grandchild elements, ex. C and later descendants
+22.03.19 09:09:04<stoopkid__> in general things shouldn't overflow their containers but there might be some situations where it's called for and as we've seen it's something that can happen by accident so our layouts should be designed to be as accommodating as possible
+22.03.19 09:10:44<stoopkid__> in that regard i'm thinking that in general the right side of the page should be left empty just in case some text content is not formatted properly and overflows to the right
+22.03.19 09:13:02<stoopkid__> and with this thing w/ the divs not expanding to the size of their grandchild divs, if there's a fix for that it should be applied on essentially every single div that doesn't intentionally have some overflow as part of the design
+22.03.19 09:32:29<editable-dog>whats the css attribute that enables the stretch-to-child behavior?
+22.03.19 09:35:57<stoopkid__> (most) divs automatically stretch/shrink vertically to fit children and stretch/shrink horizontally to fill parent, unless other settings are applied
+22.03.19 09:36:35<editable-dog>hmm
+22.03.19 09:38:05<editable-dog>so how are you making them stretch horizontally to contain children?
+22.03.19 09:49:40<stoopkid__> display: flex on the parent seems to work for some examples, although it can have side-effects
+22.03.19 09:52:25<editable-dog>any other methods? or do we just apply this attribute to every div and its done?
+22.03.19 10:13:55<editable-dog>anyway
+22.03.19 10:13:59<editable-dog>we have a job
+22.03.19 10:14:39<stoopkid__> oh yea? can you paste the link
+22.03.19 10:14:42<editable-dog>i bought it for $17 from freelancer lol
+22.03.19 10:14:49<stoopkid__> lol
+22.03.19 10:15:13<editable-dog>they actually charge your credit card their service fee when you accept the job
+22.03.19 10:15:47<stoopkid__> i see
+22.03.19 10:15:58<editable-dog>im in some tmuxes on azure
+22.03.19 10:16:47<editable-dog>the codebase's a bit of a mess, only just got it to display a page
+22.03.19 10:20:02<stoopkid__> on 51.140.155.227 ?
+22.03.19 10:20:35<editable-dog>yeah
+22.03.19 10:24:55<editable-dog>i need a bit to collect my thoughts
+22.03.19 10:25:22<stoopkid__> so what exactly is the job?
+22.03.19 10:27:47<editable-dog>its a business card wysiwyg editor like the canva thing, and the guy said there are two arrays of objects, one for texts and oe for images, and that's messing up the editing, they want us to redesign it so that all the objects are in one array
+22.03.19 10:29:45<editable-dog>idk if this is something that makes sense for you to dive into, im thinking i'm managing by myself so far, but if you're in, its throwing some error when you try to register
+22.03.19 10:32:06<stoopkid__> i would be down but i guess i'll leave that up to your judgement
+22.03.19 10:34:21<editable-dog>well, together's more fun
+22.03.19 10:36:35<stoopkid__> sure
+22.03.19 10:38:58<stoopkid__> is there a default user for this site?
+22.03.19 10:42:01<editable-dog>¯\_(ツ)_/¯
+22.03.19 10:42:23<editable-dog>django has some system of database fixtures, i'd look there
+22.03.19 10:43:35<stoopkid__> well i made a user and logged in at least, so what's the broken feature exactly?
+22.03.19 10:44:24<editable-dog>all i know is that the two arrays are messing with editing, i suppose it gives problems when selecing objects, wrt z-index
+22.03.19 10:44:43<stoopkid__> what two arrays?
+22.03.19 10:44:59<editable-dog>there are supposed to be two arrays, one for text one for images
+22.03.19 10:45:02<editable-dog>idk where exactly
+22.03.19 10:47:31<editable-dog>you manged to register?
+22.03.19 10:47:51<stoopkid__> yea it gave some error but it still made an account
+22.03.19 10:47:57<editable-dog>oh
+22.03.19 10:49:23<editable-dog>so, i know ive brought this up a lot of times already, but can we do skype, or would you prefer not to? i think it would make things smoother
+22.03.19 10:50:01<stoopkid__> sure
+22.03.19 10:50:13<stoopkid__> one sec i might need to install it
+22.03.19 10:51:51<editable-dog>this thing is so hillariously bad/unfinished
+22.03.19 10:55:06*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-zlzxzxqlzcbkseka, (unauthenticated): kook)
+22.03.19 10:56:33<stoopkid__> yes
+22.03.19 10:57:24<sirccloud> https://join.skype.com/invite/oP4fSbM8T4N9
+22.03.19 11:00:19<editable-dog>i'm guessing all the objects on the card should be movable
+22.03.19 11:40:49<editable-dog>Project Description
+                 <editable-dog>Web based SVG online document creation application prototype to be completed.
+                 <editable-dog>Redesign if needed.
+                 <editable-dog>Duration: 2 month
+                 <editable-dog>Milestones:
+                 <editable-dog>a) UI screens - 1 weeks
+                 <editable-dog>b) Application: 1.5 months
+                 <editable-dog>c) Test and Validation: 1 week
+                 <editable-dog>Description:
+                 <editable-dog>The utility is a web based one that makes use of google draw type of layout to add design widgets onto a white screen(eg. a visiting card) The design widgets can be text or drawing elements and can be transparent or solid
+22.03.19 11:40:50<editable-dog>Currently, SVG APIs are used for the drawing elements. The code uses JSON lists to keep track of all the elements and make sure that the stack of elements (editable is on top of stack) is maintained. The error in the code is that the JSON for text and drawing elements are separately maintained instead of a single interleaved list due to which edits of stacked elements on the visiting card canvas dont work (eg logo on a visting card not
+                 <editable-dog>getting updates). The work involves fixing these issues.
+22.03.19 11:42:41<editable-dog>[...]
+22.03.19 11:42:42<editable-dog>Just want to make sure we are on the same page with regards to the scope of the job, that we cannot produce more than the redesign and maybe a few fixes, on this budget
+                 <editable-dog>21 MAR 2019 · 4:27 PM
+                 <editable-dog>L
+                 <editable-dog>yes understood
+22.03.19 11:42:43<editable-dog>Congratulations, your bid has been awarded!
+22.03.19 11:43:12<editable-dog>If i understand correctly, you mainly need the datastructure redesign, to make editing work as expected. The milestones you write in project descriptions are very broad.
+22.03.19 13:14:46*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-zlzxzxqlzcbkseka) left #atlas-project: Quit: Connection closed for inactivity
+22.03.19 13:19:15<editable-dog>Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky).
+22.03.19 13:25:31<editable-dog>sorry
+22.03.19 13:27:39<stoopkid__> https://stackoverflow.com/questions/17786618/how-to-use-z-index-in-svg-elements
+22.03.19 14:03:58*** Join: sirccloud (uid172590@gateway/web/irccloud.com/x-pgpuqrobfmmlimok, (unauthenticated): kook)
+22.03.19 14:28:11<sirccloud> So i guess lets try making moving elements forth and back properly, merge the json arrays, and ask for our money?
+22.03.19 14:28:39<stoopkid__> sounds about right? idk
+22.03.19 14:28:47<stoopkid__> i'm pretty far along w/ moving elements back & forth
+22.03.19 14:29:21<sirccloud> Awesome
+22.03.19 14:34:11<stoopkid__> it basically works but for some reason it sometimes only moves them by 1 instead of by 2
+22.03.19 14:34:55<stoopkid__> i'm thinking this is related to why i'm having to do .previousSibling.previousSibling instead of just .previousSibling
+22.03.19 14:35:15<stoopkid__> maybe some hidden divs i'm not seeing in the browser tools
+22.03.19 14:35:29<stoopkid__> like :before/:after pseudo-selectors or something
+22.03.19 15:06:17<stoopkid__> ok well
+22.03.19 15:06:20<stoopkid__> i think it works
+22.03.19 15:10:06<stoopkid__> now just to merge the json arrays and ask for our money?
+22.03.19 15:13:42<stoopkid__> are they reading this json or just writing it?
+22.03.19 15:16:51<stoopkid__> i think i'm getting a guess at what they might be going for here
+22.03.19 15:20:57<editable-dog>yo
+22.03.19 15:20:59<editable-dog>half-here
+22.03.19 15:21:41<stoopkid__> i think since svg works off order of elements in DOM, they're trying to load up a json file with all the elements and have it maintain stack, but loading from two arrays doesn't do that, so they want one array already interleaved
+22.03.19 15:23:56<stoopkid__> that should be a pretty easy fix in the makeJSON routine i'm thinking?
+22.03.19 15:30:22<editable-dog>yeah yeah
+22.03.19 15:30:28<editable-dog>i'd think both reading and writing
+22.03.19 15:30:39<editable-dog>we gotta fix all the templates they already have i guess
+22.03.19 15:51:30<editable-dog>idk, do we wanna rely on the exact way the elements are interleaved there? cant we just go through everything and test the type
+22.03.19 15:54:59<stoopkid__> let's fix that up after it works at all?
+22.03.19 15:55:10<editable-dog>no prob
+22.03.19 15:55:13<stoopkid__> unless you already know how to do the check
+22.03.19 15:55:27<editable-dog>we just check the elements class?
+22.03.19 15:59:58<editable-dog>why worry about these rects at all? are there some texts that arent a part of the edited businesscard and you tell that by the absence of a rect?
+22.03.19 16:02:00<stoopkid__> well the makeJSON extracts info from the rects associated with the texts so this is more just some basic type-checking that we actually have a well-formed text component, hypothetically we would maybe throw some error handling around this just in case we don't, but.. meh
+22.03.19 16:02:24<editable-dog>a
+22.03.19 16:02:26<editable-dog>ah
+22.03.19 16:03:00<stoopkid__> there's probably some more assertions we should throw on here like that the id's correspond
+22.03.19 16:04:53<editable-dog>yeah probably worth it
+22.03.19 16:06:36<editable-dog>where exactly does it use the rect? i cant find it in the makeJSON functions
+22.03.19 16:08:44<editable-dog>i see
+22.03.19 16:09:55<editable-dog>skype again?
+22.03.19 16:10:02<stoopkid__> sure
+22.03.19 16:19:36-tomaw- [Global Notice] We're about to update one of our access control systems that manages gateway cloaks. It should be fairly unnoticable, but you may notice some odd looking user cloaks for a short while until the system catches up.
+22.03.19 16:54:46*** Quit: sirccloud (uid172590@gateway/web/irccloud.com/x-pgpuqrobfmmlimok) left #atlas-project: Quit: Connection closed for inactivity
+22.03.19 17:39:54<editable-dog>DPR_django_jinja/templates/templateEditingPage.html
+22.03.19 17:39:57<editable-dog>line 98
+22.03.19 17:40:04<editable-dog>is how the svg element is populated
+22.03.19 18:12:41<editable-dog>hahah, so theres actually more saving code on the python side, im getting the hang of it but its a mess, basically what it does is the entries in the template have a holder field with the id of the text/image item, and it goes through the json you are sending and adjusts the items in the template in a loop that looks like it could have been made specifically to keep the order of the items in the template entries array lol
+22.03.19 18:13:12<editable-dog>i kinda deciphered the code, its not complex, but i still dont know what the intentions were here
+22.03.19 18:14:02<editable-dog>but im figuring it would be a waste not to hack this somehow to make the saving and loading preserve the order
+22.03.19 18:16:57<stoopkid__> well i think i got the moving-elements-back-and-forth all figured out & fixed up at least
+22.03.19 18:18:15<editable-dog>cool
+22.03.19 18:20:00<stoopkid__> i'll have to go for a bit
+22.03.19 18:20:08<editable-dog>sure
+22.03.19 18:30:07<editable-dog>when we're done lets design our business card with it lol
+22.03.19 19:11:39<editable-dog>ok, entries order preserved but images disappear
+22.03.19 19:45:42<editable-dog>getting bored of it
+22.03.19 19:46:21<editable-dog>still quite a bit of code needs to be changed for the new design
+22.03.19 19:46:47<editable-dog>so, we're saving order, but not accounting for images in entries
+22.03.19 19:47:00<editable-dog>and i think im gonna continue tomorrow
+22.03.19 22:06:10*** Quit: stoopkid__ (uid137696@gateway/web/irccloud.com/x-hzjtbmzegobztnpo) left #atlas-project: Quit: Connection closed for inactivity
+23.03.19 05:56:02<editable-dog>ok i finished everything and pushed it to bitbucket and gave them a link
+23.03.19 08:01:54*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-mkuwzsvwwegfywqi, (unauthenticated): stoopkid)
+23.03.19 08:05:27<editable-dog>yo
+23.03.19 08:05:33<editable-dog>23.03.19 05:56:02<editable-dog>ok i finished everything and pushed it to bitbucket and gave them a link
+23.03.19 08:06:17<stoopkid__> nice
+23.03.19 13:58:31<stoopkid__> maybe nilli should take her mind off tau and freelance w/ us for a bit lol
+23.03.19 13:59:19<stoopkid__> i gotta say, over the last 3 weeks or so politics hasn't really even crossed my mind
+23.03.19 14:27:31<stoopkid__> https://www.freelancer.com/projects/software-architecture/scraping-websites-with-python-selenium/?w=f
+23.03.19 14:27:42<stoopkid__> well, the price would probably be right if we already knew webscraping
+23.03.19 16:50:36<editable-dog>yo
+23.03.19 16:50:40<editable-dog>haha
+23.03.19 16:52:15<editable-dog>you think her mind's still on tau?
+23.03.19 17:02:05<editable-dog> free graphic resources website, we've already scraped 40 websites 
+23.03.19 17:02:07<editable-dog>lolol
+23.03.19 17:07:10<editable-dog>yeah i guess we could do this too, i just dont have any idea how to estimate it
+23.03.19 19:01:30*** Quit: stoopkid__ (uid137696@gateway/web/irccloud.com/x-mkuwzsvwwegfywqi) left #atlas-project: Quit: Connection closed for inactivity
+23.03.19 20:15:27*** Join: stoopkid__ (uid137696@gateway/web/irccloud.com/x-gqgtlszjlmjzxvsd, (unauthenticated): stoopkid)
+23.03.19 20:42:02<stoopkid__> "you think her mind's still on tau?" apparently, check the #AutoNomic logs
+23.03.19 20:50:10<stoopkid__> " free graphic resources website, we've already scraped 40 websites" yea lol idk how i'd really feel about it if the job was to participate in IP violations, even if we weren't the ones legally responsible for it
+23.03.19 20:54:44<stoopkid__> but in general scraping should be pretty easy, certainly at least for static content
+23.03.19 20:57:17<stoopkid__> plus any working in scraping would be an opportunity to focus on some stuff more related to ldl, i.e. parsing, while still being relevant to web dev
+23.03.19 21:13:36<stoopkid__> idk how to price it either though; there's a decent amount of initial investment and then we don't know how long these jobs are actually gonna take yet
+23.03.19 21:20:15<stoopkid__> https://www.freelancer.com/projects/php/website-with-data-scraping-criteria/?w=f
+23.03.19 21:21:36<stoopkid__> damn so if we wanted to bid on a $5000 project we would have to pay $500 up front ?
+23.03.19 21:22:17<stoopkid__> err, take a job we bid $5000 on..
+23.03.19 21:26:03<stoopkid__> they refund you if you don't get paid right? hehe
+23.03.19 21:32:25<stoopkid__> https://www.freelancer.com/projects/graphic-design/build-website-19029452/?w=f
+23.03.19 21:32:52<stoopkid__> "free^lancer.com is s*ht company run by idi^ots ev^en if it's an em^ployer's fault they don't give a s*hit and if you tr^y to reas^on with them you will get susp^ended the cust^omer supp*ort is a bunch of fili*pino mot*herfcker cun*ts"
+24.03.19 06:31:21<editable-dog>i think theres some leveling off of the freelance charge with higher project $$$
+24.03.19 06:33:56<editable-dog>err, i guess there isnt
+24.03.19 06:34:27<editable-dog>yeah we should probably eventually start looking into the alternatives
+24.03.19 06:34:33<editable-dog>toptal etc
+24.03.19 06:35:43<editable-dog>wrt web scraping, getting set up is easy
+24.03.19 06:35:51<editable-dog>but i dont think it actually ties into ldl
+24.03.19 06:36:17<editable-dog>wrt refund, not so sure either
+24.03.19 06:37:05<editable-dog>the common theme of complaints about freelancer is that they always favor the employer
+24.03.19 21:10:53<stoopkid__> "but i dont think it actually ties into ldl" i think that all depends on how deep we get into the parsing of the underlying languages
+24.03.19 21:11:48<stoopkid__> which could realistically be "arbitrarily deep"
+24.03.19 21:12:36<stoopkid__> maybe it doesn't really tie into CNL but i think it's very much in line with LDL in the abstract at least
+24.03.19 21:15:43<stoopkid__> there's a collection of languages we have to use and we would hypothetically want some kind of system for managing them, and that already puts us in "LDL territory"
+24.03.19 21:17:14<stoopkid__> side-note: russian is such a wild language for somebody who only speaks english
+24.03.19 21:19:01<stoopkid__> i think the only thing it's easier on is the written version of the language.. everything is pretty much written the way it sounds for the most part.. nothing like "right", they would pronounce the "gh".. nothing like "knife", they would pronounce the "k"..
+24.03.19 21:19:53<stoopkid__> but verb conjugations? cases? genders? aspects?
+24.03.19 21:28:25<stoopkid__> we don't change the underlying words for these 99% of the time we just use different word combinations
 #atlas-project> 
